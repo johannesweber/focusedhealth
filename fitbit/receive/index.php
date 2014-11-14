@@ -1,6 +1,6 @@
 <?php
 
-require 'fitbit.php';
+require '../api/fitbitphp.php';
 
 $token =  $_POST['oauth_token'];
 
