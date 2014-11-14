@@ -1,9 +1,19 @@
 <?php
 
-$oauth_token =  $_POST['oauth_token'];
+echo "consumer key: ".$oauth_consumer_key = $_POST['consumer_key'];
 
-$oauth_token_secret = $_POST['oauth_token_secret'];
+echo "nonce: ".$oauth_nonce = $_POST['oauth_nonce'];
 
-$user_id = $_POST['user_id'];
+echo "signature: ".$oauth_signature = $_POST['oauth_signature'];
+
+echo "signature method: ".$oauth_signature_method = $_POST['oauth_signature_method'];
+
+echo "timestamp: ".$oauth_timestamp = $_POST['oauth_timestamp'];
+
+echo "token: ".$oauth_token =  $_POST['oauth_token'];
+
+echo "version: ".$oauth_version = $_POST['oauth_version'];
+
+echo "user id: ".$user_id = $_POST['user_id'];
 
 ?>
