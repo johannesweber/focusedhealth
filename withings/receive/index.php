@@ -1,6 +1,6 @@
 <?php
 
-echo "consumer key: ".$oauth_consumer_key = $_POST['consumer_key'];
+echo "consumer key: ".$oauth_consumer_key = $_POST['oauth_consumer_key'];
 
 echo "nonce: ".$oauth_nonce = $_POST['oauth_nonce'];
 
