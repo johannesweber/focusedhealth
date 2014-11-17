@@ -55,7 +55,7 @@ class FitBitPHP
      * @param string $user_agent User-agent to use in API calls
      * @param string $response_format Response format (json or xml) to use in API calls
      */
-    public function __construct($consumer_key, $consumer_secret, $debug = 1, $user_agent = null, $response_format = 'xml')
+    public function __construct($consumer_key, $consumer_secret, $debug = 1, $user_agent = null, $response_format = 'json')
     {
         $this->initUrls();
 

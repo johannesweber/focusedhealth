@@ -1,19 +1,22 @@
 <?php
+/**
+ * Created by PhpStorm.
+ * User: johannesweber
+ * Date: 16.11.14
+ * Time: 13:32
+ */
 
-echo "consumer key: ".$oauth_consumer_key = $_POST['oauth_consumer_key'];
+require '../oauthwithings/withingsphp.php';
 
-echo "nonce: ".$oauth_nonce = $_POST['oauth_nonce'];
 
-echo "signature: ".$oauth_signature = $_POST['oauth_signature'];
+//create new withings php objekt with consumer key and consumer secret
+$withings = new WithingsPHP(
+    "0b1de1b1e2473372f5e8e30d0f13e38f9b20c84320cf8243517e73c0c084",
+    "cdb631b4102893076d6feb038fd5fe7fd28431b998881d5c001307cece802"
+);
+//withings oauth flow start
+$withings->initSession("http://141.19.142.45/~johannes/focusedhealth/withings/receive/");
 
-echo "signature method: ".$oauth_signature_method = $_POST['oauth_signature_method'];
 
-echo "timestamp: ".$oauth_timestamp = $_POST['oauth_timestamp'];
-
-echo "token: ".$oauth_token =  $_POST['oauth_token'];
-
-echo "version: ".$oauth_version = $_POST['oauth_version'];
-
-echo "user id: ".$user_id = $_POST['user_id'];
 
 ?>
