@@ -1,6 +1,5 @@
-# Created by https://www.gitignore.io
-
-### PhpStorm ###
+# Created by .gitignore support plugin (hsz.mobi)
+### JetBrains template
 # Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm
 
 *.iml
@@ -47,3 +46,9 @@ atlassian-ide-plugin.xml
 com_crashlytics_export_strings.xml
 crashlytics.properties
 crashlytics-build.properties
+
+/vendor
+composer.phar
+composer.lock
+.DS_Store
+
