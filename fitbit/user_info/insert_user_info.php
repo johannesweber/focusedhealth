@@ -1,6 +1,14 @@
 <?php
 
-require '../receive_token/index.php';
+require_once '../fitbitphp.php';
+
+require_once '../fetch_credentials.php';
+
+require_once '../db_connection.php';
+
+$fitbit = new FitBitPHP("7c39abf127964bc984aba4020845ff11", "18c4a92f21f1458e8ac9798567d3d38c");
+$fitbit->setOAuthDetails($oauth_token, $oauth_token_secret);
+$fitbit->setResponseFormat('json');
 
 $response = $fitbit->getProfile();
 
@@ -21,26 +29,10 @@ $timezone = $response->user->timezone;
 $waterUnit = $response->user->waterUnit;
 $weightUnit = $response->user->weightUnit;
 
-//SQL Statement to insert data into user table
-$sql = "INSERT INTO fitbit_user_info (fh_user_id, fitbit_user_id, avatar, city, country, dateOfBirth, encodedId, distanceUnit, gender, glucoseUnit, height, heightUnit, locale, memberSince, waterUnit, weightUnit, timezone)
+//SQL Statement to insert data into user info table
+$sql = "INSERT INTO fitbit_user_info (fh_user_id, fitbit_user_id, avatar, city, country, dateOfBirth, encodedId,distanceUnit, gender, glucoseUnit, height, heightUnit, locale, memberSince, waterUnit, weightUnit, timezone)
         VALUES ('42', NULL, '$avatar', '$city', '$country', '$dateOfBirth', '$encodedId', '$distanceUnit', '$gender', '$glucoseUnit', '$height', '$heightUnit', '$locale', '$memberSince', '$waterUnit', '$weightUnit', '$timezone')";
 
-// execute
-$db_result = mysqli_query( $db_connection, $sql );
-if ( ! $db_result )
-{
-    die('Ungültige Abfrage: '. mysqli_error($db_connection));
-} else {
-    echo "hat funktioniert";
-}
+require '../execute_statement.php';
 
-mysqli_free_result( $db_result );
-mysqli_close($db_connection);
-exit();
 ?>
-
-/**
-
-
- *
-**/

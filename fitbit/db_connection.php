@@ -10,6 +10,7 @@ define ("MYSQL_HOST", "localhost");
 define ("MYSQL_USER", "5ive");
 define ("MYSQL_PASSWORD", "team5ivemysql");
 define ( "MYSQL_DATABASE", "healthhub" );
+
 $db_connection = mysqli_connect (MYSQL_HOST,
     MYSQL_USER,
     MYSQL_PASSWORD,
