@@ -6,7 +6,7 @@
  * Time: 22:19
  */
 
-require_once 'db_connection.php';
+include_once 'db_connection.php';
 
 $find_company_id_statement = "SELECT id FROM company WHERE name='fitbit'";
 

@@ -15,7 +15,4 @@ if ( ! $db_result )
     echo "hat funktioniert";
 }
 
-mysqli_free_result( $db_result );
-mysqli_close($db_connection);
-
 ?>
