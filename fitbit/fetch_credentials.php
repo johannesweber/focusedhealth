@@ -9,9 +9,9 @@
  * Time: 22:03
  */
 
-require_once 'db_connection.php';
+include_once 'db_connection.php';
 
-require_once 'find_company_id.php';
+include_once 'find_company_id.php';
 
 //TODO user id required
 $fetch_credentials = "SELECT * FROM user_company_account WHERE company_id='$company_id' AND user_id='42'";
