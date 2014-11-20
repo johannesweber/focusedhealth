@@ -9,16 +9,10 @@
  * Time: 22:03
  */
 
-include_once 'db_connection.php';
-
-include_once 'find_company_id.php';
-
 //TODO user id required
 $fetch_credentials = "SELECT * FROM user_company_account WHERE company_id='$company_id' AND user_id='42'";
 
-$sql_result = mysqli_query($db_connection,$fetch_credentials);
-
-$result = mysqli_fetch_array($sql_result, MYSQL_ASSOC);
+$db_connection->executeStatement($fetch_credentials);
 
 $user_id = $result['user_id'];
 $company_id = $result['company_id'];

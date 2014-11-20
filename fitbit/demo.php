@@ -6,10 +6,17 @@
  * Time: 18:23
  */
 
+include_once 'db_connection.php';
+
+$db_connection = new DatabaseConnection();
+
+$db_connection->connect();
+
 include_once 'receive_credentials.php';
 
-include_once 'user_info/insert_user_info.php';
+//include_once 'user_info/insert_user_info.php';
 
-mysqli_close($db_connection);
+$db_connection->close();
 
 ?>
+

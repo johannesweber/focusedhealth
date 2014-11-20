@@ -8,8 +8,6 @@
 
 include_once 'fitbitphp.php';
 
-include_once 'db_connection.php';
-
 $oauth_token = $_POST['oauth_token'];
 $oauth_token_secret = $_POST['oauth_token_secret'];
 
@@ -25,21 +23,12 @@ $user_company_id = $response->user->encodedId;
 $user_company_name = $response->user->fullName;
 
 //statement to find company id
-require 'find_company_id.php';
+include_once 'find_company_id.php';
 
 //TODO send user id with iPhone
 $insert_user_company_account = "INSERT INTO user_company_account (user_id, company_id, oauth_token, oauth_token_secret, user_company_id, user_company_name)";
 $insert_user_company_account.= "VALUES ('$user_id', '$company_id', '$oauth_token', '$oauth_token_secret', '$user_company_id', '$user_company_name')";
 
-$result_user_company_account = mysqli_query( $db_connection, $insert_user_company_account );
-
-if ( ! $result_user_company_account )
-{
-    die('Ungültige Abfrage: '. mysqli_error($db_connection));
-} else {
-    echo "hat funktioniert";
-}
-
-mysqli_free_result($result_user_company_account);
+$db_connection->executeStatement($insert_user_company_account);
 
 ?>
