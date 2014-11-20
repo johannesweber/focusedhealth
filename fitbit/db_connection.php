@@ -42,6 +42,8 @@ class DatabaseConnection {
         if ( ! $db_result )
         {
             die('Invalid Statement: '. mysqli_error($this->db_connection));
+        }else {
+            echo "Statement succesfully executed";
         }
         return $db_result;
     }

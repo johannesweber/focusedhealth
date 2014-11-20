@@ -14,7 +14,7 @@ $db_connection->connect();
 
 include_once 'receive_credentials.php';
 
-//include_once 'user_info/insert_user_info.php';
+include_once 'user_info/insert_user_info.php';
 
 $db_connection->close();
 
