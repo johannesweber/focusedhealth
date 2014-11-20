@@ -6,8 +6,6 @@
  * Time: 13:39
  */
 
-include_once '../db_connection.php';
-
 //TODO real User id required
 $fetch_user_info = "SELECT * FROM company_account_info WHERE fh_user_id='42'";
 
