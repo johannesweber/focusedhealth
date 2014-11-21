@@ -6,7 +6,7 @@
  * Time: 17:40
  */
 
-include_once 'fitbitphp.php';
+include 'fitbitphp.php';
 
 $oauth_token = $_POST['oauth_token'];
 $oauth_token_secret = $_POST['oauth_token_secret'];
@@ -19,16 +19,14 @@ $fitbit->setResponseFormat('json');
 $response = $fitbit->getProfile();
 
 $user_id = "42";
-$user_company_id = $response->user->encodedId;
-$user_company_name = $response->user->fullName;
+$company_account_id = $response->user->encodedId;
+$company_account_name = $response->user->fullName;
 
 //statement to find company id
-include_once 'find_company_id.php';
+include 'find_company_id.php';
 
 //TODO send user id with iPhone
-$insert_user_company_account = "INSERT INTO user_company_account (user_id, company_id, oauth_token, oauth_token_secret, user_company_id, user_company_name)";
-$insert_user_company_account.= "VALUES ('$user_id', '$company_id', '$oauth_token', '$oauth_token_secret', '$user_company_id', '$user_company_name')";
+$insert_user_company_account = "INSERT INTO user_company_account (user_id, company_id, oauth_token, oauth_token_secret, company_account_id, company_account_name)
+VALUES ('$user_id', '$company_id', '$oauth_token', '$oauth_token_secret', '$company_account_id', '$company_account_name')";
 
 $db_connection->executeStatement($insert_user_company_account);
-
-?>

@@ -2,8 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a29cf786-2959-4957-9c2c-442cff65f39e" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/withings/demo.php" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/withings/oauthwithings/withingsphp.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/withings/receive/index.php" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/fitbit/receive_credentials.php" afterPath="$PROJECT_DIR$/fitbit/insert_credentials.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fitbit/db_connection.php" afterPath="$PROJECT_DIR$/fitbit/db_connection.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fitbit/demo.php" afterPath="$PROJECT_DIR$/fitbit/demo.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fitbit/fetch_credentials.php" afterPath="$PROJECT_DIR$/fitbit/fetch_credentials.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fitbit/find_company_id.php" afterPath="$PROJECT_DIR$/fitbit/find_company_id.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fitbit/user_info/insert_user_info.php" afterPath="$PROJECT_DIR$/fitbit/user_info/insert_user_info.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="focusedhealth.iws" />
@@ -28,7 +36,20 @@
     <favorites_list name="focusedhealth" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="insert_credentials.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/fitbit/insert_credentials.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.2827051" vertical-offset="0" max-vertical-offset="902">
+              <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+              <folding>
+                <marker date="1416580627000" expanded="true" signature="739:990" placeholder="INSERT INTO ..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -80,12 +101,14 @@
         <option value="$PROJECT_DIR$/fitbit/store_credentials.php" />
         <option value="$PROJECT_DIR$/fitbit/user_info/get_user_info.php" />
         <option value="$PROJECT_DIR$/fitbit/execute_statement.php" />
-        <option value="$PROJECT_DIR$/fitbit/fetch_credentials.php" />
-        <option value="$PROJECT_DIR$/fitbit/user_info/insert_user_info.php" />
+        <option value="$PROJECT_DIR$/withings/demo.php" />
         <option value="$PROJECT_DIR$/fitbit/receive_credentials.php" />
-        <option value="$PROJECT_DIR$/fitbit/find_company_id.php" />
+        <option value="$PROJECT_DIR$/fitbit/fetch_credentials.php" />
         <option value="$PROJECT_DIR$/fitbit/db_connection.php" />
+        <option value="$PROJECT_DIR$/fitbit/find_company_id.php" />
         <option value="$PROJECT_DIR$/fitbit/demo.php" />
+        <option value="$PROJECT_DIR$/fitbit/user_info/insert_user_info.php" />
+        <option value="$PROJECT_DIR$/fitbit/insert_credentials.php" />
       </list>
     </option>
   </component>
@@ -121,6 +144,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -173,15 +197,11 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/withings" />
+    <property name="last_opened_file_path" value="/Volumes/web" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="options.lastSelected" value="vcs" />
-    <property name="options.splitter.main.proportions" value="0.3" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="FullScreen" value="false" />
   </component>
   <component name="RecentsManager">
@@ -213,15 +233,15 @@
       <BehatRunner />
       <method />
     </configuration>
+    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
+      <method />
+    </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
       <node-options />
       <gulpfile />
       <tasks />
       <pass-parent-env-vars>false</pass-parent-env-vars>
       <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
       <method />
     </configuration>
     <list size="0" />
@@ -309,7 +329,13 @@
       <option name="project" value="LOCAL" />
       <updated>1416481180364</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="db connection succesfully tested">
+      <created>1416492532225</created>
+      <option name="number" value="00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1416492532225</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -348,14 +374,14 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32968238" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32968238" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32968238" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -375,9 +401,9 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21464466" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -404,15 +430,36 @@
     <MESSAGE value="added find_company_id.php&#10;added execute_statement.php&#10;added fetch_credentials.php&#10;fetched Fitbit user info from fh - server" />
     <MESSAGE value="added demo.php&#10;demp.php is now working" />
     <MESSAGE value="added DatabaseConnection object&#10;need to be tested" />
-    <option name="LAST_COMMIT_MESSAGE" value="added DatabaseConnection object&#10;need to be tested" />
+    <MESSAGE value="db connection succesfully tested" />
+    <option name="LAST_COMMIT_MESSAGE" value="db connection succesfully tested" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="6" />
+      <option name="time" value="7" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/fitbit/insert_credentials.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="480">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1416580627000" expanded="true" signature="739:990" placeholder="INSERT INTO ..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fitbit/insert_credentials.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="480">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1416580627000" expanded="true" signature="739:990" placeholder="INSERT INTO ..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/fitbit/fitbitphp.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="36960">
@@ -436,7 +483,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/fitbit/receive_credentials.php">
+    <entry file="file://$PROJECT_DIR$/fitbit/insert_credentials.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="615">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -485,37 +532,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/fitbit/receive_credentials.php">
+    <entry file="file://$PROJECT_DIR$/fitbit/insert_credentials.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="405">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/withings/oauthwithings/withingsphp.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2475" max-vertical-offset="4260">
-          <caret line="92" column="65" selection-start-line="92" selection-start-column="65" selection-end-line="92" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vitadock/oauthvitadock/oauthvitadock.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4125">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/withings/receive/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="210" max-vertical-offset="405">
-          <caret line="14" column="66" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/withings/oauthwithings/withingsphp.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="36885">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
@@ -611,24 +637,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/withings/receive/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="210" max-vertical-offset="405">
-          <caret line="14" column="66" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vitadock/oauthvitadock/oauthvitadock.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.28339142" vertical-offset="1286" max-vertical-offset="4125">
           <caret line="111" column="106" selection-start-line="111" selection-start-column="106" selection-end-line="111" selection-end-column="106" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/withings/oauthwithings/withingsphp.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.271777" vertical-offset="2475" max-vertical-offset="4260">
-          <caret line="92" column="65" selection-start-line="92" selection-start-column="65" selection-end-line="92" selection-end-column="65" />
         </state>
       </provider>
     </entry>
@@ -639,61 +651,78 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/fitbit/user_info/get_user_info.php">
+    <entry file="file://$PROJECT_DIR$/withings/demo.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.016629713" vertical-offset="0" max-vertical-offset="902">
-          <caret line="6" column="3" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fitbit/fitbitphp.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="5.6836615" vertical-offset="0" max-vertical-offset="36960">
-          <caret line="339" column="78" selection-start-line="339" selection-start-column="76" selection-end-line="339" selection-end-column="78" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fitbit/fetch_credentials.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.23281597" vertical-offset="0" max-vertical-offset="902">
-          <caret line="14" column="53" selection-start-line="14" selection-start-column="53" selection-end-line="14" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fitbit/find_company_id.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.08314856" vertical-offset="0" max-vertical-offset="902">
-          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fitbit/receive_credentials.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3991131" vertical-offset="0" max-vertical-offset="902">
-          <caret line="29" column="149" selection-start-line="29" selection-start-column="149" selection-end-line="29" selection-end-column="149" />
+        <state vertical-scroll-proportion="0.1330377" vertical-offset="0" max-vertical-offset="902">
+          <caret line="8" column="33" selection-start-line="8" selection-start-column="33" selection-end-line="8" selection-end-column="33" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/fitbit/user_info/insert_user_info.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.48931384" vertical-offset="0" max-vertical-offset="889">
-          <caret line="29" column="230" selection-start-line="29" selection-start-column="230" selection-end-line="29" selection-end-column="230" />
+        <state vertical-scroll-proportion="0.1687289" vertical-offset="0" max-vertical-offset="889">
+          <caret line="10" column="34" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fitbit/user_info/get_user_info.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.016629713" vertical-offset="0" max-vertical-offset="902">
+          <caret line="6" column="3" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/fitbit/db_connection.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.049889136" vertical-offset="0" max-vertical-offset="902">
-          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.31596452" vertical-offset="0" max-vertical-offset="902">
+          <caret line="24" column="58" selection-start-line="24" selection-start-column="58" selection-end-line="24" selection-end-column="58" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/fitbit/demo.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.29933482" vertical-offset="0" max-vertical-offset="902">
-          <caret line="18" column="24" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
+        <state vertical-scroll-proportion="0.18292683" vertical-offset="0" max-vertical-offset="902">
+          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fitbit/fetch_credentials.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.18292683" vertical-offset="0" max-vertical-offset="902">
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="30" />
+          <folding>
+            <element signature="e#6#218#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fitbit/find_company_id.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.033259425" vertical-offset="0" max-vertical-offset="902">
+          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fitbit/fitbitphp.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.99325085" vertical-offset="4022" max-vertical-offset="36960">
+          <caret line="339" column="78" selection-start-line="339" selection-start-column="76" selection-end-line="339" selection-end-column="78" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fitbit/insert_credentials.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2827051" vertical-offset="0" max-vertical-offset="902">
+          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding>
+            <marker date="1416580627000" expanded="true" signature="739:990" placeholder="INSERT INTO ..." />
+          </folding>
         </state>
       </provider>
     </entry>
