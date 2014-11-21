@@ -16,7 +16,7 @@ class DatabaseConnection {
         define ("MYSQL_HOST", "localhost");
         define ("MYSQL_USER", "5ive");
         define ("MYSQL_PASSWORD", "team5ivemysql");
-        define ( "MYSQL_DATABASE", "healthhub" );
+        define ("MYSQL_DATABASE", "healthhub" );
 
     }
 
@@ -42,8 +42,8 @@ class DatabaseConnection {
         if ( ! $db_result )
         {
             die('Invalid Statement: '. mysqli_error($this->db_connection));
-        }else {
-            echo "Statement succesfully executed";
+        }else{
+            echo 'Statement succesfully executed';
         }
         return $db_result;
     }
