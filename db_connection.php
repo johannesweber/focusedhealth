@@ -10,6 +10,7 @@
 class DatabaseConnection {
 
     protected $db_connection;
+    protected $result;
 
     public function __construct(){
 
@@ -30,8 +31,6 @@ class DatabaseConnection {
 
         if ( ! $this->db_connection ){
             echo 'Connection failed';
-        }else{
-            echo 'Connection established';
         }
     }
 
@@ -42,14 +41,29 @@ class DatabaseConnection {
         if ( ! $db_result )
         {
             die('Invalid Statement: '. mysqli_error($this->db_connection));
-        }else{
-            echo 'Statement succesfully executed';
         }
+
+        $this->result = $db_result;
+
         return $db_result;
     }
 
     public function close(){
         mysqli_close($this->db_connection);
+    }
+
+    public function getResultAsArray(){
+
+        $resultArray = mysqli_fetch_array( $this->result, MYSQL_ASSOC);
+
+        return $resultArray;
+    }
+
+    public function getResultAsJSON(){
+
+        $resultJSON = json_encode($this->getResultAsArray());
+
+        return $resultJSON;
     }
 }
 ?>
