@@ -373,7 +373,13 @@
       <option name="project" value="LOCAL" />
       <updated>1416913008789</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="new folder structure">
+      <created>1416913073431</created>
+      <option name="number" value="00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1416913073431</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
