@@ -58,7 +58,7 @@
       <file leaf-file-name="insert_water_goal.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/fitbit/water_goal/insert_water_goal.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="34" selection-start="232" selection-end="232" vertical-scroll-proportion="0.408" vertical-offset="0" max-vertical-offset="425">
+            <state line="20" column="15" selection-start="428" selection-end="428" vertical-scroll-proportion="0.68" vertical-offset="0" max-vertical-offset="425">
               <folding>
                 <marker date="1416935838357" expanded="true" signature="338:479" placeholder="INSERT INTO ..." />
               </folding>
@@ -433,7 +433,11 @@
       <created>1416935964286</created>
       <updated>1416935964286</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Get WaterGoal hinzugefügt&#10;- evtl. nach startdatum noch gucken">
+      <created>1416935991284</created>
+      <updated>1416935991284</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -458,7 +462,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32861635" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32914045" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -841,7 +845,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="8" column="0" selection-start="87" selection-end="138" vertical-scroll-proportion="-0.045333333" vertical-offset="153" max-vertical-offset="561">
           <folding>
-            <element signature="e#6#85#0" expanded="true" />
+            <element signature="e#6#85#0" expanded="false" />
             <marker date="1416934343955" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
           </folding>
         </state>
@@ -865,7 +869,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/fitbit/water_goal/insert_water_goal.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="34" selection-start="232" selection-end="232" vertical-scroll-proportion="0.408" vertical-offset="0" max-vertical-offset="425">
+        <state line="20" column="15" selection-start="428" selection-end="428" vertical-scroll-proportion="0.68" vertical-offset="0" max-vertical-offset="425">
           <folding>
             <marker date="1416935838357" expanded="true" signature="338:479" placeholder="INSERT INTO ..." />
           </folding>
