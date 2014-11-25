@@ -6,14 +6,12 @@
  * Time: 22:19
  */
 
-include_once 'db_connection.php';
-
 $find_company_id_statement = "SELECT id FROM company WHERE name='fitbit'";
 
-$sql_result = mysqli_query($db_connection,$find_company_id_statement);
+$find_company_id_mysqli_result = $db_connection->executeStatement($find_company_id_statement);
 
-$result = mysqli_fetch_array($sql_result, MYSQL_ASSOC);
+$find_company_id_result = $db_connection->getResultAsArray();
 
-$company_id = $result['id'];
+$company_id = $find_company_id_result['id'];
 
 ?>

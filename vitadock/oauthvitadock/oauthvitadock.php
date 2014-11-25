@@ -154,7 +154,7 @@ class VitadockPHP
     }
 
     /**
-     * Initialize session. Inits OAuth session, handles redirects to Withings login/authorization if needed
+     * Initialize session. Inits OAuth session, handles redirects to Withings authenticate/authorization if needed
      *
      * @param  $callbackUrl Callback for 'Sign in with Withings'
      * @param  $cookie Use persistent cookie for authorization, or session cookie only

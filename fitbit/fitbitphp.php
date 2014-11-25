@@ -157,7 +157,7 @@ class FitBitPHP
     }
 
     /**
-     * Initialize session. Inits OAuth session, handles redirects to Fitbit login/authorization if needed
+     * Initialize session. Inits OAuth session, handles redirects to Fitbit authenticate/authorization if needed
      *
      * @param  $callbackUrl Callback for 'Sign in with Fitbit'
      * @param  $cookie Use persistent cookie for authorization, or session cookie only
