@@ -1,22 +1,32 @@
 <?php
 /**
+ * this call is called when the user want to synchronize its data.
+ * in this class we fetch the users credentials from our database and request the user info from fitbit.
+ * then we store the user info in our own database. after storing the user info we fetch user info from our
+ * database and create a json object for preparing the file to get fetched by the users iPhone.
+ *
  * Created by PhpStorm.
  * User: johannesweber
- * Date: 18.11.14
- * Time: 13:39
+ * Date: 25.11.14
+ * Time: 07:34
  */
 
-include_once '../../db_connection.php';
+include '../../db_connection.php';
+
+include '../fitbitphp.php';
 
 $db_connection = new DatabaseConnection();
 
 $db_connection->connect();
 
-//TODO real User id required
-$fetch_user_info = "SELECT * FROM company_account_info WHERE user_id='42'";
+include '../fetch_credentials.php';
 
-$db_connection->executeStatement($fetch_user_info);
+$fitbit = new FitBitPHP("7c39abf127964bc984aba4020845ff11", "18c4a92f21f1458e8ac9798567d3d38c");
+$fitbit->setOAuthDetails($oauth_token, $oauth_token_secret);
+$fitbit->setResponseFormat('json');
 
-echo $db_connection->getResultAsJSON();
+include 'select_user_info.php';
 
 $db_connection->close();
+
+?>

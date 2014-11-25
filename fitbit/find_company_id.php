@@ -10,7 +10,7 @@ $find_company_id_statement = "SELECT id FROM company WHERE name='fitbit'";
 
 $find_company_id_mysqli_result = $db_connection->executeStatement($find_company_id_statement);
 
-$find_company_id_result = mysqli_fetch_array( $find_company_id_mysqli_result, MYSQL_ASSOC);
+$find_company_id_result = $db_connection->getResultAsArray();
 
 $company_id = $find_company_id_result['id'];
 
