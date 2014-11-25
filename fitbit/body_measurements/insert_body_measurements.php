@@ -9,14 +9,9 @@
 $timestamp=time();
 $date=date("Y-m-d", $timestamp);
 
-echo $date;
-
 $response = $fitbit->getBody($date);
 
-print_r($response);
-
 $bicep = $response->body->bicep;
-echo $bicep;
 $bmi = $response->body->bmi;
 $calf = $response->body->calf;
 $chest = $response->body->chest;

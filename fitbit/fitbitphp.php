@@ -1137,10 +1137,10 @@ class FitBitPHP
     {
         $headers = $this->getHeaders();
         if (!isset($dateStr)) {
-            $dateStr = $date->format('Y-m-d');
+            $dateStr = $date;
         }
         try {
-            $this->oauth->fetch($this->baseApiUrl . "user/-/foods/log/water/date/" . $dateStr . "." . $this->responseFormat, null, OAUTH_HTTP_METHOD_GET, $headers);
+           $this->oauth->fetch($this->baseApiUrl . "user/". $this->userId ."/foods/log/water/date/" . $dateStr . "." . $this->responseFormat, null, OAUTH_HTTP_METHOD_GET, $headers);
         } catch (Exception $E) {
         }
         $response = $this->oauth->getLastResponse();

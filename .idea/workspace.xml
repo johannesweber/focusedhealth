@@ -2,6 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a29cf786-2959-4957-9c2c-442cff65f39e" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fitbit/water/fetch_get_water.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fitbit/water/index.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fitbit/water/insert_water.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fitbit/water/select_water.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fitbit/fitbitphp.php" afterPath="$PROJECT_DIR$/fitbit/fitbitphp.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fitbit/body_measurements/insert_body_measurements.php" afterPath="$PROJECT_DIR$/fitbit/body_measurements/insert_body_measurements.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="focusedhealth.iws" />
@@ -26,59 +32,46 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/fitbit/body_measurements/index.php">
+      <file leaf-file-name="fetch_get_water.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/fitbit/water/fetch_get_water.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="0" selection-start="875" selection-end="875" vertical-scroll-proportion="-12.423077" vertical-offset="153" max-vertical-offset="629">
+            <state line="30" column="2" selection-start="630" selection-end="630" vertical-scroll-proportion="-10.5" vertical-offset="237" max-vertical-offset="612">
               <folding>
-                <element signature="e#6#464#0" expanded="true" />
+                <element signature="e#6#85#0" expanded="true" />
+                <marker date="1416933909750" expanded="true" signature="393:438" placeholder="SELECT id FR..measurement..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="insert_body_measurements.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="insert_water.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/fitbit/water/insert_water.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="9" column="32" selection-start="138" selection-end="138" vertical-scroll-proportion="-5.8846154" vertical-offset="0" max-vertical-offset="561">
+              <folding>
+                <element signature="e#6#85#0" expanded="true" />
+                <marker date="1416934343955" expanded="true" signature="336:469" placeholder="INSERT INTO ..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="insert_body_measurements.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/fitbit/body_measurements/insert_body_measurements.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="44" column="48" selection-start="1452" selection-end="1452" vertical-scroll-proportion="1.104" vertical-offset="334" max-vertical-offset="918">
+            <state line="13" column="23" selection-start="198" selection-end="201" vertical-scroll-proportion="6.5384617" vertical-offset="306" max-vertical-offset="748">
               <folding>
-                <element signature="e#6#85#0" expanded="true" />
-                <marker date="1416930288577" expanded="true" signature="685:1470" placeholder="INSERT INTO ..." />
+                <marker date="1416934206887" expanded="true" signature="638:1423" placeholder="INSERT INTO ..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="fetch_body_measurements.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/fitbit/body_measurements/fetch_body_measurements.php">
+      <file leaf-file-name="fitbitphp.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/fitbit/fitbitphp.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="26" selection-start="327" selection-end="327" vertical-scroll-proportion="2.4230769" vertical-offset="233" max-vertical-offset="1309">
-              <folding>
-                <element signature="e#6#85#0" expanded="true" />
-                <element signature="e#87#299#0" expanded="false" />
-                <marker date="1416930241702" expanded="true" signature="394:439" placeholder="SELECT id FR..measurement..." />
-                <marker date="1416930241702" expanded="true" signature="458:501" placeholder="SELECT id FR..measurement..." />
-                <marker date="1416930241702" expanded="true" signature="521:565" placeholder="SELECT id FR..measurement..." />
-                <marker date="1416930241702" expanded="true" signature="586:631" placeholder="SELECT id FR..measurement..." />
-                <marker date="1416930241702" expanded="true" signature="650:698" placeholder="SELECT id FR..measurement..." />
-                <marker date="1416930241702" expanded="true" signature="721:768" placeholder="SELECT id FR..measurement..." />
-                <marker date="1416930241702" expanded="true" signature="788:832" placeholder="SELECT id FR..measurement..." />
-                <marker date="1416930241702" expanded="true" signature="852:896" placeholder="SELECT id FR..measurement..." />
-                <marker date="1416930241702" expanded="true" signature="917:962" placeholder="SELECT id FR..measurement..." />
-                <marker date="1416930241702" expanded="true" signature="983:1028" placeholder="SELECT id FR..measurement..." />
-                <marker date="1416930241702" expanded="true" signature="1050:1096" placeholder="SELECT id FR..measurement..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="find_company_id.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/fitbit/find_company_id.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="11" selection-start="330" selection-end="341" vertical-scroll-proportion="-5.8846154" vertical-offset="0" max-vertical-offset="289">
-              <folding>
-                <marker date="1416923105104" expanded="true" signature="125:167" placeholder="SELECT id FR..company..." />
-              </folding>
+            <state line="1139" column="29" selection-start="40060" selection-end="40060" vertical-scroll-proportion="0.75414366" vertical-offset="18886" max-vertical-offset="41888">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -94,16 +87,13 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="fitbit_body_measurements" />
       </map>
     </option>
   </component>
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/fitbit/receive/oauth.php" />
-        <option value="$PROJECT_DIR$/withings/api/examples/basic.php" />
-        <option value="$PROJECT_DIR$/withings/oauthwithings/examples/basic.php" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/info.php" />
         <option value="$PROJECT_DIR$/vitadock/receive/index.php" />
@@ -147,11 +137,14 @@
         <option value="$PROJECT_DIR$/fitbit/user_info/insert_user_info.php" />
         <option value="$PROJECT_DIR$/fitbit/user_info/index.php" />
         <option value="$PROJECT_DIR$/fitbit/body_measurements/index.php" />
-        <option value="$PROJECT_DIR$/fitbit/fitbitphp.php" />
         <option value="$PROJECT_DIR$/fitbit/body_measurements/select_body_measurements.php" />
         <option value="$PROJECT_DIR$/fitbit/fetch_credentials.php" />
         <option value="$PROJECT_DIR$/fitbit/body_measurements/fetch_body_measurements.php" />
+        <option value="$PROJECT_DIR$/fitbit/water/index.php" />
+        <option value="$PROJECT_DIR$/fitbit/fitbitphp.php" />
+        <option value="$PROJECT_DIR$/fitbit/water/fetch_get_water.php" />
         <option value="$PROJECT_DIR$/fitbit/body_measurements/insert_body_measurements.php" />
+        <option value="$PROJECT_DIR$/fitbit/water/insert_water.php" />
       </list>
     </option>
   </component>
@@ -234,7 +227,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="user_info" />
+              <option name="myItemId" value="water" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -419,7 +412,11 @@
       <created>1416931169926</created>
       <updated>1416931169926</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Body Measurements hinzugefügt">
+      <created>1416931218338</created>
+      <updated>1416931218338</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -444,9 +441,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="Messages" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32861635" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32861635" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32914045" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32968238" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -524,30 +521,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/fitbit/user_info/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="459">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db_connection.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db_connection.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fitbit/user_info/insert_user_info.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/db_connection.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
@@ -750,13 +723,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/fitbit/fitbitphp.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1340" column="28" selection-start="47652" selection-end="47652" vertical-scroll-proportion="-6.576923" vertical-offset="22405" max-vertical-offset="41888">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/fitbit/user_info/select_user_info.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="13" column="39" selection-start="95" selection-end="293" vertical-scroll-proportion="0.36266667" vertical-offset="0" max-vertical-offset="375">
@@ -773,72 +739,109 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/fitbit/body_measurements/select_body_measurements.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="0" selection-start="192" selection-end="192" vertical-scroll-proportion="0.45333335" vertical-offset="0" max-vertical-offset="375">
-          <folding>
-            <element signature="e#6#85#0" expanded="true" />
-            <marker date="1416927335103" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..company_account_info..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/fitbit/fetch_credentials.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="18" column="63" selection-start="556" selection-end="556" vertical-scroll-proportion="0.816" vertical-offset="0" max-vertical-offset="544">
           <folding>
-            <element signature="e#6#218#0" expanded="true" />
+            <element signature="e#6#218#0" expanded="false" />
             <marker date="1416928543904" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..user_company_account..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fitbit/find_company_id.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="11" selection-start="330" selection-end="341" vertical-scroll-proportion="-5.8846154" vertical-offset="0" max-vertical-offset="289">
-          <folding>
-            <marker date="1416923105104" expanded="true" signature="125:167" placeholder="SELECT id FR..company..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fitbit/body_measurements/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="0" selection-start="875" selection-end="875" vertical-scroll-proportion="-12.423077" vertical-offset="153" max-vertical-offset="629">
-          <folding>
-            <element signature="e#6#464#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/fitbit/body_measurements/fetch_body_measurements.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="26" selection-start="327" selection-end="327" vertical-scroll-proportion="2.4230769" vertical-offset="233" max-vertical-offset="1309">
+        <state line="79" column="2" selection-start="87" selection-end="3086" vertical-scroll-proportion="0.90029323" vertical-offset="900" max-vertical-offset="1309">
+          <folding>
+            <element signature="e#6#85#0" expanded="false" />
+            <element signature="e#87#299#0" expanded="false" />
+            <marker date="1416930241702" expanded="true" signature="-1:-1" placeholder="SELECT id FR..measurement..." />
+            <marker date="1416930241702" expanded="true" signature="-1:-1" placeholder="SELECT id FR..measurement..." />
+            <marker date="1416930241702" expanded="true" signature="-1:-1" placeholder="SELECT id FR..measurement..." />
+            <marker date="1416930241702" expanded="true" signature="-1:-1" placeholder="SELECT id FR..measurement..." />
+            <marker date="1416930241702" expanded="true" signature="-1:-1" placeholder="SELECT id FR..measurement..." />
+            <marker date="1416930241702" expanded="true" signature="-1:-1" placeholder="SELECT id FR..measurement..." />
+            <marker date="1416930241702" expanded="true" signature="-1:-1" placeholder="SELECT id FR..measurement..." />
+            <marker date="1416930241702" expanded="true" signature="-1:-1" placeholder="SELECT id FR..measurement..." />
+            <marker date="1416930241702" expanded="true" signature="-1:-1" placeholder="SELECT id FR..measurement..." />
+            <marker date="1416930241702" expanded="true" signature="-1:-1" placeholder="SELECT id FR..measurement..." />
+            <marker date="1416930241702" expanded="true" signature="-1:-1" placeholder="SELECT id FR..measurement..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fitbit/find_company_id.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="11" selection-start="330" selection-end="341" vertical-scroll-proportion="0.408" vertical-offset="0" max-vertical-offset="375">
+          <folding>
+            <marker date="1416923105104" expanded="true" signature="-1:-1" placeholder="SELECT id FR..company..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fitbit/water/fetch_get_water.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="2" selection-start="630" selection-end="630" vertical-scroll-proportion="-10.5" vertical-offset="237" max-vertical-offset="612">
           <folding>
             <element signature="e#6#85#0" expanded="true" />
-            <element signature="e#87#299#0" expanded="false" />
-            <marker date="1416930241702" expanded="true" signature="394:439" placeholder="SELECT id FR..measurement..." />
-            <marker date="1416930241702" expanded="true" signature="458:501" placeholder="SELECT id FR..measurement..." />
-            <marker date="1416930241702" expanded="true" signature="521:565" placeholder="SELECT id FR..measurement..." />
-            <marker date="1416930241702" expanded="true" signature="586:631" placeholder="SELECT id FR..measurement..." />
-            <marker date="1416930241702" expanded="true" signature="650:698" placeholder="SELECT id FR..measurement..." />
-            <marker date="1416930241702" expanded="true" signature="721:768" placeholder="SELECT id FR..measurement..." />
-            <marker date="1416930241702" expanded="true" signature="788:832" placeholder="SELECT id FR..measurement..." />
-            <marker date="1416930241702" expanded="true" signature="852:896" placeholder="SELECT id FR..measurement..." />
-            <marker date="1416930241702" expanded="true" signature="917:962" placeholder="SELECT id FR..measurement..." />
-            <marker date="1416930241702" expanded="true" signature="983:1028" placeholder="SELECT id FR..measurement..." />
-            <marker date="1416930241702" expanded="true" signature="1050:1096" placeholder="SELECT id FR..measurement..." />
+            <marker date="1416933909750" expanded="true" signature="393:438" placeholder="SELECT id FR..measurement..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fitbit/body_measurements/select_body_measurements.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="0" selection-start="192" selection-end="192" vertical-scroll-proportion="0.22666667" vertical-offset="0" max-vertical-offset="375">
+          <folding>
+            <marker date="1416927335103" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..company_account_info..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fitbit/water/select_water.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="380">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fitbit/body_measurements/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="0" selection-start="501" selection-end="501" vertical-scroll-proportion="-2.6153846" vertical-offset="0" max-vertical-offset="459">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fitbit/water/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="27" selection-start="482" selection-end="482" vertical-scroll-proportion="0.816" vertical-offset="51" max-vertical-offset="527">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/fitbit/body_measurements/insert_body_measurements.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="48" selection-start="1452" selection-end="1452" vertical-scroll-proportion="1.104" vertical-offset="334" max-vertical-offset="918">
+        <state line="13" column="23" selection-start="198" selection-end="201" vertical-scroll-proportion="6.5384617" vertical-offset="306" max-vertical-offset="748">
+          <folding>
+            <marker date="1416934206887" expanded="true" signature="638:1423" placeholder="INSERT INTO ..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fitbit/water/insert_water.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="32" selection-start="138" selection-end="138" vertical-scroll-proportion="-5.8846154" vertical-offset="0" max-vertical-offset="561">
           <folding>
             <element signature="e#6#85#0" expanded="true" />
-            <marker date="1416930288577" expanded="true" signature="685:1470" placeholder="INSERT INTO ..." />
+            <marker date="1416934343955" expanded="true" signature="336:469" placeholder="INSERT INTO ..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fitbit/fitbitphp.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1139" column="29" selection-start="40060" selection-end="40060" vertical-scroll-proportion="0.75414366" vertical-offset="18886" max-vertical-offset="41888">
+          <folding />
         </state>
       </provider>
     </entry>
