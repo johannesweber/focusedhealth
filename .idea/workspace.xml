@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a29cf786-2959-4957-9c2c-442cff65f39e" name="Default" comment="Body Measurements hinzugefügt">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fitbit/body_measurements/fetch_body_measurements.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fitbit/body_measurements/index.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fitbit/body_measurements/insert_body_measurements.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fitbit/body_measurements/select_body_measurements.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fitbit/fetch_credentials.php" afterPath="$PROJECT_DIR$/fitbit/fetch_credentials.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fitbit/fitbitphp.php" afterPath="$PROJECT_DIR$/fitbit/fitbitphp.php" />
+    <list default="true" id="a29cf786-2959-4957-9c2c-442cff65f39e" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="focusedhealth.iws" />
@@ -421,7 +415,11 @@
       <created>1416913233388</created>
       <updated>1416913233388</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Body Measurements hinzugefügt">
+      <created>1416931169926</created>
+      <updated>1416931169926</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
