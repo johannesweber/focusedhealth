@@ -1338,7 +1338,7 @@ class FitBitPHP
     {
         $headers = $this->getHeaders();
         if (!isset($dateStr)) {
-            $dateStr = $date->format('Y-m-d');
+            $dateStr = $date;
         }
         try {
             $this->oauth->fetch($this->baseApiUrl . "user/" . $this->userId . "/body/date/" . $dateStr . "." . $this->responseFormat,
