@@ -2,12 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a29cf786-2959-4957-9c2c-442cff65f39e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fitbit/water/fetch_get_water.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fitbit/water/index.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fitbit/water/insert_water.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fitbit/water/select_water.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fitbit/water_goal/fetch_water_goal.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fitbit/water_goal/index.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fitbit/water_goal/insert_water_goal.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fitbit/water_goal/select_water_goal.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fitbit/fitbitphp.php" afterPath="$PROJECT_DIR$/fitbit/fitbitphp.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fitbit/body_measurements/insert_body_measurements.php" afterPath="$PROJECT_DIR$/fitbit/body_measurements/insert_body_measurements.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="focusedhealth.iws" />
@@ -32,46 +31,42 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="fetch_get_water.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/fitbit/water/fetch_get_water.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="30" column="2" selection-start="630" selection-end="630" vertical-scroll-proportion="-10.5" vertical-offset="237" max-vertical-offset="612">
-              <folding>
-                <element signature="e#6#85#0" expanded="true" />
-                <marker date="1416933909750" expanded="true" signature="393:438" placeholder="SELECT id FR..measurement..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="insert_water.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/fitbit/water/insert_water.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="32" selection-start="138" selection-end="138" vertical-scroll-proportion="-5.8846154" vertical-offset="0" max-vertical-offset="561">
-              <folding>
-                <element signature="e#6#85#0" expanded="true" />
-                <marker date="1416934343955" expanded="true" signature="336:469" placeholder="INSERT INTO ..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="insert_body_measurements.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/fitbit/body_measurements/insert_body_measurements.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="23" selection-start="198" selection-end="201" vertical-scroll-proportion="6.5384617" vertical-offset="306" max-vertical-offset="748">
-              <folding>
-                <marker date="1416934206887" expanded="true" signature="638:1423" placeholder="INSERT INTO ..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="fitbitphp.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="fitbitphp.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/fitbit/fitbitphp.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1139" column="29" selection-start="40060" selection-end="40060" vertical-scroll-proportion="0.75414366" vertical-offset="18886" max-vertical-offset="41888">
+            <state line="1162" column="18" selection-start="40942" selection-end="40942" vertical-scroll-proportion="-3.4615386" vertical-offset="19460" max-vertical-offset="42483">
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="select_water.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/fitbit/water/select_water.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="204">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="fetch_water_goal.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/fitbit/water_goal/fetch_water_goal.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="22" column="14" selection-start="453" selection-end="453" vertical-scroll-proportion="-9.153846" vertical-offset="51" max-vertical-offset="527">
+              <folding>
+                <marker date="1416935537836" expanded="true" signature="390:435" placeholder="SELECT id FR..measurement..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="insert_water_goal.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/fitbit/water_goal/insert_water_goal.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="14" column="34" selection-start="232" selection-end="232" vertical-scroll-proportion="0.408" vertical-offset="0" max-vertical-offset="425">
+              <folding>
+                <marker date="1416935838357" expanded="true" signature="338:479" placeholder="INSERT INTO ..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -94,8 +89,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/info.php" />
         <option value="$PROJECT_DIR$/vitadock/receive/index.php" />
         <option value="$PROJECT_DIR$/withings/oauthwithings/withingsphp.php" />
         <option value="$PROJECT_DIR$/withings/receive/index.php" />
@@ -141,10 +134,12 @@
         <option value="$PROJECT_DIR$/fitbit/fetch_credentials.php" />
         <option value="$PROJECT_DIR$/fitbit/body_measurements/fetch_body_measurements.php" />
         <option value="$PROJECT_DIR$/fitbit/water/index.php" />
-        <option value="$PROJECT_DIR$/fitbit/fitbitphp.php" />
         <option value="$PROJECT_DIR$/fitbit/water/fetch_get_water.php" />
         <option value="$PROJECT_DIR$/fitbit/body_measurements/insert_body_measurements.php" />
         <option value="$PROJECT_DIR$/fitbit/water/insert_water.php" />
+        <option value="$PROJECT_DIR$/fitbit/fitbitphp.php" />
+        <option value="$PROJECT_DIR$/fitbit/water_goal/fetch_water_goal.php" />
+        <option value="$PROJECT_DIR$/fitbit/water_goal/insert_water_goal.php" />
       </list>
     </option>
   </component>
@@ -227,6 +222,24 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="water_goal" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="focusedhealth" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="focusedhealth" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fitbit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="water" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -279,6 +292,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\workspace\4_semester\projekt\focusedhealth\fitbit\water_goal" />
       <recent name="$PROJECT_DIR$/vitadock/receive" />
       <recent name="$PROJECT_DIR$/vitadock/oauthvitadock" />
       <recent name="$PROJECT_DIR$/withings" />
@@ -416,7 +430,11 @@
       <created>1416931218338</created>
       <updated>1416931218338</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Get Water hinzugefügt&#10;- Array fehlt noch">
+      <created>1416934674504</created>
+      <updated>1416934674504</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -513,7 +531,8 @@
     <MESSAGE value="fixed problem with the encodedId from fitbit" />
     <MESSAGE value="new folder structure" />
     <MESSAGE value="Body Measurements hinzugefügt" />
-    <option name="LAST_COMMIT_MESSAGE" value="Body Measurements hinzugefügt" />
+    <MESSAGE value="Get Water hinzugefügt&#10;- Array fehlt noch" />
+    <option name="LAST_COMMIT_MESSAGE" value="Get Water hinzugefügt&#10;- Array fehlt noch" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -521,16 +540,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/db_connection.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db_connection.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/fitbit/user_info/insert_user_info.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
@@ -779,21 +788,61 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/fitbit/water/fetch_get_water.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="2" selection-start="630" selection-end="630" vertical-scroll-proportion="-10.5" vertical-offset="237" max-vertical-offset="612">
-          <folding>
-            <element signature="e#6#85#0" expanded="true" />
-            <marker date="1416933909750" expanded="true" signature="393:438" placeholder="SELECT id FR..measurement..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/fitbit/body_measurements/select_body_measurements.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="10" column="0" selection-start="192" selection-end="192" vertical-scroll-proportion="0.22666667" vertical-offset="0" max-vertical-offset="375">
           <folding>
             <marker date="1416927335103" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..company_account_info..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fitbit/body_measurements/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="0" selection-start="501" selection-end="501" vertical-scroll-proportion="-2.6153846" vertical-offset="0" max-vertical-offset="459">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fitbit/body_measurements/insert_body_measurements.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="23" selection-start="198" selection-end="201" vertical-scroll-proportion="6.5384617" vertical-offset="306" max-vertical-offset="748">
+          <folding>
+            <marker date="1416934206887" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fitbit/water/fetch_get_water.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="2" selection-start="630" selection-end="630" vertical-scroll-proportion="1.36" vertical-offset="0" max-vertical-offset="612">
+          <folding>
+            <element signature="e#6#85#0" expanded="true" />
+            <marker date="1416933909750" expanded="true" signature="-1:-1" placeholder="SELECT id FR..measurement..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fitbit/water/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="27" selection-start="482" selection-end="482" vertical-scroll-proportion="0.952" vertical-offset="0" max-vertical-offset="527">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fitbit/fitbitphp.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1162" column="18" selection-start="40942" selection-end="40942" vertical-scroll-proportion="-3.4615386" vertical-offset="19460" max-vertical-offset="42483">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fitbit/water/insert_water.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="0" selection-start="87" selection-end="138" vertical-scroll-proportion="-0.045333333" vertical-offset="153" max-vertical-offset="561">
+          <folding>
+            <element signature="e#6#85#0" expanded="true" />
+            <marker date="1416934343955" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
           </folding>
         </state>
       </provider>
@@ -805,43 +854,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/fitbit/body_measurements/index.php">
+    <entry file="file://$PROJECT_DIR$/fitbit/water_goal/fetch_water_goal.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="0" selection-start="501" selection-end="501" vertical-scroll-proportion="-2.6153846" vertical-offset="0" max-vertical-offset="459">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fitbit/water/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="27" selection-start="482" selection-end="482" vertical-scroll-proportion="0.816" vertical-offset="51" max-vertical-offset="527">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fitbit/body_measurements/insert_body_measurements.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="23" selection-start="198" selection-end="201" vertical-scroll-proportion="6.5384617" vertical-offset="306" max-vertical-offset="748">
+        <state line="22" column="14" selection-start="453" selection-end="453" vertical-scroll-proportion="-9.153846" vertical-offset="51" max-vertical-offset="527">
           <folding>
-            <marker date="1416934206887" expanded="true" signature="638:1423" placeholder="INSERT INTO ..." />
+            <marker date="1416935537836" expanded="true" signature="390:435" placeholder="SELECT id FR..measurement..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/fitbit/water/insert_water.php">
+    <entry file="file://$PROJECT_DIR$/fitbit/water_goal/insert_water_goal.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="32" selection-start="138" selection-end="138" vertical-scroll-proportion="-5.8846154" vertical-offset="0" max-vertical-offset="561">
+        <state line="14" column="34" selection-start="232" selection-end="232" vertical-scroll-proportion="0.408" vertical-offset="0" max-vertical-offset="425">
           <folding>
-            <element signature="e#6#85#0" expanded="true" />
-            <marker date="1416934343955" expanded="true" signature="336:469" placeholder="INSERT INTO ..." />
+            <marker date="1416935838357" expanded="true" signature="338:479" placeholder="INSERT INTO ..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fitbit/fitbitphp.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1139" column="29" selection-start="40060" selection-end="40060" vertical-scroll-proportion="0.75414366" vertical-offset="18886" max-vertical-offset="41888">
-          <folding />
         </state>
       </provider>
     </entry>
