@@ -23,7 +23,18 @@ $thigh = $response->body->thigh;
 $waist = $response->body->waist;
 $weight = $response->body->weight;
 
-include 'fetch_body_measurements.php';
+include 'find_bicep_id.php';
+include 'find_bmi_id.php';
+include 'find_calf_id.php';
+include 'find_chest_id.php';
+include 'find_body_fat_id.php';
+include 'find_forearm_id.php';
+include 'find_hips_id.php';
+include 'find_neck_id.php';
+include 'find_thigh_id.php';
+include 'find_waist_id.php';
+include 'find_weight_id.php';
+
 
 //SQL Statement to insert data into value table
 $insert_body = "INSERT INTO value (user_id, measurement_id, company_id, value, date)
