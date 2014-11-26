@@ -1496,6 +1496,36 @@ class FitBitPHP
 
 
     /**
+     * Get Weight Goal
+     *
+     * @throws FitBitException
+     * @param string $userId UserId of public profile, if none using set with setUser or '-' by default
+     * @return mixed SimpleXMLElement or the value encoded in json as an object
+     */
+    public function getWeightGoal()
+    {
+        $headers = $this->getHeaders();
+
+        try {
+            $this->oauth->fetch($this->baseApiUrl . "user/" . $this->userId . "/body/log/weight/goal." . $this->responseFormat, null, OAUTH_HTTP_METHOD_GET, $headers);
+        } catch (Exception $E) {
+        }
+        $response = $this->oauth->getLastResponse();
+        $responseInfo = $this->oauth->getLastResponseInfo();
+        if (!strcmp($responseInfo['http_code'], '200')) {
+            $response = $this->parseResponse($response);
+
+            if ($response)
+                return $response;
+            else
+                throw new FitBitException($responseInfo['http_code'], 'Fitbit request failed. Code: ' . $responseInfo['http_code']);
+        } else {
+            throw new FitBitException($responseInfo['http_code'], 'Fitbit request failed. Code: ' . $responseInfo['http_code']);
+        }
+    }
+
+
+    /**
      * Log user weight
      *
      * @throws FitBitException

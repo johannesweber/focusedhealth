@@ -9,10 +9,10 @@
 $timestamp=time();
 $date=date("Y-m-d", $timestamp);
 
-$response = $fitbit->getWaterGoal();
+$response = $fitbit->getFoodGoal();
 print_r($response);
 
-$foodGoal = $response->goal->goal;
+$foodGoal = $response->goals->calories;
 
 include 'fetch_food_goal.php';
 
