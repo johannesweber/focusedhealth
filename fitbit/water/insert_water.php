@@ -14,7 +14,7 @@ $response = $fitbit->getWater($date);
 print_r($response);
 
 $water = $response->summary->water;
-
+$waterArray = $response->water[0];
 
 
 include 'fetch_get_water.php';
