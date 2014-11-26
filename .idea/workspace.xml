@@ -2,12 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a29cf786-2959-4957-9c2c-442cff65f39e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fitbit/weight_goal/fetch_weight_goal.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fitbit/weight_goal/index.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fitbit/weight_goal/insert_weight_goal.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fitbit/weight_goal/select_weight_goal.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fitbit/fitbitphp.php" afterPath="$PROJECT_DIR$/fitbit/fitbitphp.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fitbit/food_goal/insert_food_goal.php" afterPath="$PROJECT_DIR$/fitbit/food_goal/insert_food_goal.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="focusedhealth.iws" />
@@ -52,7 +46,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="fitbit_water_goal" />
+        <entry key="$PROJECT_DIR$" value="food_goal" />
       </map>
     </option>
   </component>
@@ -421,7 +415,11 @@
       <created>1416993338689</created>
       <updated>1416993338689</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="Weight Goal hinzugefügt&#10;-&gt; muss noch getestet werden">
+      <created>1416994271830</created>
+      <updated>1416994271830</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -446,7 +444,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32861635" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32914045" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -521,7 +519,8 @@
     <MESSAGE value="Get Water hinzugefügt&#10;- Array fehlt noch" />
     <MESSAGE value="Get WaterGoal hinzugefügt&#10;- evtl. nach startdatum noch gucken" />
     <MESSAGE value="Food Goal hinzugefügt&#10;-&gt; muss noch getestet werden" />
-    <option name="LAST_COMMIT_MESSAGE" value="Food Goal hinzugefügt&#10;-&gt; muss noch getestet werden" />
+    <MESSAGE value="Weight Goal hinzugefügt&#10;-&gt; muss noch getestet werden" />
+    <option name="LAST_COMMIT_MESSAGE" value="Weight Goal hinzugefügt&#10;-&gt; muss noch getestet werden" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
