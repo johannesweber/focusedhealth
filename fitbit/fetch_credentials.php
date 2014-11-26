@@ -16,7 +16,7 @@ $fetch_credentials = "SELECT * FROM user_company_account WHERE company_id='$comp
 
 $fetch_credentials_mysqli_result = $db_connection->executeStatement($fetch_credentials);
 
-$fetch_credentials_result = mysqli_fetch_array( $fetch_credentials_mysqli_result, MYSQL_ASSOC);
+$fetch_credentials_result = $db_connection->getResultAsArray();
 
 $user_id = $fetch_credentials_result['user_id'];
 $company_id = $fetch_credentials_result['company_id'];

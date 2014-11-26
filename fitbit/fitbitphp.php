@@ -1137,10 +1137,10 @@ class FitBitPHP
     {
         $headers = $this->getHeaders();
         if (!isset($dateStr)) {
-            $dateStr = $date->format('Y-m-d');
+            $dateStr = $date;
         }
         try {
-            $this->oauth->fetch($this->baseApiUrl . "user/-/foods/log/water/date/" . $dateStr . "." . $this->responseFormat, null, OAUTH_HTTP_METHOD_GET, $headers);
+           $this->oauth->fetch($this->baseApiUrl . "user/". $this->userId ."/foods/log/water/date/" . $dateStr . "." . $this->responseFormat, null, OAUTH_HTTP_METHOD_GET, $headers);
         } catch (Exception $E) {
         }
         $response = $this->oauth->getLastResponse();
@@ -1156,6 +1156,41 @@ class FitBitPHP
             throw new FitBitException($responseInfo['http_code'], 'Fitbit request failed. Code: ' . $responseInfo['http_code']);
         }
     }
+
+
+
+    /**
+     * Get Water Goal
+     *
+     * @throws FitBitException
+     * @param string $userId UserId of public profile, if none using set with setUser or '-' by default
+     * @return mixed SimpleXMLElement or the value encoded in json as an object
+     */
+    public function getWaterGoal()
+    {
+        $headers = $this->getHeaders();
+
+        try {
+            $this->oauth->fetch($this->baseApiUrl . "user/" . $this->userId . "/foods/log/water/goal." . $this->responseFormat, null, OAUTH_HTTP_METHOD_GET, $headers);
+        } catch (Exception $E) {
+        }
+        $response = $this->oauth->getLastResponse();
+        $responseInfo = $this->oauth->getLastResponseInfo();
+        if (!strcmp($responseInfo['http_code'], '200')) {
+            $response = $this->parseResponse($response);
+
+            if ($response)
+                return $response;
+            else
+                throw new FitBitException($responseInfo['http_code'], 'Fitbit request failed. Code: ' . $responseInfo['http_code']);
+        } else {
+            throw new FitBitException($responseInfo['http_code'], 'Fitbit request failed. Code: ' . $responseInfo['http_code']);
+        }
+    }
+
+
+
+
 
 
     /**
@@ -1338,7 +1373,7 @@ class FitBitPHP
     {
         $headers = $this->getHeaders();
         if (!isset($dateStr)) {
-            $dateStr = $date->format('Y-m-d');
+            $dateStr = $date;
         }
         try {
             $this->oauth->fetch($this->baseApiUrl . "user/" . $this->userId . "/body/date/" . $dateStr . "." . $this->responseFormat,
