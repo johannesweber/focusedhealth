@@ -10,12 +10,10 @@
  *
  *
  * Created by PhpStorm.
- * User: patricauer
- * Date: 25.11.14
- * Time: 18:05
+ * User: johannesweber
+ * Date: 17.11.14
+ * Time: 22:03
  */
-
-include 'find_company_id.php';
 
 //TODO user id from focusedhealth required
 $fetch_waterId = "SELECT id FROM measurement WHERE name='Water'";

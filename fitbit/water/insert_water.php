@@ -11,13 +11,9 @@ $date=date("Y-m-d", $timestamp);
 
 $response = $fitbit->getWater($date);
 
-print_r($response);
-
 $water = $response->summary->water;
 
-
-
-include 'fetch_get_water.php';
+include 'find_water_id.php';
 
 //SQL Statement to insert data into value table
 $insert_water = "INSERT INTO value (user_id, measurement_id, company_id, value, date)
