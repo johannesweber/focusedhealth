@@ -5,14 +5,25 @@
  * Date: 25.11.14
  * Time: 17:05
  */
+/**
+ * this class gets all important credentials from fitbit. This credentials are required to send Requests to Fitbit API
+ *
+ *
+ * Created by PhpStorm.
+ * User: johannesweber
+ * Date: 17.11.14
+ * Time: 22:03
+ */
 
 //TODO user id from focusedhealth required
-$find_waterId = "SELECT id FROM measurement WHERE name='Water'";
+$fetch_waterId = "SELECT id FROM measurement WHERE name='Water'";
 
-$find_waterId_mysqli_result = $db_connection->executeStatement($find_waterId);
+$fetch_waterId_mysqli_result = $db_connection->executeStatement($fetch_waterId);
+$fetch_waterId_result = $db_connection->getResultAsArray();
 
-$find_waterId_result = $db_connection->getResultAsArray();
 
-$waterId = $find_waterId_result['id'];
+$waterId = $fetch_waterId_result['id'];
+
+
 
 ?>

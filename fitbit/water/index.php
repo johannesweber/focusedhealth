@@ -23,6 +23,8 @@ include 'insert/insert_water.php';
 
 include 'select/select_water.php';
 
+include 'select_water.php';
+
 $db_connection->close();
 
 ?>
