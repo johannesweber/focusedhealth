@@ -21,6 +21,8 @@ $fitbit->setResponseFormat('json');
 
 include 'insert_water.php';
 
+include 'select_water.php';
+
 $db_connection->close();
 
 ?>
