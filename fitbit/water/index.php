@@ -19,7 +19,9 @@ $fitbit = new FitBitPHP("7c39abf127964bc984aba4020845ff11", "18c4a92f21f1458e8ac
 $fitbit->setOAuthDetails($oauth_token, $oauth_token_secret);
 $fitbit->setResponseFormat('json');
 
-include 'insert_water.php';
+include 'insert/insert_water.php';
+
+include 'select/select_water.php';
 
 include 'select_water.php';
 
