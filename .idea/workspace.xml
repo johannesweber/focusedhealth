@@ -2,67 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a29cf786-2959-4957-9c2c-442cff65f39e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fitbit/id/find_awake_id.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fitbit/id/find_bad_sleep_quality_id.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fitbit/id/find_bicep_id.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fitbit/id/find_bmi_id.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fitbit/id/find_body_fat_id.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fitbit/id/find_body_temperature_ide.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fitbit/id/find_body_water_id.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fitbit/id/find_bone_mass_id.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fitbit/id/find_calf_id.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fitbit/id/find_calories_id.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fitbit/id/find_calories_out_id.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fitbit/id/find_chest_id.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fitbit/id/find_distance_id.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fitbit/id/find_elevation_id.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fitbit/id/find_excellent_sleep_quality_id.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fitbit/id/find_fall_asleep_id.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fitbit/id/find_forearm_id.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fitbit/id/find_good_sleep_quality_id.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fitbit/id/find_hips_id.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fitbit/id/find_medium_sleep_quality_id.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fitbit/id/find_neck_id.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fitbit/id/find_period_daily_id.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fitbit/id/find_period_weekly_id.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fitbit/id/find_sleep_duration_id.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fitbit/id/find_sleep_records_id.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fitbit/id/find_steps_id.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fitbit/id/find_thigh_id.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fitbit/id/find_time_in_bed_id.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fitbit/id/find_waist_id.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fitbit/id/find_weight_id.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/login/index.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/signup/index.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fitbit/food_goal/insert/insert_food_goal.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fitbit/water_goal/insert/insert_water_goal.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fitbit/water/select/select_water.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fitbit/water_goal/select/select_water_goal.php" />
-      <change type="DELETED" beforePath="E:\workspace\4_semester\projekt\focusedhealth\fitbit\activity_daily_goals\fetch_activity_daily_goals.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\workspace\4_semester\projekt\focusedhealth\fitbit\body_measurements\fetch_body_measurements.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\workspace\4_semester\projekt\focusedhealth\fitbit\food_goal\fetch_food_goal.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\workspace\4_semester\projekt\focusedhealth\fitbit\food_goal\insert_food_goal.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\workspace\4_semester\projekt\focusedhealth\fitbit\water_goal\fetch_water_goal.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\workspace\4_semester\projekt\focusedhealth\fitbit\water_goal\index.php" afterPath="" />
-      <change type="DELETED" beforePath="E:\workspace\4_semester\projekt\focusedhealth\fitbit\water_goal\insert_water_goal.php" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fitbit/fetch_credentials.php" afterPath="$PROJECT_DIR$/fitbit/fetch_credentials.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fitbit/authorize/index.php" afterPath="$PROJECT_DIR$/fitbit/authorize/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fitbit/food_goal/index.php" afterPath="$PROJECT_DIR$/fitbit/food_goal/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fitbit/water/index.php" afterPath="$PROJECT_DIR$/fitbit/water/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fitbit/body_measurements/insert_body_measurements.php" afterPath="$PROJECT_DIR$/fitbit/body_measurements/insert_body_measurements.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MOVED" beforePath="E:\workspace\4_semester\projekt\focusedhealth\fitbit\activity_daily_goals\insert_activity_daily_goals.php" afterPath="$PROJECT_DIR$/fitbit/activity_daily_goals/insert/insert_activity_daily_goals.php" />
-      <change type="MOVED" beforePath="E:\workspace\4_semester\projekt\focusedhealth\fitbit\activity_daily_goals\select_activity_daily_goals.php" afterPath="$PROJECT_DIR$/fitbit/activity_daily_goals/select/select_activity_daily_goals.php" />
-      <change type="MOVED" beforePath="E:\workspace\4_semester\projekt\focusedhealth\fitbit\find_company_id.php" afterPath="$PROJECT_DIR$/fitbit/id/find_company_id.php" />
-      <change type="MOVED" beforePath="E:\workspace\4_semester\projekt\focusedhealth\fitbit\food_goal\select_food_goal.php" afterPath="$PROJECT_DIR$/fitbit/food_goal/select/select_food_goal.php" />
-      <change type="MOVED" beforePath="E:\workspace\4_semester\projekt\focusedhealth\fitbit\insert_credentials.php" afterPath="$PROJECT_DIR$/fitbit/authorize/insert_credentials.php" />
-      <change type="MOVED" beforePath="E:\workspace\4_semester\projekt\focusedhealth\fitbit\user_info\index.php" afterPath="$PROJECT_DIR$/fitbit/synchronize/index.php" />
-      <change type="MOVED" beforePath="E:\workspace\4_semester\projekt\focusedhealth\fitbit\user_info\insert_user_info.php" afterPath="$PROJECT_DIR$/fitbit/user_info/insert/insert_user_info.php" />
-      <change type="MOVED" beforePath="E:\workspace\4_semester\projekt\focusedhealth\fitbit\user_info\select_user_info.php" afterPath="$PROJECT_DIR$/fitbit/user_info/select/select_user_info.php" />
-      <change type="MOVED" beforePath="E:\workspace\4_semester\projekt\focusedhealth\fitbit\water\fetch_get_water.php" afterPath="$PROJECT_DIR$/fitbit/id/find_water_id.php" />
-      <change type="MOVED" beforePath="E:\workspace\4_semester\projekt\focusedhealth\fitbit\water\insert_water.php" afterPath="$PROJECT_DIR$/fitbit/water/insert/insert_water.php" />
-      <change type="MOVED" beforePath="E:\workspace\4_semester\projekt\focusedhealth\fitbit\water\select_water.php" afterPath="$PROJECT_DIR$/fitbit/id/find_active_minutes_id.php" />
-      <change type="MOVED" beforePath="E:\workspace\4_semester\projekt\focusedhealth\fitbit\water_goal\select_water_goal.php" afterPath="$PROJECT_DIR$/fitbit/id/find_after_wake_up_id.php" />
     </list>
     <ignored path="focusedhealth.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -85,43 +25,7 @@
     <favorites_list name="focusedhealth" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="insert_water.php" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/fitbit/water/insert/insert_water.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="0" selection-start="550" selection-end="550" vertical-scroll-proportion="0.61130136" vertical-offset="0" max-vertical-offset="584">
-              <folding>
-                <marker date="1417022010276" expanded="true" signature="361:495" placeholder="INSERT INTO ..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="find_company_id.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/fitbit/id/find_company_id.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="5" selection-start="272" selection-end="272" vertical-scroll-proportion="-4.576923" vertical-offset="0" max-vertical-offset="289">
-              <folding>
-                <marker date="1417009340620" expanded="true" signature="125:167" placeholder="SELECT id FR..company..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="insert_water_goal.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/fitbit/water_goal/insert/insert_water_goal.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="0" selection-start="627" selection-end="627" vertical-scroll-proportion="-12.346154" vertical-offset="36" max-vertical-offset="646">
-              <folding>
-                <marker date="1417019278650" expanded="true" signature="433:529" placeholder="SELECT * FRO..goal..." />
-                <marker date="1417019278650" expanded="true" signature="672:851" placeholder="INSERT INTO ..." />
-                <marker date="1417019278650" expanded="true" signature="939:1178" placeholder="UPDATE goal ..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -132,13 +36,39 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="fitbit_activity_weekly_goals" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
   </component>
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
+        <option value="$PROJECT_DIR$/withings/receive/index.php" />
+        <option value="$PROJECT_DIR$/vitadock/oauthvitadock/oauthvitadock.php" />
+        <option value="$PROJECT_DIR$/fitbit/oauthfitbit/fitbitphp.php" />
+        <option value="$PROJECT_DIR$/fitbit/receive/index.php" />
+        <option value="$PROJECT_DIR$/fitbit/send/db_connection.php" />
+        <option value="$PROJECT_DIR$/fitbit/send/index.php" />
+        <option value="$PROJECT_DIR$/fitbit/send_data.php" />
+        <option value="$PROJECT_DIR$/fitbit/receive_data.php" />
+        <option value="$PROJECT_DIR$/fitbit/receive/user_info.php" />
+        <option value="$PROJECT_DIR$/fitbit/receive/test.php" />
+        <option value="$PROJECT_DIR$/fitbit/send/send_user_info.php" />
+        <option value="$PROJECT_DIR$/fitbit/receive/receive_user_info.php" />
+        <option value="$PROJECT_DIR$/fitbit/userinfo/receive_user_info.php" />
+        <option value="$PROJECT_DIR$/fitbit/userinfo/send_user_info.php" />
+        <option value="$PROJECT_DIR$/fitbit/receive_token/index.php" />
+        <option value="$PROJECT_DIR$/fitbit/store_credentials/execute_statement.php" />
+        <option value="$PROJECT_DIR$/fitbit/userinfo/insert_user_info.php" />
+        <option value="$PROJECT_DIR$/fitbit/php/db_connection.php" />
+        <option value="$PROJECT_DIR$/fitbit/php/execute_statement.php" />
+        <option value="$PROJECT_DIR$/fitbit/store_credentials/store_credentials.php" />
+        <option value="$PROJECT_DIR$/fitbit/fetch_credentials/fetch_credentials.php" />
+        <option value="$PROJECT_DIR$/fitbit/store_credentials.php" />
+        <option value="$PROJECT_DIR$/fitbit/user_info/get_user_info.php" />
+        <option value="$PROJECT_DIR$/fitbit/execute_statement.php" />
+        <option value="$PROJECT_DIR$/withings/demo.php" />
+        <option value="$PROJECT_DIR$/fitbit/receive_credentials.php" />
         <option value="$PROJECT_DIR$/fitbit/db_connection.php" />
         <option value="$PROJECT_DIR$/fitbit/demo.php" />
         <option value="$PROJECT_DIR$/db_connection.php" />
@@ -148,57 +78,30 @@
         <option value="$PROJECT_DIR$/fitbit/insert_credentials.php" />
         <option value="$PROJECT_DIR$/fitbit/find_company_id.php" />
         <option value="$PROJECT_DIR$/fitbit/user_info/select_user_info.php" />
-        <option value="$PROJECT_DIR$/fitbit/authorize/index.php" />
-        <option value="$PROJECT_DIR$/fitbit/user_info/insert_user_info.php" />
         <option value="$PROJECT_DIR$/fitbit/user_info/index.php" />
-        <option value="$PROJECT_DIR$/fitbit/body_measurements/index.php" />
-        <option value="$PROJECT_DIR$/fitbit/body_measurements/select_body_measurements.php" />
-        <option value="$PROJECT_DIR$/fitbit/fetch_credentials.php" />
-        <option value="$PROJECT_DIR$/fitbit/water/fetch_get_water.php" />
-        <option value="$PROJECT_DIR$/fitbit/water/insert_water.php" />
-        <option value="$PROJECT_DIR$/fitbit/fitbitphp.php" />
-        <option value="$PROJECT_DIR$/fitbit/water_goal/fetch_water_goal.php" />
-        <option value="$PROJECT_DIR$/fitbit/id/find_bicep_id.php" />
-        <option value="$PROJECT_DIR$/fitbit/id/find_bmi_id.php" />
-        <option value="$PROJECT_DIR$/fitbit/id/find_calf_id.php" />
-        <option value="$PROJECT_DIR$/fitbit/id/find_chest_id.php" />
-        <option value="$PROJECT_DIR$/fitbit/id/find_body_fat_id.php" />
-        <option value="$PROJECT_DIR$/fitbit/id/find_forearm_id.php" />
-        <option value="$PROJECT_DIR$/fitbit/id/find_hips_id.php" />
-        <option value="$PROJECT_DIR$/fitbit/id/find_neck_id.php" />
-        <option value="$PROJECT_DIR$/fitbit/id/find_thigh_id.php" />
-        <option value="$PROJECT_DIR$/fitbit/id/find_waist_id.php" />
-        <option value="$PROJECT_DIR$/fitbit/id/find_weight_id.php" />
-        <option value="$PROJECT_DIR$/fitbit/body_measurements/fetch_body_measurements.php" />
-        <option value="$PROJECT_DIR$/fitbit/body_measurements/insert_body_measurements.php" />
-        <option value="$PROJECT_DIR$/fitbit/id/find_period_id.php" />
-        <option value="$PROJECT_DIR$/fitbit/id/find_period_daily_id.php" />
-        <option value="$PROJECT_DIR$/fitbit/id/find_period_weekly_id.php" />
-        <option value="$PROJECT_DIR$/fitbit/id/find_calories_id.php" />
-        <option value="$PROJECT_DIR$/fitbit/food_goal/insert_food_goal.php" />
-        <option value="$PROJECT_DIR$/fitbit/water_goal/insert/insert_water_goal.php" />
-        <option value="$PROJECT_DIR$/fitbit/water_goal/insert_water_goal.php" />
-        <option value="$PROJECT_DIR$/fitbit/food_goal/insert/insert_food_goal.php" />
-        <option value="$PROJECT_DIR$/fitbit/id/find_calories_out_id.php" />
-        <option value="$PROJECT_DIR$/fitbit/id/find_elevation_id.php" />
-        <option value="$PROJECT_DIR$/fitbit/id/find_distance_id.php" />
-        <option value="$PROJECT_DIR$/fitbit/id/find_steps_id.php" />
-        <option value="$PROJECT_DIR$/fitbit/id/find_active_minutes_id.php" />
-        <option value="$PROJECT_DIR$/fitbit/activity_daily_goals/fetch_activity_daily_goals.php" />
-        <option value="$PROJECT_DIR$/fitbit/activity_daily_goals/insert/insert_activity_daily_goals.php" />
+        <option value="$PROJECT_DIR$/fitbit/user_info/insert_user_info.php" />
         <option value="$PROJECT_DIR$/fitbit/water/index.php" />
-        <option value="$PROJECT_DIR$/fitbit/food_goal/index.php" />
-        <option value="$PROJECT_DIR$/fitbit/water/insert/insert_water.php" />
-        <option value="$PROJECT_DIR$/fitbit/id/find_water_id.php" />
+        <option value="$PROJECT_DIR$/fitbit/water/insert_water.php" />
+        <option value="$PROJECT_DIR$/fitbit/water/get_water_id.php" />
+        <option value="$PROJECT_DIR$/fitbit/water_goal/fetch_water_goal.php" />
+        <option value="$PROJECT_DIR$/fitbit/water/select_water.php" />
+        <option value="$PROJECT_DIR$/fitbit/water_goal/insert_water_goal.php" />
+        <option value="$PROJECT_DIR$/fitbit/water_goal/select_water_goal.php" />
+        <option value="$PROJECT_DIR$/fitbit/water_goal/index.php" />
+        <option value="$PROJECT_DIR$/fitbit/user_info/insert/index.php" />
+        <option value="$PROJECT_DIR$/fitbit/user_info/select/index.php" />
+        <option value="$PROJECT_DIR$/fitbit/synchronize/index.php" />
+        <option value="$PROJECT_DIR$/fitbit/water_goal/insert/insert_water_goal.php" />
+        <option value="$PROJECT_DIR$/fitbit/authorize/index.php" />
+        <option value="$PROJECT_DIR$/fitbit/fetch_credentials.php" />
       </list>
     </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" interpreter_name="PHP 5.5" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1382" />
-    <option name="height" value="744" />
+    <option name="y" value="23" />
+    <option name="width" value="1680" />
+    <option name="height" value="961" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -226,6 +129,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -240,7 +144,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="focusedhealth" />
+              <option name="myItemId" value="focusedhealthTimon01" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -250,115 +154,16 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="focusedhealth" />
+              <option name="myItemId" value="focusedhealthTimon01" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="fitbit" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="focusedhealth" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="focusedhealth" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fitbit" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="water_goal" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="focusedhealth" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="focusedhealth" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fitbit" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="water_goal" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="insert" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="focusedhealth" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="focusedhealth" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fitbit" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="water" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="focusedhealth" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="focusedhealth" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fitbit" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="water" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="insert" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="focusedhealth" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="focusedhealth" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fitbit" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="id" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -368,17 +173,16 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\workspace\4_semester\projekt\focusedhealth\fitbit\water_goal" />
       <recent name="$PROJECT_DIR$/vitadock/receive" />
       <recent name="$PROJECT_DIR$/vitadock/oauthvitadock" />
       <recent name="$PROJECT_DIR$/withings" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\workspace\4_semester\projekt\focusedhealth\fitbit\water\select" />
-      <recent name="E:\workspace\4_semester\projekt\focusedhealth\fitbit\water\insert" />
-      <recent name="E:\workspace\4_semester\projekt\focusedhealth\fitbit\activity_daily_goals\select" />
-      <recent name="E:\workspace\4_semester\projekt\focusedhealth\fitbit\activity_daily_goals\insert" />
-      <recent name="E:\workspace\4_semester\projekt\focusedhealth\fitbit\food_goal\select" />
+      <recent name="$PROJECT_DIR$/fitbit/authorize" />
+      <recent name="$PROJECT_DIR$/fitbit/get_id" />
+      <recent name="$PROJECT_DIR$/fitbit/water_goal/select" />
+      <recent name="$PROJECT_DIR$/fitbit/water_goal/insert" />
+      <recent name="$PROJECT_DIR$/fitbit/user_info/insert" />
     </key>
   </component>
   <component name="RunManager">
@@ -398,7 +202,7 @@
     <list size="0" />
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
-  <component name="SvnConfiguration" maxAnnotateRevisions="500" myUseAcceleration="nothing" myAutoUpdateAfterCommit="false" cleanupOnStartRun="false" SSL_PROTOCOLS="all">
+  <component name="SvnConfiguration" maxAnnotateRevisions="500" myUseAcceleration="nothing" myAutoUpdateAfterCommit="false" cleanupOnStartRun="false" SSL_PROTOCOLS="sslv3">
     <option name="USER" value="" />
     <option name="PASSWORD" value="" />
     <option name="mySSHConnectionTimeout" value="30000" />
@@ -498,27 +302,7 @@
       <created>1416913233388</created>
       <updated>1416913233388</updated>
     </task>
-    <task id="LOCAL-00020" summary="Body Measurements hinzugefügt">
-      <created>1416931169926</created>
-      <updated>1416931169926</updated>
-    </task>
-    <task id="LOCAL-00021" summary="Body Measurements hinzugefügt">
-      <created>1416931218338</created>
-      <updated>1416931218338</updated>
-    </task>
-    <task id="LOCAL-00022" summary="Get Water hinzugefügt&#10;- Array fehlt noch">
-      <created>1416934674504</created>
-      <updated>1416934674504</updated>
-    </task>
-    <task id="LOCAL-00023" summary="Get WaterGoal hinzugefügt&#10;- evtl. nach startdatum noch gucken">
-      <created>1416935964286</created>
-      <updated>1416935964286</updated>
-    </task>
-    <task id="LOCAL-00024" summary="Get WaterGoal hinzugefügt&#10;- evtl. nach startdatum noch gucken">
-      <created>1416935991284</created>
-      <updated>1416935991284</updated>
-    </task>
-    <option name="localTasksCounter" value="25" />
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -542,29 +326,29 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
+    <frame x="0" y="23" width="1680" height="961" extended-state="6" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32914045" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32968238" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24982053" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25183016" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31607142" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32968238" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32861635" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32914045" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32861635" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32861635" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32914045" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -614,10 +398,7 @@
     <MESSAGE value="fitbit is working" />
     <MESSAGE value="fixed problem with the encodedId from fitbit" />
     <MESSAGE value="new folder structure" />
-    <MESSAGE value="Body Measurements hinzugefügt" />
-    <MESSAGE value="Get Water hinzugefügt&#10;- Array fehlt noch" />
-    <MESSAGE value="Get WaterGoal hinzugefügt&#10;- evtl. nach startdatum noch gucken" />
-    <option name="LAST_COMMIT_MESSAGE" value="Get WaterGoal hinzugefügt&#10;- evtl. nach startdatum noch gucken" />
+    <option name="LAST_COMMIT_MESSAGE" value="new folder structure" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -625,291 +406,234 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/fitbit/user_info/insert/insert_user_info.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db_connection.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fitbit/authorize/insert_credentials.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fitbit/authorize/insert_credentials.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fitbit/authorize/insert_credentials.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fitbit/fitbitphp.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fitbit/authorize/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fitbit/authorize/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fitbit/authorize/insert_credentials.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fitbit/fetch_credentials.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fitbit/user_info/select/select_user_info.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fitbit/user_info/insert/insert_user_info.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fitbit/fetch_credentials.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fitbit/user_info/select/select_user_info.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fitbit/user_info/insert/insert_user_info.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fitbit/authorize/insert_credentials.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vitadock/oauthvitadock/oauthvitadock.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fitbit/fitbitphp.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fitbit/user_info/insert/insert_user_info.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fitbit/fitbitphp.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fitbit/user_info/insert/insert_user_info.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fitbit/fitbitphp.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fitbit/user_info/insert/insert_user_info.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fitbit/fitbitphp.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fitbit/user_info/insert/insert_user_info.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fitbit/fitbitphp.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fitbit/user_info/insert/insert_user_info.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/info.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vitadock/receive/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vitadock/oauthvitadock/oauthvitadock.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/com/jetbrains/php/lang/psi/stubs/data/oauth.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/withings/demo.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/scp10213/home/timon/public_html/focusedhealth/fitbit/body/insert_body.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="765" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fitbit/fetch_credentials.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="63" selection-start="556" selection-end="556" vertical-scroll-proportion="0.816" vertical-offset="0" max-vertical-offset="544" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fitbit/body_measurements/select_body_measurements.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="0" selection-start="192" selection-end="192" vertical-scroll-proportion="0.22666667" vertical-offset="0" max-vertical-offset="375" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fitbit/body_measurements/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="0" selection-start="501" selection-end="501" vertical-scroll-proportion="-2.6153846" vertical-offset="0" max-vertical-offset="459">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fitbit/water/select/select_water.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="380" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/fitbit/fitbitphp.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1162" column="18" selection-start="40743" selection-end="40743" vertical-scroll-proportion="7.8461537" vertical-offset="19754" max-vertical-offset="44489">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fitbit/id/find_bone_mass_id.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="610" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fitbit/id/find_body_water_id.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="610" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fitbit/id/find_body_temperature_ide.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="589" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fitbit/id/find_sleep_duration_id.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="589" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fitbit/id/find_awake_id.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="589" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fitbit/id/find_after_wake_up_id.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="589" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fitbit/id/find_fall_asleep_id.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="568" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fitbit/id/find_excellent_sleep_quality_id.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="568" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fitbit/id/find_good_sleep_quality_id.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="547" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fitbit/id/find_medium_sleep_quality_id.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="568" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fitbit/id/find_bad_sleep_quality_id.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="589" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fitbit/id/find_sleep_records_id.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="589" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fitbit/id/find_time_in_bed_id.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="589" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fitbit/id/find_bmi_id.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="2" selection-start="325" selection-end="325" vertical-scroll-proportion="-9.807693" vertical-offset="0" max-vertical-offset="357" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fitbit/id/find_calf_id.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="2" selection-start="331" selection-end="331" vertical-scroll-proportion="-9.153846" vertical-offset="0" max-vertical-offset="340" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fitbit/id/find_chest_id.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="2" selection-start="338" selection-end="338" vertical-scroll-proportion="-9.153846" vertical-offset="0" max-vertical-offset="340" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fitbit/id/find_body_fat_id.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="2" selection-start="329" selection-end="329" vertical-scroll-proportion="-9.153846" vertical-offset="0" max-vertical-offset="340" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fitbit/id/find_forearm_id.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="2" selection-start="352" selection-end="352" vertical-scroll-proportion="0.40753424" vertical-offset="0" max-vertical-offset="584" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fitbit/id/find_hips_id.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="2" selection-start="331" selection-end="331" vertical-scroll-proportion="0.40753424" vertical-offset="0" max-vertical-offset="584" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fitbit/id/find_waist_id.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="2" selection-start="338" selection-end="338" vertical-scroll-proportion="0.40753424" vertical-offset="0" max-vertical-offset="584" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fitbit/id/find_weight_id.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="2" selection-start="345" selection-end="345" vertical-scroll-proportion="0.40753424" vertical-offset="0" max-vertical-offset="584" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fitbit/id/find_neck_id.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="0" selection-start="86" selection-end="331" vertical-scroll-proportion="0.21136767" vertical-offset="0" max-vertical-offset="563" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fitbit/id/find_period_daily_id.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="0" selection-start="86" selection-end="375" vertical-scroll-proportion="0.21136767" vertical-offset="0" max-vertical-offset="563" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fitbit/user_info/select/select_user_info.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="610" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fitbit/food_goal/select/select_food_goal.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="57" selection-start="97" selection-end="144" vertical-scroll-proportion="0.08732877" vertical-offset="0" max-vertical-offset="584" />
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/db_connection.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="56" column="71" selection-start="1193" selection-end="1193" vertical-scroll-proportion="1.0445205" vertical-offset="257" max-vertical-offset="1173" />
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/fitbit/body_measurements/insert_body_measurements.php">
+    <entry file="file://$PROJECT_DIR$/fitbit/authorize/insert_credentials.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="27" selection-start="765" selection-end="765" vertical-scroll-proportion="0.7859589" vertical-offset="0" max-vertical-offset="935" />
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/fitbit/id/find_calories_id.php">
+    <entry file="file://$PROJECT_DIR$/fitbit/water_goal/select/select_water_goal.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="0" selection-start="87" selection-end="360" vertical-scroll-proportion="0.23287672" vertical-offset="0" max-vertical-offset="584" />
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/fitbit/id/find_calories_out_id.php">
+    <entry file="file://$PROJECT_DIR$/fitbit/user_info/select/select_user_info.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="35" selection-start="360" selection-end="360" vertical-scroll-proportion="0.34931508" vertical-offset="0" max-vertical-offset="584" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fitbit/id/find_bicep_id.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="0" selection-start="86" selection-end="338" vertical-scroll-proportion="0.21136767" vertical-offset="0" max-vertical-offset="563" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fitbit/id/find_elevation_id.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="0" selection-start="87" selection-end="87" vertical-scroll-proportion="0.23287672" vertical-offset="0" max-vertical-offset="584" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fitbit/id/find_distance_id.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="23" selection-start="33" selection-end="33" vertical-scroll-proportion="0.05821918" vertical-offset="0" max-vertical-offset="584" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fitbit/id/find_period_weekly_id.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="14" selection-start="81" selection-end="81" vertical-scroll-proportion="0.14554794" vertical-offset="0" max-vertical-offset="584" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fitbit/id/find_active_minutes_id.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="2" selection-start="395" selection-end="395" vertical-scroll-proportion="0.40753424" vertical-offset="0" max-vertical-offset="584" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fitbit/activity_daily_goals/insert/insert_activity_daily_goals.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="0" selection-start="1102" selection-end="1102" vertical-scroll-proportion="0.8336252" vertical-offset="0" max-vertical-offset="867" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fitbit/food_goal/insert/insert_food_goal.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="2" selection-start="238" selection-end="1340" vertical-scroll-proportion="0.86986303" vertical-offset="19" max-vertical-offset="629" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fitbit/id/find_thigh_id.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="2" selection-start="338" selection-end="338" vertical-scroll-proportion="0.40753424" vertical-offset="0" max-vertical-offset="584" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fitbit/food_goal/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="16" selection-start="471" selection-end="471" vertical-scroll-proportion="0.61130136" vertical-offset="0" max-vertical-offset="584">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/fitbit/water/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="16" selection-start="507" selection-end="507" vertical-scroll-proportion="0.66952056" vertical-offset="0" max-vertical-offset="584">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fitbit/id/find_steps_id.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="2" selection-start="339" selection-end="339" vertical-scroll-proportion="0.43664384" vertical-offset="0" max-vertical-offset="584">
-          <folding>
-            <element signature="e#6#85#0" expanded="true" />
-            <marker date="1417020167835" expanded="true" signature="-1:-1" placeholder="SELECT id FR..measurement..." />
-          </folding>
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/fitbit/water_goal/insert/insert_water_goal.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="0" selection-start="627" selection-end="627" vertical-scroll-proportion="-12.346154" vertical-offset="36" max-vertical-offset="646">
-          <folding>
-            <marker date="1417019278650" expanded="true" signature="433:529" placeholder="SELECT * FRO..goal..." />
-            <marker date="1417019278650" expanded="true" signature="672:851" placeholder="INSERT INTO ..." />
-            <marker date="1417019278650" expanded="true" signature="939:1178" placeholder="UPDATE goal ..." />
-          </folding>
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fitbit/user_info/insert/insert_user_info.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fitbit/synchronize/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/fitbit/id/find_company_id.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="5" selection-start="272" selection-end="272" vertical-scroll-proportion="-4.576923" vertical-offset="0" max-vertical-offset="289">
-          <folding>
-            <marker date="1417009340620" expanded="true" signature="125:167" placeholder="SELECT id FR..company..." />
-          </folding>
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/fitbit/id/find_water_id.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="2" selection-start="378" selection-end="378" vertical-scroll-proportion="0.494863" vertical-offset="0" max-vertical-offset="584">
-          <folding>
-            <element signature="e#6#85#0" expanded="true" />
-            <marker date="1417022265419" expanded="true" signature="-1:-1" placeholder="SELECT id FR..measurement..." />
-          </folding>
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/fitbit/water/insert/insert_water.php">
+    <entry file="file://$PROJECT_DIR$/fitbit/authorize/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="0" selection-start="550" selection-end="550" vertical-scroll-proportion="0.61130136" vertical-offset="0" max-vertical-offset="584">
-          <folding>
-            <marker date="1417022010276" expanded="true" signature="361:495" placeholder="INSERT INTO ..." />
-          </folding>
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fitbit/fetch_credentials.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
       </provider>
     </entry>
   </component>
