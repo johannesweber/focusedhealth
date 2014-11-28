@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a29cf786-2959-4957-9c2c-442cff65f39e" name="Default" comment="">
+      <change type="DELETED" beforePath="E:\workspace\4_semester\projekt\focusedhealth\fitbit\id\test.php" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="focusedhealth.iws" />
@@ -358,7 +359,11 @@
       <created>1417192378943</created>
       <updated>1417192378943</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="test Datei angelegt für branch">
+      <created>1417192395569</created>
+      <updated>1417192395569</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -456,7 +461,8 @@
     <MESSAGE value="new folder structure" />
     <MESSAGE value="added fitbit_timon changes&#10;" />
     <MESSAGE value="water_goal und food_goal funktionieren&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="water_goal und food_goal funktionieren&#10;" />
+    <MESSAGE value="test Datei angelegt für branch" />
+    <option name="LAST_COMMIT_MESSAGE" value="test Datei angelegt für branch" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -716,9 +722,7 @@
     <entry file="file://$PROJECT_DIR$/fitbit/id/test.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="8" column="25" selection-start="112" selection-end="112" vertical-scroll-proportion="0.23287672" vertical-offset="0" max-vertical-offset="584">
-          <folding>
-            <element signature="e#6#85#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
