@@ -6,6 +6,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fitbit/activity_weekly_goals/fetch_activity_weekly_goals.php" afterPath="$PROJECT_DIR$/fitbit/activity_weekly_goals/fetch_activity_weekly_goals.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fitbit/fitbitphp.php" afterPath="$PROJECT_DIR$/fitbit/fitbitphp.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fitbit/activity_weekly_goals/insert_activity_weekly_goals.php" afterPath="$PROJECT_DIR$/fitbit/activity_weekly_goals/insert_activity_weekly_goals.php" />
@@ -87,6 +88,9 @@
 =======
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fitbit/user_info/insert/insert_user_info.php" afterPath="$PROJECT_DIR$/fitbit/user_info/insert/insert_user_info.php" />
 >>>>>>> origin/fitbit_aktueller_stand
+=======
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fitbit/user_info/insert/insert_user_info.php" afterPath="$PROJECT_DIR$/fitbit/user_info/insert/insert_user_info.php" />
+>>>>>>> 35b6ce062958b9011c2e2b3e80871831b52ae714
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="focusedhealth.iws" />
@@ -166,6 +170,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         <entry key="$PROJECT_DIR$" value="fitbit_activity_daily_goals" />
 =======
         <entry key="$PROJECT_DIR$" value="fitbit_activity_weekly_goals" />
@@ -179,6 +184,9 @@
 =======
         <entry key="$PROJECT_DIR$" value="fitbit_id" />
 >>>>>>> origin/fitbit_aktueller_stand
+=======
+        <entry key="$PROJECT_DIR$" value="fitbit_id" />
+>>>>>>> 35b6ce062958b9011c2e2b3e80871831b52ae714
       </map>
     </option>
   </component>
@@ -702,6 +710,7 @@
     </task>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     <task id="LOCAL-00025" summary="Get WaterGoal hinzugefügt&#10;- evtl. nach startdatum noch gucken">
       <created>1416936021829</created>
       <updated>1416936021829</updated>
@@ -732,15 +741,20 @@
 =======
 =======
 >>>>>>> origin/fitbit_aktueller_stand
+=======
+>>>>>>> 35b6ce062958b9011c2e2b3e80871831b52ae714
     <task id="LOCAL-00025" summary="- id-Dateien hinzugefügt&#10;- bereits erledigte Dateien umgebaut bzgl. der id-Dateien">
       <created>1417027672923</created>
       <updated>1417027672923</updated>
     </task>
     <option name="localTasksCounter" value="26" />
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> origin/fitbit_aktueller_stand
 =======
 >>>>>>> origin/fitbit_aktueller_stand
+=======
+>>>>>>> 35b6ce062958b9011c2e2b3e80871831b52ae714
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -770,6 +784,7 @@
     <editor active="false" />
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fitbit_aktueller_stand
     <layout>
@@ -777,6 +792,8 @@
 =======
     <frame x="0" y="23" width="1680" height="1023" extended-state="6" />
     <editor active="false" />
+=======
+>>>>>>> 35b6ce062958b9011c2e2b3e80871831b52ae714
     <layout>
 >>>>>>> master
 =======
@@ -796,6 +813,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31551978" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
 =======
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25183016" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -803,6 +821,9 @@
 =======
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25183016" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
 >>>>>>> origin/fitbit_aktueller_stand
+=======
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25183016" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+>>>>>>> 35b6ce062958b9011c2e2b3e80871831b52ae714
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32968238" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -829,6 +850,7 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -860,6 +882,14 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
 >>>>>>> origin/fitbit_aktueller_stand
+=======
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32861635" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32861635" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+>>>>>>> 35b6ce062958b9011c2e2b3e80871831b52ae714
     </layout>
     <layout-to-restore>
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -919,6 +949,7 @@
     <MESSAGE value="Get WaterGoal hinzugefügt&#10;- evtl. nach startdatum noch gucken" />
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     <MESSAGE value="Food Goal hinzugefügt&#10;-&gt; muss noch getestet werden" />
     <MESSAGE value="Weight Goal hinzugefügt&#10;-&gt; muss noch getestet werden" />
     <MESSAGE value="Activity Daily Goals hinzugefügt&#10;-&gt; Select fehlt noch" />
@@ -937,6 +968,10 @@
     <MESSAGE value="- id-Dateien hinzugefügt&#10;- bereits erledigte Dateien umgebaut bzgl. der id-Dateien" />
     <option name="LAST_COMMIT_MESSAGE" value="- id-Dateien hinzugefügt&#10;- bereits erledigte Dateien umgebaut bzgl. der id-Dateien" />
 >>>>>>> origin/fitbit_aktueller_stand
+=======
+    <MESSAGE value="- id-Dateien hinzugefügt&#10;- bereits erledigte Dateien umgebaut bzgl. der id-Dateien" />
+    <option name="LAST_COMMIT_MESSAGE" value="- id-Dateien hinzugefügt&#10;- bereits erledigte Dateien umgebaut bzgl. der id-Dateien" />
+>>>>>>> 35b6ce062958b9011c2e2b3e80871831b52ae714
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -945,6 +980,7 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -971,6 +1007,8 @@
 >>>>>>> origin/fitbit_aktueller_stand
 =======
 >>>>>>> origin/fitbit_aktueller_stand
+=======
+>>>>>>> 35b6ce062958b9011c2e2b3e80871831b52ae714
     <entry file="file://$USER_HOME$/AppData/Local/Temp/scp10213/home/timon/public_html/focusedhealth/fitbit/body/insert_body.php">
       <provider selected="true" editor-type-id="text-editor">
 <<<<<<< HEAD
@@ -1587,6 +1625,7 @@
       <provider selected="true" editor-type-id="text-editor">
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         <state line="21" column="16" selection-start="471" selection-end="471" vertical-scroll-proportion="0.61130136" vertical-offset="0" max-vertical-offset="584">
           <folding />
 =======
@@ -1644,6 +1683,9 @@
             <element signature="e#6#85#0#PHP" expanded="true" />
           </folding>
         </state>
+=======
+        <state line="21" column="16" selection-start="471" selection-end="471" vertical-scroll-proportion="0.61130136" vertical-offset="0" max-vertical-offset="584" />
+>>>>>>> 35b6ce062958b9011c2e2b3e80871831b52ae714
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/fitbit/water/insert_water.php">
@@ -1746,6 +1788,7 @@
       <provider selected="true" editor-type-id="text-editor">
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         <state vertical-scroll-proportion="0.31596452" vertical-offset="0" max-vertical-offset="902">
           <caret line="19" column="35" selection-start-line="19" selection-start-column="35" selection-end-line="19" selection-end-column="35" />
 <<<<<<< HEAD
@@ -1831,6 +1874,9 @@
 =======
         <state line="23" column="16" selection-start="507" selection-end="507" vertical-scroll-proportion="0.66952056" vertical-offset="0" max-vertical-offset="584" />
 >>>>>>> origin/fitbit_aktueller_stand
+=======
+        <state line="23" column="16" selection-start="507" selection-end="507" vertical-scroll-proportion="0.66952056" vertical-offset="0" max-vertical-offset="584" />
+>>>>>>> 35b6ce062958b9011c2e2b3e80871831b52ae714
       </provider>
     </entry>
 <<<<<<< HEAD
@@ -1841,6 +1887,7 @@
 =======
     <entry file="file://$PROJECT_DIR$/fitbit/id/find_steps_id.php">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
         <state line="15" column="2" selection-start="339" selection-end="339" vertical-scroll-proportion="0.43664384" vertical-offset="0" max-vertical-offset="584">
@@ -1856,6 +1903,9 @@
 =======
         <state line="15" column="2" selection-start="339" selection-end="339" vertical-scroll-proportion="0.43664384" vertical-offset="0" max-vertical-offset="584" />
 >>>>>>> origin/fitbit_aktueller_stand
+=======
+        <state line="15" column="2" selection-start="339" selection-end="339" vertical-scroll-proportion="0.43664384" vertical-offset="0" max-vertical-offset="584" />
+>>>>>>> 35b6ce062958b9011c2e2b3e80871831b52ae714
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/fitbit/water_goal/insert/insert_water_goal.php">
@@ -1923,6 +1973,7 @@
       <provider selected="true" editor-type-id="text-editor">
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         <state vertical-scroll-proportion="0.16629712" vertical-offset="0" max-vertical-offset="902">
           <caret line="15" column="3" selection-start-line="15" selection-start-column="3" selection-end-line="15" selection-end-column="3" />
           <folding>
@@ -1958,6 +2009,8 @@
 =======
 =======
 >>>>>>> origin/fitbit_aktueller_stand
+=======
+>>>>>>> 35b6ce062958b9011c2e2b3e80871831b52ae714
         <state line="17" column="2" selection-start="378" selection-end="378" vertical-scroll-proportion="0.494863" vertical-offset="0" max-vertical-offset="584" />
       </provider>
     </entry>
@@ -1965,9 +2018,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1088" />
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> origin/fitbit_aktueller_stand
 =======
 >>>>>>> origin/fitbit_aktueller_stand
+=======
+>>>>>>> 35b6ce062958b9011c2e2b3e80871831b52ae714
       </provider>
     </entry>
 <<<<<<< HEAD
