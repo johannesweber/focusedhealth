@@ -5,7 +5,7 @@
  * Date: 26.11.14
  * Time: 16:11
  */
-echo("perod daily");
+
 
 $fetch_periodDailyId = "SELECT id FROM period WHERE period = 'daily'";
 
