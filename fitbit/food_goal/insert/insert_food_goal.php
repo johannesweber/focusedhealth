@@ -14,9 +14,9 @@ print_r($response);
 
 $foodGoal = $response->goals->calories;
 
-include '../../id/find_calories_id.php';
-include '../../id/find_company_id.php';
-include '../../id/find_period_daily_id.php';
+include 'find_calories_id.php';
+include 'id/find_company_id.php';
+include 'find_period_daily_id.php';
 
 //SQL Statement to insert data into value table
 $select_food_goal = "SELECT * FROM goal WHERE user_id='42' AND measurement_id='$caloriesId' AND company_id='$company_id'";
