@@ -6,7 +6,6 @@
  * Time: 17:36
  */
 
-
 $fetch_distanceId = "SELECT id FROM measurement WHERE name='Distance'";
 
 $db_connection->executeStatement($fetch_distanceId);
