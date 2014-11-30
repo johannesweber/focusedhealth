@@ -6,38 +6,55 @@
  * Time: 17:06
  */
 
-$timestamp=time();
-$date=date("Y-m-d", $timestamp);
+$timestamp = time();
+$date = date("Y-m-d", $timestamp);
+
+include '../../id/find_company_id.php';
+include 'find_water_id.php';
+
 
 $response = $fitbit->getWater($date);
+print_r($response);
+echo('#####');
 
 $water = $response->summary->water;
-<<<<<<< HEAD:fitbit/water/insert_water.php
-<<<<<<< HEAD
-$waterArray = $response->water[0];
-=======
->>>>>>> fitbit_id:fitbit/water/insert/insert_water.php
-
-<<<<<<< HEAD:fitbit/water/insert/insert_water.php
-include '../../id/find_water_id.php';
-include '../../id/find_company_id.php';
-
-<<<<<<< HEAD:fitbit/water/insert_water.php
-include 'fetch_get_water.php';
-=======
-
-include 'find_water_id.php';
->>>>>>> master
-=======
-=======
-include 'find_water_id.php';
->>>>>>> master:fitbit/water/insert_water.php
->>>>>>> fitbit_id:fitbit/water/insert/insert_water.php
 
 //SQL Statement to insert data into value table
-$insert_water = "INSERT INTO value (user_id, measurement_id, company_id, value, date)
-         VALUES ('42', '$waterId', '$company_id', '$water', NULL)";
+$select_water = "SELECT * FROM value WHERE user_id='42' AND measurement_id='$waterId' AND company_id='$company_id' AND date= '$date'";
+$result = $db_connection->executeStatement($select_water);
+$rowCount = $result->num_rows;
 
-$db_connection->executeStatement($insert_water);
+//water was not inserted today
+if ($rowCount == 0) {
+
+//SQL Statement to insert data into value table
+    $insert_water_summary = "INSERT INTO value (user_id, measurement_id, company_id, value, date)
+         VALUES ('42', '$waterId', '$company_id', '$water', '$date')";
+
+    $db_connection->executeStatement($insert_water_summary);
 
 
+    $arrayLenght = $response->water;
+    $arrayLenght = sizeof($arrayLenght);
+
+
+    for ($x = 0; $x < $arrayLenght; $x++) {
+
+        $waterArray = $response->water[$x]->amount;
+
+        //SQL Statement to insert data into value table
+        $insert_water = "INSERT INTO value (user_id, measurement_id, company_id, value, date)
+         VALUES ('42', '$waterId', '$company_id', '$waterArray', '$date')";
+
+        $db_connection->executeStatement($insert_water);
+
+    }
+
+
+}
+
+
+
+
+
+?>
