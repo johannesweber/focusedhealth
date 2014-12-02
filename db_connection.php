@@ -11,6 +11,7 @@ class DatabaseConnection {
 
     protected $db_connection;
     protected $result;
+    protected $resultarray = [];
 
     public function __construct(){
 
@@ -54,16 +55,38 @@ class DatabaseConnection {
 
     public function getResultAsArray(){
 
-        $resultArray = mysqli_fetch_array( $this->result, MYSQL_ASSOC);
+      /*  while ($zeile = mysqli_fetch_array( $this->result, MYSQL_ASSOC)){
 
+            array_push($this->resultarray, $zeile);
+        }
+
+        return json_encode($this->resultarray); */
+
+        $resultArray = mysqli_fetch_array( $this->result, MYSQL_ASSOC);
         return $resultArray;
+
+
     }
 
     public function getResultAsJSON(){
 
-        $resultJSON = json_encode($this->getResultAsArray());
+     /*   $result = array();
 
-        return $resultJSON;
+        foreach($this->resultarray  as ) */
+
+
+
+
+        while ($zeile = mysqli_fetch_array( $this->result, MYSQL_ASSOC)){
+
+            array_push($this->resultarray, $zeile);
+        }
+
+        return json_encode($this->resultarray);
+
+
+
     }
 }
+
 ?>

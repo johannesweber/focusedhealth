@@ -11,5 +11,3 @@ $fetch_weight_goal = "SELECT goal_value, start_value, startdate FROM goal WHERE 
 $db_connection->executeStatement($fetch_weight_goal);
 
 echo $db_connection->getResultAsJSON();
-
-$test;
