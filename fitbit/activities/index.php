@@ -1,10 +1,11 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: pauer
- * Date: 25.11.14
- * Time: 17:06
+ * User: timonvogler
+ * Date: 27.11.14
+ * Time: 11:30
  */
+
 include '../../db_connection.php';
 
 include '../fitbitphp.php';
@@ -19,9 +20,7 @@ $fitbit = new FitBitPHP("7c39abf127964bc984aba4020845ff11", "18c4a92f21f1458e8ac
 $fitbit->setOAuthDetails($oauth_token, $oauth_token_secret);
 $fitbit->setResponseFormat('json');
 
-include 'insert/insert_water.php';
-
-
+include 'insert/insert_activities.php';
 
 $db_connection->close();
 

@@ -14,7 +14,8 @@ $response = $fitbit->getFoodGoal();
 print_r($response);
 
 $calories = $response->goals->calories;
- echo $estimateDate = $response->foodPlan->estimateDate;
+//ist nicht in der response vorhanden
+$estimateDate = $response->foodPlan->estimateDate;
 $intensity = $response->foodPlan->intensity;
 
 
@@ -32,7 +33,7 @@ if ($rowCount == 0) {
          VALUES ('42', '$calories', '$caloriesId', '$date', '$estimateDate', '$intensity', '$periodDailyId', '$company_id')";
     $db_connection->executeStatement($insert_food_plan);
 } else {
-    $update_food_plan = "UPDATE food_plan SET calories_goal = '$calories', estimate_date = '$estimateDate' , intensity = '$intensity'
+    $update_food_plan = "UPDATE food_plan SET calories_goal = '$calories',start_date = '$date', estimate_date = '$estimateDate' , intensity = '$intensity'
                                      WHERE user_id='42' AND company_id='$company_id'";
     $db_connection->executeStatement($update_food_plan);
 }
