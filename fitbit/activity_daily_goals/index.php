@@ -21,6 +21,8 @@ $fitbit->setResponseFormat('json');
 
 include 'insert/insert_activity_daily_goals.php';
 
+include 'select/select_activity_daily_goals.php';
+
 $db_connection->close();
 
 ?>

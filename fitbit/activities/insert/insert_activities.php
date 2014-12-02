@@ -32,7 +32,7 @@ for ($x = 0; $x < $arrayLenght; $x++) {
     $duration = $response->activities[$x]->duration;
     $lastModified = $response->activities[$x]->lastModified;
     $name = $response->activities[$x]->name;
-    $startDate = $response->activities[$x]->starDate;
+    $startDate = $response->activities[$x]->startDate;
     $startTime = $response->activities[$x]->startTime;
 
 
