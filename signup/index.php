@@ -3,11 +3,11 @@
 header('Content-type: application/json');
 
 if($_POST) {
-    $username   = $_POST['username'];
+    $email   = $_POST['email'];
     $password   = $_POST['password'];
     $c_password = $_POST['c_password'];
 
-    if($_POST['username']) {
+    if($_POST['email']) {
         if ( $password == $c_password ) {
 
             $db_name     = 'healthhub';
@@ -22,9 +22,9 @@ if($_POST) {
                 error_log("Connect failed: " . mysqli_connect_error());
                 echo '{"success":0,"error_message":"' . mysqli_connect_error() . '"}';
             } else {
-                $stmt = $mysqli->prepare("INSERT INTO user (username, password) VALUES (?, ?)");
+                $stmt = $mysqli->prepare("INSERT INTO user (email, password) VALUES (?, ?)");
                 $password = md5($password);
-                $stmt->bind_param('ss', $username, $password);
+                $stmt->bind_param('ss', $email, $password);
 
                 /* execute prepared statement */
                 $stmt->execute();
@@ -41,17 +41,17 @@ if($_POST) {
                 error_log("Success: $success");
 
                 if ($success > 0) {
-                    error_log("User '$username' created.");
+                    error_log("User '$email' created.");
                     echo '{"success":1}';
                 } else {
-                    echo '{"success":0,"error_message":"Username Exist."}';
+                    echo '{"success":0,"error_message":"E - Mail Exist."}';
                 }
             }
         } else {
             echo '{"success":0,"error_message":"Passwords does not match."}';
         }
     } else {
-        echo '{"success":0,"error_message":"Invalid Username."}';
+        echo '{"success":0,"error_message":"Invalid E - Mail."}';
     }
 }else {
     echo '{"success":0,"error_message":"Invalid Data."}';
