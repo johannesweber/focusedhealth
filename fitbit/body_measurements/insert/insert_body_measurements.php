@@ -62,18 +62,7 @@ if ($rowCount == 0) {
     $insert_body = "INSERT INTO value (user_id, measurement_id, company_id, value, date)
          VALUES ('42', '$ID', '$company_id', '$value','$date')";
 
-            /*
-                ('42', '$bmiId', '$company_id', '$bmi','$date'),
-                ('42', '$calfId', '$company_id', '$calf','$date'),
-                ('42', '$chestId', '$company_id', '$chest','$date'),
-                ('42', '$fatId', '$company_id', '$fat','$date'),
-                ('42', '$forearmId', '$company_id', '$forearm','$date'),
-                ('42', '$hipsId', '$company_id', '$hips','$date'),
-                ('42', '$neckId', '$company_id', '$neck','$date'),
-                ('42', '$thighId', '$company_id', '$thigh','$date'),
-                ('42', '$waistId', '$company_id', '$waist','$date'),
-                ('42', '$weightId', '$company_id', '$weight','$date')";
-*/
+
     $db_connection->executeStatement($insert_body);
 
 
