@@ -55,13 +55,6 @@ class DatabaseConnection {
 
     public function getResultAsArray(){
 
-      /*  while ($zeile = mysqli_fetch_array( $this->result, MYSQL_ASSOC)){
-
-            array_push($this->resultarray, $zeile);
-        }
-
-        return json_encode($this->resultarray); */
-
         $resultArray = mysqli_fetch_array( $this->result, MYSQL_ASSOC);
         return $resultArray;
 
@@ -70,19 +63,12 @@ class DatabaseConnection {
 
     public function getResultAsJSON(){
 
-     /*   $result = array();
-
-        foreach($this->resultarray  as ) */
-
-
-
-
         while ($zeile = mysqli_fetch_array( $this->result, MYSQL_ASSOC)){
 
             array_push($this->resultarray, $zeile);
         }
 
-        return json_encode($this->resultarray);
+        return json_decode(json_encode($this->resultarray));
 
 
 
