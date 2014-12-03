@@ -1,17 +1,17 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: pauer
- * Date: 26.11.14
- * Time: 14:48
+ * User: timonvogler
+ * Date: 03.12.14
+ * Time: 15:55
  */
 
 
-$fetch_bmiId = "SELECT id FROM measurement WHERE name='time in bed'";
+$fetch_bmiId = "SELECT id FROM measurement WHERE name='Floors'";
 
 $fetch_bmiId_mysqli_result = $db_connection->executeStatement($fetch_bmiId);
 $fetch_bmiId_result = $db_connection->getResultAsArray();
 
-$timeInBedId = $fetch_bmiId_result['id'];
+$floorsId = $fetch_bmiId_result['id'];
 
 ?>

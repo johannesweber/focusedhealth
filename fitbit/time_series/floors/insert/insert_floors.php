@@ -2,40 +2,38 @@
 /**
  * Created by PhpStorm.
  * User: timonvogler
- * Date: 02.12.14
- * Time: 15:12
+ * Date: 03.12.14
+ * Time: 15:51
  */
 
 
-
-
 include '../../id/find_company_id.php';
-include '../../id/find_bmi_id.php';
+include '../../id/find_floors_id.php';
 
 
 
-$response = $fitbit->getTimeSeries("bmi","today","7d");
+$response = $fitbit->getTimeSeries("floors","today","7d");
 print_r($response);
 
 
 
 
-$arrayLength = $response;
-$arrayLength = sizeof($arrayLength);
+$arrayLenght = $response;
+$arrayLenght = sizeof($arrayLenght);
 
 
 $array = $response;
 
-for ($x = 0; $x < $arrayLength; $x++) {
+for ($x = 0; $x < $arrayLenght; $x++) {
 
-    $bmi = $array[$x]->value;
+    $floors = $array[$x]->value;
     $date = $array[$x]->dateTime;
 
 
 
 
     //SQL Statement to
-    $select = "SELECT * FROM value WHERE user_id='42' AND measurement_id='$bmiId' AND company_id='$company_id' AND date= '$date' ";
+    $select = "SELECT * FROM value WHERE user_id='42' AND measurement_id='$floorsId' AND company_id='$company_id' AND date= '$date' ";
     $result = $db_connection->executeStatement($select);
     $rowCount = $result->num_rows;
 
@@ -44,10 +42,10 @@ for ($x = 0; $x < $arrayLength; $x++) {
 
 
 //SQL Statement to insert data into value table
-        $insert = "INSERT INTO value (user_id, measurement_id, company_id, value, date)
-        VALUES ('42', '$bmiId', '$company_id', '$bmi','$date')";
+        $insert_bmi = "INSERT INTO value (user_id, measurement_id, company_id, value, date)
+        VALUES ('42', '$floorsId', '$company_id', '$floors','$date')";
 
-        $db_connection->executeStatement($insert);
+        $db_connection->executeStatement($insert_bmi);
 
 
     } /* else {
