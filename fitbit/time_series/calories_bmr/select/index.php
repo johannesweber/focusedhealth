@@ -1,9 +1,9 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: timonvogler
- * Date: 02.12.14
- * Time: 18:00
+ * User: pauer
+ * Date: 03.12.14
+ * Time: 13:51
  */
 
 
@@ -15,10 +15,10 @@ $db_connection = new DatabaseConnection();
 $db_connection->connect();
 
 
-include '../../../id/find_bmi_id.php';
+include '../../../id/find_calories_bmr_id.php';
 
 
-$fetch = "SELECT value, date FROM value WHERE user_id='42' AND measurement_id = '$bmiId'";
+$fetch = "SELECT value, date FROM value WHERE user_id='42' AND measurement_id = '$caloriesBMRId'";
 
 $db_connection->executeStatement($fetch);
 $result = $db_connection->getResultAsJSON();

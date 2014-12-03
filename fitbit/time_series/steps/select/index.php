@@ -15,10 +15,10 @@ $db_connection = new DatabaseConnection();
 $db_connection->connect();
 
 
-include '../../../id/find_bmi_id.php';
+include '../../../id/find_steps_id.php';
 
 
-$fetch = "SELECT value, date FROM value WHERE user_id='42' AND measurement_id = '$bmiId'";
+$fetch = "SELECT value, date FROM value WHERE user_id='42' AND measurement_id = '$stepsId'";
 
 $db_connection->executeStatement($fetch);
 $result = $db_connection->getResultAsJSON();

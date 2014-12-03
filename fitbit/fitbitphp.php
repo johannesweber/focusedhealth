@@ -2050,6 +2050,11 @@ class FitBitPHP
             case 'caloriesOut':
                 $path = '/activities/log/calories';
                 break;
+
+            case 'caloriesBMR':
+                $path = '/activities/caloriesBMR';
+                break;
+
             case 'steps':
                 $path = '/activities/log/steps';
                 break;
