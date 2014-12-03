@@ -20,9 +20,9 @@ include '../../../id/find_weight_id.php';
 
 
 
- $fetch_food = "SELECT value, date FROM value WHERE user_id='42' AND measurement_id = '$weightId'";
+ $fetch = "SELECT value, date FROM value WHERE user_id='42' AND measurement_id = '$weightId'";
 
-$db_connection->executeStatement($fetch_food);
+$db_connection->executeStatement($fetch);
  $result = $db_connection->getResultAsJSON();
 
 print_r( $result);

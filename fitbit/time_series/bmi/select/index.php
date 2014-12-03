@@ -18,7 +18,7 @@ $db_connection->connect();
 include '../../../id/find_bmi_id.php';
 
 
-$fetch_food = "SELECT value, date FROM value WHERE user_id='42' AND measurement_id = '$bmiId'";
+$fetch = "SELECT value, date FROM value WHERE user_id='42' AND measurement_id = '$bmiId'";
 
 $db_connection->executeStatement($fetch_food);
 $result = $db_connection->getResultAsJSON();
