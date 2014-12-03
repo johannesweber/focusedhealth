@@ -1636,11 +1636,12 @@ class FitBitPHP
      */
     public function getWeightSeries()
     {
-        echo("bin in time series");
         $headers = $this->getHeaders();
 
         try {
-            $this->oauth->fetch($this->baseApiUrl . "user/" . $this->userId . "/body/weight/data/today/7d." . $this->responseFormat, null, OAUTH_HTTP_METHOD_GET, $headers);
+
+            $this->oauth->fetch($this->baseApiUrl . "user/" . $this->userId . "/body/weight/date/today/6m." . $this->responseFormat, null, OAUTH_HTTP_METHOD_GET, $headers);
+
         } catch (Exception $E) {
         }
         $response = $this->oauth->getLastResponse();

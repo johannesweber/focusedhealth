@@ -16,14 +16,14 @@ $distance = $response->goals->distance;
 $steps = $response->goals->steps;
 
 // icluding all files which are necessary to get the measurement ids
-include '../../id/find_company_id.php';
+include '../id/find_company_id.php';
 
-include 'find_distance_id.php';
-include 'find_active_minutes_id.php';
-include 'find_calories_out_id.php';
-include 'find_steps_id.php';
+include '../id/find_distance_id.php';
+include '../id/find_active_minutes_id.php';
+include '../id/find_calories_out_id.php';
+include '../id/find_steps_id.php';
 
-include 'find_period_daily_id.php';
+include '../id/find_period_daily_id.php';
 
 // Array for the different measurement ids
 $idArray[0] = $distanceId;

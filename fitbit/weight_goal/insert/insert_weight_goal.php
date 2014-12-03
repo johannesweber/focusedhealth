@@ -15,8 +15,9 @@ $weightGoal = $response->goal->weight;
 $startDate = $response->goal->startDate;
 $startWeight = $response->goal->startWeight;
 
-include '../../id/find_company_id.php';
-include 'find_weight_id.php';
+echo getcwd();
+include '../id/find_company_id.php';
+include '../id/find_weight_id.php';
 
 
 //SQL Statement to insert data into value table

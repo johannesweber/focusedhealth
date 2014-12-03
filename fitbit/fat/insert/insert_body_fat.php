@@ -12,7 +12,7 @@ $timestamp = time();
 $datum = date("Y-m-d", $timestamp);
 
 include '../../id/find_company_id.php';
-include 'find_body_fat_id.php';
+include '../../id/find_body_fat_id.php';
 
 
 $response = $fitbit->getBodyFat($datum);

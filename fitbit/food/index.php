@@ -21,7 +21,6 @@ $fitbit->setResponseFormat('json');
 
 include 'insert/insert_food.php';
 
-
 $db_connection->close();
 
 ?>

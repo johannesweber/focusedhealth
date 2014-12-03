@@ -13,7 +13,7 @@ $datum = date("Y-m-d", $timestamp);
 
 
 // icluding all files which are necessary to get the ids
-include 'find_company_id.php';
+include '../../id/find_company_id.php';
 
 
 $response = $fitbit->getActivities($datum);
@@ -29,10 +29,11 @@ for ($x = 0; $x < $arrayLenght; $x++) {
     $calories = $response->activities[$x]->calories;
     $distance = $response->activities[$x]->distance;
     $description = $response->activities[$x]->description;
+    echo($description);
     $duration = $response->activities[$x]->duration;
     $lastModified = $response->activities[$x]->lastModified;
     $name = $response->activities[$x]->name;
-    $startDate = $response->activities[$x]->startDate;
+    $startDate = $response->activities[$x]->starDate;
     $startTime = $response->activities[$x]->startTime;
 
 
