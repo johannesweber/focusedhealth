@@ -9,39 +9,35 @@
 
 
 
+echo(getcwd());
+include '../../id/find_company_id.php';
+include '../../id/find_bmi_id.php';
 
-include 'find_company_id.php';
-include 'find_weight_id.php';
 
 
-
-$response = $fitbit->getTimeSeries("weight","today","7d");
+$response = $fitbit->getTimeSeries("bmi","today","7d");
 print_r($response);
 
 
 
 
-
-
-  $arrayLenght = $response;
-$arrayLenght = sizeof($arrayLenght);
-
-
+ $arrayLenght = $response;
+ $arrayLenght = sizeof($arrayLenght);
 
 
 $array = $response;
 
 for ($x = 0; $x < $arrayLenght; $x++) {
 
-    $weight = $array[$x]->value;
+    $bmi = $array[$x]->value;
     $date = $array[$x]->dateTime;
 
 
 
 
     //SQL Statement to
-    $select_weight = "SELECT * FROM value WHERE user_id='42' AND measurement_id='$weightId' AND company_id='$company_id' AND date= '$date' ";
-    $result = $db_connection->executeStatement($select_weight);
+    $select_bmi = "SELECT * FROM value WHERE user_id='42' AND measurement_id='$bmiId' AND company_id='$company_id' AND date= '$date' ";
+    $result = $db_connection->executeStatement($select_bmi);
     $rowCount = $result->num_rows;
 
 //weight was not inserted today
@@ -49,10 +45,10 @@ for ($x = 0; $x < $arrayLenght; $x++) {
 
 
 //SQL Statement to insert data into value table
-        $insert_weight = "INSERT INTO value (user_id, measurement_id, company_id, value, date)
-        VALUES ('42', '$weightId', '$company_id', '$weight','$date')";
+        $insert_bmi = "INSERT INTO value (user_id, measurement_id, company_id, value, date)
+        VALUES ('42', '$bmiId', '$company_id', '$bmi','$date')";
 
-        $db_connection->executeStatement($insert_weight);
+        $db_connection->executeStatement($insert_bmi);
 
 
     } /* else {
