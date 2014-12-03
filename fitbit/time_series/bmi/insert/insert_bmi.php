@@ -20,8 +20,8 @@ print_r($response);
 
 
 
-echo $arrayLenght = $response;
-echo $arrayLenght = sizeof($arrayLenght);
+$arrayLenght = $response;
+$arrayLenght = sizeof($arrayLenght);
 
 
 $array = $response;

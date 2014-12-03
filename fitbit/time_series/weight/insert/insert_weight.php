@@ -7,26 +7,16 @@
  */
 
 
-
-
-
 include '../../id/find_company_id.php';
 include '../../id/find_weight_id.php';
 
 
-
-$response = $fitbit->getTimeSeries("weight","today","7d");
+$response = $fitbit->getTimeSeries("weight", "today", "7d");
 print_r($response);
 
 
-
-
-
-
-  $arrayLenght = $response;
+$arrayLenght = $response;
 $arrayLenght = sizeof($arrayLenght);
-
-
 
 
 $array = $response;
@@ -35,8 +25,6 @@ for ($x = 0; $x < $arrayLenght; $x++) {
 
     $weight = $array[$x]->value;
     $date = $array[$x]->dateTime;
-
-
 
 
     //SQL Statement to

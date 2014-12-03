@@ -9,15 +9,12 @@ include '../../id/find_company_id.php';
 include '../../id/find_body_fat_id.php';
 
 
-
-$response = $fitbit->getTimeSeries("fat","today","7d");
+$response = $fitbit->getTimeSeries("fat", "today", "7d");
 print_r($response);
 
 
-
-
-echo $arrayLenght = $response;
-echo $arrayLenght = sizeof($arrayLenght);
+$arrayLenght = $response;
+$arrayLenght = sizeof($arrayLenght);
 
 
 $array = $response;
@@ -26,8 +23,6 @@ for ($x = 0; $x < $arrayLenght; $x++) {
 
     $fat = $array[$x]->value;
     $date = $array[$x]->dateTime;
-
-
 
 
     //SQL Statement to
