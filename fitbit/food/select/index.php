@@ -23,3 +23,4 @@ $db_connection->executeStatement($fetch_food);
 $result = $db_connection->getResultAsJSON();
 
 echo $result;
+?>

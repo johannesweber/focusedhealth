@@ -11,3 +11,5 @@ $fetch_food_goal = "SELECT goal_value, startdate, enddate FROM goal WHERE user_i
 $db_connection->executeStatement($fetch_food_goal);
 
 echo $db_connection->getResultAsJSON();
+
+?>
