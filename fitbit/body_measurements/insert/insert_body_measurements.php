@@ -62,7 +62,7 @@ if ($rowCount == 0) {
     $insert_body = "INSERT INTO value (user_id, measurement_id, company_id, value, date)
          VALUES ('42', '$ID', '$company_id', '$value','$date')";
 
-        
+
     $db_connection->executeStatement($insert_body);
 
 

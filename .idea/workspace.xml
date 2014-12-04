@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a29cf786-2959-4957-9c2c-442cff65f39e" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fitbit/activities/insert/insert_activities.php" afterPath="$PROJECT_DIR$/fitbit/activities/insert/insert_activities.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fitbit/body_measurements/insert/insert_body_measurements.php" afterPath="$PROJECT_DIR$/fitbit/body_measurements/insert/insert_body_measurements.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -27,14 +28,36 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="insert_body_measurements.php" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/fitbit/body_measurements/insert/insert_body_measurements.php">
+      <file leaf-file-name="insert_activities.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/fitbit/activities/insert/insert_activities.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="64" column="8" selection-start="1805" selection-end="1805" vertical-scroll-proportion="0.5143885" vertical-offset="456" max-vertical-offset="1290">
+            <state line="40" column="1" selection-start="1061" selection-end="1061" vertical-scroll-proportion="0.58633095" vertical-offset="36" max-vertical-offset="870">
               <folding>
-                <marker date="1417701234000" expanded="true" signature="1327:1437" placeholder="SELECT * FRO..value..." />
-                <marker date="1417701234000" expanded="true" signature="1662:1793" placeholder="INSERT INTO ..." />
-                <marker date="1417701234000" expanded="true" signature="1906:2068" placeholder="UPDATE value..." />
+                <marker date="1417703773000" expanded="true" signature="918:1056" placeholder="SELECT * FRO..activity..." />
+                <marker date="1417703773000" expanded="true" signature="1250:1532" placeholder="INSERT INTO ..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="db_connection.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/db_connection.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="14.0" vertical-offset="336" max-vertical-offset="1170">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="insert_weight.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/fitbit/weight/insert/insert_weight.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="31" column="0" selection-start="562" selection-end="884" vertical-scroll-proportion="-9.75" vertical-offset="156" max-vertical-offset="990">
+              <folding>
+                <marker date="1417617283000" expanded="true" signature="607:723" placeholder="SELECT * FRO..value..." />
+                <marker date="1417617283000" expanded="true" signature="961:1163" placeholder="INSERT INTO ..." />
+                <marker date="1417617283000" expanded="true" signature="1267:1437" placeholder="UPDATE value..." />
+                <marker date="1417617283000" expanded="true" signature="1527:1691" placeholder="UPDATE value..." />
               </folding>
             </state>
           </provider>
@@ -58,7 +81,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/fitbit/time_series/distance/insert/distance.php" />
         <option value="$PROJECT_DIR$/fitbit/time_series/distance/insert/insert_distance.php" />
         <option value="$PROJECT_DIR$/fitbit/time_series/distance/select/index.php" />
         <option value="$PROJECT_DIR$/fitbit/time_series/floors/index.php" />
@@ -109,6 +131,7 @@
         <option value="$PROJECT_DIR$/fitbit/time_series/minutesToFallAsleep/index.php" />
         <option value="$PROJECT_DIR$/fitbit/id/find_minutes_to_fall_asleep_id.php" />
         <option value="$PROJECT_DIR$/fitbit/body_measurements/insert/insert_body_measurements.php" />
+        <option value="$PROJECT_DIR$/fitbit/activities/insert/insert_activities.php" />
       </list>
     </option>
   </component>
@@ -191,7 +214,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="body_measurements" />
+              <option name="myItemId" value="weight" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -209,7 +232,47 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="body_measurements" />
+              <option name="myItemId" value="weight" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="insert" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="focusedhealth" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="focusedhealth" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fitbit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="activities" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="focusedhealth" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="focusedhealth" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fitbit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="activities" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -469,7 +532,11 @@
       <created>1417693892938</created>
       <updated>1417693892938</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="bodymeasurements angepasst">
+      <created>1417701254445</created>
+      <updated>1417701254445</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -496,6 +563,7 @@
     <frame x="0" y="23" width="1680" height="955" extended-state="6" />
     <editor active="true" />
     <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32914045" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32914045" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -511,7 +579,6 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20597485" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -553,7 +620,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="fitbit is working" />
     <MESSAGE value="fixed problem with the encodedId from fitbit" />
     <MESSAGE value="new folder structure" />
     <MESSAGE value="added fitbit_timon changes&#10;" />
@@ -578,7 +644,8 @@
     <MESSAGE value="time-series:&#10;body ist fertig die zweite" />
     <MESSAGE value="time-series:&#10;Food (calorisIn und Water) ist erledigt" />
     <MESSAGE value="time-series:&#10;sleep hinzugefügt" />
-    <option name="LAST_COMMIT_MESSAGE" value="time-series:&#10;sleep hinzugefügt" />
+    <MESSAGE value="bodymeasurements angepasst" />
+    <option name="LAST_COMMIT_MESSAGE" value="bodymeasurements angepasst" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -586,21 +653,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/db_connection.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1170" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fitbit/time_series/floors/insert/insert_floors.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="58" selection-start="966" selection-end="966" vertical-scroll-proportion="-28.125" vertical-offset="0" max-vertical-offset="1020" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fitbit/time_series/floors/select/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="17" selection-start="455" selection-end="455" vertical-scroll-proportion="-13.125" vertical-offset="0" max-vertical-offset="420" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/fitbit/time_series/elevation/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="24" column="38" selection-start="511" selection-end="511" vertical-scroll-proportion="-11.875" vertical-offset="0" max-vertical-offset="435" />
@@ -840,11 +892,40 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/fitbit/body_measurements/insert/insert_body_measurements.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="64" column="8" selection-start="1805" selection-end="1805" vertical-scroll-proportion="0.5143885" vertical-offset="456" max-vertical-offset="1290">
+        <state line="64" column="0" selection-start="1797" selection-end="1797" vertical-scroll-proportion="0.5143885" vertical-offset="456" max-vertical-offset="1290">
           <folding>
-            <marker date="1417701234000" expanded="true" signature="1327:1437" placeholder="SELECT * FRO..value..." />
-            <marker date="1417701234000" expanded="true" signature="1662:1793" placeholder="INSERT INTO ..." />
-            <marker date="1417701234000" expanded="true" signature="1906:2068" placeholder="UPDATE value..." />
+            <marker date="1417701468000" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..value..." />
+            <marker date="1417701468000" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1417701468000" expanded="true" signature="-1:-1" placeholder="UPDATE value..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fitbit/weight/insert/insert_weight.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="31" column="0" selection-start="562" selection-end="884" vertical-scroll-proportion="-9.75" vertical-offset="156" max-vertical-offset="990">
+          <folding>
+            <marker date="1417617283000" expanded="true" signature="607:723" placeholder="SELECT * FRO..value..." />
+            <marker date="1417617283000" expanded="true" signature="961:1163" placeholder="INSERT INTO ..." />
+            <marker date="1417617283000" expanded="true" signature="1267:1437" placeholder="UPDATE value..." />
+            <marker date="1417617283000" expanded="true" signature="1527:1691" placeholder="UPDATE value..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db_connection.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="14.0" vertical-offset="336" max-vertical-offset="1170">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fitbit/activities/insert/insert_activities.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="40" column="1" selection-start="1061" selection-end="1061" vertical-scroll-proportion="0.58633095" vertical-offset="36" max-vertical-offset="870">
+          <folding>
+            <marker date="1417703773000" expanded="true" signature="918:1056" placeholder="SELECT * FRO..activity..." />
+            <marker date="1417703773000" expanded="true" signature="1250:1532" placeholder="INSERT INTO ..." />
           </folding>
         </state>
       </provider>

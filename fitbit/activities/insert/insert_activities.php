@@ -29,12 +29,20 @@ for ($x = 0; $x < $arrayLenght; $x++) {
     $calories = $response->activities[$x]->calories;
     $distance = $response->activities[$x]->distance;
     $description = $response->activities[$x]->description;
-    echo($description);
     $duration = $response->activities[$x]->duration;
     $lastModified = $response->activities[$x]->lastModified;
     $name = $response->activities[$x]->name;
-    $startDate = $response->activities[$x]->starDate;
+    $startDate = $response->activities[$x]->startDate;
     $startTime = $response->activities[$x]->startTime;
+
+
+    //SQL Statement to
+    $select_weight = "SELECT * FROM activity WHERE user_id='42' AND activity='$name' AND company_id='$company_id' AND date= '$date' AND start_time= '$startTime' ";
+    $result = $db_connection->executeStatement($select_weight);
+  echo  $rowCount = $result->num_rows;
+
+//weight was not inserted today
+    if ($rowCount == 0 ) {
 
 
 
@@ -43,5 +51,7 @@ for ($x = 0; $x < $arrayLenght; $x++) {
 
     $db_connection->executeStatement($insert_activity);
 
+
+    }
 
 }
