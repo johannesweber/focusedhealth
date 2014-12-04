@@ -2,22 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a29cf786-2959-4957-9c2c-442cff65f39e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fitbit/id/find_awakenings_count_id.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fitbit/id/find_minutes_a_sleep_id.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fitbit/id/find_minutes_awake_id.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fitbit/id/find_minutes_to_fall_asleep_id.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fitbit/time_series/awakeningsCount/index.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fitbit/time_series/awakeningsCount/select/index.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fitbit/time_series/minutesAsleep/index.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fitbit/time_series/minutesAsleep/select/index.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fitbit/time_series/minutesAwake/index.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fitbit/time_series/minutesAwake/select/index.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fitbit/time_series/minutesToFallAsleep/index.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fitbit/time_series/minutesToFallAsleep/select/index.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fitbit/time_series/awakeningsCount/insert/insert_awakeningsCount.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fitbit/time_series/minutesAsleep/insert/insert_minutesAsleep.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fitbit/time_series/minutesAwake/insert/insert_minutesAwake.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fitbit/time_series/minutesToFallAsleep/insert/insert_minutesToFallAsleep.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fitbit/body_measurements/insert/insert_body_measurements.php" afterPath="$PROJECT_DIR$/fitbit/body_measurements/insert/insert_body_measurements.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="focusedhealth.iws" />
@@ -41,7 +26,21 @@
     <favorites_list name="focusedhealth" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="insert_body_measurements.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/fitbit/body_measurements/insert/insert_body_measurements.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="64" column="8" selection-start="1805" selection-end="1805" vertical-scroll-proportion="0.5143885" vertical-offset="456" max-vertical-offset="1290">
+              <folding>
+                <marker date="1417701234000" expanded="true" signature="1327:1437" placeholder="SELECT * FRO..value..." />
+                <marker date="1417701234000" expanded="true" signature="1662:1793" placeholder="INSERT INTO ..." />
+                <marker date="1417701234000" expanded="true" signature="1906:2068" placeholder="UPDATE value..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -59,7 +58,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/fitbit/time_series/distance/index.php" />
         <option value="$PROJECT_DIR$/fitbit/time_series/distance/insert/distance.php" />
         <option value="$PROJECT_DIR$/fitbit/time_series/distance/insert/insert_distance.php" />
         <option value="$PROJECT_DIR$/fitbit/time_series/distance/select/index.php" />
@@ -110,15 +108,15 @@
         <option value="$PROJECT_DIR$/fitbit/time_series/minutesToFallAsleep/select/index.php" />
         <option value="$PROJECT_DIR$/fitbit/time_series/minutesToFallAsleep/index.php" />
         <option value="$PROJECT_DIR$/fitbit/id/find_minutes_to_fall_asleep_id.php" />
+        <option value="$PROJECT_DIR$/fitbit/body_measurements/insert/insert_body_measurements.php" />
       </list>
     </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" interpreter_name="PHP 5.5" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1382" />
-    <option name="height" value="744" />
+    <option name="y" value="23" />
+    <option name="width" value="1680" />
+    <option name="height" value="955" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -193,7 +191,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="time_series" />
+              <option name="myItemId" value="body_measurements" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -211,125 +209,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="time_series" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="minutesToFallAsleep" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="focusedhealth" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="focusedhealth" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fitbit" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="time_series" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="minutesToFallAsleep" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="select" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="focusedhealth" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="focusedhealth" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fitbit" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="time_series" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="minutesToFallAsleep" />
+              <option name="myItemId" value="body_measurements" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="insert" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="focusedhealth" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="focusedhealth" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fitbit" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="time_series" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="minutesAwake" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="focusedhealth" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="focusedhealth" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fitbit" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="time_series" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="awakeningsCount" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="focusedhealth" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="focusedhealth" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fitbit" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="id" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -609,16 +493,15 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="false" />
+    <frame x="0" y="23" width="1680" height="955" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32914045" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32914045" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24982053" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25402635" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25357142" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32849163" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -628,6 +511,7 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20597485" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -651,9 +535,9 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28452381" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -702,11 +586,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/fitbit/time_series/floors/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="29" selection-start="502" selection-end="502" vertical-scroll-proportion="0.34009546" vertical-offset="0" max-vertical-offset="838" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/db_connection.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1170" />
@@ -876,143 +755,96 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/fitbit/time_series/awakeningsCount/insert/insert_awakeningsCount.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="90" selection-start="600" selection-end="600" vertical-scroll-proportion="0.5061296" vertical-offset="255" max-vertical-offset="1105">
-          <folding>
-            <marker date="1417697129565" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..value..." />
-            <marker date="1417697129565" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-          </folding>
-        </state>
+        <state line="37" column="90" selection-start="600" selection-end="600" vertical-scroll-proportion="0.5061296" vertical-offset="255" max-vertical-offset="1105" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/fitbit/time_series/awakeningsCount/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="38" selection-start="511" selection-end="511" vertical-scroll-proportion="0.66885245" vertical-offset="0" max-vertical-offset="610">
-          <folding />
-        </state>
+        <state line="24" column="38" selection-start="511" selection-end="511" vertical-scroll-proportion="0.66885245" vertical-offset="0" max-vertical-offset="610" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/fitbit/time_series/awakeningsCount/select/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="0" selection-start="263" selection-end="263" vertical-scroll-proportion="0.5295082" vertical-offset="0" max-vertical-offset="610">
-          <folding />
-        </state>
+        <state line="19" column="0" selection-start="263" selection-end="263" vertical-scroll-proportion="0.5295082" vertical-offset="0" max-vertical-offset="610" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/fitbit/id/find_active_minutes_id.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="0" selection-start="86" selection-end="395" vertical-scroll-proportion="0.20376712" vertical-offset="0" max-vertical-offset="584">
-          <folding />
-        </state>
+        <state line="7" column="0" selection-start="86" selection-end="395" vertical-scroll-proportion="0.20376712" vertical-offset="0" max-vertical-offset="584" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/fitbit/id/find_awakenings_count_id.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="0" selection-start="87" selection-end="319" vertical-scroll-proportion="0.23287672" vertical-offset="0" max-vertical-offset="584">
-          <folding>
-            <element signature="e#6#85#0" expanded="true" />
-            <marker date="1417697579025" expanded="true" signature="-1:-1" placeholder="SELECT id FR..measurement..." />
-          </folding>
-        </state>
+        <state line="8" column="0" selection-start="87" selection-end="319" vertical-scroll-proportion="0.23287672" vertical-offset="0" max-vertical-offset="584" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/fitbit/time_series/minutesAsleep/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="36" selection-start="509" selection-end="509" vertical-scroll-proportion="0.66885245" vertical-offset="0" max-vertical-offset="610">
-          <folding />
-        </state>
+        <state line="24" column="36" selection-start="509" selection-end="509" vertical-scroll-proportion="0.66885245" vertical-offset="0" max-vertical-offset="610" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/fitbit/time_series/minutesAsleep/select/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="95" selection-start="357" selection-end="357" vertical-scroll-proportion="0.5295082" vertical-offset="0" max-vertical-offset="610">
-          <folding />
-        </state>
+        <state line="19" column="95" selection-start="357" selection-end="357" vertical-scroll-proportion="0.5295082" vertical-offset="0" max-vertical-offset="610" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/fitbit/id/find_minutes_a_sleep_id.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="0" selection-start="87" selection-end="314" vertical-scroll-proportion="0.23287672" vertical-offset="0" max-vertical-offset="584">
-          <folding>
-            <element signature="e#6#85#0" expanded="true" />
-            <marker date="1417698249573" expanded="true" signature="-1:-1" placeholder="SELECT id FR..measurement..." />
-          </folding>
-        </state>
+        <state line="8" column="0" selection-start="87" selection-end="314" vertical-scroll-proportion="0.23287672" vertical-offset="0" max-vertical-offset="584" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/fitbit/time_series/minutesAsleep/insert/insert_minutesAsleep.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="38" selection-start="174" selection-end="174" vertical-scroll-proportion="0.2084063" vertical-offset="0" max-vertical-offset="1105">
-          <folding>
-            <marker date="1417698220549" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..value..." />
-            <marker date="1417698220549" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-          </folding>
-        </state>
+        <state line="12" column="38" selection-start="174" selection-end="174" vertical-scroll-proportion="0.2084063" vertical-offset="0" max-vertical-offset="1105" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/fitbit/time_series/minutesAwake/select/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="94" selection-start="354" selection-end="354" vertical-scroll-proportion="0.5295082" vertical-offset="0" max-vertical-offset="610">
-          <folding />
-        </state>
+        <state line="19" column="94" selection-start="354" selection-end="354" vertical-scroll-proportion="0.5295082" vertical-offset="0" max-vertical-offset="610" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/fitbit/time_series/minutesAwake/insert/insert_minutesAwake.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="32" selection-start="168" selection-end="168" vertical-scroll-proportion="0.2084063" vertical-offset="0" max-vertical-offset="1105">
-          <folding>
-            <marker date="1417698497584" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..value..." />
-            <marker date="1417698497584" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-          </folding>
-        </state>
+        <state line="12" column="32" selection-start="168" selection-end="168" vertical-scroll-proportion="0.2084063" vertical-offset="0" max-vertical-offset="1105" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/fitbit/time_series/minutesAwake/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="35" selection-start="508" selection-end="508" vertical-scroll-proportion="0.66885245" vertical-offset="0" max-vertical-offset="610">
-          <folding />
-        </state>
+        <state line="24" column="35" selection-start="508" selection-end="508" vertical-scroll-proportion="0.66885245" vertical-offset="0" max-vertical-offset="610" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/fitbit/time_series/minutesToFallAsleep/insert/insert_minutesToFallAsleep.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="43" selection-start="998" selection-end="998" vertical-scroll-proportion="1.2504379" vertical-offset="0" max-vertical-offset="1105">
-          <folding>
-            <marker date="1417698752227" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..value..." />
-            <marker date="1417698752227" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-          </folding>
-        </state>
+        <state line="47" column="43" selection-start="998" selection-end="998" vertical-scroll-proportion="1.2504379" vertical-offset="0" max-vertical-offset="1105" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/fitbit/time_series/minutesToFallAsleep/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="42" selection-start="515" selection-end="515" vertical-scroll-proportion="0.66885245" vertical-offset="0" max-vertical-offset="610">
-          <folding />
-        </state>
+        <state line="24" column="42" selection-start="515" selection-end="515" vertical-scroll-proportion="0.66885245" vertical-offset="0" max-vertical-offset="610" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/fitbit/time_series/minutesToFallAsleep/select/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="101" selection-start="370" selection-end="370" vertical-scroll-proportion="0.5295082" vertical-offset="0" max-vertical-offset="610">
-          <folding />
-        </state>
+        <state line="19" column="101" selection-start="370" selection-end="370" vertical-scroll-proportion="0.5295082" vertical-offset="0" max-vertical-offset="610" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/fitbit/id/find_minutes_awake_id.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="0" selection-start="86" selection-end="311" vertical-scroll-proportion="0.20376712" vertical-offset="0" max-vertical-offset="584">
-          <folding>
-            <marker date="1417698372065" expanded="true" signature="-1:-1" placeholder="SELECT id FR..measurement..." />
-          </folding>
-        </state>
+        <state line="7" column="0" selection-start="86" selection-end="311" vertical-scroll-proportion="0.20376712" vertical-offset="0" max-vertical-offset="584" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/fitbit/id/find_minutes_to_fall_asleep_id.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="2" selection-start="326" selection-end="326" vertical-scroll-proportion="0.40753424" vertical-offset="0" max-vertical-offset="584">
+        <state line="14" column="2" selection-start="326" selection-end="326" vertical-scroll-proportion="0.40753424" vertical-offset="0" max-vertical-offset="584" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fitbit/body_measurements/insert/insert_body_measurements.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="64" column="8" selection-start="1805" selection-end="1805" vertical-scroll-proportion="0.5143885" vertical-offset="456" max-vertical-offset="1290">
           <folding>
-            <element signature="e#6#85#0" expanded="true" />
-            <marker date="1417698799208" expanded="true" signature="-1:-1" placeholder="SELECT id FR..measurement..." />
-            <marker date="1417698799208" expanded="true" signature="-1:-1" placeholder="SELECT id FR..measurement..." />
+            <marker date="1417701234000" expanded="true" signature="1327:1437" placeholder="SELECT * FRO..value..." />
+            <marker date="1417701234000" expanded="true" signature="1662:1793" placeholder="INSERT INTO ..." />
+            <marker date="1417701234000" expanded="true" signature="1906:2068" placeholder="UPDATE value..." />
           </folding>
         </state>
       </provider>
