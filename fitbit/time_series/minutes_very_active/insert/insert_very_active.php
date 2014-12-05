@@ -47,15 +47,15 @@ for ($x = 0; $x < $arrayLength; $x++) {
         $db_connection->executeStatement($insert);
 
 
-    } /* else {
+    }  else {
 
-        $update_weight = "UPDATE value set value = '$weight'
-                                     WHERE user_id='42' AND measurement_id='$weightId' AND company_id='$company_id' AND date = '$datum'";
+        $update = "UPDATE value SET value = '$veryActive'
+                                     WHERE user_id='42' AND measurement_id='$veryActiveId' AND company_id='$company_id' AND date = '$date'";
 
-        $db_connection->executeStatement($update_weight);
+        $db_connection->executeStatement($update);
 
 
-    } */
+    }
 
 }
 

@@ -68,7 +68,7 @@ if ($rowCount == 0) {
 
 } else {
 
-    echo("1");
+
 
     $update_body = "UPDATE value SET value = '$value'
                                      WHERE user_id='42' AND measurement_id='$ID' AND company_id='$company_id' AND date = '$date'";

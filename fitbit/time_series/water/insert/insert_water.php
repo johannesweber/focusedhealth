@@ -10,10 +10,10 @@
 include '../../id/find_company_id.php';
 include '../../id/find_water_id.php';
 
-
+echo("1");
 $response = $fitbit->getTimeSeries("water", "today", "7d");
 print_r($response);
-
+echo("2");
 
 $arrayLenght = $response;
 $arrayLenght = sizeof($arrayLenght);
@@ -43,15 +43,16 @@ for ($x = 0; $x < $arrayLenght; $x++) {
         $db_connection->executeStatement($insert_water);
 
 
-    } /* else {
-
-        $update_weight = "UPDATE value set value = '$weight'
-                                     WHERE user_id='42' AND measurement_id='$weightId' AND company_id='$company_id' AND date = '$datum'";
-
-        $db_connection->executeStatement($update_weight);
+    }  else {
 
 
-    } */
+        $update = "UPDATE value SET value = '$water'
+                                     WHERE user_id='42' AND measurement_id='$waterId' AND company_id='$company_id' AND date = '$date'";
+
+        $db_connection->executeStatement($update);
+
+
+    }
 
 }
 

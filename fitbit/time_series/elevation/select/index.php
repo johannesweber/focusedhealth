@@ -18,11 +18,16 @@ $db_connection->connect();
 include '../../../id/find_elevation_id.php';
 
 
-$fetch = "SELECT value, date FROM value WHERE user_id='42' AND measurement_id = '$elevationId'";
+$fetch = "SELECT value, date, distanceUnit
+FROM value
+JOIN company_account_info AS cci on value.user_id = cci.user_id
+WHERE value.user_id='42' AND value.measurement_id = '$elevationId'";
 
 $db_connection->executeStatement($fetch);
 $result = $db_connection->getResultAsJSON();
 
 
 print_r($result);
+
+
 ?>

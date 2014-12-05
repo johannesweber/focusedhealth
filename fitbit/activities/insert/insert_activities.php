@@ -37,7 +37,7 @@ for ($x = 0; $x < $arrayLenght; $x++) {
 
 
     //SQL Statement to
-    $select_weight = "SELECT * FROM activity WHERE user_id='42' AND activity='$name' AND company_id='$company_id' AND date= '$date' AND start_time= '$startTime' ";
+    $select_weight = "SELECT * FROM activity WHERE user_id='42' AND activity='$name' AND company_id='$company_id' AND date= '$startDate' AND start_time= '$startTime' ";
     $result = $db_connection->executeStatement($select_weight);
   echo  $rowCount = $result->num_rows;
 

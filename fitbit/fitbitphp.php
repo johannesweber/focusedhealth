@@ -14,8 +14,7 @@
  */
 
 
-class FitBitPHP
-{
+class FitBitPHP {
 
     /**
      * API Constants
@@ -423,12 +422,13 @@ class FitBitPHP
      * @param string $userId UserId of public profile, if none using set with setUser or '-' by default
      * @return mixed SimpleXMLElement or the value encoded in json as an object
      */
-    public function getActivityDailyGoals()
-    {
+    public function getActivityDailyGoals() {
+
         $headers = $this->getHeaders();
 
         try {
             $this->oauth->fetch($this->baseApiUrl . "user/" . $this->userId . "/activities/goals/daily." . $this->responseFormat, null, OAUTH_HTTP_METHOD_GET, $headers);
+
         } catch (Exception $E) {
         }
         $response = $this->oauth->getLastResponse();
@@ -804,6 +804,7 @@ class FitBitPHP
         try {
             $this->oauth->fetch($this->baseApiUrl . "user/" . $this->userId . "/foods/log/date/" . $dateStr . "." . $this->responseFormat,
                 null, OAUTH_HTTP_METHOD_GET, $headers);
+
         } catch (Exception $E) {
         }
 
@@ -2729,7 +2730,6 @@ class FitBitRateLimiting
         $this->clientReset = $clientReset;
         $this->clientQuota = $clientQuota;
     }
-
 }
 
 

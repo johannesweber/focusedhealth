@@ -48,15 +48,15 @@ for ($x = 0; $x < $arrayLenght; $x++) {
         $db_connection->executeStatement($insert_bmi);
 
 
-    } /* else {
+    }  else {
 
-        $update_weight = "UPDATE value set value = '$weight'
-                                     WHERE user_id='42' AND measurement_id='$weightId' AND company_id='$company_id' AND date = '$datum'";
+        $update_weight = "UPDATE value set value = '$floors'
+                                     WHERE user_id='42' AND measurement_id='$floorsId' AND company_id='$company_id' AND date = '$datum'";
 
         $db_connection->executeStatement($update_weight);
 
 
-    } */
+    }
 
 }
 

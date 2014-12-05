@@ -10,6 +10,7 @@
 $response = $fitbit->getActivityDailyGoals();
 print_r($response);
 
+
 $activeMinutes = $response->goals->activeMinutes;
 $caloriesOut = $response->goals->caloriesOut;
 $distance = $response->goals->distance;
@@ -43,10 +44,13 @@ for ($id = 0; $id < sizeof($idArray); $id++) {
     $ID = $idArray[$id];
     $wert = $werteArray[$id];
 
+
 //SQL Statement to insert data into goal table
     $select_activity_daily_goals = "SELECT * FROM goal WHERE user_id='42' AND measurement_id='$ID' AND company_id='$company_id' AND period= '$periodDailyId'";
     $result = $db_connection->executeStatement($select_activity_daily_goals);
     $rowCount = $result->num_rows;
+
+
 
     if ($rowCount == 0) {
         $insert_activity_daily_goals = "INSERT INTO goal (goal_value, startdate, enddate, period, user_id, measurement_id, company_id)
