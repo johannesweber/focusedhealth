@@ -104,28 +104,35 @@ class WithingsPHP
      */
 
     /**
-     * Get user profile
+     * Get Method for all 5ive withings api requests
      *
      * @throws FitBitException
      * @param string $userId UserId of public profile, if none using set with setUser or '-' by default
      * @return mixed SimpleXMLElement or the value encoded in json as an object
      */
-    public function getBodyMeasurements()
-    {
+    public function sendRequestToWithings($action) {
 
-        $url = $this->baseApiUrl . "/measure?action=getmeas&oauth_consumer_key=" . $this->oauth_consumer_key . "&oauth_nonce=" . $this->oauth_nonce . "&oauth_signature=" . $this->oauth_signature . "&oauth_signature_method=" . $this->oauth_signature_method . "&oauth_timestamp=" . $this->oauth_timestamp . "&oauth_token=" . $this->oauth_token . "&oauth_version=" . $this->oauth_version . "&userid=" . $this->userid;
+        $bodyMeasuresSchema = '/measure';
+        $ActivitySchema = '/v2/measure';
+        $SleepSchema = '/v2/sleep';
 
-        print_r($url);
-
-        $json = file_get_contents($url);
-        $result = json_decode($json);
-        print_r($result);
-    }
-
-    public function getActivity()
-    {
-
-        $url = $this->baseApiUrl . "/v2/measure?action=getactivity&oauth_consumer_key=" . $this->oauth_consumer_key . "&oauth_nonce=" . $this->oauth_nonce . "&oauth_signature=" . $this->oauth_signature . "&oauth_signature_method=" . $this->oauth_signature_method . "&oauth_timestamp=" . $this->oauth_timestamp . "&oauth_token=" . $this->oauth_token . "&oauth_version=" . $this->oauth_version . "&userid=" . $this->userid;
+        switch ($action) {
+            case "getactivity":
+                $url = $this->baseApiUrl . $ActivitySchema . "?action=" . $action . "&oauth_consumer_key=" . $this->oauth_consumer_key . "&oauth_nonce=" . $this->oauth_nonce . "&oauth_signature=" . $this->oauth_signature . "&oauth_signature_method=" . $this->oauth_signature_method . "&oauth_timestamp=" . $this->oauth_timestamp . "&oauth_token=" . $this->oauth_token . "&oauth_version=" . $this->oauth_version . "&userid=" . $this->userid;
+                break;
+            case "getmeas":
+                $url = $this->baseApiUrl . $bodyMeasuresSchema . "?action=" . $action ."&oauth_consumer_key=" . $this->oauth_consumer_key . "&oauth_nonce=" . $this->oauth_nonce . "&oauth_signature=" . $this->oauth_signature . "&oauth_signature_method=" . $this->oauth_signature_method . "&oauth_timestamp=" . $this->oauth_timestamp . "&oauth_token=" . $this->oauth_token . "&oauth_version=" . $this->oauth_version . "&userid=" . $this->userid;
+                break;
+            case "getintradayactivity":
+                $url = $this->baseApiUrl . $ActivitySchema . "?action=" . $action . "&oauth_consumer_key=" . $this->oauth_consumer_key . "&oauth_nonce=" . $this->oauth_nonce . "&oauth_signature=" . $this->oauth_signature . "&oauth_signature_method=" . $this->oauth_signature_method . "&oauth_timestamp=" . $this->oauth_timestamp . "&oauth_token=" . $this->oauth_token . "&oauth_version=" . $this->oauth_version . "&userid=" . $this->userid;
+                break;
+            case "get":
+                $url = $this->baseApiUrl . $SleepSchema . "?action=" . $action . "&oauth_consumer_key=" . $this->oauth_consumer_key . "&oauth_nonce=" . $this->oauth_nonce . "&oauth_signature=" . $this->oauth_signature . "&oauth_signature_method=" . $this->oauth_signature_method . "&oauth_timestamp=" . $this->oauth_timestamp . "&oauth_token=" . $this->oauth_token . "&oauth_version=" . $this->oauth_version . "&userid=" . $this->userid;
+                break;
+            case "getsummary":
+                $url = $this->baseApiUrl . $SleepSchema . "?action=" . $action . "&oauth_consumer_key=" . $this->oauth_consumer_key . "&oauth_nonce=" . $this->oauth_nonce . "&oauth_signature=" . $this->oauth_signature . "&oauth_signature_method=" . $this->oauth_signature_method . "&oauth_timestamp=" . $this->oauth_timestamp . "&oauth_token=" . $this->oauth_token . "&oauth_version=" . $this->oauth_version . "&userid=" . $this->userid;
+                break;
+        }
 
         print_r($url);
 
