@@ -6,6 +6,9 @@
  * Time: 17:06
  */
 
+error_reporting(E_ALL);
+ini_set('display_errors', 'On');
+
 //date for daily goal
 $timestamp=time();
 $date=date("Y-m-d", $timestamp);
@@ -14,9 +17,9 @@ $response = $fitbit->getWaterGoal();
 $waterGoal = $response->goal->goal;
 
 
-include 'find_water_id.php';
+include '../../id/find_water_id.php';
 include '../../id/find_company_id.php';
-include 'find_period_daily_id.php';
+include '../../id/find_period_daily_id.php';
 
 //SQL Statement to insert data into value table
 $select_water_goal = "SELECT * FROM goal WHERE user_id='42' AND measurement_id='$waterId' AND company_id='$company_id'";
