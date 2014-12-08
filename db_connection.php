@@ -54,22 +54,60 @@ class DatabaseConnection {
 
     public function getResultAsArray(){
 
+<<<<<<< HEAD
+      /*  while ($zeile = mysqli_fetch_array( $this->result, MYSQL_ASSOC)){
+
+            array_push($this->resultarray, $zeile);
+        }
+
+        return json_encode($this->resultarray);
+
+=======
+>>>>>>> FETCH_HEAD
         $resultArray = mysqli_fetch_array( $this->result, MYSQL_ASSOC);
 
         return $resultArray;
+*/
 
+
+        $resultArray = mysqli_fetch_array( $this->result, MYSQL_ASSOC);
+        return $resultArray;
 
     }
 
     public function getResultAsJSON(){
 
+<<<<<<< HEAD
         $data = array();
 
         for ($x = 0; $x < mysqli_num_rows($this->result); $x++) {
             $data[] = mysqli_fetch_assoc($this->result);
-        }
+=======
+<<<<<<< HEAD
+     /*   $result = array();
 
+        foreach($this->resultarray  as ) */
+
+
+
+
+=======
+        while ($zeile = mysqli_fetch_array( $this->result, MYSQL_ASSOC)){
+>>>>>>> FETCH_HEAD
+
+        while ($zeile = mysqli_fetch_array( $this->result, MYSQL_ASSOC)){
+            array_push($this->resultarray, $zeile);
+>>>>>>> fitbit_pa_tv
+        }
+<<<<<<< HEAD
+=======
+
+<<<<<<< HEAD
         return json_encode($data);
+=======
+>>>>>>> FETCH_HEAD
+        return json_decode(json_encode($this->resultarray));
+>>>>>>> fitbit_pa_tv
 
         /*
         $resultArray = array();

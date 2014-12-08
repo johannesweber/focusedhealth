@@ -19,9 +19,10 @@ $estimateDate = $response->foodPlan->estimateDate;
 $intensity = $response->foodPlan->intensity;
 
 
-include 'find_calories_id.php';
-include 'find_company_id.php';
-include 'find_period_daily_id.php';
+
+include '../id/find_company_id.php';
+include '../id/find_period_daily_id.php';   // geht von index aus
+include '../id/find_calories_id.php';       // geht von index aus
 
 //SQL Statement to insert data into value table
 $select_food_plan = "SELECT * FROM food_plan WHERE user_id='42' AND company_id='$company_id'";

@@ -10,9 +10,9 @@
 $timestamp = time();
 $datum = date("Y-m-d", $timestamp);
 
-include '../../id/find_company_id.php';
-include 'find_weight_id.php';
-include 'find_bmi_id.php';
+include '../id/find_company_id.php';
+include '../id/find_weight_id.php';
+include '../id/find_bmi_id.php';
 
 $response = $fitbit->getWeight($datum);
 print_r($response);
