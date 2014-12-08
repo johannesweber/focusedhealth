@@ -2,21 +2,13 @@
 /**
  * Created by PhpStorm.
  * User: pauer
-<<<<<<< HEAD:fitbit/id/find_sleep_records_id.php
  * Date: 26.11.14
  * Time: 14:49
- */ 
-=======
- * Date: 25.11.14
- * Time: 17:07
  */
 
-include 'find_water_id.php';
+$fetch = "SELECT id FROM measurement WHERE name='sleep records'";
 
-//TODO real User id required
-$select_water = "SELECT * FROM value WHERE user_id='42' AND measurement_id='$waterId'";
+$fetch_mysqli_result = $db_connection->executeStatement($fetch_bmiId);
+$fetch_result = $db_connection->getResultAsArray();
 
-$db_connection->executeStatement($select_water);
-
-echo $db_connection->getResultAsJSON();
->>>>>>> master:fitbit/water/select_water.php
+$sleepRecordsId = $fetch_result['id'];

@@ -22,7 +22,7 @@ $fitbit = new FitBitPHP("7c39abf127964bc984aba4020845ff11", "18c4a92f21f1458e8ac
 $fitbit->setOAuthDetails($oauth_token, $oauth_token_secret);
 $fitbit->setResponseFormat('json');
 
-include 'insert/insert_minutesToFallAsleep.php';
+include 'insert_minutesToFallAsleep.php';
 
 $db_connection->close();
 

@@ -7,6 +7,11 @@
  */
 
 
+$userId = '42';
+
+$timeStamp = time();
+$date = date("Y-m-d", $timeStamp);
+
 include '../../../../db_connection.php';
 
 
@@ -23,14 +28,14 @@ include '../../../id/find_minutes_to_fall_asleep_id.php';
 
 $fetch = "SELECT value, date
         FROM value
-        WHERE value.user_id='42' AND value.date='2014-12-04' AND ( measurement_id = '$timeInBedId' OR measurement_id = '$minutesAsleepId'
+        WHERE value.user_id='$userId' AND value.date='$date' AND ( measurement_id = '$timeInBedId' OR measurement_id = '$minutesAsleepId'
         OR measurement_id = '$awakeningsCountId' OR measurement_id = '$minutesAwakeId' OR measurement_id = '$minutesToFallAsleepId')";
 
 $db_connection->executeStatement($fetch);
 $result = $db_connection->getResultAsJSON();
 
 
-print_r($result);
+echo($result);
 
 
 

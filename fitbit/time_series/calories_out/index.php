@@ -6,6 +6,12 @@
  * Time: 14:23
  */
 
+
+header('Content-type: application/json');
+
+error_reporting(E_ALL);
+ini_set('display_errors', 'On');
+
  include '../../../db_connection.php';
 
  include '../../fitbitphp.php';
@@ -20,7 +26,8 @@
  $fitbit->setOAuthDetails($oauth_token, $oauth_token_secret);
  $fitbit->setResponseFormat('json');
 
- include 'insert/insert_calories_out.php';
+ include 'insert_calories_out.php';
+ include 'select_calories_out.php';
 
  $db_connection->close();
 

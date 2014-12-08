@@ -25,7 +25,9 @@ $fitbit = new FitBitPHP("7c39abf127964bc984aba4020845ff11", "18c4a92f21f1458e8ac
 $fitbit->setOAuthDetails($oauth_token, $oauth_token_secret);
 $fitbit->setResponseFormat('json');
 
-include 'select/select_water_goal.php';
+
+include 'insert_water_goal.php';
+include 'select_water_goal.php';
 
 $db_connection->close();
 

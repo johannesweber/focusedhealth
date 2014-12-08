@@ -8,11 +8,10 @@
 
 $userId = '42';
 
-include '../../id/find_water_id.php';
-
 $timeStamp = time();
 $date = date("Y-m-d", $timeStamp);
 
+include '../../id/find_water_id.php';
 
 
 $fetch = "SELECT value, date, waterUnit

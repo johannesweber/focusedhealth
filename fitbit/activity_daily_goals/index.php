@@ -6,8 +6,11 @@
  * Time: 17:06
  */
 
-ini_set("display_errors", "1");
+
+header('Content-type: application/json');
+
 error_reporting(E_ALL);
+ini_set('display_errors', 'On');
 
 include '../../db_connection.php';
 
@@ -23,7 +26,8 @@ $fitbit = new FitBitPHP("7c39abf127964bc984aba4020845ff11", "18c4a92f21f1458e8ac
 $fitbit->setOAuthDetails($oauth_token, $oauth_token_secret);
 $fitbit->setResponseFormat('json');
 
-include 'insert/insert_activity_daily_goals.php';
+include 'insert_activity_daily_goals.php';
+include 'select_activity_daily_goals.php';
 
 $db_connection->close();
 
