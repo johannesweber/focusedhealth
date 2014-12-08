@@ -9,7 +9,10 @@
 
 
 
+<<<<<<< HEAD
 echo(getcwd());
+=======
+>>>>>>> FETCH_HEAD
 include '../../id/find_company_id.php';
 include '../../id/find_bmi_id.php';
 
@@ -21,13 +24,22 @@ print_r($response);
 
 
 
+<<<<<<< HEAD
  $arrayLenght = $response;
  $arrayLenght = sizeof($arrayLenght);
+=======
+$arrayLength = $response;
+$arrayLength = sizeof($arrayLength);
+>>>>>>> FETCH_HEAD
 
 
 $array = $response;
 
+<<<<<<< HEAD
 for ($x = 0; $x < $arrayLenght; $x++) {
+=======
+for ($x = 0; $x < $arrayLength; $x++) {
+>>>>>>> FETCH_HEAD
 
     $bmi = $array[$x]->value;
     $date = $array[$x]->dateTime;
@@ -36,8 +48,13 @@ for ($x = 0; $x < $arrayLenght; $x++) {
 
 
     //SQL Statement to
+<<<<<<< HEAD
     $select_bmi = "SELECT * FROM value WHERE user_id='42' AND measurement_id='$bmiId' AND company_id='$company_id' AND date= '$date' ";
     $result = $db_connection->executeStatement($select_bmi);
+=======
+    $select = "SELECT * FROM value WHERE user_id='42' AND measurement_id='$bmiId' AND company_id='$company_id' AND date= '$date' ";
+    $result = $db_connection->executeStatement($select);
+>>>>>>> FETCH_HEAD
     $rowCount = $result->num_rows;
 
 //weight was not inserted today
@@ -45,6 +62,7 @@ for ($x = 0; $x < $arrayLenght; $x++) {
 
 
 //SQL Statement to insert data into value table
+<<<<<<< HEAD
         $insert_bmi = "INSERT INTO value (user_id, measurement_id, company_id, value, date)
         VALUES ('42', '$bmiId', '$company_id', '$bmi','$date')";
 
@@ -60,6 +78,23 @@ for ($x = 0; $x < $arrayLenght; $x++) {
 
 
     } */
+=======
+        $insert = "INSERT INTO value (user_id, measurement_id, company_id, value, date)
+        VALUES ('42', '$bmiId', '$company_id', '$bmi','$date')";
+
+        $db_connection->executeStatement($insert);
+
+
+    }  else {
+
+        $update = "UPDATE value SET value = '$bmi'
+                                     WHERE user_id='42' AND measurement_id='$bmiId' AND company_id='$company_id' AND date = '$date'";
+
+        $db_connection->executeStatement($update);
+
+
+    }
+>>>>>>> FETCH_HEAD
 
 }
 

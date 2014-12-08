@@ -14,3 +14,4 @@ $select_water = "SELECT * FROM value WHERE user_id='42' AND measurement_id='$wat
 $db_connection->executeStatement($select_water);
 
 echo $db_connection->getResultAsJSON();
+?>

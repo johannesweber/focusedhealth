@@ -9,8 +9,8 @@
 $timestamp = time();
 $date = date("Y-m-d", $timestamp);
 
-include '../../id/find_company_id.php';
-include 'find_water_id.php';
+include '../id/find_company_id.php';
+include '../id/find_water_id.php';
 
 
 $response = $fitbit->getWater($date);

@@ -3,10 +3,10 @@
 header('Content-type: application/json');
 
 if($_POST) {
-    $username   = $_POST['username'];
+    $email   = $_POST['email'];
     $password   = $_POST['password'];
 
-    if($username && $password) {
+    if($email && $password) {
 
         $db_name     = 'healthhub';
         $db_user     = '5ive';
@@ -20,10 +20,10 @@ if($_POST) {
             error_log("Connect failed: " . mysqli_connect_error());
             echo '{"success":0,"error_message":"' . mysqli_connect_error() . '"}';
         } else {
-            if ($stmt = $mysqli->prepare("SELECT username FROM user WHERE username = ? and password = ?")) {
+            if ($stmt = $mysqli->prepare("SELECT email FROM user WHERE email = ? and password = ?")) {
 
                 /* bind parameters for markers */
-                $stmt->bind_param("ss", $username, md5($password));
+                $stmt->bind_param("ss", $email, md5($password));
 
                 /* execute query */
                 $stmt->execute();
@@ -42,15 +42,15 @@ if($_POST) {
             $mysqli->close();
 
             if ($id) {
-                error_log("User $username: password match.");
+                error_log("User $email: password match.");
                 echo '{"success":1}';
             } else {
-                error_log("User $username: password doesn't match.");
-                echo '{"success":0,"error_message":"Invalid Username/Password"}';
+                error_log("User $email: password doesn't match.");
+                echo '{"success":0,"error_message":"Invalid E - Mail/Password"}';
             }
         }
     } else {
-        echo '{"success":0,"error_message":"Invalid Username/Password."}';
+        echo '{"success":0,"error_message":"Invalid E - Mail/Password."}';
     }
 }else {
     echo '{"success":0,"error_message":"Invalid Data."}';

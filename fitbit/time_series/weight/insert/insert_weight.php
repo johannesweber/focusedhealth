@@ -7,8 +7,11 @@
  */
 
 
+include '../../id/find_company_id.php';
+include '../../id/find_weight_id.php';
 
 
+<<<<<<< HEAD
 
 include 'find_company_id.php';
 include 'find_weight_id.php';
@@ -29,14 +32,27 @@ $arrayLenght = sizeof($arrayLenght);
 
 
 
+=======
+$response = $fitbit->getTimeSeries("weight", "today", "7d");
+print_r($response);
+
+
+$arrayLenght = $response;
+$arrayLenght = sizeof($arrayLenght);
+
+
+>>>>>>> FETCH_HEAD
 $array = $response;
 
 for ($x = 0; $x < $arrayLenght; $x++) {
 
     $weight = $array[$x]->value;
     $date = $array[$x]->dateTime;
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> FETCH_HEAD
 
 
     //SQL Statement to
@@ -55,15 +71,26 @@ for ($x = 0; $x < $arrayLenght; $x++) {
         $db_connection->executeStatement($insert_weight);
 
 
+<<<<<<< HEAD
     } /* else {
 
         $update_weight = "UPDATE value set value = '$weight'
                                      WHERE user_id='42' AND measurement_id='$weightId' AND company_id='$company_id' AND date = '$datum'";
+=======
+    }  else {
+>>>>>>> FETCH_HEAD
 
-        $db_connection->executeStatement($update_weight);
+        $update = "UPDATE value SET value = '$weight'
+                                     WHERE user_id='42' AND measurement_id='$weightId' AND company_id='$company_id' AND date = '$date'";
 
+        $db_connection->executeStatement($update);
 
+<<<<<<< HEAD
     } */
+=======
+
+    }
+>>>>>>> FETCH_HEAD
 
 }
 

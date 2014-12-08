@@ -6,12 +6,15 @@
  * Time: 14:35
  */
 
+
+
+
 $timestamp = time();
 $datum = date("Y-m-d", $timestamp);
 
 
 // icluding all files which are necessary to get the ids
-include 'find_company_id.php';
+include '../id/find_company_id.php';
 
 
 $response = $fitbit->getFoods($datum);
@@ -37,10 +40,23 @@ for ($x = 0; $x < $arrayLenght; $x++) {
     $sodium = $response->foods[$x]->nutritionalValues->sodium;
 
 
+
+    //SQL Statement to
+    $select = "SELECT * FROM food WHERE user_id='42'  AND company_id='$company_id' AND date= '$date' ";
+    $result = $db_connection->executeStatement($select);
+    $rowCount = $result->num_rows;
+
+//weight was not inserted today
+    if ($rowCount == 0) {
+
+
     $insert_food = "INSERT INTO food (user_id, company_id, date, amount, brand, name, unit, calories, carbs, fat, fiber, protein, sodium)
                 VALUES ('42', '$company_id', '$date', '$amount', '$brand', '$name', '$unit', '$calories', '$carbs', '$fat', '$fiber', '$protein', '$sodium')";
 
     $db_connection->executeStatement($insert_food);
+
+    }
+
 
 
 }
