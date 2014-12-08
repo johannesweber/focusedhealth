@@ -5,6 +5,10 @@
  * Date: 25.11.14
  * Time: 17:06
  */
+
+ini_set("display_errors", "1");
+error_reporting(E_ALL);
+
 include '../../db_connection.php';
 
 include '../fitbitphp.php';
@@ -20,8 +24,6 @@ $fitbit->setOAuthDetails($oauth_token, $oauth_token_secret);
 $fitbit->setResponseFormat('json');
 
 include 'insert/insert_activity_daily_goals.php';
-
-include 'select/select_activity_daily_goals.php';
 
 $db_connection->close();
 

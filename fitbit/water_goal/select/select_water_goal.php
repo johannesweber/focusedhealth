@@ -14,3 +14,4 @@ $select_water_goal = "SELECT * FROM goal WHERE user_id='42' AND measurement_id='
 $db_connection->executeStatement($select_water_goal);
 
 echo $db_connection->getResultAsJSON();
+?>

@@ -14,8 +14,7 @@
  */
 
 
-class FitBitPHP
-{
+class FitBitPHP {
 
     /**
      * API Constants
@@ -423,12 +422,13 @@ class FitBitPHP
      * @param string $userId UserId of public profile, if none using set with setUser or '-' by default
      * @return mixed SimpleXMLElement or the value encoded in json as an object
      */
-    public function getActivityDailyGoals()
-    {
+    public function getActivityDailyGoals() {
+
         $headers = $this->getHeaders();
 
         try {
             $this->oauth->fetch($this->baseApiUrl . "user/" . $this->userId . "/activities/goals/daily." . $this->responseFormat, null, OAUTH_HTTP_METHOD_GET, $headers);
+
         } catch (Exception $E) {
         }
         $response = $this->oauth->getLastResponse();
@@ -804,6 +804,7 @@ class FitBitPHP
         try {
             $this->oauth->fetch($this->baseApiUrl . "user/" . $this->userId . "/foods/log/date/" . $dateStr . "." . $this->responseFormat,
                 null, OAUTH_HTTP_METHOD_GET, $headers);
+
         } catch (Exception $E) {
         }
 
@@ -1636,11 +1637,12 @@ class FitBitPHP
      */
     public function getWeightSeries()
     {
-        echo("bin in time series");
         $headers = $this->getHeaders();
 
         try {
-            $this->oauth->fetch($this->baseApiUrl . "user/" . $this->userId . "/body/weight/data/today/7d." . $this->responseFormat, null, OAUTH_HTTP_METHOD_GET, $headers);
+
+            $this->oauth->fetch($this->baseApiUrl . "user/" . $this->userId . "/body/weight/date/today/6m." . $this->responseFormat, null, OAUTH_HTTP_METHOD_GET, $headers);
+
         } catch (Exception $E) {
         }
         $response = $this->oauth->getLastResponse();
@@ -2049,6 +2051,11 @@ class FitBitPHP
             case 'caloriesOut':
                 $path = '/activities/log/calories';
                 break;
+
+            case 'caloriesBMR':
+                $path = '/activities/caloriesBMR';
+                break;
+
             case 'steps':
                 $path = '/activities/log/steps';
                 break;
@@ -2723,7 +2730,6 @@ class FitBitRateLimiting
         $this->clientReset = $clientReset;
         $this->clientQuota = $clientQuota;
     }
-
 }
 
 
