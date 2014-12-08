@@ -1,5 +1,8 @@
 <?php
 
+$userId= '42';
+
+
 $response = $fitbit->getProfile();
 
 $avatar = $response->user->avatar;
@@ -19,11 +22,28 @@ $timezone = $response->user->timezone;
 $waterUnit = $response->user->waterUnit;
 $weightUnit = $response->user->weightUnit;
 
+include '../id/find_company_id.php';
+
+$select_water_goal = "SELECT * FROM company_account_info WHERE user_id='$userId' AND company_id='$company_id'";
+$result = $db_connection->executeStatement($select_water_goal);
+$rowCount = $result->num_rows;
+
+if ($rowCount == 0) {
+
 
 //SQL Statement to insert data into user info table
 $insert_company_account_info = "INSERT INTO company_account_info (company_account_id, avatar, city, country, dateOfBirth, distanceUnit, fullName, gender, glucoseUnit, height, heightUnit, locale, memberSince, waterUnit, weightUnit, timezone)
     VALUES ('$encodedId', '$avatar', '$city', '$country', '$dateOfBirth', '$distanceUnit', '$fullName', '$gender', '$glucoseUnit', '$height', '$heightUnit', '$locale', '$memberSince', '$waterUnit', '$weightUnit', '$timezone')";
 
 $db_connection->executeStatement($insert_company_account_info);
+
+} else {
+
+    $update = "UPDATE company_account_info set company_account_id='$encodedId', avatar='$avatar', city='$city', country='$country', dateOfBirth='$dateOfBirth', distanceUnit='$distanceUnit',
+fullName='$fullName', gender='$gender', glucoseUnit='$glucoseUnit', height='$height', heightUnit='$heightUnit', locale='$locale', memberSince='$memberSince', waterUnit='$waterUnit', weightUnit='$weightUnit', timezone='$timezone'
+WHERE user_id='$userId'  AND company_id ='$company_id'";
+    $db_connection->executeStatement($update);
+
+}
 
 ?>
