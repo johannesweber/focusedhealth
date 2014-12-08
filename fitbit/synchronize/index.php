@@ -11,6 +11,9 @@
  * Time: 07:34
  */
 
+error_reporting(E_ALL);
+ini_set('display_errors', 'On');
+
 include '../../db_connection.php';
 
 include '../fitbitphp.php';
@@ -27,7 +30,7 @@ $fitbit->setResponseFormat('json');
 
 include '../user_info/insert/insert_user_info.php';
 
-include '../water_goal/insert/insert_water_goal.php';
+//include '../water_goal/insert/insert_water_goal.php';
 
 $db_connection->close();
 

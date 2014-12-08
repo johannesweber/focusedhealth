@@ -11,7 +11,6 @@ class DatabaseConnection {
 
     protected $db_connection;
     protected $result;
-    protected $resultarray = [];
 
     public function __construct(){
 
@@ -63,16 +62,23 @@ class DatabaseConnection {
 
     public function getResultAsJSON(){
 
-        while ($zeile = mysqli_fetch_array( $this->result, MYSQL_ASSOC)){
+        $data = array();
 
-            array_push($this->resultarray, $zeile);
+        for ($x = 0; $x < mysqli_num_rows($this->result); $x++) {
+            $data[] = mysqli_fetch_assoc($this->result);
         }
 
-        return json_decode(json_encode($this->resultarray));
+        return json_encode($data);
 
+        /*
+        $resultArray = array();
 
+        while($obj = mysqli_fetch_object($this->result)) {
+            $resultArray[] = $obj;
+        }
 
+        return json_encode($resultArray);
+        */
     }
 }
-
 ?>

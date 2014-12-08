@@ -11,6 +11,7 @@ include '../../id/find_company_id.php';
 include '../../id/find_weight_id.php';
 
 
+
 $response = $fitbit->getTimeSeries("weight", "today", "7d");
 print_r($response);
 
@@ -19,12 +20,22 @@ $arrayLenght = $response;
 $arrayLenght = sizeof($arrayLenght);
 
 
+
+
+
+$arrayLenght = $response;
+$arrayLenght = sizeof($arrayLenght);
+
+
+
 $array = $response;
 
 for ($x = 0; $x < $arrayLenght; $x++) {
 
     $weight = $array[$x]->value;
     $date = $array[$x]->dateTime;
+
+
 
 
     //SQL Statement to
@@ -43,7 +54,9 @@ for ($x = 0; $x < $arrayLenght; $x++) {
         $db_connection->executeStatement($insert_weight);
 
 
+
     }  else {
+
 
         $update = "UPDATE value SET value = '$weight'
                                      WHERE user_id='42' AND measurement_id='$weightId' AND company_id='$company_id' AND date = '$date'";
@@ -52,6 +65,10 @@ for ($x = 0; $x < $arrayLenght; $x++) {
 
 
     }
+
+
+
+
 
 }
 

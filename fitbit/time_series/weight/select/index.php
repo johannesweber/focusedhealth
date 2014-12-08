@@ -16,13 +16,6 @@ $db_connection->connect();
 
 include '../../../id/find_weight_id.php';
 
-
-
-
-
-// $fetch = "SELECT value, date FROM value WHERE user_id='42' AND measurement_id = '$weightId'";
-
-
 $fetch = "SELECT value, date, weightUnit
         FROM value
         JOIN company_account_info AS cci on value.user_id = cci.user_id
@@ -31,5 +24,5 @@ $fetch = "SELECT value, date, weightUnit
 $db_connection->executeStatement($fetch);
  $result = $db_connection->getResultAsJSON();
 
-print_r( $result);
+echo $result;
 ?>

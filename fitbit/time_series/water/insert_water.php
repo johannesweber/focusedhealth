@@ -10,10 +10,7 @@
 include '../../id/find_company_id.php';
 include '../../id/find_water_id.php';
 
-echo("1");
 $response = $fitbit->getTimeSeries("water", "today", "7d");
-print_r($response);
-echo("2");
 
 $arrayLenght = $response;
 $arrayLenght = sizeof($arrayLenght);

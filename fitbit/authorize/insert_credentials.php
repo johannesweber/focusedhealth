@@ -10,6 +10,8 @@ $response = $fitbit->getProfile();
 
 $user_id = "42";
 $company_account_id = $response->user->encodedId;
+$timestamp = time();
+$date = date("Y-m-d", $timestamp);
 
 $timestamp=time();
 $date=date("Y-m-d", $timestamp);
