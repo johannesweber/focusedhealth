@@ -36,7 +36,7 @@ class DatabaseConnection {
 
     public function executeStatement($statement){
 
-        $db_result = mysqli_query( $this->db_connection, $statement );
+        $db_result = mysqli_query( $this->db_connection, $statement);
 
         if ( ! $db_result )
         {
@@ -54,10 +54,14 @@ class DatabaseConnection {
 
     public function getResultAsArray(){
 
-        $resultArray = mysqli_fetch_array( $this->result, MYSQL_ASSOC);
+        $resultArray = mysqli_fetch_array($this->result, MYSQL_ASSOC);
         return $resultArray;
 
 
+    }
+
+    public function getResult(){
+        return $this->result;
     }
 
     public function getResultAsJSON(){
@@ -69,16 +73,6 @@ class DatabaseConnection {
         }
 
         return json_encode($data);
-
-        /*
-        $resultArray = array();
-
-        while($obj = mysqli_fetch_object($this->result)) {
-            $resultArray[] = $obj;
-        }
-
-        return json_encode($resultArray);
-        */
     }
 }
 ?>

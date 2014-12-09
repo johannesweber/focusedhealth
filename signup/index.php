@@ -1,18 +1,19 @@
 <?php
 
+header('Content-type: application/json');
+
 error_reporting(E_ALL);
 ini_set('display_errors', 'On');
 
-header('Content-type: application/json');
-
 require_once '../db_connection.php';
 
-if($_POST) {
-    $email   = $_POST['email'];
-    $password   = $_POST['password'];
-    $c_password = $_POST['c_password'];
+if($_GET) {
+    $email   = $_GET['email'];
+    $password   = $_GET['password'];
+    $c_password = $_GET['c_password'];
 
-    if($_POST['email']) {
+
+    if($_GET['email']) {
         if ( $password == $c_password ) {
 
             $dbConnection = new DatabaseConnection();
@@ -21,36 +22,22 @@ if($_POST) {
 
             $passwordHashed = password_hash($password, PASSWORD_DEFAULT);
 
-            $select_same_user = "SELECT email FROM user WHERE email LIKE '$email'";
+            $stmt = "INSERT INTO user (email, password) VALUES ('$email', '$passwordHashed')";
 
-            $result = $dbConnection->executeStatement($select_same_user);
+            $dbConnection->executeStatement($stmt);
 
-            $count_same_user = mysqli_num_rows($result);
+            $result = $dbConnection->getResult();
 
-            if ($count_same_user == 0){
-                $stmt = "INSERT INTO user (email, password) VALUES ('$email', '$passwordHashed')";
-
-                $dbConnection->executeStatement($stmt);
-
-                $result = $dbConnection->getResultAsArray();
-
-                if($result == true){
-                    error_log("User '$email' created.");
-                    echo '{"success":1}';
-                } else {
-                    echo '{"success":0,"error_message":"E - Mail Exist."}';
-                }
-            } else{
-                echo '{"success":0,"error_message":"Username already exists."}';
+            if ($result == true) {
+                echo '{"success" : 1}';
             }
         } else {
-            echo '{"success":0,"error_message":"Passwords does not match."}';
+            echo '{"success": 0 ,"error_message" : "Passwords do not match."}';
         }
     } else {
-        echo '{"success":0,"error_message":"Invalid E - Mail."}';
+        echo '{"success" : 0, "error_message" : "Please enter your E-Mail."}';
     }
 }else {
-    echo '{"success":0,"error_message":"Invalid Data."}';
+    echo '{"success" : 0, "error_message" : "Please enter your E-Mail and Password"}';
 }
-$dbConnection->close();
 ?>

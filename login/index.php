@@ -1,15 +1,16 @@
 <?php
 
+header('Content-type: application/json');
+
 error_reporting(E_ALL);
 ini_set('display_errors', 'On');
 
-header('Content-type: application/json');
-
 require_once '../db_connection.php';
 
-if($_POST) {
-    $email   = trim($_POST['email']);
-    $password   = trim($_POST['password']);
+//TODO change login and signup from $_GET to $_POST
+if($_GET) {
+    $email   = trim($_GET['email']);
+    $password   = trim($_GET['password']);
 
     if($email && $password) {
 
@@ -23,20 +24,15 @@ if($_POST) {
         $result = $dbConnection->getResultAsArray();
 
         if(password_verify($password, $result['password'])){
-            error_log("User $email: password match.");
-            echo '{"success":1}';
+            echo '{"success" : 1}';
         } else {
-            error_log("User $email: password doesn't match.");
-            echo '{"success":0,"error_message":"Invalid E - Mail/Password"}';
+            echo '{"success" : 0,"error_message" : "Invalid E - Mail/Password"}';
         }
 
     } else {
-        echo '{"success":0,"error_message":"Invalid E - Mail/Password."}';
+        echo '{"success" : 0,"error_message" : "Invalid E - Mail/Password."}';
     }
 }else {
-    echo '{"success":0,"error_message":"Invalid Data."}';
+    echo '{"success" : 0,"error_message" : "Invalid Data."}';
 }
-
-$dbConnection->close();
-
 ?>
