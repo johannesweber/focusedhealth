@@ -24,7 +24,15 @@ if($_GET) {
         $result = $dbConnection->getResultAsArray();
 
         if(password_verify($password, $result['password'])){
-            echo '{"success" : 1}';
+
+            $select_user_id = "SELECT id FROM user WHERE email LIKE '$email' LIMIT 1";
+
+            $dbConnection->executeStatement($select_user_id);
+            $userResult = $dbConnection->getResultAsArray();
+            $userId = $userResult['id'];
+
+            echo '{"success" : 1, "userId" : ' . $userId . '}';
+
         } else {
             echo '{"success" : 0,"error_message" : "Invalid E - Mail/Password"}';
         }
@@ -35,4 +43,6 @@ if($_GET) {
 }else {
     echo '{"success" : 0,"error_message" : "Invalid Data."}';
 }
+
+
 ?>
