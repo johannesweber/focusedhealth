@@ -9,7 +9,7 @@
 
 $fetch = "SELECT id FROM measurement WHERE name='sleepStartTime'";
 
-$fetch_mysqli_result = $db_connection->executeStatement($fetch_chestId);
+$fetch_mysqli_result = $db_connection->executeStatement($fetch);
 $fetch_result = $db_connection->getResultAsArray();
 
 $sleepStartTimeId = $fetch_result['id'];

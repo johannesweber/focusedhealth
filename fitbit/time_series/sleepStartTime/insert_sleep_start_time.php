@@ -33,7 +33,7 @@ for ($x = 0; $x < $arrayLength; $x++) {
 
 
     //SQL Statement to
-    $select = "SELECT * FROM value WHERE user_id='42' AND measurement_id='$sleepStartTimeId' AND company_id='$company_id' AND date= '$date' ";
+    $select = "SELECT * FROM sleep_start_time WHERE user_id='42' AND measurement_id='$sleepStartTimeId' AND company_id='$company_id' AND date= '$date' ";
     $result = $db_connection->executeStatement($select);
     $rowCount = $result->num_rows;
 
@@ -42,7 +42,7 @@ for ($x = 0; $x < $arrayLength; $x++) {
 
 
 //SQL Statement to insert data into value table
-        $insert = "INSERT INTO value (user_id, measurement_id, company_id, value, date)
+        $insert = "INSERT INTO sleep_start_time (user_id, measurement_id, company_id, start_time, date)
         VALUES ('42', '$sleepStartTimeId', '$company_id', '$startTime','$date')";
 
         $db_connection->executeStatement($insert);
@@ -50,7 +50,7 @@ for ($x = 0; $x < $arrayLength; $x++) {
 
     }  else {
 
-        $update = "UPDATE value SET value = '$startTime'
+        $update = "UPDATE value SET start_time = '$startTime'
                                      WHERE user_id='42' AND measurement_id='$sleepStartTimeId' AND company_id='$company_id' AND date = '$date'";
 
         $db_connection->executeStatement($update);

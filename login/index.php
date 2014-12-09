@@ -37,6 +37,8 @@ if($_POST) {
     echo '{"success":0,"error_message":"Invalid Data."}';
 }
 
+
+
 $dbConnection->close();
 
 ?>

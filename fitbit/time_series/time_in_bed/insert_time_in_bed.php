@@ -12,7 +12,7 @@ include '../../id/find_time_in_bed_id.php';
 
 
 $response = $fitbit->getTimeSeries("timeInBed","today","7d");
-print_r($response);
+//print_r($response);
 
 
 
