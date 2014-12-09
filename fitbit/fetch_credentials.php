@@ -12,7 +12,7 @@
 include 'id/find_company_id.php';
 
 //TODO user id from focusedhealth required
-$fetch_credentials = "SELECT * FROM user_company_account WHERE company_id='$company_id' AND user_id='42'";
+$fetch_credentials = "SELECT * FROM user_company_account WHERE company_id='$company_id' AND user_id='$userId'";
 
 $fetch_credentials_mysqli_result = $db_connection->executeStatement($fetch_credentials);
 

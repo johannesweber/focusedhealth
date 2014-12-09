@@ -1,8 +1,5 @@
 <?php
 
-$userId= '42';
-
-
 $response = $fitbit->getProfile();
 
 $avatar = $response->user->avatar;

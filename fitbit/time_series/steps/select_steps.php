@@ -6,9 +6,6 @@
  * Time: 18:00
  */
 
-
-$userId = '42';
-
 $timeStamp = time();
 $date = date("Y-m-d", $timeStamp);
 
@@ -26,7 +23,7 @@ LIMIT $limit";
 $db_connection->executeStatement($fetch);
 $result = $db_connection->getResultAsJSON();
 
-
 echo($result);
+
 ?>
 
