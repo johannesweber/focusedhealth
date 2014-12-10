@@ -7,16 +7,7 @@
  */
 
 
-
-
-include '../../id/find_company_id.php';
-include '../../id/find_calories_out_id.php';
-
-
-
-$response = $fitbit->getTimeSeries("caloriesOut","today","7d");
-
-
+$response = $fitbit->getTimeSeries("caloriesOut", "today", "7d");
 
 
 $arrayLenght = $response;
@@ -29,8 +20,6 @@ for ($x = 0; $x < $arrayLenght; $x++) {
 
     $calories = $array[$x]->value;
     $date = $array[$x]->dateTime;
-
-
 
 
     //SQL Statement to
@@ -49,7 +38,7 @@ for ($x = 0; $x < $arrayLenght; $x++) {
         $db_connection->executeStatement($insert_bmi);
 
 
-    }  else {
+    } else {
 
         $update = "UPDATE value SET value = '$calories'
                                      WHERE user_id='$userId' AND measurement_id='$caloriesOutId' AND company_id='$company_id' AND date = '$date'";

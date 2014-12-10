@@ -7,14 +7,10 @@
  */
 
 
-
 $timeStamp = time();
 $date = date("Y-m-d", $timeStamp);
 
 $limit = '7';
-
-
-include '../../id/find_body_fat_id.php';
 
 
 $fetch = "SELECT value, date

@@ -9,9 +9,6 @@
  */
 
 
-include '../../id/find_company_id.php';
-include '../../id/find_calories_id.php';
-
 //Request for time series awakenings count
 $response = $fitbit->getTimeSeries("caloriesIn", "today", "7d");
 
@@ -46,7 +43,7 @@ for ($x = 0; $x < $arrayLenght; $x++) {
         $db_connection->executeStatement($insert_calories);
 
 //awakenings count was already inserted today
-    }  else {
+    } else {
 
         //SQL Statement to update data
         $update = "UPDATE value SET value = '$caloriesIn'

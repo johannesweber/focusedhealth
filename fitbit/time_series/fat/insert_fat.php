@@ -5,8 +5,6 @@
  * Date: 03.12.14
  * Time: 12:10
  */
-include '../../id/find_company_id.php';
-include '../../id/find_body_fat_id.php';
 
 
 $response = $fitbit->getTimeSeries("fat", "today", "7d");
@@ -40,7 +38,7 @@ for ($x = 0; $x < $arrayLenght; $x++) {
         $db_connection->executeStatement($insert_fat);
 
 
-    }  else {
+    } else {
 
         $update = "UPDATE value SET value = '$fat'
                                      WHERE user_id='$userId' AND measurement_id='$fatId' AND company_id='$company_id' AND date = '$date'";

@@ -11,8 +11,6 @@ $date = date("Y-m-d", $timeStamp);
 
 $limit = '30';
 
-include '../../id/find_steps_id.php';
-
 
 $fetch = "SELECT value, date
 FROM value

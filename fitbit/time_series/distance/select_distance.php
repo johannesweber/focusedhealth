@@ -7,15 +7,10 @@
  */
 
 
-
-
 $timeStamp = time();
 $date = date("Y-m-d", $timeStamp);
 
 $limit = '7';
-
-
-include '../../id/find_distance_id.php';
 
 
 //$fetch = "SELECT value, date FROM value WHERE user_id='42' AND measurement_id = '$distanceId'";

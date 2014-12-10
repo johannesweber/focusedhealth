@@ -15,7 +15,7 @@ $date = date("Y-m-d", $timeStamp);
 $limit = '7';
 
 
-include '../../id/find_elevation_id.php';
+
 
 
 $fetch = "SELECT value, date, distanceUnit AS elevationUnit
