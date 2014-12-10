@@ -11,7 +11,6 @@ header('Content-type: application/json');
 error_reporting(E_ALL);
 ini_set('display_errors', 'On');
 
-
 include '../../db_connection.php';
 
 include '../fitbitphp.php';
