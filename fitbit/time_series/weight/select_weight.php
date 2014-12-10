@@ -12,7 +12,6 @@ $date = date("Y-m-d", $timeStamp);
 
 $limit = '7';
 
-include '../../id/find_weight_id.php';
 
 $fetch = "SELECT value, date, weightUnit
 FROM value
@@ -22,7 +21,7 @@ ORDER BY date DESC
 LIMIT $limit";
 
 $db_connection->executeStatement($fetch);
- $result = $db_connection->getResultAsJSON();
+$result = $db_connection->getResultAsJSON();
 
 echo $result;
 

@@ -9,8 +9,6 @@
 $timeStamp = time();
 $date = date("Y-m-d", $timeStamp);
 
-include '../../id/find_water_id.php';
-
 
 $fetch = "SELECT value, date, waterUnit
         FROM value
