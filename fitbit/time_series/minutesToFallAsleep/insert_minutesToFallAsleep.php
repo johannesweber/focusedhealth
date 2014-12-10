@@ -7,17 +7,8 @@
  */
 
 
-
-
-include '../../id/find_company_id.php';
-include '../../id/find_minutes_to_fall_asleep_id.php';
-
-
-
-$response = $fitbit->getTimeSeries("minutesAsleep","today","7d");
+$response = $fitbit->getTimeSeries("minutesAsleep", "today", "7d");
 print_r($response);
-
-
 
 
 $arrayLength = $response;
@@ -30,8 +21,6 @@ for ($x = 0; $x < $arrayLength; $x++) {
 
     $minutesToFallAsleep = $array[$x]->value;
     $date = $array[$x]->dateTime;
-
-
 
 
     $select = "SELECT * FROM value WHERE user_id='$userId' AND measurement_id='$minutesToFallAsleepId' AND company_id='$company_id' AND date= '$date' ";
@@ -49,7 +38,7 @@ for ($x = 0; $x < $arrayLength; $x++) {
         $db_connection->executeStatement($insert);
 
 
-    }  else {
+    } else {
 
         $update = "UPDATE value SET value = '$minutesToFallAsleep'
                                      WHERE user_id='$userId' AND measurement_id='$minutesToFallAsleepId' AND company_id='$company_id' AND date = '$date'";

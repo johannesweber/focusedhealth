@@ -6,15 +6,9 @@
  * Time: 16:57
  */
 
-include '../../id/find_company_id.php';
-include '../../id/find_very_active_id.php';
 
-
-
-$response = $fitbit->getTimeSeries("minutesVeryActive","today","7d");
+$response = $fitbit->getTimeSeries("minutesVeryActive", "today", "7d");
 print_r($response);
-
-
 
 
 $arrayLength = $response;
@@ -27,8 +21,6 @@ for ($x = 0; $x < $arrayLength; $x++) {
 
     $veryActive = $array[$x]->value;
     $date = $array[$x]->dateTime;
-
-
 
 
     //SQL Statement to
@@ -47,7 +39,7 @@ for ($x = 0; $x < $arrayLength; $x++) {
         $db_connection->executeStatement($insert);
 
 
-    }  else {
+    } else {
 
         $update = "UPDATE value SET value = '$veryActive'
                                      WHERE user_id='$userId' AND measurement_id='$veryActiveId' AND company_id='$company_id' AND date = '$date'";

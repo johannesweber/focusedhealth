@@ -7,17 +7,8 @@
  */
 
 
-
-
-include '../../id/find_company_id.php';
-include '../../id/find_minutes_a_sleep_id.php';
-
-
-
-$response = $fitbit->getTimeSeries("minutesAsleep","today","7d");
+$response = $fitbit->getTimeSeries("minutesAsleep", "today", "7d");
 print_r($response);
-
-
 
 
 $arrayLength = $response;
@@ -30,8 +21,6 @@ for ($x = 0; $x < $arrayLength; $x++) {
 
     $minutesAsleep = $array[$x]->value;
     $date = $array[$x]->dateTime;
-
-
 
 
     //SQL Statement to
@@ -50,7 +39,7 @@ for ($x = 0; $x < $arrayLength; $x++) {
         $db_connection->executeStatement($insert);
 
 
-    }  else {
+    } else {
 
         $update = "UPDATE value SET value = '$minutesAsleep'
                                      WHERE user_id='$userId' AND measurement_id='$minutesAsleepId' AND company_id='$company_id' AND date = '$date'";

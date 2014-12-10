@@ -6,15 +6,9 @@
  * Time: 16:20
  */
 
-include '../../id/find_company_id.php';
-include '../../id/find_sedentary_id.php';
 
-
-
-$response = $fitbit->getTimeSeries("minutesSedentary","today","7d");
+$response = $fitbit->getTimeSeries("minutesSedentary", "today", "7d");
 print_r($response);
-
-
 
 
 $arrayLenght = $response;
@@ -27,8 +21,6 @@ for ($x = 0; $x < $arrayLenght; $x++) {
 
     $sedentary = $array[$x]->value;
     $date = $array[$x]->dateTime;
-
-
 
 
     //SQL Statement to
@@ -47,7 +39,7 @@ for ($x = 0; $x < $arrayLenght; $x++) {
         $db_connection->executeStatement($insert);
 
 
-    }  else {
+    } else {
 
         $update = "UPDATE value SET value = '$sedentary'
                                      WHERE user_id='$userId' AND measurement_id='$sedentaryId' AND company_id='$company_id' AND date = '$date'";
