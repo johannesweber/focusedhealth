@@ -20,6 +20,7 @@ $db_connection = new DatabaseConnection();
 
 $db_connection->connect();
 
+$userId = $_GET['userId'];
 
 include '../fetch_credentials.php';
 
