@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a29cf786-2959-4957-9c2c-442cff65f39e" name="Default" comment="include pfade in die jeweilige index hinzugefügt, damit zentraler Aufruf gegeben ist">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fitbit/time_series/water/index.php" afterPath="$PROJECT_DIR$/fitbit/time_series/water/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fitbit/time_series/weight/index.php" afterPath="$PROJECT_DIR$/fitbit/time_series/weight/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fitbit/user_info/index.php" afterPath="$PROJECT_DIR$/fitbit/user_info/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fitbit/time_series/water/insert_water.php" afterPath="$PROJECT_DIR$/fitbit/time_series/water/insert_water.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fitbit/time_series/weight/insert_weight.php" afterPath="$PROJECT_DIR$/fitbit/time_series/weight/insert_weight.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fitbit/time_series/water/select_water.php" afterPath="$PROJECT_DIR$/fitbit/time_series/water/select_water.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fitbit/time_series/weight/select_weight.php" afterPath="$PROJECT_DIR$/fitbit/time_series/weight/select_weight.php" />
+    <list default="true" id="a29cf786-2959-4957-9c2c-442cff65f39e" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="focusedhealth.iws" />
@@ -523,7 +516,11 @@
       <created>1418219658431</created>
       <updated>1418219658431</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="user_info angepasst">
+      <created>1418220263975</created>
+      <updated>1418220263975</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -607,7 +604,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="fixed problem with the encodedId from fitbit" />
     <MESSAGE value="new folder structure" />
     <MESSAGE value="added fitbit_timon changes&#10;" />
     <MESSAGE value="water_goal und food_goal funktionieren&#10;" />
@@ -632,7 +628,8 @@
     <MESSAGE value="Wert der userId durch variable ersetzt.&#10;&#10;get-Methode bzgl. User in der jeweiligen index hinzugefügt" />
     <MESSAGE value="include pfade in die jeweilige index hinzugefügt, damit zentraler Aufruf gegeben ist" />
     <MESSAGE value="include pfade in die jeweilige index hinzugefügt, damit zentraler Aufruf gegeben ist&#10;ToDo: index Dateien von timeSeries" />
-    <option name="LAST_COMMIT_MESSAGE" value="include pfade in die jeweilige index hinzugefügt, damit zentraler Aufruf gegeben ist&#10;ToDo: index Dateien von timeSeries" />
+    <MESSAGE value="user_info angepasst" />
+    <option name="LAST_COMMIT_MESSAGE" value="user_info angepasst" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -844,7 +841,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="13" column="0" selection-start="153" selection-end="153" vertical-scroll-proportion="0.3870403" vertical-offset="0" max-vertical-offset="1071">
           <folding>
-            <element signature="e#6#91#0" expanded="true" />
+            <element signature="e#6#91#0" expanded="false" />
             <marker date="1418219568395" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..food..." />
             <marker date="1418219568395" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
           </folding>
@@ -871,7 +868,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="8" column="20" selection-start="107" selection-end="107" vertical-scroll-proportion="0.23287672" vertical-offset="0" max-vertical-offset="731">
           <folding>
-            <element signature="e#6#85#0" expanded="true" />
+            <element signature="e#6#85#0" expanded="false" />
             <marker date="1418219568442" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..goal..." />
             <marker date="1418219568442" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
             <marker date="1418219568442" expanded="true" signature="-1:-1" placeholder="UPDATE goal ..." />
@@ -899,7 +896,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="22" column="0" selection-start="370" selection-end="370" vertical-scroll-proportion="0.64041096" vertical-offset="0" max-vertical-offset="765">
           <folding>
-            <element signature="e#6#91#0" expanded="true" />
+            <element signature="e#6#91#0" expanded="false" />
             <marker date="1418219568520" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..food_plan..." />
             <marker date="1418219568520" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
             <marker date="1418219568520" expanded="true" signature="-1:-1" placeholder="UPDATE food_..." />
@@ -980,7 +977,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="13" column="0" selection-start="153" selection-end="233" vertical-scroll-proportion="0.11643836" vertical-offset="153" max-vertical-offset="1122">
           <folding>
-            <element signature="e#6#91#0" expanded="true" />
+            <element signature="e#6#91#0" expanded="false" />
             <marker date="1418216474276" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..value..." />
             <marker date="1418216474276" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
             <marker date="1418216474276" expanded="true" signature="-1:-1" placeholder="UPDATE value..." />
