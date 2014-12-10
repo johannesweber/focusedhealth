@@ -1,7 +1,6 @@
 <?php
 /**
  * Created by PhpStorm.
-<<<<<<< HEAD
  * User: johannesweber
  * Date: 07.12.14
  * Time: 12:25
@@ -12,9 +11,6 @@ header('Content-type: application/json');
 error_reporting(E_ALL);
 ini_set('display_errors', 'On');
 
-
-//$userId = '42';
-
 include '../../db_connection.php';
 
 include '../fitbitphp.php';
@@ -23,6 +19,7 @@ $db_connection = new DatabaseConnection();
 
 $db_connection->connect();
 
+$userId = $_GET['userId'];
 
 include '../fetch_credentials.php';
 

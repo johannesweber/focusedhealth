@@ -7,14 +7,7 @@
  */
 
 
-include '../../id/find_company_id.php';
-include '../../id/find_floors_id.php';
-
-
-
-$response = $fitbit->getTimeSeries("floors","today","7d");
-
-
+$response = $fitbit->getTimeSeries("floors", "today", "7d");
 
 
 $arrayLenght = $response;
@@ -27,8 +20,6 @@ for ($x = 0; $x < $arrayLenght; $x++) {
 
     $floors = $array[$x]->value;
     $date = $array[$x]->dateTime;
-
-
 
 
     //SQL Statement to
@@ -47,7 +38,7 @@ for ($x = 0; $x < $arrayLenght; $x++) {
         $db_connection->executeStatement($insert_bmi);
 
 
-    }  else {
+    } else {
 
         $update_weight = "UPDATE value set value = '$floors'
                                      WHERE user_id='$userId' AND measurement_id='$floorsId' AND company_id='$company_id' AND date = '$datum'";

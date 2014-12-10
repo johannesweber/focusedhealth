@@ -7,16 +7,10 @@
  */
 
 
-
-
-
 $timeStamp = time();
 $date = date("Y-m-d", $timeStamp);
 
 $limit = '7';
-
-
-include '../../id/find_bmi_id.php';
 
 
 $fetch = "SELECT value, date

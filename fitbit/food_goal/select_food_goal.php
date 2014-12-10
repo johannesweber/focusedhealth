@@ -6,8 +6,6 @@
  * Time: 17:07
  */
 
-include '../id/find_calories_id.php';
-
 
 $fetch_food_goal = "SELECT goal_value, startdate, enddate FROM goal WHERE user_id='$userId' AND measurement_id='$caloriesId'";
 

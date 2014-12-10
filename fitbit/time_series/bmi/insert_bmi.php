@@ -10,15 +10,8 @@
  */
 
 
-
-
-
-include '../../id/find_company_id.php';
-include '../../id/find_bmi_id.php';
-
-
 //Request for time series awakenings count
-$response = $fitbit->getTimeSeries("bmi","today","7d");
+$response = $fitbit->getTimeSeries("bmi", "today", "7d");
 
 
 //lenght of response array
@@ -50,9 +43,9 @@ for ($x = 0; $x < $arrayLength; $x++) {
 
         $db_connection->executeStatement($insert);
 
-    //awakenings count was already inserted today
-    }  else {
-    //SQL Statement to update data
+        //awakenings count was already inserted today
+    } else {
+        //SQL Statement to update data
         $update = "UPDATE value SET value = '$bmi'
                    WHERE user_id='$userId' AND measurement_id='$bmiId' AND company_id='$company_id' AND date = '$date'";
 

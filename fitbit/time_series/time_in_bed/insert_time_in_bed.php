@@ -6,15 +6,9 @@
  * Time: 17:22
  */
 
-include '../../id/find_company_id.php';
-include '../../id/find_time_in_bed_id.php';
 
-
-
-$response = $fitbit->getTimeSeries("timeInBed","today","7d");
+$response = $fitbit->getTimeSeries("timeInBed", "today", "7d");
 //print_r($response);
-
-
 
 
 $arrayLength = $response;
@@ -27,8 +21,6 @@ for ($x = 0; $x < $arrayLength; $x++) {
 
     $timeInBed = $array[$x]->value;
     $date = $array[$x]->dateTime;
-
-
 
 
     $select = "SELECT * FROM value WHERE user_id='$userId' AND measurement_id='$timeInBedId' AND company_id='$company_id' AND date= '$date' ";
@@ -46,7 +38,7 @@ for ($x = 0; $x < $arrayLength; $x++) {
         $db_connection->executeStatement($insert);
 
 
-    }  else {
+    } else {
 
         $update = "UPDATE value SET value = '$timeInBed'
                                      WHERE user_id='$userId' AND measurement_id='$timeInBedId' AND company_id='$company_id' AND date = '$date'";

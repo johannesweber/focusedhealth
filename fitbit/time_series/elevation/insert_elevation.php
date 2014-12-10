@@ -7,14 +7,7 @@
  */
 
 
-include '../../id/find_company_id.php';
-include '../../id/find_elevation_id.php';
-
-
-
-$response = $fitbit->getTimeSeries("elevation","today","7d");
-
-
+$response = $fitbit->getTimeSeries("elevation", "today", "7d");
 
 
 $arrayLenght = $response;
@@ -27,8 +20,6 @@ for ($x = 0; $x < $arrayLenght; $x++) {
 
     $elevation = $array[$x]->value;
     $date = $array[$x]->dateTime;
-
-
 
 
     //SQL Statement to
@@ -47,7 +38,7 @@ for ($x = 0; $x < $arrayLenght; $x++) {
         $db_connection->executeStatement($insert);
 
 
-    }  else {
+    } else {
 
         $update = "UPDATE value SET value = '$elevation'
                                      WHERE user_id='$userId' AND measurement_id='$elevationId' AND company_id='$company_id' AND date = '$date'";

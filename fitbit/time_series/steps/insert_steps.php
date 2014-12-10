@@ -6,9 +6,6 @@
  * Time: 15:03
  */
 
-include '../../id/find_company_id.php';
-include '../../id/find_steps_id.php';
-
 
 $response = $fitbit->getTimeSeries("steps", "today", "30d");
 

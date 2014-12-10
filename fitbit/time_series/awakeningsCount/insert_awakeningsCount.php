@@ -9,10 +9,6 @@
  */
 
 
-include '../../id/find_company_id.php';
-include '../../id/find_awakenings_count_id.php';
-
-
 //Request for time series awakenings count
 $response = $fitbit->getTimeSeries("awakeningsCount", "today", "7d");
 //print_r($response);

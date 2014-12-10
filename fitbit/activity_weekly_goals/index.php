@@ -23,6 +23,16 @@ $db_connection->connect();
 
 $userId = $_GET["userId"];
 
+// icluding all files which are necessary to get the measurement ids
+// is used in insert
+include '../id/find_company_id.php';
+include '../id/find_period_weekly_id.php';
+include '../id/find_distance_id.php';
+include '../id/find_steps_id.php';
+
+// is used in select
+include '../id/find_period_weekly_id.php';
+
 include '../fetch_credentials.php';
 
 $fitbit = new FitBitPHP("7c39abf127964bc984aba4020845ff11", "18c4a92f21f1458e8ac9798567d3d38c");

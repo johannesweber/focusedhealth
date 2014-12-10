@@ -7,15 +7,8 @@
  */
 
 
-include '../../id/find_company_id.php';
-include '../../id/find_sleep_start_time_id.php';
-
-
-
-$response = $fitbit->getTimeSeries("startTime","today","7d");
+$response = $fitbit->getTimeSeries("startTime", "today", "7d");
 print_r($response);
-
-
 
 
 $arrayLength = $response;
@@ -28,8 +21,6 @@ for ($x = 0; $x < $arrayLength; $x++) {
 
     $startTime = $array[$x]->value;
     $date = $array[$x]->dateTime;
-
-
 
 
     $select = "SELECT * FROM sleep_start_time WHERE user_id='$userId' AND measurement_id='$sleepStartTimeId' AND company_id='$company_id' AND date= '$date' ";
@@ -47,7 +38,7 @@ for ($x = 0; $x < $arrayLength; $x++) {
         $db_connection->executeStatement($insert);
 
 
-    }  else {
+    } else {
 
         $update = "UPDATE value SET start_time = '$startTime'
                                      WHERE user_id='$userId' AND measurement_id='$sleepStartTimeId' AND company_id='$company_id' AND date = '$date'";

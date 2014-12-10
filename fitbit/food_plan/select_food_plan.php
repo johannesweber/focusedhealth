@@ -7,7 +7,7 @@
  */
 
 
-include '../id/find_weight_id.php';
+
 
 $fetch = "SELECT calories_goal, start_date, estimate_date, intensity FROM food_plan WHERE user_id='$userId' ";
 

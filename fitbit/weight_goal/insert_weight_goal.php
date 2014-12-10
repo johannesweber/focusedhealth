@@ -7,17 +7,11 @@
  */
 
 
-
 $response = $fitbit->getWeightGoal();
 
 $weightGoal = $response->goal->weight;
 $startDate = $response->goal->startDate;
 $startWeight = $response->goal->startWeight;
-
-
-
-include '../id/find_company_id.php';
-include '../id/find_weight_id.php';
 
 
 $select_weight_goal = "SELECT * FROM goal WHERE user_id='$userId' AND measurement_id='$weightId' AND company_id='$company_id'";

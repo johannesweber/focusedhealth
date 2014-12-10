@@ -7,9 +7,6 @@
  */
 
 
-include '../../id/find_company_id.php';
-include '../../id/find_water_id.php';
-
 $response = $fitbit->getTimeSeries("water", "today", "7d");
 
 $arrayLenght = $response;
@@ -42,7 +39,7 @@ for ($x = 0; $x < $arrayLenght; $x++) {
         $db_connection->executeStatement($insert_water);
 
 
-    }  else {
+    } else {
 
 
         $update = "UPDATE value SET value = '$water'

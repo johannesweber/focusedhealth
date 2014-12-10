@@ -7,14 +7,10 @@
  */
 
 
-
 $timeStamp = time();
 $date = date("Y-m-d", $timeStamp);
 
 $limit = '30';
-
-
-include '../../id/find_floors_id.php';
 
 
 $fetch = "SELECT value, date
