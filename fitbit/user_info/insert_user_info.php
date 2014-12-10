@@ -19,8 +19,6 @@ $timezone = $response->user->timezone;
 $waterUnit = $response->user->waterUnit;
 $weightUnit = $response->user->weightUnit;
 
-include '../id/find_company_id.php';
-
 $select_water_goal = "SELECT * FROM company_account_info WHERE user_id='$userId' AND company_id='$company_id'";
 $result = $db_connection->executeStatement($select_water_goal);
 $rowCount = $result->num_rows;
