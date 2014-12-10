@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< Updated upstream
     <list default="true" id="a29cf786-2959-4957-9c2c-442cff65f39e" name="Default" comment="kommentierung angefangen">
       <change type="DELETED" beforePath="$PROJECT_DIR$/fitbit/time_series/time_in_bed/select/index.php" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fitbit/id/find_sleep_start_time_id.php" afterPath="$PROJECT_DIR$/fitbit/id/find_sleep_start_time_id.php" />
@@ -30,6 +31,9 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fitbit/user_info/select_user_info.php" afterPath="$PROJECT_DIR$/fitbit/user_info/select_user_info.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
+=======
+    <list default="true" id="a29cf786-2959-4957-9c2c-442cff65f39e" name="Default" comment="" />
+>>>>>>> Stashed changes
     <ignored path="focusedhealth.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -52,6 +56,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
+<<<<<<< Updated upstream
       <file leaf-file-name="fetch_credentials.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/fitbit/fetch_credentials.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -76,6 +81,13 @@
         <entry file="file://$PROJECT_DIR$/fitbit/time_series/calories_in/insert_calories_in.php">
           <provider selected="true" editor-type-id="text-editor">
             <state line="58" column="0" selection-start="1638" selection-end="1638" vertical-scroll-proportion="1.0831794" vertical-offset="179" max-vertical-offset="1050">
+=======
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.08099352" vertical-offset="0" max-vertical-offset="926">
+              <caret line="5" column="3" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="3" />
+>>>>>>> Stashed changes
               <folding />
             </state>
           </provider>
@@ -203,6 +215,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+<<<<<<< Updated upstream
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="focusedhealth" />
@@ -285,6 +298,8 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+=======
+>>>>>>> Stashed changes
         </subPane>
       </pane>
       <pane id="Scope" />
@@ -339,6 +354,17 @@
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
       <method />
     </configuration>
+<<<<<<< Updated upstream
+=======
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <pass-parent-env-vars>false</pass-parent-env-vars>
+      <envs />
+      <method />
+    </configuration>
+>>>>>>> Stashed changes
     <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
       <method />
     </configuration>
@@ -577,8 +603,13 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32914045" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24982053" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+<<<<<<< Updated upstream
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1797619" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+=======
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1797619" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+>>>>>>> Stashed changes
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32918552" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -587,11 +618,20 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32809225" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+<<<<<<< Updated upstream
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+=======
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+>>>>>>> Stashed changes
     </layout>
     <layout-to-restore>
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -610,7 +650,11 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24982053" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+<<<<<<< Updated upstream
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32417583" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+=======
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1797619" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+>>>>>>> Stashed changes
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -664,10 +708,15 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/fitbit/fetch_credentials.php">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
         <state line="26" column="2" selection-start="872" selection-end="872" vertical-scroll-proportion="0.0" vertical-offset="360" max-vertical-offset="360">
           <folding>
             <marker date="1418210259000" expanded="true" signature="320:407" placeholder="SELECT * FRO..user_company_account..." />
           </folding>
+=======
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="480">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+>>>>>>> Stashed changes
         </state>
       </provider>
     </entry>
@@ -683,7 +732,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/fitbit/authorize/insert_credentials.php">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
+=======
+        <state vertical-scroll-proportion="0.0" vertical-offset="105" max-vertical-offset="330">
+          <caret line="12" column="34" selection-start-line="12" selection-start-column="34" selection-end-line="12" selection-end-column="34" />
+        </state>
+>>>>>>> Stashed changes
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/fitbit/authorize/index.php">
@@ -733,7 +788,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/login/index.php">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
         <state line="39" column="0" selection-start="1030" selection-end="1030" vertical-scroll-proportion="0.75274724" vertical-offset="174" max-vertical-offset="750" />
+=======
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="720">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+>>>>>>> Stashed changes
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/signup/index.php">
@@ -761,12 +822,16 @@
         <state line="40" column="0" selection-start="1007" selection-end="1007" vertical-scroll-proportion="-21.875" vertical-offset="0" max-vertical-offset="870" />
       </provider>
     </entry>
+<<<<<<< Updated upstream
     <entry file="file://$PROJECT_DIR$/db_connection.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/fitbit/time_series/time_in_bed/select_time_in_bed.php">
+=======
+    <entry file="file://$PROJECT_DIR$/fitbit/food/index.php">
+>>>>>>> Stashed changes
       <provider selected="true" editor-type-id="text-editor">
         <state line="8" column="0" selection-start="93" selection-end="93" vertical-scroll-proportion="-1.875" vertical-offset="0" max-vertical-offset="330" />
       </provider>
@@ -875,100 +940,177 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/fitbit/food_goal/insert_food_goal.php">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
         <state line="40" column="0" selection-start="1374" selection-end="1374" vertical-scroll-proportion="-21.875" vertical-offset="0" max-vertical-offset="615">
           <folding />
+=======
+        <state vertical-scroll-proportion="0.06651885" vertical-offset="0" max-vertical-offset="902">
+          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="5" selection-end-column="32" />
+>>>>>>> Stashed changes
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/fitbit/user_info/insert_user_info.php">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
         <state line="32" column="35" selection-start="1325" selection-end="1325" vertical-scroll-proportion="-20.0" vertical-offset="0" max-vertical-offset="780">
           <folding />
+=======
+        <state vertical-scroll-proportion="0.12710911" vertical-offset="31642" max-vertical-offset="40950">
+          <caret line="2129" column="39" selection-start-line="2129" selection-start-column="39" selection-end-line="2129" selection-end-column="39" />
+>>>>>>> Stashed changes
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/fitbit/water_goal/insert_water_goal.php">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
         <state line="25" column="0" selection-start="412" selection-end="412" vertical-scroll-proportion="-12.5" vertical-offset="0" max-vertical-offset="645">
           <folding />
+=======
+        <state vertical-scroll-proportion="0.21618626" vertical-offset="0" max-vertical-offset="902">
+          <caret line="21" column="18" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
+>>>>>>> Stashed changes
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/fitbit/food_plan/insert_food_plan.php">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
         <state line="24" column="41" selection-start="445" selection-end="445" vertical-scroll-proportion="0.3522868" vertical-offset="0" max-vertical-offset="809">
           <folding />
+=======
+        <state vertical-scroll-proportion="0.36585367" vertical-offset="0" max-vertical-offset="902">
+          <caret line="27" column="35" selection-start-line="27" selection-start-column="35" selection-end-line="27" selection-end-column="35" />
+>>>>>>> Stashed changes
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/fitbit/time_series/minutesToFallAsleep/insert_minutesToFallAsleep.php">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
         <state line="40" column="24" selection-start="760" selection-end="760" vertical-scroll-proportion="0.6489493" vertical-offset="0" max-vertical-offset="960">
           <folding />
+=======
+        <state vertical-scroll-proportion="0.016629713" vertical-offset="0" max-vertical-offset="902">
+          <caret line="11" column="3" selection-start-line="11" selection-start-column="3" selection-end-line="11" selection-end-column="3" />
+>>>>>>> Stashed changes
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/fitbit/time_series/sleepStartTime/insert_sleep_start_time.php">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
         <state line="38" column="18" selection-start="738" selection-end="738" vertical-scroll-proportion="0.473424" vertical-offset="112" max-vertical-offset="930">
           <folding />
+=======
+        <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="540">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+>>>>>>> Stashed changes
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/fitbit/time_series/steps/insert_steps.php">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
         <state line="33" column="7" selection-start="671" selection-end="671" vertical-scroll-proportion="0.5048077" vertical-offset="0" max-vertical-offset="855">
           <folding />
+=======
+        <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="780">
+          <caret line="0" column="5" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="5" />
+>>>>>>> Stashed changes
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/fitbit/time_series/time_in_bed/insert_time_in_bed.php">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
         <state line="37" column="13" selection-start="713" selection-end="713" vertical-scroll-proportion="0.49519232" vertical-offset="68" max-vertical-offset="900">
           <folding />
+=======
+        <state vertical-scroll-proportion="0.06651885" vertical-offset="0" max-vertical-offset="902">
+          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+>>>>>>> Stashed changes
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/fitbit/time_series/water/insert_water.php">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
         <state line="26" column="0" selection-start="423" selection-end="423" vertical-scroll-proportion="0.37860578" vertical-offset="0" max-vertical-offset="832">
           <folding />
+=======
+        <state vertical-scroll-proportion="0.11640798" vertical-offset="0" max-vertical-offset="902">
+          <caret line="12" column="59" selection-start-line="12" selection-start-column="59" selection-end-line="12" selection-end-column="59" />
+>>>>>>> Stashed changes
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/fitbit/time_series/weight/insert_weight.php">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.18028846" vertical-offset="150" max-vertical-offset="990">
           <folding />
+=======
+        <state vertical-scroll-proportion="0.51552105" vertical-offset="0" max-vertical-offset="902">
+          <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+>>>>>>> Stashed changes
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/fitbit/weight_goal/insert_weight_goal.php">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
         <state line="22" column="0" selection-start="331" selection-end="331" vertical-scroll-proportion="0.3064904" vertical-offset="0" max-vertical-offset="832">
           <folding />
+=======
+        <state vertical-scroll-proportion="0.2660754" vertical-offset="0" max-vertical-offset="902">
+          <caret line="21" column="26" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="26" />
+>>>>>>> Stashed changes
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/fitbit/fetch_credentials.php">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
         <state line="26" column="2" selection-start="872" selection-end="872" vertical-scroll-proportion="-11.25" vertical-offset="0" max-vertical-offset="360">
           <folding>
             <marker date="1418210259000" expanded="true" signature="320:407" placeholder="SELECT * FRO..user_company_account..." />
           </folding>
+=======
+        <state vertical-scroll-proportion="0.5487805" vertical-offset="0" max-vertical-offset="902">
+          <caret line="38" column="47" selection-start-line="38" selection-start-column="47" selection-end-line="38" selection-end-column="47" />
+>>>>>>> Stashed changes
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/fitbit/time_series/calories_in/index.php">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="565">
           <folding />
+=======
+        <state vertical-scroll-proportion="0.34922394" vertical-offset="0" max-vertical-offset="902">
+          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+>>>>>>> Stashed changes
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/fitbit/time_series/calories_in/insert_calories_in.php">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
         <state line="58" column="0" selection-start="1638" selection-end="1638" vertical-scroll-proportion="1.0831794" vertical-offset="179" max-vertical-offset="1050">
+=======
+        <state vertical-scroll-proportion="0.11640798" vertical-offset="0" max-vertical-offset="902">
+          <caret line="12" column="34" selection-start-line="12" selection-start-column="34" selection-end-line="12" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.08099352" vertical-offset="0" max-vertical-offset="926">
+          <caret line="5" column="3" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="3" />
+>>>>>>> Stashed changes
           <folding />
         </state>
       </provider>
