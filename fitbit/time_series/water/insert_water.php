@@ -24,12 +24,11 @@ for ($x = 0; $x < $arrayLenght; $x++) {
     $date = $array[$x]->dateTime;
 
 
-    //SQL Statement to
     $select_water = "SELECT * FROM value WHERE user_id='42' AND measurement_id='$waterId' AND company_id='$company_id' AND date= '$date' ";
     $result = $db_connection->executeStatement($select_water);
     $rowCount = $result->num_rows;
 
-//weight was not inserted today
+//water was not inserted today
     if ($rowCount == 0) {
 
 

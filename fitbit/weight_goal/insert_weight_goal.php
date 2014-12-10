@@ -20,7 +20,6 @@ include '../id/find_company_id.php';
 include '../id/find_weight_id.php';
 
 
-//SQL Statement to insert data into value table
 $select_weight_goal = "SELECT * FROM goal WHERE user_id='42' AND measurement_id='$weightId' AND company_id='$company_id'";
 $result = $db_connection->executeStatement($select_weight_goal);
 $rowCount = $result->num_rows;

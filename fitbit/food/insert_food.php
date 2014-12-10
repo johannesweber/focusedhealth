@@ -27,6 +27,7 @@ $arrayLenght = sizeof($arrayLenght);
 
 for ($x = 0; $x < $arrayLenght; $x++) {
 
+    //access data of array
     $date = $response->foods[$x]->logDate;
     $amount = $response->foods[$x]->loggedFood->amount;
     $brand = $response->foods[$x]->loggedFood->brand;

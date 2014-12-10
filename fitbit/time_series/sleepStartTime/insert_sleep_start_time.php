@@ -32,12 +32,11 @@ for ($x = 0; $x < $arrayLength; $x++) {
 
 
 
-    //SQL Statement to
     $select = "SELECT * FROM sleep_start_time WHERE user_id='42' AND measurement_id='$sleepStartTimeId' AND company_id='$company_id' AND date= '$date' ";
     $result = $db_connection->executeStatement($select);
     $rowCount = $result->num_rows;
 
-//weight was not inserted today
+//sleep start time was not inserted today
     if ($rowCount == 0) {
 
 

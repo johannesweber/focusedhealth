@@ -31,12 +31,11 @@ for ($x = 0; $x < $arrayLength; $x++) {
 
 
 
-    //SQL Statement to
     $select = "SELECT * FROM value WHERE user_id='42' AND measurement_id='$timeInBedId' AND company_id='$company_id' AND date= '$date' ";
     $result = $db_connection->executeStatement($select);
     $rowCount = $result->num_rows;
 
-//weight was not inserted today
+//time in bed was not inserted today
     if ($rowCount == 0) {
 
 
