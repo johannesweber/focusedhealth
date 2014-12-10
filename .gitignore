@@ -1,6 +1,4 @@
-# Created by https://www.gitignore.io
-
-### PhpStorm ###
+### JetBrains template
 # Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm
 
 *.iml
@@ -10,23 +8,23 @@
 # if you remove the above rule, at least ignore the following:
 
 # User-specific stuff:
-# .idea/workspace.xml
-# .idea/tasks.xml
-# .idea/dictionaries
+ .idea/workspace.xml
+ .idea/tasks.xml
+ .idea/dictionaries
 
 # Sensitive or high-churn files:
-# .idea/dataSources.ids
-# .idea/dataSources.xml
-# .idea/sqlDataSources.xml
-# .idea/dynamic.xml
-# .idea/uiDesigner.xml
+ .idea/dataSources.ids
+ .idea/dataSources.xml
+ .idea/sqlDataSources.xml
+ .idea/dynamic.xml
+ .idea/uiDesigner.xml
 
 # Gradle:
-# .idea/gradle.xml
-# .idea/libraries
+ .idea/gradle.xml
+ .idea/libraries
 
 # Mongo Explorer plugin:
-# .idea/mongoSettings.xml
+ .idea/mongoSettings.xml
 
 ## File-based project format:
 *.ipr
@@ -35,7 +33,7 @@
 ## Plugin-specific files:
 
 # IntelliJ
-out/
+.out/
 
 # mpeltonen/sbt-idea plugin
 .idea_modules/
@@ -47,3 +45,15 @@ atlassian-ide-plugin.xml
 com_crashlytics_export_strings.xml
 crashlytics.properties
 crashlytics-build.properties
+
+
+### CakePHP template
+tmp/*
+[Cc]onfig/core.php
+[Cc]onfig/database.php
+app/tmp/*
+app/[Cc]onfig/core.php
+app/[Cc]onfig/database.php
+!empty
+
+
