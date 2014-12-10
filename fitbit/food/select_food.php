@@ -18,7 +18,6 @@ $fetch_food = "SELECT date, amount, name, unit, calories, carbs, fat, fiber, pro
 $db_connection->executeStatement($fetch_food);
 $result = $db_connection->getResultAsJSON();
 
-print_r( $result);
 echo $result;
 ?>
 

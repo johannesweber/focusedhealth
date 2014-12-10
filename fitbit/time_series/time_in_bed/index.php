@@ -28,6 +28,7 @@ $fitbit->setOAuthDetails($oauth_token, $oauth_token_secret);
 $fitbit->setResponseFormat('json');
 
 include 'insert_time_in_bed.php';
+//include 'select_time_in_bed.php';
 
 $db_connection->close();
 

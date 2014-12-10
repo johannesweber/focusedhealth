@@ -44,5 +44,11 @@ if($_GET) {
     echo '{"success" : 0,"error_message" : "Invalid Data."}';
 }
 
+<<<<<<< HEAD
+=======
+
+
+$dbConnection->close();
+>>>>>>> timon
 
 ?>

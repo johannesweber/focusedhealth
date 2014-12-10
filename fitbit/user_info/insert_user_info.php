@@ -29,8 +29,8 @@ if ($rowCount == 0) {
 
 
 //SQL Statement to insert data into user info table
-$insert_company_account_info = "INSERT INTO company_account_info (company_account_id, avatar, city, country, dateOfBirth, distanceUnit, fullName, gender, glucoseUnit, height, heightUnit, locale, memberSince, waterUnit, weightUnit, timezone)
-    VALUES ('$encodedId', '$avatar', '$city', '$country', '$dateOfBirth', '$distanceUnit', '$fullName', '$gender', '$glucoseUnit', '$height', '$heightUnit', '$locale', '$memberSince', '$waterUnit', '$weightUnit', '$timezone')";
+$insert_company_account_info = "INSERT INTO company_account_info (user_id, company_id, company_account_id, avatar, city, country, dateOfBirth, distanceUnit, fullName, gender, glucoseUnit, height, heightUnit, locale, memberSince, waterUnit, weightUnit, timezone)
+    VALUES ('$userId', '$company_id', '$encodedId', '$avatar', '$city', '$country', '$dateOfBirth', '$distanceUnit', '$fullName', '$gender', '$glucoseUnit', '$height', '$heightUnit', '$locale', '$memberSince', '$waterUnit', '$weightUnit', '$timezone')";
 
 $db_connection->executeStatement($insert_company_account_info);
 
