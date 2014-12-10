@@ -23,18 +23,6 @@ $thigh = $response->body->thigh;
 $waist = $response->body->waist;
 //$weight = $response->body->weight;
 
-include '../id/find_bicep_id.php';
-//include '../id/find_bmi_id.php';
-include '../id/find_calf_id.php';
-include '../id/find_chest_id.php';
-//include '../id/find_body_fat_id.php';
-include '../id/find_forearm_id.php';
-include '../id/find_hips_id.php';
-include '../id/find_neck_id.php';
-include '../id/find_thigh_id.php';
-include '../id/find_waist_id.php';
-//include '../id/find_weight_id.php';
-
 
 $measurementIdArray = array($bicepId, $calfId, $chestId, $forearmId, $hipsId, $neckId, $thighId, $waistId);
 

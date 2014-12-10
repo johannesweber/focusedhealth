@@ -15,8 +15,6 @@ $timestamp = time();
 $datum = date("Y-m-d", $timestamp);
 
 
-// icluding all files which are necessary to get the ids
-include '../id/find_company_id.php';
 
 
 //Request for activities
