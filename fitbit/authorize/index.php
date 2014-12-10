@@ -21,7 +21,7 @@ $db_connection = new DatabaseConnection();
 
 $db_connection->connect();
 
-$user = $_GET['userId'];
+$userId = $_GET['userId'];
 
 $oauth_token = $_POST['oauth_token'];
 $oauth_token_secret = $_POST['oauth_token_secret'];
