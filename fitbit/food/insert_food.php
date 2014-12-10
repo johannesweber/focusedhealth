@@ -18,7 +18,7 @@ include '../id/find_company_id.php';
 
 
 $response = $fitbit->getFoods($datum);
-print_r($response);
+//print_r($response);
 
 
 $arrayLenght = $response->foods;
@@ -27,6 +27,7 @@ $arrayLenght = sizeof($arrayLenght);
 
 for ($x = 0; $x < $arrayLenght; $x++) {
 
+    //access data of array
     $date = $response->foods[$x]->logDate;
     $amount = $response->foods[$x]->loggedFood->amount;
     $brand = $response->foods[$x]->loggedFood->brand;
@@ -46,7 +47,7 @@ for ($x = 0; $x < $arrayLenght; $x++) {
     $result = $db_connection->executeStatement($select);
     $rowCount = $result->num_rows;
 
-//weight was not inserted today
+//food was not inserted for today
     if ($rowCount == 0) {
 
 

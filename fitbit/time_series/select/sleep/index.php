@@ -28,7 +28,7 @@ include '../../../id/find_minutes_to_fall_asleep_id.php';
 
 $fetch = "SELECT value, date
         FROM value
-        WHERE value.user_id='$userId' AND value.date='$date' AND ( measurement_id = '$timeInBedId' OR measurement_id = '$minutesAsleepId'
+        WHERE value.user_id='$userId' AND value.date='$date' AND (measurement_id = '$sleepStartTime' OR measurement_id = '$timeInBedId' OR measurement_id = '$minutesAsleepId'
         OR measurement_id = '$awakeningsCountId' OR measurement_id = '$minutesAwakeId' OR measurement_id = '$minutesToFallAsleepId')";
 
 $db_connection->executeStatement($fetch);

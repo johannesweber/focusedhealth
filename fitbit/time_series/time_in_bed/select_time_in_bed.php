@@ -7,15 +7,9 @@
  */
 
 
-include '../../../../db_connection.php';
 
 
-$db_connection = new DatabaseConnection();
-
-$db_connection->connect();
-
-
-include '../../../id/find_time_in_bed_id.php';
+include '../../id/find_time_in_bed_id.php';
 
 
 $fetch = "SELECT value, date FROM value WHERE user_id='42' AND measurement_id = '$timeInBedId'";
