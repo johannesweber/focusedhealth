@@ -22,6 +22,10 @@ $db_connection->connect();
 
 $userId = $_GET["userId"];
 
+// icluding all files which are necessary to get the ids
+// to used in insert
+include '../id/find_company_id.php';
+
 include '../fetch_credentials.php';
 
 $fitbit = new FitBitPHP("7c39abf127964bc984aba4020845ff11", "18c4a92f21f1458e8ac9798567d3d38c");

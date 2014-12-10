@@ -7,8 +7,8 @@
  */
 
 
-$timestamp=time();
-$date=date("Y-m-d", $timestamp);
+$timestamp = time();
+$date = date("Y-m-d", $timestamp);
 
 $response = $fitbit->getFoodGoal();
 
@@ -20,15 +20,10 @@ $calories = $response->goals->calories;
 $intensity = $response->foodPlan->intensity;
 
 
-
-include '../id/find_company_id.php';
-include '../id/find_period_daily_id.php';
-include '../id/find_calories_id.php';
-
 //SQL Statement to check if this data set already exists
 $select_food_plan = "SELECT * FROM food_plan WHERE user_id='$userId' AND company_id='$company_id'";
 $result = $db_connection->executeStatement($select_food_plan);
- $rowCount = $result->num_rows;
+$rowCount = $result->num_rows;
 
 //food plan was not inserted
 if ($rowCount == 0) {

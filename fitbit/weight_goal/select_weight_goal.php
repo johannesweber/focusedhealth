@@ -6,8 +6,6 @@
  * Time: 17:07
  */
 
-include '../id/find_weight_id.php';
-
 
 $fetch = "SELECT goal_value, start_value, startdate FROM goal WHERE user_id='$userId' AND measurement_id='$weightId' ";
 

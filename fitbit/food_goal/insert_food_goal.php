@@ -6,16 +6,13 @@
  * Time: 17:06
  */
 
-$timestamp=time();
-$date=date("Y-m-d", $timestamp);
+$timestamp = time();
+$date = date("Y-m-d", $timestamp);
 
 $response = $fitbit->getFoodGoal();
 
 $foodGoal = $response->goals->calories;
 
-include '../id/find_calories_id.php';
-include '../id/find_company_id.php';
-include '../id/find_period_daily_id.php';
 
 //SQL Statement to check if this data set already exists
 $select_food_goal = "SELECT * FROM goal WHERE user_id='$userId' AND measurement_id='$caloriesId' AND company_id='$company_id'";
@@ -31,7 +28,7 @@ if ($rowCount == 0) {
     //food goal was already inserted
 } else {
 
-$update_food_goal = "UPDATE goal set goal_value='$foodGoal', startdate=NULL, enddate=NULL, period='$periodDailyId',
+    $update_food_goal = "UPDATE goal set goal_value='$foodGoal', startdate=NULL, enddate=NULL, period='$periodDailyId',
                                     user_id='$userId', measurement_id='$caloriesId', company_id='$company_id'
                                      WHERE user_id='$userId' AND measurement_id='$caloriesId' and company_id='$company_id'";
     $db_connection->executeStatement($update_food_goal);
