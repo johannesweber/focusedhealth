@@ -9,7 +9,7 @@
 include '../id/find_period_daily_id.php';
 
 
-$fetch = "SELECT goal_value, start_value, startdate FROM goal WHERE user_id='42' AND period = '$periodDailyId'";
+$fetch = "SELECT goal_value, start_value, startdate FROM goal WHERE user_id='$userId' AND period = '$periodDailyId'";
 
 $db_connection->executeStatement($fetch);
 $result = $db_connection->getResultAsJSON();

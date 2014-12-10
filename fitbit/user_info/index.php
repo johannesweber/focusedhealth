@@ -13,7 +13,7 @@ error_reporting(E_ALL);
 ini_set('display_errors', 'On');
 
 
-$userId = '42';
+//$userId = '42';
 
 include '../../db_connection.php';
 

@@ -10,8 +10,7 @@ include '../../id/find_company_id.php';
 include '../../id/find_steps_id.php';
 
 
-
-$response = $fitbit->getTimeSeries("steps","today","30d");
+$response = $fitbit->getTimeSeries("steps", "today", "30d");
 
 $arrayLenght = $response;
 $arrayLenght = sizeof($arrayLenght);
@@ -25,14 +24,10 @@ for ($x = 0; $x < $arrayLenght; $x++) {
     $date = $array[$x]->dateTime;
 
 
-
-
-<<<<<<< HEAD
     //SQL Statement to
     $select_steps = "SELECT * FROM value WHERE user_id= '$userId' AND measurement_id='$stepsId' AND company_id='$company_id' AND date= '$date' ";
-=======
-    $select_steps = "SELECT * FROM value WHERE user_id='42' AND measurement_id='$stepsId' AND company_id='$company_id' AND date= '$date' ";
->>>>>>> timon
+
+
     $result = $db_connection->executeStatement($select_steps);
     $rowCount = $result->num_rows;
 
@@ -47,7 +42,7 @@ for ($x = 0; $x < $arrayLenght; $x++) {
         $db_connection->executeStatement($insert);
 
 
-    }  else {
+    } else {
 
         $update = "UPDATE value SET value = '$steps'
                                      WHERE user_id='$userId' AND measurement_id='$stepsId' AND company_id='$company_id' AND date = '$date'";

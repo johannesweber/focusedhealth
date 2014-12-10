@@ -31,6 +31,7 @@ $fitbit->setOAuthDetails($oauth_token, $oauth_token_secret);
 $fitbit->setResponseFormat('json');
 
 include 'insert_credentials.php';
+include '../insert_user_info.php';
 
 $db_connection->close();
 

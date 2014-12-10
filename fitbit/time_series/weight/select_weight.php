@@ -6,7 +6,6 @@
  * Time: 18:00
  */
 
-$userId = '42';
 
 $timeStamp = time();
 $date = date("Y-m-d", $timeStamp);

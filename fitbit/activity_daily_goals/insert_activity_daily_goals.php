@@ -46,7 +46,7 @@ for ($id = 0; $id < sizeof($idArray); $id++) {
 
 
 //SQL Statement to check if this data set already exists
-    $select_activity_daily_goals = "SELECT * FROM goal WHERE user_id='42' AND measurement_id='$ID' AND company_id='$company_id' AND period= '$periodDailyId'";
+    $select_activity_daily_goals = "SELECT * FROM goal WHERE user_id='$userId' AND measurement_id='$ID' AND company_id='$company_id' AND period= '$periodDailyId'";
     $result = $db_connection->executeStatement($select_activity_daily_goals);
     $rowCount = $result->num_rows;
 
@@ -54,13 +54,13 @@ for ($id = 0; $id < sizeof($idArray); $id++) {
 //activity daily goal data set is not inserted yet
     if ($rowCount == 0) {
         $insert_activity_daily_goals = "INSERT INTO goal (goal_value, startdate, enddate, period, user_id, measurement_id, company_id)
-         VALUES ('$wert', Null, Null, '$periodDailyId', '42', '$ID', '$company_id')";
+         VALUES ('$wert', Null, Null, '$periodDailyId', '$userId', '$ID', '$company_id')";
         $db_connection->executeStatement($insert_activity_daily_goals);
     } else {
         //SQL Statement to update data
         $update_activity_daily_goals = "UPDATE goal set goal_value='$wert', startdate=NULL, enddate=NULL, period='$periodDailyId',
-                                    user_id='42', measurement_id='$ID', company_id='$company_id'
-                                     WHERE user_id='42' AND measurement_id='$ID' AND company_id='$company_id' AND period='$periodDailyId'";
+                                    user_id='$userId', measurement_id='$ID', company_id='$company_id'
+                                     WHERE user_id='$userId' AND measurement_id='$ID' AND company_id='$company_id' AND period='$periodDailyId'";
 
         $db_connection->executeStatement($update_activity_daily_goals);
     }

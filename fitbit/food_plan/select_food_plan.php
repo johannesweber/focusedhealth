@@ -9,7 +9,7 @@
 
 include '../id/find_weight_id.php';
 
-$fetch = "SELECT calories_goal, start_date, estimate_date, intensity FROM food_plan WHERE user_id='42' ";
+$fetch = "SELECT calories_goal, start_date, estimate_date, intensity FROM food_plan WHERE user_id='$userId' ";
 
 $db_connection->executeStatement($fetch);
 $result = $db_connection->getResultAsJSON();

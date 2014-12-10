@@ -7,7 +7,6 @@
  */
 
 
-$userId = '42';
 
 include '../id/find_period_weekly_id.php';
 

@@ -43,7 +43,7 @@ for ($x = 0; $x < $arrayLenght; $x++) {
 
 
     //SQL Statement to
-    $select = "SELECT * FROM food WHERE user_id='42'  AND company_id='$company_id' AND date= '$date' ";
+    $select = "SELECT * FROM food WHERE user_id='$userId'  AND company_id='$company_id' AND date= '$date' ";
     $result = $db_connection->executeStatement($select);
     $rowCount = $result->num_rows;
 
@@ -52,7 +52,7 @@ for ($x = 0; $x < $arrayLenght; $x++) {
 
 
     $insert_food = "INSERT INTO food (user_id, company_id, date, amount, brand, name, unit, calories, carbs, fat, fiber, protein, sodium)
-                VALUES ('42', '$company_id', '$date', '$amount', '$brand', '$name', '$unit', '$calories', '$carbs', '$fat', '$fiber', '$protein', '$sodium')";
+                VALUES ('$userId', '$company_id', '$date', '$amount', '$brand', '$name', '$unit', '$calories', '$carbs', '$fat', '$fiber', '$protein', '$sodium')";
 
     $db_connection->executeStatement($insert_food);
 

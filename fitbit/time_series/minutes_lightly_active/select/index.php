@@ -18,7 +18,7 @@ $db_connection->connect();
 include '../../../id/find_lightly_active_id.php';
 
 
-$fetch = "SELECT value, date FROM value WHERE user_id='42' AND measurement_id = '$lightlyActiveId'";
+$fetch = "SELECT value, date FROM value WHERE user_id='$userId' AND measurement_id = '$lightlyActiveId'";
 
 $db_connection->executeStatement($fetch);
 $result = $db_connection->getResultAsJSON();

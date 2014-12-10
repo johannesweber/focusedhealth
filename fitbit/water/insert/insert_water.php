@@ -20,7 +20,7 @@ echo('#####');
 $water = $response->summary->water;
 
 //SQL Statement to insert data into value table
-$select_water = "SELECT * FROM value WHERE user_id='42' AND measurement_id='$waterId' AND company_id='$company_id' AND date= '$date'";
+$select_water = "SELECT * FROM value WHERE user_id='$userId' AND measurement_id='$waterId' AND company_id='$company_id' AND date= '$date'";
 $result = $db_connection->executeStatement($select_water);
 $rowCount = $result->num_rows;
 
@@ -29,7 +29,7 @@ if ($rowCount == 0) {
 
 //SQL Statement to insert data into value table
     $insert_water_summary = "INSERT INTO value (user_id, measurement_id, company_id, value, date)
-         VALUES ('42', '$waterId', '$company_id', '$water', '$date')";
+         VALUES ('$userId', '$waterId', '$company_id', '$water', '$date')";
 
     $db_connection->executeStatement($insert_water_summary);
 
@@ -44,7 +44,7 @@ if ($rowCount == 0) {
 
         //SQL Statement to insert data into value table
         $insert_water = "INSERT INTO value (user_id, measurement_id, company_id, value, date)
-         VALUES ('42', '$waterId', '$company_id', '$waterArray', '$date')";
+         VALUES ('$userId', '$waterId', '$company_id', '$waterArray', '$date')";
 
         $db_connection->executeStatement($insert_water);
 

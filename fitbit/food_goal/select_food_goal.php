@@ -9,7 +9,7 @@
 include '../id/find_calories_id.php';
 
 
-$fetch_food_goal = "SELECT goal_value, startdate, enddate FROM goal WHERE user_id='42' AND measurement_id='$caloriesId'";
+$fetch_food_goal = "SELECT goal_value, startdate, enddate FROM goal WHERE user_id='$userId' AND measurement_id='$caloriesId'";
 
 $db_connection->executeStatement($fetch_food_goal);
 

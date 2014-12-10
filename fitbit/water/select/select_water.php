@@ -9,7 +9,7 @@
 include 'find_water_id.php';
 
 //TODO real User id required
-$select_water = "SELECT * FROM value WHERE user_id='42' AND measurement_id='$waterId'";
+$select_water = "SELECT * FROM value WHERE user_id='$userId' AND measurement_id='$waterId'";
 
 $db_connection->executeStatement($select_water);
 

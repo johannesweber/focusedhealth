@@ -7,7 +7,6 @@
  */
 
 
-$userId = '42';
 
 $timeStamp = time();
 $date = date("Y-m-d", $timeStamp);
@@ -47,7 +46,7 @@ echo($result);
 SELECT value,date,name
 FROM value
 JOIN measurement AS m on value.measurement_id = m.id
-WHERE value.user_id='42' AND value.date='2014-12-04' AND ( measurement_id = '33' OR measurement_id = '52')
+WHERE value.user_id='$userId' AND value.date='2014-12-04' AND ( measurement_id = '33' OR measurement_id = '52')
 
 
 

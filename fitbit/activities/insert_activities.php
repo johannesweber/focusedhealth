@@ -42,7 +42,7 @@ for ($x = 0; $x < $arrayLenght; $x++) {
 
 
     //SQL Statement to check if this data set already exists for this day
-    $select_weight = "SELECT * FROM activity WHERE user_id='42' AND activity='$name' AND company_id='$company_id' AND date= '$startDate' AND start_time= '$startTime' ";
+    $select_weight = "SELECT * FROM activity WHERE user_id='$userId' AND activity='$name' AND company_id='$company_id' AND date= '$startDate' AND start_time= '$startTime' ";
     $result = $db_connection->executeStatement($select_weight);
     $rowCount = $result->num_rows;
 
@@ -50,7 +50,7 @@ for ($x = 0; $x < $arrayLenght; $x++) {
     if ($rowCount == 0 ) {
 
     $insert_activity = "INSERT INTO activity (user_id, company_id, activity, date, start_time, duration, distance, calories, description, last_modified)
-                VALUES ('42', '$company_id', '$name', '$startDate', '$startTime', '$duration', '$distance', '$calories', '$description', '$lastModified')";
+                VALUES ('$userId', '$company_id', '$name', '$startDate', '$startTime', '$duration', '$distance', '$calories', '$description', '$lastModified')";
 
     $db_connection->executeStatement($insert_activity);
 

@@ -17,7 +17,7 @@ $db_connection->connect();
 
 include '../../../id/find_minutes_a_sleep_id.php';
 
-$fetch = "SELECT value, date FROM value WHERE user_id='42' AND measurement_id = '$minutesAsleepId'";
+$fetch = "SELECT value, date FROM value WHERE user_id='$userId' AND measurement_id = '$minutesAsleepId'";
 
 $db_connection->executeStatement($fetch);
 $result = $db_connection->getResultAsJSON();

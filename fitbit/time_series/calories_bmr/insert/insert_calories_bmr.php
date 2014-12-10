@@ -34,7 +34,7 @@ for ($x = 0; $x < $arrayLenght; $x++) {
 
 
     //SQL Statement to
-    $select_caloriesBMR = "SELECT * FROM value WHERE user_id='42' AND measurement_id='$caloriesBMRId' AND company_id='$company_id' AND date= '$date' ";
+    $select_caloriesBMR = "SELECT * FROM value WHERE user_id='$userId' AND measurement_id='$caloriesBMRId' AND company_id='$company_id' AND date= '$date' ";
     $result = $db_connection->executeStatement($select_caloriesBMR);
     $rowCount = $result->num_rows;
 
@@ -44,7 +44,7 @@ for ($x = 0; $x < $arrayLenght; $x++) {
 
 //SQL Statement to insert data into value table
         $insert_bmi = "INSERT INTO value (user_id, measurement_id, company_id, value, date)
-        VALUES ('42', '$caloriesBMRId', '$company_id', '$caloriesBMR','$date')";
+        VALUES ('$userId', '$caloriesBMRId', '$company_id', '$caloriesBMR','$date')";
 
         $db_connection->executeStatement($insert_bmi);
 
@@ -52,7 +52,7 @@ for ($x = 0; $x < $arrayLenght; $x++) {
     } /* else {
 
         $update_weight = "UPDATE value set value = '$weight'
-                                     WHERE user_id='42' AND measurement_id='$weightId' AND company_id='$company_id' AND date = '$datum'";
+                                     WHERE user_id='$userId' AND measurement_id='$weightId' AND company_id='$company_id' AND date = '$datum'";
 
         $db_connection->executeStatement($update_weight);
 

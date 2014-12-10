@@ -33,7 +33,7 @@ for ($x = 0; $x < $arrayLength; $x++) {
 
 
 //SQL Statement to check if this data set already exists for this day
-    $select = "SELECT * FROM value WHERE user_id='42' AND measurement_id='$awakeningsCountId' AND company_id='$company_id' AND date= '$date' ";
+    $select = "SELECT * FROM value WHERE user_id='$userId' AND measurement_id='$awakeningsCountId' AND company_id='$company_id' AND date= '$date' ";
     $result = $db_connection->executeStatement($select);
     $rowCount = $result->num_rows;
 
@@ -43,7 +43,7 @@ for ($x = 0; $x < $arrayLength; $x++) {
 
 //SQL Statement to insert data into table called "value"
         $insert = "INSERT INTO value (user_id, measurement_id, company_id, value, date)
-        VALUES ('42', '$awakeningsCountId', '$company_id', '$awakeningsCount','$date')";
+        VALUES ('$userId', '$awakeningsCountId', '$company_id', '$awakeningsCount','$date')";
 
         $db_connection->executeStatement($insert);
 
@@ -51,7 +51,7 @@ for ($x = 0; $x < $arrayLength; $x++) {
     } else {
 //SQL Statement to update data
         $update = "UPDATE value SET value = '$awakeningsCount'
-                                     WHERE user_id='42' AND measurement_id='$awakeningsCountId' AND company_id='$company_id' AND date = '$date'";
+                                     WHERE user_id='$userId' AND measurement_id='$awakeningsCountId' AND company_id='$company_id' AND date = '$date'";
 
         $db_connection->executeStatement($update);
 

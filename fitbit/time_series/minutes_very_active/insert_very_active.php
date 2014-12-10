@@ -32,7 +32,7 @@ for ($x = 0; $x < $arrayLength; $x++) {
 
 
     //SQL Statement to
-    $select = "SELECT * FROM value WHERE user_id='42' AND measurement_id='$veryActiveId' AND company_id='$company_id' AND date= '$date' ";
+    $select = "SELECT * FROM value WHERE user_id='$userId' AND measurement_id='$veryActiveId' AND company_id='$company_id' AND date= '$date' ";
     $result = $db_connection->executeStatement($select);
     $rowCount = $result->num_rows;
 
@@ -42,7 +42,7 @@ for ($x = 0; $x < $arrayLength; $x++) {
 
 //SQL Statement to insert data into value table
         $insert = "INSERT INTO value (user_id, measurement_id, company_id, value, date)
-        VALUES ('42', '$veryActiveId', '$company_id', '$veryActive','$date')";
+        VALUES ('$userId', '$veryActiveId', '$company_id', '$veryActive','$date')";
 
         $db_connection->executeStatement($insert);
 
@@ -50,7 +50,7 @@ for ($x = 0; $x < $arrayLength; $x++) {
     }  else {
 
         $update = "UPDATE value SET value = '$veryActive'
-                                     WHERE user_id='42' AND measurement_id='$veryActiveId' AND company_id='$company_id' AND date = '$date'";
+                                     WHERE user_id='$userId' AND measurement_id='$veryActiveId' AND company_id='$company_id' AND date = '$date'";
 
         $db_connection->executeStatement($update);
 

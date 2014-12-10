@@ -20,19 +20,19 @@ include '../id/find_company_id.php';
 include '../id/find_weight_id.php';
 
 
-$select_weight_goal = "SELECT * FROM goal WHERE user_id='42' AND measurement_id='$weightId' AND company_id='$company_id'";
+$select_weight_goal = "SELECT * FROM goal WHERE user_id='$userId' AND measurement_id='$weightId' AND company_id='$company_id'";
 $result = $db_connection->executeStatement($select_weight_goal);
 $rowCount = $result->num_rows;
 
 if ($rowCount == 0) {
     $insert_weight_goal = "INSERT INTO goal (goal_value, start_value, startdate, enddate, period, user_id, measurement_id, company_id)
-VALUES ('$weightGoal', '$startWeight', '$startDate', Null, NULL , '42', '$weightId', '$company_id')";
+VALUES ('$weightGoal', '$startWeight', '$startDate', Null, NULL , '$userId', '$weightId', '$company_id')";
     $db_connection->executeStatement($insert_weight_goal);
 
 } else {
 
     $update_weight_goal = "UPDATE goal set goal_value='$weightGoal',start_value='$startWeight', startdate='$startDate'
-WHERE user_id='42' AND measurement_id='$weightId' and company_id='$company_id'";
+WHERE user_id='$userId' AND measurement_id='$weightId' and company_id='$company_id'";
     $db_connection->executeStatement($update_weight_goal);
 
 }

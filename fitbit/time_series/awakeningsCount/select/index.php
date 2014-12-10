@@ -17,7 +17,7 @@ $db_connection->connect();
 
 include '../../../id/find_awakenings_count_id.php';
 
-$fetch = "SELECT value, date FROM value WHERE user_id='42' AND measurement_id = '$awakeningsCountId'";
+$fetch = "SELECT value, date FROM value WHERE user_id='$userId' AND measurement_id = '$awakeningsCountId'";
 
 $db_connection->executeStatement($fetch);
 $result = $db_connection->getResultAsJSON();
