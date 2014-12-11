@@ -30,6 +30,8 @@ $company_account_id = '5064852';
 $oauth_token = '7c144c3075d37c657e7f4079cf6e508517d7626c2e6c8e384065429';
 $oauth_token_secret = '779e3cbfb2d220e4fd236fcbb75269f28394fcfc3617f66e5f5bcf27e7e';
 
+// Zu Testzwecken, ohne erscheint Fehler
+$userid = 20;
 
 
 $withings = new WithingsPHP();
