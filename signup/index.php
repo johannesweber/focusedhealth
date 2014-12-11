@@ -31,6 +31,7 @@ if($_GET) {
 
             $insert_user = "INSERT INTO user (email, password, active, verifier, memberSince) VALUES ('$email', '$passwordHashed', 'No', '$verifier', '$memberSince')";
 
+            
             $dbConnection->executeStatement($insert_user);
 
             $result = $dbConnection->getResult();

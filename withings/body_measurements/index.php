@@ -14,13 +14,13 @@ ini_set('display_errors', 'On');
 
 include '../../db_connection.php';
 
-include '../fitbitphp.php';
+include '../withingsphp.php';
 
 $db_connection = new DatabaseConnection();
 
 $db_connection->connect();
 
-$userId = $_GET["userId"];
+$userid = '5064852';
 
 // is used in insert
 include '../id/find_bicep_id.php';
@@ -38,11 +38,11 @@ include '../id/find_waist_id.php';
 
 include '../fetch_credentials.php';
 
-$fitbit = new FitBitPHP("7c39abf127964bc984aba4020845ff11", "18c4a92f21f1458e8ac9798567d3d38c");
-$fitbit->setOAuthDetails($oauth_token, $oauth_token_secret);
-$fitbit->setResponseFormat('json');
+$withings = new WithingsPHP();
+$withings->setOAuthDetails($oauth_token, $oauth_token_secret);
+$withings->setResponseFormat('json');
 
 include 'insert_body_measurements.php';
-include 'select_body_measurements.php';
+//include 'select_body_measurements.php';
 
 $db_connection->close();
