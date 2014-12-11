@@ -27,7 +27,7 @@ if($_REQUEST['email'] && $_REQUEST['verifier']) {
 
     $result = $dbConnection->getResult();
 
-    if (mysql_num_rows($result) > 0) {
+    if (mysqli_num_rows($result) > 0) {
 
         $set_user_active = "UPDATE user SET active = 'Yes' WHERE email = '$email'";
 
