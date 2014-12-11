@@ -31,7 +31,7 @@ if($_GET) {
 
             $insert_user = "INSERT INTO user (email, password, active, verifier, memberSince) VALUES ('$email', '$passwordHashed', 'No', '$verifier', '$memberSince')";
 
-            mysqli_insert_id($insert_user);
+            $mysqli->insert_id;
 
             $dbConnection->executeStatement($insert_user);
 
