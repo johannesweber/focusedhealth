@@ -33,7 +33,7 @@ if($_REQUEST['email'] && $_REQUEST['verifier']) {
 
         $dbConnection->executeStatement($set_user_active);
 
-        echo "Thank you for your Registration!";
+        echo "Thank you for your Registration!. You can now use your Focused Health Account.";
     }
 
     $dbConnection->close();

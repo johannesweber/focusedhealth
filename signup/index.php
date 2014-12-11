@@ -50,7 +50,7 @@ if($_GET) {
 
                 $mail->smtpmailer($to, $from, $from_name, $subject, $message);
 
-                echo '{"success" : 1 , "active" : "No" , "error_message" : "E-Mail has been successfully sent"}';
+                echo '{"success" : 1 , "active" : "No" , "error_message" : "You are succesfully signed up. An Email has been sent to your Account. Please click the Link to activate your Account"}';
             }
         } else {
             echo '{"success": 0 ,"error_message" : "Passwords do not match."}';
