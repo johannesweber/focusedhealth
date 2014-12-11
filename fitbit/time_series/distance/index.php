@@ -37,7 +37,6 @@ $fitbit->setOAuthDetails($oauth_token, $oauth_token_secret);
 $fitbit->setResponseFormat('json');
 
 
-
 include 'insert_distance.php';
 include_once 'select_distance.php';
 
