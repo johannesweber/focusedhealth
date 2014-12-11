@@ -6,7 +6,6 @@
  * Time: 21:45
  */
 
-//TODO needs to be tested. Redirection to iPhone
 error_reporting(E_ALL);
 ini_set('display_errors', 'On');
 
@@ -27,13 +26,13 @@ if($_REQUEST['email'] && $_REQUEST['verifier']) {
 
     $result = $dbConnection->getResult();
 
-    if (mysql_num_rows($result) > 0) {
+    if (mysqli_num_rows($result) > 0) {
 
         $set_user_active = "UPDATE user SET active = 'Yes' WHERE email = '$email'";
 
         $dbConnection->executeStatement($set_user_active);
 
-        echo "Thank you for your Registration!";
+        echo "Thank you for your Registration!. You can now use your Focused Health Account.";
     }
 
     $dbConnection->close();

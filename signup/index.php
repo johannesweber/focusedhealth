@@ -7,6 +7,8 @@ ini_set('display_errors', 'On');
 
 require_once '../db_connection.php';
 
+require_once '../mail.php';
+
 if($_GET) {
     $email   = $_GET['email'];
     $password   = $_GET['password'];
@@ -22,22 +24,33 @@ if($_GET) {
 
             $passwordHashed = password_hash($password, PASSWORD_DEFAULT);
 
-            $stmt = "INSERT INTO user (email, password, active) VALUES ('$email', '$passwordHashed', 'No')";
+            $timestamp = time();
+            $memberSince = date("Y-m-d", $timestamp);
 
-            $dbConnection->executeStatement($stmt);
+            $verifier = rand(1, 999999999);
+
+            $insert_user = "INSERT INTO user (email, password, active, verifier, memberSince) VALUES ('$email', '$passwordHashed', 'No', '$verifier', '$memberSince')";
+
+            $dbConnection->executeStatement($insert_user);
 
             $result = $dbConnection->getResult();
 
-            if ($result == true) {
+            if ($result) {
 
-                //TODO sending an email needs to be tested if mail server is available
-                $senderFromMail = "weber.johanes@gmail.com";
+                $to = $email;
+                $from = "weber.johanes@gmail.com";
+                $from_name = "Team 5ive";
+                $subject = "Account Activation";
 
-                $verifier = rand(1, 999999);
+                $message  = "Please click on the following link to activate your Account \n\n";
+                $message .= "http://141.19.142.45/~johannes/focusedhealth/signup/activate_account.php?email=$email&verifier=$verifier\n\n";
+                $message .= "Thank You.";
 
-                mail($email, "Activate Your Account", "Hello, \n\n to activate your Account please click the following link :\n\n http://141.19.142.45/~johannes/focusedhealth/signup/activate_account.php?email=$email&verifier=$verifier", "FROM: $senderFromMail");
+                $mail = new Mail();
 
-                echo '{"success" : 1 , "active" : "No" , "error_message" : "E-Mail has been successfully sent to your Address. Please activate your Account with clicking the received link."}';
+                $mail->smtpmailer($to, $from, $from_name, $subject, $message);
+
+                echo '{"success" : 1 , "active" : "No" , "error_message" : "You are succesfully signed up. An Email has been sent to your Account. Please click the Link to activate your Account"}';
             }
         } else {
             echo '{"success": 0 ,"error_message" : "Passwords do not match."}';
