@@ -95,7 +95,6 @@ class WithingsPHP
 
         $this->oauth_timestamp = time();
         $this->oauth_nonce = uniqid();
-        echo $this->oauth_nonce;
 
         $method = 'GET';
 
@@ -163,7 +162,7 @@ class WithingsPHP
 
         $json = file_get_contents($url);
         $result = json_decode($json);
-        echo $result;
+        print_r($result);
     }
 
     public function getActivityMeasures() {
