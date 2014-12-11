@@ -9,7 +9,7 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 'On');
 
-require_once '../db_connection.php';
+require_once '../../db_connection.php';
 
 if($_REQUEST['email'] && $_REQUEST['verifier']) {
 
@@ -32,7 +32,7 @@ if($_REQUEST['email'] && $_REQUEST['verifier']) {
 
         $dbConnection->executeStatement($set_user_active);
 
-        echo "Thank you for your Registration!. You can now use your Focused Health Account.";
+        echo "Congratulations!. You have succesfully activated your Focused Health Account.";
     }
 
     $dbConnection->close();

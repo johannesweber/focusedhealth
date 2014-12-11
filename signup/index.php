@@ -40,17 +40,17 @@ if($_GET) {
                 $to = $email;
                 $from = "weber.johanes@gmail.com";
                 $from_name = "Team 5ive";
-                $subject = "Account Activation";
+                $subject = "Focused Health App | Account Activation";
 
-                $message  = "Please click on the following link to activate your Account \n\n";
-                $message .= "http://141.19.142.45/~johannes/focusedhealth/signup/activate_account.php?email=$email&verifier=$verifier\n\n";
+                $message  = "Please click on the following link to activate your Account: \n\n";
+                $message .= "http://141.19.142.45/~johannes/focusedhealth/signup/activate/?email=$email&verifier=$verifier\n\n";
                 $message .= "Thank You.";
 
                 $mail = new Mail();
 
                 $mail->smtpmailer($to, $from, $from_name, $subject, $message);
 
-                echo '{"success" : 1 , "active" : "No" , "error_message" : "You are succesfully signed up. An Email has been sent to your Account. Please click the Link to activate your Account"}';
+                echo '{"success" : 1 , "active" : "No" , "error_message" : "Please see your E-Mail Inbox for further Instructions"}';
             }
         } else {
             echo '{"success": 0 ,"error_message" : "Passwords do not match."}';
