@@ -8,6 +8,4 @@
 
 phpinfo();
 
-echo 'funktionirt';
-
 ?>
