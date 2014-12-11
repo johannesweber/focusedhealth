@@ -8,6 +8,6 @@
 
 phpinfo();
 
-echo ('hallo ich kapier nix');
+
 
 ?>
