@@ -6,7 +6,6 @@
  * Time: 21:45
  */
 
-//TODO needs to be tested. Redirection to iPhone
 error_reporting(E_ALL);
 ini_set('display_errors', 'On');
 
