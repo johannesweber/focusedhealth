@@ -7,7 +7,7 @@ ini_set('display_errors', 'On');
 
 require_once '../db_connection.php';
 
-//TODO change login and signup from $_GET to $_POST. Logind ans Signups needs to be tested
+//TODO change login and signup from $_GET to $_POST.
 if($_GET) {
     $email   = trim($_GET['email']);
     $password   = trim($_GET['password']);
@@ -48,6 +48,7 @@ if($_GET) {
     } else {
         echo '{"success" : 0,"error_message" : "Invalid E - Mail/Password."}';
     }
+
 }else {
     echo '{"success" : 0,"error_message" : "Invalid Data."}';
 }
