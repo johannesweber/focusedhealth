@@ -1,4 +1,5 @@
 <?php
+
 /**
  * FitbitPHP v.0.73. Basic Fitbit API wrapper for PHP using OAuth
  *
@@ -12,8 +13,6 @@
  * Requires OAuth 1.0.0, SimpleXML
  * @version 0.73 ($Id$)
  */
-
-
 class WithingsPHP
 {
 
@@ -153,7 +152,8 @@ class WithingsPHP
      * @return mixed SimpleXMLElement or the value encoded in json as an object
      */
 
-    public function getBodyMeasures() {
+    public function getBodyMeasures()
+    {
         $action = 'getmeas';
 
         $this->oauth_signature = $this->getSignature($action);
@@ -165,7 +165,8 @@ class WithingsPHP
         print_r($result);
     }
 
-    public function getActivityMeasures() {
+    public function getActivityMeasures()
+    {
         $action = 'getactivity';
 
         $this->oauth_signature = $this->getSignature($action);
@@ -177,7 +178,8 @@ class WithingsPHP
         print_r($result);
     }
 
-    public function getIntradayActivity() {
+    public function getIntradayActivity()
+    {
         $action = 'getintradayactivity';
 
         $this->oauth_signature = $this->getSignature($action);
@@ -189,7 +191,8 @@ class WithingsPHP
         print_r($result);
     }
 
-    public function getSleepMeasure() {
+    public function getSleepMeasure()
+    {
         $action = 'get';
 
         $this->oauth_signature = $this->getSignature($action);
@@ -201,7 +204,8 @@ class WithingsPHP
         print_r($result);
     }
 
-    public function getSleepSummary() {
+    public function getSleepSummary()
+    {
         $action = 'getsummary';
 
         $this->oauth_signature = $this->getSignature($action);
