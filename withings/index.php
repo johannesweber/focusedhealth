@@ -23,6 +23,6 @@ $withings = new WithingsPHP();
 
 $withings->setOAuthDetails($oauth_token, $oauth_token_secret, $userid);
 
-$withings->getSleepMeasure();
+$withings->getBodyMeasures();
 
 ?>

@@ -3,7 +3,7 @@
  * this class is executed when the user presses the add device button.
  * in this class we are getting the aouth token and token secret from our iPhone and store them for
  * further requests in our database.
- * afterwards we fetch all the data from the fitbit device.
+ * afterwards we fetch all the data from the withings device.
  *
  * Created by PhpStorm.
  * User: johannesweber
@@ -32,8 +32,8 @@ $oauth_token_secret = '779e3cbfb2d220e4fd236fcbb75269f28394fcfc3617f66e5f5bcf27e
 
 
 
-$fitbit = new WithingsPHP();
-$fitbit->setOAuthDetails($oauth_token, $oauth_token_secret, $userid);
+$withings = new WithingsPHP();
+$withings->setOAuthDetails($oauth_token, $oauth_token_secret, $userid);
 
 include '../id/find_company_id.php';
 include '../id/find_company_account_id.php';
