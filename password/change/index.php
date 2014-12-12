@@ -16,13 +16,15 @@ require_once '../../db_connection.php';
 $email = $_POST['email'];
 $password = $_POST['password'];
 
+$passwordHashed = password_hash($password, PASSWORD_DEFAULT);
+
 $dbConnection = new DatabaseConnection();
 
 $dbConnection->connect();
 
-$change_password = "UPDATE user VALUE password = $password WHERE email = '$email '";
+$change_password = "UPDATE user SET password = '$passwordHashed' WHERE email = '$email '";
 
-$dbConnection->executeStatement($select_user);
+$dbConnection->executeStatement($change_password);
 
 echo '{"success" : 1, "message" : "Password successfully changed"}';
 
