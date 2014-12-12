@@ -30,7 +30,7 @@ if($_POST) {
 
     if (mysqli_num_rows($result) > 0) {
 
-        $verifier = rand(1, 999999999);
+        $verifier = mt_rand();
 
         $update_user_verifier = "UPDATE user
                                  SET verifier = '$verifier'

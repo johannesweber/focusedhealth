@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Created by PhpStorm.
  * User: johannesweber
@@ -91,7 +90,7 @@ require_once '../../library/Mobile_Detect.php';
             </form>
         </section>
         <?php
-                        //TODO what i do need here
+                        //TODO what do i need here
                     }
                 } else {
 
