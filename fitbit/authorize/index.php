@@ -21,9 +21,9 @@ $db_connection = new DatabaseConnection();
 
 $db_connection->connect();
 
-echo $userId = $_GET['userId'];
-echo $oauth_token = $_GET['oauth_token'];
-echo $oauth_token_secret = $_GET['oauth_token_secret'];
+echo $userId = $_POST['userId'];
+echo $oauth_token = $_POST['oauth_token'];
+echo $oauth_token_secret = $_POST['oauth_token_secret'];
 
 $fitbit = new FitBitPHP("7c39abf127964bc984aba4020845ff11", "18c4a92f21f1458e8ac9798567d3d38c");
 $fitbit->setOAuthDetails($oauth_token, $oauth_token_secret);
@@ -39,6 +39,9 @@ include '../fetch_credentials.php';
 //start to insert
 
 include '../user_info/insert_user_info.php';
+
+
+$result = $db_connection->getResult();
 
 $db_connection->close();
 
