@@ -14,39 +14,31 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 'On');
 
-include '../../db_connection.php';
-include '../withingsphp.php';
+require_once '../../db_connection.php';
+require_once '../withingsphp.php';
 
 $db_connection = new DatabaseConnection();
 
 $db_connection->connect();
 
-/*echo $comanyAccountId = $_GET['userid'];
-echo $oauth_token = $_GET['oauth_token'];
-echo $oauth_token_secret = $_GET['oauth_token_secret'];
-*/
-
-$company_account_id = '5064852';
-$oauth_token = '7c144c3075d37c657e7f4079cf6e508517d7626c2e6c8e384065429';
-$oauth_token_secret = '779e3cbfb2d220e4fd236fcbb75269f28394fcfc3617f66e5f5bcf27e7e';
-
-// Zu Testzwecken, ohne erscheint Fehler
-$userid = 20;
+$user_id = $_POST['user_id'];
+$company_account_id = $_POST['company_account_id'];
+$oauth_token = $_POST['oauth_token'];
+$oauth_token_secret = $_POST['oauth_token_secret'];
 
 
 $withings = new WithingsPHP();
-$withings->setOAuthDetails($oauth_token, $oauth_token_secret, $userid);
+$withings->setOAuthDetails($oauth_token, $oauth_token_secret, $company_account_id);
 
-include '../id/find_company_id.php';
-include '../id/find_company_account_id.php';
+require_once '../id/find_company_id.php';
 
-include 'insert_credentials.php';
+require_once 'insert_credentials.php';
 
-include '../fetch_credentials.php';
+require_once '../fetch_credentials.php';
 
 //start to insert
 
-include '../user_info/insert_user_info.php';
+//include '../user_info/insert_user_info.php';
 
 $db_connection->close();
 

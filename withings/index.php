@@ -6,7 +6,7 @@
  * Time: 17:57
  */
 
-include 'withingsphp.php';
+require_once 'withingsphp.php';
 
 // to use in the future
 /*$oauth_token = $_GET['oauth_token'];

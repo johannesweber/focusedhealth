@@ -39,7 +39,7 @@ include '../id/find_waist_id.php';
 include '../fetch_credentials.php';
 
 $withings = new WithingsPHP();
-$withings->setOAuthDetails($oauth_token, $oauth_token_secret);
+$withings->setOAuthDetails($oauth_token, $oauth_token_secret, $userid);
 $withings->setResponseFormat('json');
 
 include 'insert_body_measurements.php';

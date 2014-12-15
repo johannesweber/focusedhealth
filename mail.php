@@ -9,7 +9,7 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 'On');
 
-require 'library/PHPMailer/PHPMailerAutoload.php';
+require_once 'library/PHPMailer/PHPMailerAutoload.php';
 
 class Mail{
 

@@ -12,6 +12,6 @@ $find_company_id_mysqli_result = $db_connection->executeStatement($find_company_
 
 $find_company_id_result = $db_connection->getResultAsArray();
 
-$company_id = $find_company_id_result['id'];
+echo $company_id = $find_company_id_result['id'];
 
 ?>
