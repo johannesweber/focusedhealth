@@ -2,15 +2,14 @@
 /**
  * Created by PhpStorm.
  * User: timonvogler
- * Date: 03.12.14
- * Time: 16:30
+ * Date: 15.12.14
+ * Time: 15:39
  */
 
-$fetch = "SELECT id FROM measurement WHERE name='FairlyActive'";
+$fetch = "SELECT id FROM measurement WHERE name='Diastolic'";
 
 $fetch_mysqli_result = $db_connection->executeStatement($fetch);
 $fetch_result = $db_connection->getResultAsArray();
 
-$fairlyActiveId = $fetch_result['id'];
-
+$diastolicId = $fetch_result['id'];
 ?>

@@ -1,16 +1,15 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: pauer
- * Date: 04.12.14
- * Time: 13:42
+ * User: timonvogler
+ * Date: 15.12.14
+ * Time: 15:29
  */
 
-$fetch = "SELECT id FROM measurement WHERE name='awakeningsCount'";
+$fetch = "SELECT id FROM measurement WHERE name='fatMass'";
 
 $fetch_mysqli_result = $db_connection->executeStatement($fetch);
 $fetch_result = $db_connection->getResultAsArray();
 
-$awakeningsCountId = $fetch_result['id'];
-
+$fatMassId = $fetch_result['id'];
 ?>

@@ -68,7 +68,7 @@ class WithingsPHP
 
 
 //das token secret muss auch an den server geschickt werden und das consumer secret
-    private function getSignature($actionParam)
+    private function getSignature($actionParam, $hasTimespan = false, $startDate = null, $endDate = null)
     {
 
         $url = '';
@@ -120,7 +120,12 @@ class WithingsPHP
 
         $encodedUserId = urlencode($this->userid);
 
-        $parameterString = 'action=' . $encodedAction . '&oauth_consumer_key=' . $encodedConsumerKey . '&oauth_nonce=' . $encodedNonce . '&oauth_signature_method=' . $encodedSignatureMethod . '&oauth_timestamp=' . $encodedTimestamp . '&oauth_token=' . $encodedToken . '&oauth_version=' . $encodedVersion . '&userid=' . $encodedUserId;
+        if($hasTimespan == false){
+            $parameterString = 'action=' . $encodedAction . '&oauth_consumer_key=' . $encodedConsumerKey . '&oauth_nonce=' . $encodedNonce . '&oauth_signature_method=' . $encodedSignatureMethod . '&oauth_timestamp=' . $encodedTimestamp . '&oauth_token=' . $encodedToken . '&oauth_version=' . $encodedVersion . '&userid=' . $encodedUserId;
+        }else{
+            $parameterString = 'action=' . $encodedAction . "&enddate=" . $endDate . '&oauth_consumer_key=' . $encodedConsumerKey . '&oauth_nonce=' . $encodedNonce . '&oauth_signature_method=' . $encodedSignatureMethod . '&oauth_timestamp=' . $encodedTimestamp . '&oauth_token=' . $encodedToken . '&oauth_version=' . $encodedVersion . "&startdate=" . $startDate . '&userid=' . $encodedUserId;
+
+        }
 
         $encodedParameterString = urlencode($parameterString);
 
@@ -162,8 +167,25 @@ class WithingsPHP
 
         $json = file_get_contents($url);
         $result = json_decode($json);
-        print_r($result);
+        //print_r($result);
+        return $result;
     }
+
+
+    public function getBodyMeasuresTimeRange($startDate, $endDate)
+    {
+        $action = 'getmeas';
+
+        $this->oauth_signature = $this->getSignature($action, true, $startDate, $endDate);
+
+        $url = $this->bodyMeasuresURL . "?action=" . $action . "&enddate=" . $endDate . "&oauth_consumer_key=" . $this->oauth_consumer_key . "&oauth_nonce=" . $this->oauth_nonce . "&oauth_signature=" . $this->oauth_signature . "&oauth_signature_method=" . $this->oauth_signature_method . "&oauth_timestamp=" . $this->oauth_timestamp . "&oauth_token=" . $this->oauth_token . "&oauth_version=" . $this->oauth_version . "&startdate=" . $startDate . "&userid=" . $this->userid;
+
+        $json = file_get_contents($url);
+        $result = json_decode($json);
+        print_r($result);
+        return $result;
+    }
+
 
     public function getActivityMeasures()
     {
@@ -176,6 +198,7 @@ class WithingsPHP
         $json = file_get_contents($url);
         $result = json_decode($json);
         print_r($result);
+        return $result;
     }
 
     public function getIntradayActivity()
@@ -189,19 +212,21 @@ class WithingsPHP
         $json = file_get_contents($url);
         $result = json_decode($json);
         print_r($result);
+        return $result;
     }
 
-    public function getSleepMeasure()
+    public function getSleepMeasure($startDate, $endDate)
     {
         $action = 'get';
 
-        $this->oauth_signature = $this->getSignature($action);
+        $this->oauth_signature = $this->getSignature($action, true, $startDate, $endDate);
 
-        $url = $this->sleepMeasuresURL . "?action=" . $action . "&oauth_consumer_key=" . $this->oauth_consumer_key . "&oauth_nonce=" . $this->oauth_nonce . "&oauth_signature=" . $this->oauth_signature . "&oauth_signature_method=" . $this->oauth_signature_method . "&oauth_timestamp=" . $this->oauth_timestamp . "&oauth_token=" . $this->oauth_token . "&oauth_version=" . $this->oauth_version . "&userid=" . $this->userid;
+        $url = $this->sleepMeasuresURL . "?action=" . $action . "&enddate=" . $endDate . "&oauth_consumer_key=" . $this->oauth_consumer_key . "&oauth_nonce=" . $this->oauth_nonce . "&oauth_signature=" . $this->oauth_signature . "&oauth_signature_method=" . $this->oauth_signature_method . "&oauth_timestamp=" . $this->oauth_timestamp . "&oauth_token=" . $this->oauth_token . "&oauth_version=" . $this->oauth_version . "&startdate=" . $startDate . "&userid=" . $this->userid;
 
         $json = file_get_contents($url);
         $result = json_decode($json);
         print_r($result);
+        return $result;
     }
 
     public function getSleepSummary()
@@ -215,5 +240,6 @@ class WithingsPHP
         $json = file_get_contents($url);
         $result = json_decode($json);
         print_r($result);
+        return $result;
     }
 }
