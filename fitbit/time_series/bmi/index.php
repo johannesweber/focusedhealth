@@ -22,6 +22,7 @@ $db_connection = new DatabaseConnection();
 $db_connection->connect();
 
 $userId = $_GET["userId"];
+$period = $_GET["period"];
 
 // to used in insert
 include '../../id/find_company_id.php';

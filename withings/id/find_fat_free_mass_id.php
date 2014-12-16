@@ -6,7 +6,7 @@
  * Time: 15:27
  */
 
-$fetch = "SELECT id FROM measurement WHERE name='fatFreeMass'";
+$fetch = "SELECT id FROM measurement WHERE name='Fat Free Mass'";
 
 $fetch_mysqli_result = $db_connection->executeStatement($fetch);
 $fetch_result = $db_connection->getResultAsArray();

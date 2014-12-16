@@ -6,7 +6,7 @@
  * Time: 16:28
  */
 
-$fetch = "SELECT id FROM measurement WHERE name='LightlyActive'";
+$fetch = "SELECT id FROM measurement WHERE name='Lightly Active'";
 
 $fetch_mysqli_result = $db_connection->executeStatement($fetch);
 $fetch_result = $db_connection->getResultAsArray();

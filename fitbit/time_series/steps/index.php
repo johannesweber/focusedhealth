@@ -20,6 +20,9 @@ $db_connection = new DatabaseConnection();
 $db_connection->connect();
 
 $userId = $_GET["userId"];
+$selectDate = $_GET["endDate"];
+$selectLimit = $_GET["limit"];
+
 
 // to used in insert
 include '../../id/find_company_id.php';
@@ -34,7 +37,10 @@ $fitbit = new FitBitPHP("7c39abf127964bc984aba4020845ff11", "18c4a92f21f1458e8ac
 $fitbit->setOAuthDetails($oauth_token, $oauth_token_secret);
 $fitbit->setResponseFormat('json');
 
-include 'insert_steps.php';
+require_once '../../id/find_member_since.php';
+//include 'insert_steps.php';
+
+
 
 include_once 'select_steps.php';
 

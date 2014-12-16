@@ -6,17 +6,18 @@
  * Time: 18:00
  */
 
+/*
 $timeStamp = time();
 $date = date("Y-m-d", $timeStamp);
 
 $limit = '30';
-
+*/
 
 $fetch = "SELECT value, date
 FROM value
-WHERE value.user_id='$userId' AND value.measurement_id = '$stepsId' AND date <= '$date'
+WHERE value.user_id='$userId' AND value.measurement_id = '$stepsId' AND date <= '$selectDate'
 ORDER BY date DESC
-LIMIT $limit";
+LIMIT $selectLimit";
 
 $db_connection->executeStatement($fetch);
 $result = $db_connection->getResultAsJSON();

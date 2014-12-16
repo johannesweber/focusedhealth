@@ -22,16 +22,31 @@ $db_connection = new DatabaseConnection();
 
 $db_connection->connect();
 
+$userId = $_GET["userId"];
+
+
+// to used in insert
+include '../id/find_company_id.php';
+include '../id/find_steps_id.php';
+
+
 include '../fetch_credentials.php';
 
 $fitbit = new FitBitPHP("7c39abf127964bc984aba4020845ff11", "18c4a92f21f1458e8ac9798567d3d38c");
 $fitbit->setOAuthDetails($oauth_token, $oauth_token_secret);
 $fitbit->setResponseFormat('json');
 
-include '../user_info/insert/insert_user_info.php';
-
-//include '../water_goal/insert/insert_water_goal.php';
+require_once '../id/find_member_since.php';
+include 'insert_steps.php';
 
 $db_connection->close();
+
+
+
+
+
+
+
+
 
 ?>
