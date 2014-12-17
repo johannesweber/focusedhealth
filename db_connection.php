@@ -92,6 +92,19 @@ class DatabaseConnection
         echo $this->getResultAsJSON();
 
     }
+
+    //return number of rows
+    public function checkIfvalueExists($userId, $measurementId, $companyId, $date) {
+
+        $this->connect();
+
+        $statement = "SELECT * FROM value WHERE user_id='$userId' AND measurement_id='$measurementId' AND company_id='$companyId' AND date= '$date' ";
+
+        $result = $this->executeStatement($statement);
+
+        echo $rowCount = $result->num_rows;
+    }
+
 }
 
 ?>

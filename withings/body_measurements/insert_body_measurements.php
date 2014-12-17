@@ -66,16 +66,27 @@ for ($i = 0; $i< sizeof($valueArray); $i++ ) {
     // get the measurement id from focused health
    echo "measureID:" . $measurementId = $meastypeWithings[$type];
 
+
+
+
+
+
     //if category is a real measurement
     if ($category == 1) {
 
-        echo "###in categroy 1###";
+        //measurement was not inserted for today
+        if ($rowCount == 0) {
+
+
         //SQL Statement to insert data into value table
         $insert = "INSERT INTO value (user_id, measurement_id, company_id, value, date)
          VALUES ('$user_id', '$measurementId', '$company_id', '$value','$date')";
 
 
         $db_connection->executeStatement($insert);
+        } else {
+            //update
+        }
 
         // if category is a goal
     } else if($category == 2) {
