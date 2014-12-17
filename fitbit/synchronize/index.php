@@ -27,8 +27,8 @@ $userId = $_GET["userId"];
 
 // to used in insert
 include '../id/find_company_id.php';
-include '../id/find_steps_id.php';
-
+//include '../id/find_steps_id.php';
+ include '../../id/find_id.php';
 
 include '../fetch_credentials.php';
 
