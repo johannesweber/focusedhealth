@@ -9,7 +9,7 @@
 
 $response = $fitbit->getTimeSeries("minutesVeryActive", "today", "7d");
 print_r($response);
-
+$veryActiveId = getMeasurementId("veryActive", $db_connection);
 
 $arrayLength = $response;
 $arrayLength = sizeof($arrayLength);

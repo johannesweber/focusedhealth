@@ -9,7 +9,7 @@
 
 $response = $fitbit->getTimeSeries("startTime", "today", "7d");
 print_r($response);
-
+$sleepStartTimeId = getMeasurementId("sleepStartTime", $db_connection);
 
 $arrayLength = $response;
 $arrayLength = sizeof($arrayLength);

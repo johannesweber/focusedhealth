@@ -9,13 +9,13 @@
 
 
 include '../../id/find_company_id.php';
-include '../../id/find_calories_bmr_id.php';
+
 
 
 
 $response = $fitbit->getTimeSeries("caloriesBMR","today","7d");//achtung geht nicht
 print_r($response);
-
+$caloriesBMRId = getMeasurementId("caloriesBMR", $db_connection);
 
 
 

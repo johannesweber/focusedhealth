@@ -8,7 +8,7 @@
 
 
 $response = $fitbit->getTimeSeries("fat", "today", "7d");
-
+$fatId = getMeasurementId("bodyFat", $db_connection);
 
 $arrayLenght = $response;
 $arrayLenght = sizeof($arrayLenght);

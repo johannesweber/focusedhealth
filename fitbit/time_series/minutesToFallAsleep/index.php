@@ -20,7 +20,7 @@ $userId = $_GET["userId"];
 
 // to used in insert
 include '../../id/find_company_id.php';
-include '../../id/find_minutes_to_fall_asleep_id.php';
+
 
 include '../../fetch_credentials.php';
 

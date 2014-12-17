@@ -9,7 +9,7 @@
 
 $response = $fitbit->getTimeSeries("distance", "today", "7d");
 print_r($response);
-
+$distanceId = getMeasurementId("distance", $db_connection);
 
 $arrayLenght = $response;
 $arrayLenght = sizeof($arrayLenght);

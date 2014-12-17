@@ -8,7 +8,7 @@
 
 
 $response = $fitbit->getTimeSeries("elevation", "today", "7d");
-
+$elevationId = getMeasurementId("elevation", $db_connection);
 
 $arrayLenght = $response;
 $arrayLenght = sizeof($arrayLenght);

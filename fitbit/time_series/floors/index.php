@@ -25,7 +25,6 @@ $userId = $_GET["userId"];
 
 // to used in insert
 include '../../id/find_company_id.php';
-include '../../id/find_floors_id.php';
 
 // to used in select
 include '../../id/find_floors_id.php';

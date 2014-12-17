@@ -9,6 +9,8 @@
 
 $response = $fitbit->getTimeSeries("water", "today", "7d");
 
+$waterId = getMeasurementId("water", $db_connection);
+
 $arrayLenght = $response;
 $arrayLenght = sizeof($arrayLenght);
 

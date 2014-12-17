@@ -11,6 +11,9 @@ $date = date("Y-m-d", $timestamp);
 
 $response = $fitbit->getFoodGoal();
 
+$caloriesId = getMeasurementId("calories", $db_connection);
+$periodDailyId = getMeasurementId("daily", $db_connection);
+
 $foodGoal = $response->goals->calories;
 
 

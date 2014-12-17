@@ -23,7 +23,7 @@ $userId = $_GET["userId"];
 
 // to used in inser
 include '../../id/find_company_id.php';
-include '../../id/find_fairly_active_id.php';
+
 
 include '../../fetch_credentials.php';
 

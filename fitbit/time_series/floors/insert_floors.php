@@ -8,7 +8,7 @@
 
 
 $response = $fitbit->getTimeSeries("floors", "today", "7d");
-
+$floorsId = getMeasurementId("floors", $db_connection);
 
 $arrayLenght = $response;
 $arrayLenght = sizeof($arrayLenght);
