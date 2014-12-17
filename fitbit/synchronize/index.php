@@ -43,11 +43,4 @@ include 'insert_steps.php';
 $db_connection->close();
 
 
-
-
-
-
-
-
-
 ?>

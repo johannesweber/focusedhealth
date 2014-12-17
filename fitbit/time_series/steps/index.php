@@ -26,7 +26,7 @@ $selectLimit = $_GET["limit"];
 
 // to used in insert
 include '../../id/find_company_id.php';
-//include '../../id/find_steps_id.php';
+
 
 include '../../fetch_credentials.php';
 
@@ -35,9 +35,7 @@ $fitbit->setOAuthDetails($oauth_token, $oauth_token_secret);
 $fitbit->setResponseFormat('json');
 
 require_once '../../id/find_member_since.php';
-//include 'insert_steps.php';
-
-
+require_once '../../../id/find_id.php';
 
 include_once 'select_steps.php';
 

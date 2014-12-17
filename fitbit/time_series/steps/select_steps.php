@@ -13,6 +13,8 @@ $date = date("Y-m-d", $timeStamp);
 $limit = '30';
 */
 
+$stepsId = getMeasurementId("steps", $db_connection);
+
 $fetch = "SELECT value, date
 FROM value
 WHERE value.user_id='$userId' AND value.measurement_id = '$stepsId' AND date <= '$selectDate'
