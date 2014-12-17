@@ -11,6 +11,18 @@ $date = date("Y-m-d", $timestamp);
 
 $response = $fitbit->getBody($date);
 
+
+
+$bicepId = getMeasurementId("bicep", $db_connection);
+$calfId = getMeasurementId("calf", $db_connection);
+$chestId = getMeasurementId("chest", $db_connection);
+$forearmId = getMeasurementId("forearm", $db_connection);
+$hipsId = getMeasurementId("hips", $db_connection);
+$neckId = getMeasurementId("neck", $db_connection);
+$thighId = getMeasurementId("thigh", $db_connection);
+$waistId = getMeasurementId("waist", $db_connection);
+
+
 $bicep = $response->body->bicep;
 //$bmi = $response->body->bmi;
 $calf = $response->body->calf;
@@ -22,6 +34,8 @@ $neck = $response->body->neck;
 $thigh = $response->body->thigh;
 $waist = $response->body->waist;
 //$weight = $response->body->weight;
+
+
 
 
 $measurementIdArray = array($bicepId, $calfId, $chestId, $forearmId, $hipsId, $neckId, $thighId, $waistId);

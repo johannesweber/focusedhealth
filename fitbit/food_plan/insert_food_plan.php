@@ -10,7 +10,12 @@
 $timestamp = time();
 $date = date("Y-m-d", $timestamp);
 
+$caloriesId = getMeasurementId("calories", $db_connection);
+$periodDailyId = getMeasurementId("daily", $db_connection);
+
 $response = $fitbit->getFoodGoal();
+
+
 
 $calories = $response->goals->calories;
 

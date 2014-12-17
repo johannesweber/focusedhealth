@@ -18,7 +18,6 @@ $db_connection = new DatabaseConnection();
 
 $db_connection->connect();
 
-
 include '../../../id/find_time_in_bed_id.php';
 include '../../../id/find_minutes_a_sleep_id.php';
 include '../../../id/find_awakenings_count_id.php';

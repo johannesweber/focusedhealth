@@ -23,13 +23,7 @@ $db_connection->connect();
 $userId = $_GET["userId"];
 
 // icluding all files which are necessary to get the measurement ids
-// is used in insert
-include '../id/find_company_id.php';
-include '../id/find_distance_id.php';
-include '../id/find_active_minutes_id.php';
-include '../id/find_calories_out_id.php';
-include '../id/find_steps_id.php';
-include '../id/find_period_daily_id.php';
+
 
 // is used in select
 include '../id/find_period_daily_id.php';

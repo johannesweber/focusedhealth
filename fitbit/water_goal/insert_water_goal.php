@@ -16,11 +16,12 @@ $date=date("Y-m-d", $timestamp);
 $response = $fitbit->getWaterGoal();
 $waterGoal = $response->goal->goal;
 
+$waterId = getMeasurementId("water", $db_connection);
+$periodDailyId = getMeasurementId("daily", $db_connection);
 
 
-include '../id/find_water_id.php';
 include '../id/find_company_id.php';
-include '../id/find_period_daily_id.php';
+
 
 
 $select_water_goal = "SELECT * FROM goal WHERE user_id='$userId' AND measurement_id='$waterId' AND company_id='$company_id'";

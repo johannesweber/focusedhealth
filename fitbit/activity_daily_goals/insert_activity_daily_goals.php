@@ -10,6 +10,13 @@
 //Request for activity daily goals
 $response = $fitbit->getActivityDailyGoals();
 
+
+$distanceId = getMeasurementId("distance", $db_connection);
+$activeMinutesId = getMeasurementId("activeMinutes", $db_connection);
+$caloriesOutId = getMeasurementId("caloriesOut", $db_connection);
+$stepsId = getMeasurementId("steps", $db_connection);
+$periodDailyId = getMeasurementId("daily", $db_connection);
+
 //access data of response
 $activeMinutes = $response->goals->activeMinutes;
 $caloriesOut = $response->goals->caloriesOut;

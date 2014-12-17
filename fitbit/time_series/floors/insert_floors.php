@@ -8,7 +8,9 @@
 
 
 $response = $fitbit->getTimeSeries("floors", "today", "7d");
+$floorsId = getMeasurementId("floors", $db_connection);
 
+$error = true;
 
 $arrayLenght = $response;
 $arrayLenght = sizeof($arrayLenght);
@@ -25,6 +27,10 @@ for ($x = 0; $x < $arrayLenght; $x++) {
     //SQL Statement to
     $select = "SELECT * FROM value WHERE user_id='$userId' AND measurement_id='$floorsId' AND company_id='$company_id' AND date= '$date' ";
     $result = $db_connection->executeStatement($select);
+
+    if (!$result) {
+        $error = false;
+    }
     $rowCount = $result->num_rows;
 
 //weight was not inserted today
@@ -32,10 +38,13 @@ for ($x = 0; $x < $arrayLenght; $x++) {
 
 
 //SQL Statement to insert data into value table
-        $insert_bmi = "INSERT INTO value (user_id, measurement_id, company_id, value, date)
+        $insert = "INSERT INTO value (user_id, measurement_id, company_id, value, date)
         VALUES ('$userId', '$floorsId', '$company_id', '$floors','$date')";
 
-        $db_connection->executeStatement($insert_bmi);
+        $result = $db_connection->executeStatement($insert);
+        if (!$result) {
+            $error = false;
+        }
 
 
     } else {
@@ -43,11 +52,19 @@ for ($x = 0; $x < $arrayLenght; $x++) {
         $update_weight = "UPDATE value set value = '$floors'
                                      WHERE user_id='$userId' AND measurement_id='$floorsId' AND company_id='$company_id' AND date = '$datum'";
 
-        $db_connection->executeStatement($update_weight);
-
+        $result = $db_connection->executeStatement($update_weight);
+        if (!$result) {
+            $error = false;
+        }
 
     }
 
+}
+
+if (!$error) {
+    echo '{"success" : "-1", "message" : "steps statement was not successfull"}';
+} else {
+    echo '{"success" : "1", "message" : "steps statement was successfull"}';
 }
 
 ?>

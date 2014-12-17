@@ -20,29 +20,24 @@ $db_connection = new DatabaseConnection();
 $db_connection->connect();
 
 $userId = $_GET["userId"];
-$selectDate = $_GET["endDate"];
-$selectLimit = $_GET["limit"];
-
+$date = $_GET["endDate"];
+$limit = $_GET["limit"];
+$measurement = $_GET["measurement"];
 
 // to used in insert
-include '../../id/find_company_id.php';
-include '../../id/find_steps_id.php';
-
-// to used in select
-include '../../id/find_steps_id.php';
-
-include '../../fetch_credentials.php';
+require_once '../../id/find_company_id.php';
+require_once '../../fetch_credentials.php';
 
 $fitbit = new FitBitPHP("7c39abf127964bc984aba4020845ff11", "18c4a92f21f1458e8ac9798567d3d38c");
 $fitbit->setOAuthDetails($oauth_token, $oauth_token_secret);
 $fitbit->setResponseFormat('json');
 
 require_once '../../id/find_member_since.php';
-//include 'insert_steps.php';
+require_once '../../../id/find_id.php';
 
+$measurementId = getMeasurementId($measurement, $db_connection);
 
-
-include_once 'select_steps.php';
+$db_connection->selectValueFromDatabase($measurementId, $userId, $date, $limit);
 
 $db_connection->close();
 
