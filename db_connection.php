@@ -96,7 +96,21 @@ class DatabaseConnection
     }
 
 
+    /*
+    * function to
+    */
+    public function getCompanyAccountIdAndMemberSinceFromCompanyAccountInfo($userId, $company_id)
+    {
+        $this->connect();
 
+        $fetch = "SELECT * FROM company_account_info WHERE user_id ='$userId' and company_id = '$company_id'";
+
+        $this->executeStatement($fetch);
+        $result = $this->getResultAsArray();
+        $companyAccountId = $result['company_account_id'];
+        $memberSince = $result['memberSince'];
+        return $companyAccountId;
+    }
 
     public function selectValueFromDatabase($measurementId, $userId, $date, $limit)
     {

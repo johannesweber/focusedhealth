@@ -36,6 +36,8 @@ $fitbit->setResponseFormat('json');
 
 $measurementId = $db_connection->getMeasurementId($measurement);
 
+$companyAccountInfo = $db_connection->getCompanyAccountIdAndMemberSinceFromCompanyAccountInfo($userId, $company_id);
+
 $db_connection->selectValueFromDatabase($measurementId, $userId, $date, $limit);
 
 $db_connection->close();
