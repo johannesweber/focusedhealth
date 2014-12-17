@@ -91,8 +91,12 @@ class DatabaseConnection
 
         $this->executeStatement($fetch);
 
-        echo $this->getResultAsJSON();
+       $result = $this->getResultAsJSON();
+       $result = $result ['id'];
+       echo $result;
     }
+
+
 
 
     public function selectValueFromDatabase($measurementId, $userId, $date, $limit)
