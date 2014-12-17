@@ -32,9 +32,9 @@ $fitbit = new FitBitPHP("7c39abf127964bc984aba4020845ff11", "18c4a92f21f1458e8ac
 $fitbit->setOAuthDetails($oauth_token, $oauth_token_secret);
 $fitbit->setResponseFormat('json');
 
-require_once '../../id/find_id.php';
+// require_once '../../id/find_id.php';
 
-$measurementId = getMeasurementId($measurement, $db_connection);
+$measurementId = $db_connection->getMeasurementId($measurement);
 
 $db_connection->selectValueFromDatabase($measurementId, $userId, $date, $limit);
 

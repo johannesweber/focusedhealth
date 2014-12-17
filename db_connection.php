@@ -80,6 +80,21 @@ class DatabaseConnection
         return json_encode($data);
     }
 
+    /*
+     * function to find the measurment Id's by name
+     */
+    public function getMeasurementId($measurementName)
+    {
+        $this->connect();
+
+        $fetch = "SELECT id FROM measurement WHERE name='$measurementName'";
+
+        $this->executeStatement($fetch);
+
+        echo $this->getResultAsJSON();
+    }
+
+
     public function selectValueFromDatabase($measurementId, $userId, $date, $limit)
     {
 
@@ -89,12 +104,13 @@ class DatabaseConnection
 
         $this->executeStatement($statement);
 
-        echo $this->getResultAsJSON();
+        echo $this->getResultAsArray();
 
     }
 
     //return number of rows
-    public function checkIfvalueExists($userId, $measurementId, $companyId, $date) {
+    public function checkIfvalueExists($userId, $measurementId, $companyId, $date)
+    {
 
         $this->connect();
 
@@ -104,6 +120,7 @@ class DatabaseConnection
 
         echo $rowCount = $result->num_rows;
     }
+
 
 }
 
