@@ -6,25 +6,12 @@
  * Time: 18:00
  */
 
-/*
-$timeStamp = time();
-$date = date("Y-m-d", $timeStamp);
 
-$limit = '30';
-*/
+$measurementId = getMeasurementId($measurement, $db_connection);
 
-$stepsId = getMeasurementId("steps", $db_connection);
 
-$fetch = "SELECT value, date
-FROM value
-WHERE value.user_id='$userId' AND value.measurement_id = '$stepsId' AND date <= '$selectDate'
-ORDER BY date DESC
-LIMIT $selectLimit";
+$db_connection->selectValueFromDatabase($stepsId, $userId, $date, $limit);
 
-$db_connection->executeStatement($fetch);
-$result = $db_connection->getResultAsJSON();
-
-echo($result);
 
 ?>
 
