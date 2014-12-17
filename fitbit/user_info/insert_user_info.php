@@ -2,6 +2,8 @@
 
 $response = $fitbit->getProfile();
 
+$error = true;
+
 $avatar = $response->user->avatar;
 $city = $response->user->city;
 $country = $response->user->country;
@@ -26,18 +28,31 @@ $rowCount = $result->num_rows;
 if ($rowCount == 0) {
 
 //SQL Statement to insert data into user info table
-$insert_company_account_info = "INSERT INTO company_account_info (user_id, company_id, company_account_id, avatar, city, country, dateOfBirth, distanceUnit, fullName, gender, glucoseUnit, height, heightUnit, locale, memberSince, waterUnit, weightUnit, timezone)
+    $insert = "INSERT INTO company_account_info (user_id, company_id, company_account_id, avatar, city, country, dateOfBirth, distanceUnit, fullName, gender, glucoseUnit, height, heightUnit, locale, memberSince, waterUnit, weightUnit, timezone)
     VALUES ('$userId', '$company_id', '$encodedId', '$avatar', '$city', '$country', '$dateOfBirth', '$distanceUnit', '$fullName', '$gender', '$glucoseUnit', '$height', '$heightUnit', '$locale', '$memberSince', '$waterUnit', '$weightUnit', '$timezone')";
 
-$db_connection->executeStatement($insert_company_account_info);
+    $result = $db_connection->executeStatement($insert);
+    if (!$result) {
+        $error = false;
+    }
 
 } else {
 
     $update = "UPDATE company_account_info set company_account_id='$encodedId', avatar='$avatar', city='$city', country='$country', dateOfBirth='$dateOfBirth', distanceUnit='$distanceUnit',
 fullName='$fullName', gender='$gender', glucoseUnit='$glucoseUnit', height='$height', heightUnit='$heightUnit', locale='$locale', memberSince='$memberSince', waterUnit='$waterUnit', weightUnit='$weightUnit', timezone='$timezone'
 WHERE user_id='$userId'  AND company_id ='$company_id'";
-    $db_connection->executeStatement($update);
+    $result = $db_connection->executeStatement($update);
+    if (!$result) {
+        $error = false;
+    }
 
+
+}
+
+if (!$error) {
+    echo '{"success" : "-1", "message" : "steps statement was not successfull"}';
+} else {
+    echo '{"success" : "1", "message" : "steps statement was successfull"}';
 }
 
 ?>

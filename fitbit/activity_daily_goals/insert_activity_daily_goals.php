@@ -10,6 +10,7 @@
 //Request for activity daily goals
 $response = $fitbit->getActivityDailyGoals();
 
+$error = true;
 
 $distanceId = getMeasurementId("distance", $db_connection);
 $activeMinutesId = getMeasurementId("activeMinutes", $db_connection);
@@ -22,7 +23,6 @@ $activeMinutes = $response->goals->activeMinutes;
 $caloriesOut = $response->goals->caloriesOut;
 $distance = $response->goals->distance;
 $steps = $response->goals->steps;
-
 
 
 // Array for the different measurement ids
@@ -45,8 +45,12 @@ for ($id = 0; $id < sizeof($idArray); $id++) {
 
 
 //SQL Statement to check if this data set already exists
-    $select_activity_daily_goals = "SELECT * FROM goal WHERE user_id='$userId' AND measurement_id='$ID' AND company_id='$company_id' AND period= '$periodDailyId'";
-    $result = $db_connection->executeStatement($select_activity_daily_goals);
+    $select = "SELECT * FROM goal WHERE user_id='$userId' AND measurement_id='$ID' AND company_id='$company_id' AND period= '$periodDailyId'";
+    $result = $db_connection->executeStatement($select);
+
+    if (!$result) {
+        $error = false;
+    }
     $rowCount = $result->num_rows;
 
 
@@ -54,15 +58,32 @@ for ($id = 0; $id < sizeof($idArray); $id++) {
     if ($rowCount == 0) {
         $insert_activity_daily_goals = "INSERT INTO goal (goal_value, startdate, enddate, period, user_id, measurement_id, company_id)
          VALUES ('$wert', Null, Null, '$periodDailyId', '$userId', '$ID', '$company_id')";
-        $db_connection->executeStatement($insert_activity_daily_goals);
+
+        $result = $db_connection->executeStatement($insert_activity_daily_goals);
+
+        if (!$result) {
+            $error = false;
+        }
     } else {
         //SQL Statement to update data
-        $update_activity_daily_goals = "UPDATE goal set goal_value='$wert', startdate=NULL, enddate=NULL, period='$periodDailyId',
+        $update = "UPDATE goal set goal_value='$wert', startdate=NULL, enddate=NULL, period='$periodDailyId',
                                     user_id='$userId', measurement_id='$ID', company_id='$company_id'
                                      WHERE user_id='$userId' AND measurement_id='$ID' AND company_id='$company_id' AND period='$periodDailyId'";
 
-        $db_connection->executeStatement($update_activity_daily_goals);
+        $result = $db_connection->executeStatement($update);
+
+        if (!$result) {
+            $error = false;
+        }
+
     }
+
+}
+
+if (!$error) {
+    echo '{"success" : "-1", "message" : "steps statement was not successfull"}';
+} else {
+    echo '{"success" : "1", "message" : "steps statement was successfull"}';
 }
 
 ?>

@@ -8,7 +8,9 @@
 
 
 $response = $fitbit->getActivityWeeklyGoals();
+
 $error = true;
+
 $periodWeeklyId = getMeasurementId("weekly", $db_connection);
 $distanceId = getMeasurementId("distance", $db_connection);
 $stepsId = getMeasurementId("steps", $db_connection);
@@ -32,15 +34,25 @@ for ($id = 0; $id < sizeof($idArray); $id++) {
     $wert = $werteArray[$id];
 
 //SQL Statement to check if this data set already exists
-    $select_activity_daily_goals = "SELECT * FROM goal WHERE user_id='$userId' AND measurement_id='$ID' AND company_id='$company_id' AND period= '$periodWeeklyId'";
-    $result = $db_connection->executeStatement($select_activity_daily_goals);
+    $select = "SELECT * FROM goal WHERE user_id='$userId' AND measurement_id='$ID' AND company_id='$company_id' AND period= '$periodWeeklyId'";
+    $result = $db_connection->executeStatement($select);
+
+    if (!$result) {
+        $error = false;
+    }
+
     $rowCount = $result->num_rows;
 
     //weekly goal is not inserted yet
     if ($rowCount == 0) {
-        $insert_activity_daily_goals = "INSERT INTO goal (goal_value, startdate, enddate, period, user_id, measurement_id, company_id)
+        $insert = "INSERT INTO goal (goal_value, startdate, enddate, period, user_id, measurement_id, company_id)
          VALUES ('$wert', Null, Null, '$periodWeeklyId', '$userId', '$ID', '$company_id')";
-        $db_connection->executeStatement($insert_activity_daily_goals);
+
+        $result = $db_connection->executeStatement($insert);
+
+        if (!$result) {
+            $error = false;
+        }
 
         //weekly goal was already inserted
     } else {
@@ -48,8 +60,20 @@ for ($id = 0; $id < sizeof($idArray); $id++) {
                                     user_id='$userId', measurement_id='$ID', company_id='$company_id'
                                      WHERE user_id='$userId' AND measurement_id='$ID' AND company_id='$company_id' AND period='$periodWeeklyId'";
 
-        $db_connection->executeStatement($update_activity_daily_goals);
+        $result = $db_connection->executeStatement($update_activity_daily_goals);
+
+        if (!$result) {
+            $error = false;
+        }
+
     }
+
+}
+
+if (!$error) {
+    echo '{"success" : "-1", "message" : "steps statement was not successfull"}';
+} else {
+    echo '{"success" : "1", "message" : "steps statement was successfull"}';
 }
 
 

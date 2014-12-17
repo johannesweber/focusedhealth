@@ -11,6 +11,8 @@ $response = $fitbit->getTimeSeries("timeInBed", "today", "7d");
 //print_r($response);
 $timeInBedId = getMeasurementId("timeInBed", $db_connection);
 
+$error = true;
+
 $arrayLength = $response;
 $arrayLength = sizeof($arrayLength);
 
@@ -25,6 +27,11 @@ for ($x = 0; $x < $arrayLength; $x++) {
 
     $select = "SELECT * FROM value WHERE user_id='$userId' AND measurement_id='$timeInBedId' AND company_id='$company_id' AND date= '$date' ";
     $result = $db_connection->executeStatement($select);
+
+    if (!$result) {
+        $error = false;
+    }
+
     $rowCount = $result->num_rows;
 
 //time in bed was not inserted today
@@ -35,7 +42,11 @@ for ($x = 0; $x < $arrayLength; $x++) {
         $insert = "INSERT INTO value (user_id, measurement_id, company_id, value, date)
         VALUES ('$userId', '$timeInBedId', '$company_id', '$timeInBed','$date')";
 
-        $db_connection->executeStatement($insert);
+        $result = $db_connection->executeStatement($insert);
+
+        if (!$result) {
+            $error = false;
+        }
 
 
     } else {
@@ -43,10 +54,22 @@ for ($x = 0; $x < $arrayLength; $x++) {
         $update = "UPDATE value SET value = '$timeInBed'
                                      WHERE user_id='$userId' AND measurement_id='$timeInBedId' AND company_id='$company_id' AND date = '$date'";
 
-        $db_connection->executeStatement($update);
+        $result = $db_connection->executeStatement($update);
+
+        if (!$result) {
+            $error = false;
+        }
 
     }
 
 }
+
+if (!$error) {
+    echo '{"success" : "-1", "message" : "steps statement was not successfull"}';
+} else {
+    echo '{"success" : "1", "message" : "steps statement was successfull"}';
+}
+
+
 
 ?>

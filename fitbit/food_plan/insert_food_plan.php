@@ -10,11 +10,12 @@
 $timestamp = time();
 $date = date("Y-m-d", $timestamp);
 
+$error = true;
+
 $caloriesId = getMeasurementId("calories", $db_connection);
 $periodDailyId = getMeasurementId("daily", $db_connection);
 
 $response = $fitbit->getFoodGoal();
-
 
 
 $calories = $response->goals->calories;
@@ -26,8 +27,13 @@ $intensity = $response->foodPlan->intensity;
 
 
 //SQL Statement to check if this data set already exists
-$select_food_plan = "SELECT * FROM food_plan WHERE user_id='$userId' AND company_id='$company_id'";
-$result = $db_connection->executeStatement($select_food_plan);
+$select = "SELECT * FROM food_plan WHERE user_id='$userId' AND company_id='$company_id'";
+$result = $db_connection->executeStatement($select);
+
+if (!$result) {
+    $error = false;
+}
+
 $rowCount = $result->num_rows;
 
 //food plan was not inserted
@@ -36,9 +42,18 @@ if ($rowCount == 0) {
          VALUES ('$userId', '$calories', '$caloriesId', '$date', '$intensity', '$periodDailyId', '$company_id')";
     $db_connection->executeStatement($insert_food_plan);
 } else {
-    $update_food_plan = "UPDATE food_plan SET calories_goal = '$calories',start_date = '$date', intensity = '$intensity'
+    $update = "UPDATE food_plan SET calories_goal = '$calories',start_date = '$date', intensity = '$intensity'
                                      WHERE user_id='$userId' AND company_id='$company_id'";
-    $db_connection->executeStatement($update_food_plan);
+    $result = $db_connection->executeStatement($update);
+    if (!$result) {
+        $error = false;
+    }
+}
+
+if (!$error) {
+    echo '{"success" : "-1", "message" : "steps statement was not successfull"}';
+} else {
+    echo '{"success" : "1", "message" : "steps statement was successfull"}';
 }
 
 ?>
