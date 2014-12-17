@@ -90,10 +90,9 @@ class DatabaseConnection
         $fetch = "SELECT id FROM measurement WHERE name='$measurementName'";
 
         $this->executeStatement($fetch);
-
-       $result = $this->getResultAsJSON();
-       $result = $result ['id'];
-       echo $result;
+        $result = $this->getResultAsArray();
+        $measurementId = $result['id'];
+        return $measurementId;
     }
 
 
@@ -108,14 +107,12 @@ class DatabaseConnection
 
         $this->executeStatement($statement);
 
-        echo $this->getResultAsArray();
-
+        echo $this->getResultAsJSON();
     }
 
     //return number of rows
     public function checkIfvalueExists($userId, $measurementId, $companyId, $date)
     {
-
         $this->connect();
 
         $statement = "SELECT * FROM value WHERE user_id='$userId' AND measurement_id='$measurementId' AND company_id='$companyId' AND date= '$date' ";
