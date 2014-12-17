@@ -10,6 +10,8 @@
 $response = $fitbit->getTimeSeries("caloriesOut", "today", "7d");
 $caloriesOutId = getMeasurementId("caloriesOut", $db_connection);
 
+$error = true;
+
 $arrayLenght = $response;
 $arrayLenght = sizeof($arrayLenght);
 
@@ -23,8 +25,14 @@ for ($x = 0; $x < $arrayLenght; $x++) {
 
 
     //SQL Statement to
-    $select_calories = "SELECT * FROM value WHERE user_id='$userId' AND measurement_id='$caloriesOutId' AND company_id='$company_id' AND date= '$date' ";
-    $result = $db_connection->executeStatement($select_calories);
+    $select = "SELECT * FROM value WHERE user_id='$userId' AND measurement_id='$caloriesOutId' AND company_id='$company_id' AND date= '$date' ";
+    $result = $db_connection->executeStatement($select);
+
+
+    if (!$result) {
+        $error = false;
+    }
+
     $rowCount = $result->num_rows;
 
 //weight was not inserted today
@@ -32,10 +40,14 @@ for ($x = 0; $x < $arrayLenght; $x++) {
 
 
 //SQL Statement to insert data into value table
-        $insert_bmi = "INSERT INTO value (user_id, measurement_id, company_id, value, date)
+        $insert = "INSERT INTO value (user_id, measurement_id, company_id, value, date)
         VALUES ('$userId', '$caloriesOutId', '$company_id', '$calories','$date')";
 
-        $db_connection->executeStatement($insert_bmi);
+        $result = $db_connection->executeStatement($insert);
+
+        if (!$result) {
+            $error = false;
+        }
 
 
     } else {
@@ -43,11 +55,20 @@ for ($x = 0; $x < $arrayLenght; $x++) {
         $update = "UPDATE value SET value = '$calories'
                                      WHERE user_id='$userId' AND measurement_id='$caloriesOutId' AND company_id='$company_id' AND date = '$date'";
 
-        $db_connection->executeStatement($update);
+        $result = $db_connection->executeStatement($update);
 
+        if (!$result) {
+            $error = false;
+        }
 
     }
 
+}
+
+if (!$error) {
+    echo '{"success" : "-1", "message" : "steps statement was not successfull"}';
+} else {
+    echo '{"success" : "1", "message" : "steps statement was successfull"}';
 }
 
 ?>

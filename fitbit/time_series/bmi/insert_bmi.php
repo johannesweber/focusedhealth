@@ -14,6 +14,8 @@
 $response = $fitbit->getTimeSeries("bmi", "today", $period);
 $bmiId = getMeasurementId("bmi", $db_connection);
 
+
+
 //lenght of response array
 $arrayLength = $response;
 $arrayLength = sizeof($arrayLength);
