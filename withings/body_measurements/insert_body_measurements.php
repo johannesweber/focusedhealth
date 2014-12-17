@@ -11,11 +11,11 @@ $date = date("Y-m-d", $timestamp);
 */
 $startdate = "1417392000"; //1 dez.
 $enddate = "1417737600";
-$response = $withings->getBodyMeasuresTimeRange($startdate,$enddate);
+$response = $withings->getBodyMeasures();
 print_r($response);
 
 $int = 1780;
- echo $double = number_format(($int/1000),3);
+$double = number_format(($int/1000),3);
 
 /*
 $today = time();
@@ -24,8 +24,23 @@ $enddate = "1417737600"; //5 dez.
 $response2 = $withings->getBodyMeasuresTimeRange($startdate, $enddate);
 */
 
-// connecting meastype from withings
-$meastypeWithings = array(1=>$weightId, 4=>$heightId, 5=>$fatFreeMassId, 6=>$fatId,8 =>$fatMassId, 9=> $diastolicId, 10=>$systolicId, 11=> $pulseId, 54=>$spO2Id);
+// get all id's wich are neccessary
+$weightId = getMeasurementId("weight", $db_connection);
+$heightId = getMeasurementId("height", $db_connection);
+$fatFreeMassId = getMeasurementId("fatFreeMass", $db_connection);
+$fatId = getMeasurementId("fat", $db_connection);
+$fatMassId = getMeasurementId("fatMass", $db_connection);
+$diastolicId = getMeasurementId("diastolic", $db_connection);
+$systolicId = getMeasurementId("systolic", $db_connection);
+$heartRateId = getMeasurementId("heartRate", $db_connection);
+$spO2Id = getMeasurementId("spO2", $db_connection);
+
+
+
+
+
+// connecting meastype from withings with measure id's from focused health
+$meastypeWithings = array(1=>$weightId, 4=>$heightId, 5=>$fatFreeMassId, 6=>$fatId,8 =>$fatMassId, 9=> $diastolicId, 10=>$systolicId, 11=> $heartRateId, 54=>$spO2Id);
 
 $measuregrpsArray = $response->body->measuregrps;
 
@@ -44,21 +59,23 @@ for ($x = 0; $x < sizeof($measuregrpsArray); $x++) {
 for ($i = 0; $i< sizeof($valueArray); $i++ ) {
     //print_r($valueArray[$i]);
 
-    $value = $valueArray[$i]->value;
-    $type = $valueArray[$i]->type;
+    echo $value = $valueArray[$i]->value;
+    echo "//";
+    echo $type = $valueArray[$i]->type;
 
     // get the measurement id from focused health
-    $measurementId = $meastypeWithings[$type];
+   echo "measureID:" . $measurementId = $meastypeWithings[$type];
 
     //if category is a real measurement
     if ($category == 1) {
 
+        echo "###in categroy 1###";
         //SQL Statement to insert data into value table
-  //      $insert = "INSERT INTO value (user_id, measurement_id, company_id, value, date)
-   //      VALUES ('$user_id', '$measurementId', '$company_id', '$value','$date')";
+        $insert = "INSERT INTO value (user_id, measurement_id, company_id, value, date)
+         VALUES ('$user_id', '$measurementId', '$company_id', '$value','$date')";
 
 
-   //     $db_connection->executeStatement($insert);
+        $db_connection->executeStatement($insert);
 
         // if category is a goal
     } else if($category == 2) {
