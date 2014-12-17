@@ -49,6 +49,7 @@ class DatabaseConnection {
     }
 
     public function close(){
+
         mysqli_close($this->db_connection);
     }
 
@@ -56,8 +57,6 @@ class DatabaseConnection {
 
         $resultArray = mysqli_fetch_array($this->result, MYSQL_ASSOC);
         return $resultArray;
-
-
     }
 
     public function getResult(){
@@ -73,6 +72,18 @@ class DatabaseConnection {
         }
 
         return json_encode($data);
+    }
+
+    public function selectValueFromDatabase($measurementId, $userId, $date, $limit){
+
+        $this->connect();
+
+        $statement = "SELECT value, date FROM value WHERE value.user_id='$userId' AND value.measurement_id = '$measurementId' AND date <= '$date' ORDER BY date DESC LIMIT $limit";
+
+        $this->executeStatement($statement);
+
+        echo $this->getResultAsJSON();
+
     }
 }
 ?>
