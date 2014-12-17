@@ -8,7 +8,7 @@
 
 
 $response = $fitbit->getActivityWeeklyGoals();
-
+$error = true;
 $periodWeeklyId = getMeasurementId("weekly", $db_connection);
 $distanceId = getMeasurementId("distance", $db_connection);
 $stepsId = getMeasurementId("steps", $db_connection);

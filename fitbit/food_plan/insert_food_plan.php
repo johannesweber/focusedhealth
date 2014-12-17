@@ -16,6 +16,7 @@ $periodDailyId = getMeasurementId("daily", $db_connection);
 $response = $fitbit->getFoodGoal();
 
 
+
 $calories = $response->goals->calories;
 
 //ist nicht in der response vorhanden!!

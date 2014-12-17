@@ -21,6 +21,7 @@ $arrayLenght = sizeof($arrayLenght);
 
 $array = $response;
 
+
 for ($x = 0; $x < $arrayLenght; $x++) {
 
     $steps = $array[$x]->value;
@@ -28,13 +29,13 @@ for ($x = 0; $x < $arrayLenght; $x++) {
 
 
     //SQL Statement to
-    $select_steps = "SELECT * FROM value WHERE user_id= '$userId' AND measurement_id='$stepsId' AND company_id='$company_id' AND date= '$date' ";
+    $select = "SELECT * FROM value WHERE user_id= '$userId' AND measurement_id='$stepsId' AND company_id='$company_id' AND date= '$date' ";
 
 
-    $result = $db_connection->executeStatement($select_steps);
-if (!$result) {
-    $error = false;
-}
+    $result = $db_connection->executeStatement($select);
+    if (!$result) {
+        $error = false;
+    }
 
 
     $rowCount = $result->num_rows;
@@ -58,7 +59,7 @@ if (!$result) {
         $update = "UPDATE value SET value = '$steps'
                                      WHERE user_id='$userId' AND measurement_id='$stepsId' AND company_id='$company_id' AND date = '$date'";
 
-         $result = $db_connection->executeStatement($update);
+        $result = $db_connection->executeStatement($update);
 
         if (!$result) {
             $error = false;

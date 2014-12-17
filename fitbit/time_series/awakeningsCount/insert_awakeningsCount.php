@@ -14,6 +14,8 @@ $response = $fitbit->getTimeSeries("awakeningsCount", "today", "7d");
 //print_r($response);
 $awakeningsCountId = getMeasurementId("awakeningsCount", $db_connection);
 
+$error = true;
+
 //length of response array
 $arrayLength = $response;
 $arrayLength = sizeof($arrayLength);
@@ -22,7 +24,9 @@ $arrayLength = sizeof($arrayLength);
 $array = $response;
 
 //loop to insert all data from response array
-for ($x = 0; $x < $arrayLength; $x++) {
+for ($x = 0;
+     $x < $arrayLength;
+     $x++) {
 
     $awakeningsCount = $array[$x]->value;
     $date = $array[$x]->dateTime;
@@ -30,7 +34,12 @@ for ($x = 0; $x < $arrayLength; $x++) {
 
 //SQL Statement to check if this data set already exists for this day
     $select = "SELECT * FROM value WHERE user_id='$userId' AND measurement_id='$awakeningsCountId' AND company_id='$company_id' AND date= '$date' ";
+
     $result = $db_connection->executeStatement($select);
+    if (!$result) {
+        $error = false;
+    }
+
     $rowCount = $result->num_rows;
 
 //awakenigns count was not inserted today
@@ -41,7 +50,11 @@ for ($x = 0; $x < $arrayLength; $x++) {
         $insert = "INSERT INTO value (user_id, measurement_id, company_id, value, date)
         VALUES ('$userId', '$awakeningsCountId', '$company_id', '$awakeningsCount','$date')";
 
-        $db_connection->executeStatement($insert);
+        $result = $db_connection->executeStatement($insert);
+
+        if (!$result) {
+            $error = false;
+        }
 
 //awakenings count was already inserted today
     } else {
@@ -49,10 +62,20 @@ for ($x = 0; $x < $arrayLength; $x++) {
         $update = "UPDATE value SET value = '$awakeningsCount'
                                      WHERE user_id='$userId' AND measurement_id='$awakeningsCountId' AND company_id='$company_id' AND date = '$date'";
 
-        $db_connection->executeStatement($update);
+        $result = $db_connection->executeStatement($update);
+
+        if (!$result) {
+            $error = false;
 
 
+        }
     }
+}
+
+if (!$error) {
+    echo '{"success" : "-1", "message" : "steps statement was not successfull"}';
+} else {
+    echo '{"success" : "1", "message" : "steps statement was successfull"}';
 }
 
 ?>

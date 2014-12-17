@@ -15,6 +15,7 @@ $response = $fitbit->getFoods($datum);
 //print_r($response);
 
 
+
 $arrayLenght = $response->foods;
 $arrayLenght = sizeof($arrayLenght);
 
