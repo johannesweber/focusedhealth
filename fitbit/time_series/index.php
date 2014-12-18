@@ -33,8 +33,6 @@ $fitbit = new FitBitPHP("7c39abf127964bc984aba4020845ff11", "18c4a92f21f1458e8ac
 $fitbit->setOAuthDetails($oauth_token, $oauth_token_secret);
 $fitbit->setResponseFormat('json');
 
-// require_once '../../id/find_id.php';
-
 $measurementId = $db_connection->getMeasurementId($measurement);
 
 $companyId = $db_connection->getCompanyIdFitbit($companyId);

@@ -1,7 +1,7 @@
 <?php
 
 /**
- * FitbitPHP v.0.73. Basic Fitbit API wrapper for PHP using OAuth
+ * WithingsPHP v.0.73. Basic Withings API wrapper for PHP using OAuth
  *
  * Note: Library is in beta and provided as-is. We hope to add features as API grows, however
  *       feel free to fork, extend and send pull requests to us.
