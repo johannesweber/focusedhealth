@@ -35,7 +35,33 @@ $fitbit->setOAuthDetails($oauth_token, $oauth_token_secret);
 $fitbit->setResponseFormat('json');
 
 require_once '../id/find_member_since.php';
-include 'insert_steps.php';
+require_once 'insert_steps.php';
+require_once 'insert_distance.php';
+require_once 'insert_calories_out.php';
+require_once 'insert_calories_in.php';
+require_once 'insert_elevation.php';
+require_once 'insert_fat.php';
+require_once 'insert_floors.php';
+require_once 'insert_minutesAsleep.php';
+require_once 'insert_minutesAwake.php';
+require_once 'insert_minutesToFallAsleep.php';
+require_once 'insert_sleep_start_time.php';
+require_once 'insert_time_in_bed.php';
+require_once 'insert_water.php';
+require_once 'insert_weight.php';
+require_once 'insert_awakeningsCount.php';
+require_once 'insert_bmi.php';
+//require_once 'insert_activity_weekly_goals';
+//require_once 'insert_activity_daily_goals';
+//require_once 'insert_body_measurements';
+//require_once 'insert_food_goal';
+//require_once 'insert_food_plan.php';
+//require_once 'insert_weight_goal.php';
+
+
+
+
+
 
 $db_connection->close();
 

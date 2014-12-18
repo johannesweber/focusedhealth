@@ -7,9 +7,10 @@
  */
 
 
-$response = $fitbit->getTimeSeries("minutesAwake", "today", "7d");
-print_r($response);
-$minutesAwakeId = getMeasurementId("minutesAwake", $db_connection);
+$response = $fitbit->getTimeSeries("minutesAsleep", "today", "7d");
+
+$measurementName='minutesAsleep';
+$minutesAsleepId = $db_connection->getMeasurementId($measurementName);
 
 $error = true;
 
@@ -21,12 +22,12 @@ $array = $response;
 
 for ($x = 0; $x < $arrayLength; $x++) {
 
-    $minutesAwake = $array[$x]->value;
+    $minutesAsleep = $array[$x]->value;
     $date = $array[$x]->dateTime;
 
 
     //SQL Statement to
-    $select = "SELECT * FROM value WHERE user_id='$userId' AND measurement_id='$minutesAwakeId' AND company_id='$company_id' AND date= '$date' ";
+    $select = "SELECT * FROM value WHERE user_id='$userId' AND measurement_id='$minutesAsleepId' AND company_id='$company_id' AND date= '$date' ";
     $result = $db_connection->executeStatement($select);
 
     if (!$result) {
@@ -40,9 +41,10 @@ for ($x = 0; $x < $arrayLength; $x++) {
 
 //SQL Statement to insert data into value table
         $insert = "INSERT INTO value (user_id, measurement_id, company_id, value, date)
-        VALUES ('$userId', '$minutesAwakeId', '$company_id', '$minutesAwake','$date')";
+        VALUES ('$userId', '$minutesAsleepId', '$company_id', '$minutesAsleep','$date')";
 
         $result = $db_connection->executeStatement($insert);
+
         if (!$result) {
             $error = false;
         }
@@ -50,11 +52,10 @@ for ($x = 0; $x < $arrayLength; $x++) {
 
     } else {
 
-        $update = "UPDATE value SET value = '$minutesAwake'
-                                     WHERE user_id='$userId' AND measurement_id='$minutesAwakeId' AND company_id='$company_id' AND date = '$date'";
+        $update = "UPDATE value SET value = '$minutesAsleep'
+                                     WHERE user_id='$userId' AND measurement_id='$minutesAsleepId' AND company_id='$company_id' AND date = '$date'";
 
         $result = $db_connection->executeStatement($update);
-
 
         if (!$result) {
             $error = false;

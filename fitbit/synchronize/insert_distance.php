@@ -8,8 +8,8 @@
 
 
 $response = $fitbit->getTimeSeries("distance", "today", "7d");
-print_r($response);
-$distanceId = getMeasurementId("distance", $db_connection);
+$measurementName='distance';
+$distanceId = $db_connection->getMeasurementId($measurementName);
 
 $error = true;
 
@@ -66,9 +66,9 @@ for ($x = 0; $x < $arrayLenght; $x++) {
 }
 
 if (!$error) {
-    echo '{"success" : "-1", "message" : "steps statement was not successfull"}';
+    echo '{"success" : "-1", "message" : "distance statement was not successfull"}';
 } else {
-    echo '{"success" : "1", "message" : "steps statement was successfull"}';
+    echo '{"success" : "1", "message" : "distance statement was successfull"}';
 
 
 }

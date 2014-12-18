@@ -12,11 +12,19 @@ $response = $fitbit->getActivityDailyGoals();
 
 $error = true;
 
-$distanceId = getMeasurementId("distance", $db_connection);
-$activeMinutesId = getMeasurementId("activeMinutes", $db_connection);
-$caloriesOutId = getMeasurementId("caloriesOut", $db_connection);
-$stepsId = getMeasurementId("steps", $db_connection);
-$periodDailyId = getMeasurementId("daily", $db_connection);
+
+// to get the Id's for the measurement name
+$measurementName='distance';
+$distanceId = $db_connection->getMeasurementId($measurementName);
+$measurementName='activeMinutes';
+$activeMinutesId = $db_connection->getMeasurementId($measurementName);
+$measurementName='caloriesOut';
+$caloriesOutId = $db_connection->getMeasurementId($measurementName);
+$measurementName='steps';
+$stepsId = $db_connection->getMeasurementId($measurementName);
+$measurementName='daily';
+$periodDailyId = $db_connection->getMeasurementId($measurementName);
+
 
 //access data of response
 $activeMinutes = $response->goals->activeMinutes;

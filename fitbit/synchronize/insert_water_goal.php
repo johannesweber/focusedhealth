@@ -16,8 +16,12 @@ $date = date("Y-m-d", $timestamp);
 $response = $fitbit->getWaterGoal();
 $waterGoal = $response->goal->goal;
 
-$waterId = getMeasurementId("water", $db_connection);
-$periodDailyId = getMeasurementId("daily", $db_connection);
+// to get the Id's for the measurement name
+$measurementName='water';
+$waterId = $db_connection->getMeasurementId($measurementName);
+$measurementName='daily';
+$periodDailyId = $db_connection->getMeasurementId($measurementName);
+
 
 $error = true;
 

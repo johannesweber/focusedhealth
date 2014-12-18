@@ -1,14 +1,17 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: timonvogler
+ * User: pauer
  * Date: 03.12.14
- * Time: 15:51
+ * Time: 14:24
  */
 
 
-$response = $fitbit->getTimeSeries("floors", "today", "7d");
-$floorsId = getMeasurementId("floors", $db_connection);
+$response = $fitbit->getTimeSeries("caloriesOut", "today", "7d");
+
+$measurementName='caloriesOut';
+$caloriesOutId = $db_connection->getMeasurementId($measurementName);
+
 
 $error = true;
 
@@ -20,17 +23,19 @@ $array = $response;
 
 for ($x = 0; $x < $arrayLenght; $x++) {
 
-    $floors = $array[$x]->value;
+    $calories = $array[$x]->value;
     $date = $array[$x]->dateTime;
 
 
     //SQL Statement to
-    $select = "SELECT * FROM value WHERE user_id='$userId' AND measurement_id='$floorsId' AND company_id='$company_id' AND date= '$date' ";
+    $select = "SELECT * FROM value WHERE user_id='$userId' AND measurement_id='$caloriesOutId' AND company_id='$company_id' AND date= '$date' ";
     $result = $db_connection->executeStatement($select);
+
 
     if (!$result) {
         $error = false;
     }
+
     $rowCount = $result->num_rows;
 
 //weight was not inserted today
@@ -39,9 +44,10 @@ for ($x = 0; $x < $arrayLenght; $x++) {
 
 //SQL Statement to insert data into value table
         $insert = "INSERT INTO value (user_id, measurement_id, company_id, value, date)
-        VALUES ('$userId', '$floorsId', '$company_id', '$floors','$date')";
+        VALUES ('$userId', '$caloriesOutId', '$company_id', '$calories','$date')";
 
         $result = $db_connection->executeStatement($insert);
+
         if (!$result) {
             $error = false;
         }
@@ -49,10 +55,11 @@ for ($x = 0; $x < $arrayLenght; $x++) {
 
     } else {
 
-        $update_weight = "UPDATE value set value = '$floors'
-                                     WHERE user_id='$userId' AND measurement_id='$floorsId' AND company_id='$company_id' AND date = '$datum'";
+        $update = "UPDATE value SET value = '$calories'
+                                     WHERE user_id='$userId' AND measurement_id='$caloriesOutId' AND company_id='$company_id' AND date = '$date'";
 
-        $result = $db_connection->executeStatement($update_weight);
+        $result = $db_connection->executeStatement($update);
+
         if (!$result) {
             $error = false;
         }

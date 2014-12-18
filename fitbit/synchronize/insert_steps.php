@@ -9,7 +9,8 @@
 //date of today
 $timestamp = time();
 $today = date("Y-m-d", $timestamp);
-$stepsId = getMeasurementId("steps", $db_connection);
+$measurementName='steps';
+$stepsId = $db_connection->getMeasurementId($measurementName);
 
 $error = true;
 

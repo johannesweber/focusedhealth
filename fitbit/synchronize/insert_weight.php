@@ -1,14 +1,15 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: pauer
- * Date: 03.12.14
- * Time: 12:10
+ * User: timonvogler
+ * Date: 02.12.14
+ * Time: 15:12
  */
 
 
-$response = $fitbit->getTimeSeries("fat", "today", "7d");
-$fatId = getMeasurementId("bodyFat", $db_connection);
+$response = $fitbit->getTimeSeries("weight", "today", "7d");
+$measurementName='weight';
+$weightId = $db_connection->getMeasurementId($measurementName);
 
 $error = true;
 
@@ -20,17 +21,18 @@ $array = $response;
 
 for ($x = 0; $x < $arrayLenght; $x++) {
 
-    $fat = $array[$x]->value;
+    $weight = $array[$x]->value;
     $date = $array[$x]->dateTime;
 
 
     //SQL Statement to
-    $select = "SELECT * FROM value WHERE user_id='$userId' AND measurement_id='$fatId' AND company_id='$company_id' AND date= '$date' ";
+    $select = "SELECT * FROM value WHERE user_id='$userId' AND measurement_id='$weightId' AND company_id='$company_id' AND date= '$date' ";
     $result = $db_connection->executeStatement($select);
 
     if (!$result) {
         $error = false;
     }
+
     $rowCount = $result->num_rows;
 
 //weight was not inserted today
@@ -39,17 +41,19 @@ for ($x = 0; $x < $arrayLenght; $x++) {
 
 //SQL Statement to insert data into value table
         $insert = "INSERT INTO value (user_id, measurement_id, company_id, value, date)
-        VALUES ('$userId', '$fatId', '$company_id', '$fat','$date')";
+        VALUES ('$userId', '$weightId', '$company_id', '$weight','$date')";
 
         $result = $db_connection->executeStatement($insert);
+
         if (!$result) {
             $error = false;
         }
 
     } else {
 
-        $update = "UPDATE value SET value = '$fat'
-                                     WHERE user_id='$userId' AND measurement_id='$fatId' AND company_id='$company_id' AND date = '$date'";
+
+        $update = "UPDATE value SET value = '$weight'
+                                     WHERE user_id='$userId' AND measurement_id='$weightId' AND company_id='$company_id' AND date = '$date'";
 
         $result = $db_connection->executeStatement($update);
 

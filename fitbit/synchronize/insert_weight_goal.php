@@ -13,6 +13,12 @@ $weightGoal = $response->goal->weight;
 $startDate = $response->goal->startDate;
 $startWeight = $response->goal->startWeight;
 
+// to get the Id's for the measurement name
+$measurementName='weight';
+$weightId = $db_connection->getMeasurementId($measurementName);
+$measurementName='daily';
+$periodDailyId = $db_connection->getMeasurementId($measurementName);
+
 $error = true;
 
 
@@ -37,8 +43,6 @@ WHERE user_id='$userId' AND measurement_id='$weightId' and company_id='$company_
     if (!$result) {
         $error = false;
     }
-
-
 }
 
 if (!$error) {
@@ -46,9 +50,5 @@ if (!$error) {
 } else {
     echo '{"success" : "1", "message" : "steps statement was successfull"}';
 
-
 }
-
-
-
 ?>

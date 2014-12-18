@@ -14,14 +14,23 @@ $error = true;
 $response = $fitbit->getBody($date);
 
 
-$bicepId = getMeasurementId("bicep", $db_connection);
-$calfId = getMeasurementId("calf", $db_connection);
-$chestId = getMeasurementId("chest", $db_connection);
-$forearmId = getMeasurementId("forearm", $db_connection);
-$hipsId = getMeasurementId("hips", $db_connection);
-$neckId = getMeasurementId("neck", $db_connection);
-$thighId = getMeasurementId("thigh", $db_connection);
-$waistId = getMeasurementId("waist", $db_connection);
+// to get the Id's for the measurement name
+$measurementName = 'bicep';
+$bicepId = $db_connection->getMeasurementId($measurementName);
+$measurementName = 'calf';
+$calfId = $db_connection->getMeasurementId($measurementName);
+$measurementName = 'chest';
+$chestId = $db_connection->getMeasurementId($measurementName);
+$measurementName = 'forearm';
+$forearmId = $db_connection->getMeasurementId($measurementName);
+$measurementName = 'hips';
+$hipsId = $db_connection->getMeasurementId($measurementName);
+$measurementName = 'neck';
+$neckId = $db_connection->getMeasurementId($measurementName);
+$measurementName = 'thigh';
+$thighId = $db_connection->getMeasurementId($measurementName);
+$measurementName = 'waist';
+$waistId = $db_connection->getMeasurementId($measurementName);
 
 
 $bicep = $response->body->bicep;

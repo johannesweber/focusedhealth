@@ -11,9 +11,14 @@ $response = $fitbit->getActivityWeeklyGoals();
 
 $error = true;
 
-$periodWeeklyId = getMeasurementId("weekly", $db_connection);
-$distanceId = getMeasurementId("distance", $db_connection);
-$stepsId = getMeasurementId("steps", $db_connection);
+// to get the Id's for the measurement name
+$measurementName = 'distance';
+$distanceId = $db_connection->getMeasurementId($measurementName);
+$measurementName = 'steps';
+$stepsId = $db_connection->getMeasurementId($measurementName);
+$measurementName = 'weekly';
+$periodWeeklyId = $db_connection->getMeasurementId($measurementName);
+
 
 $distance = $response->goals->distance;
 $steps = $response->goals->steps;

@@ -2,14 +2,14 @@
 /**
  * Created by PhpStorm.
  * User: timonvogler
- * Date: 02.12.14
- * Time: 15:12
+ * Date: 08.12.14
+ * Time: 17:33
  */
 
 
-$response = $fitbit->getTimeSeries("minutesToFallAsleep", "today", "7d");
-print_r($response);
-$minutesToFallAsleepId = getMeasurementId("minutesToFallAsleep", $db_connection);
+$response = $fitbit->getTimeSeries("startTime", "today", "7d");
+$measurementName='sleepStartTime';
+$sleepStartTimeId = $db_connection->getMeasurementId($measurementName);
 
 $error = true;
 
@@ -21,24 +21,24 @@ $array = $response;
 
 for ($x = 0; $x < $arrayLength; $x++) {
 
-    $minutesToFallAsleep = $array[$x]->value;
+    $startTime = $array[$x]->value;
     $date = $array[$x]->dateTime;
 
 
-    $select = "SELECT * FROM value WHERE user_id='$userId' AND measurement_id='$minutesToFallAsleepId' AND company_id='$company_id' AND date= '$date' ";
+    $select = "SELECT * FROM sleep_start_time WHERE user_id='$userId' AND measurement_id='$sleepStartTimeId' AND company_id='$company_id' AND date= '$date' ";
     $result = $db_connection->executeStatement($select);
     if (!$result) {
         $error = false;
     }
     $rowCount = $result->num_rows;
 
-//minutes to fall asleep was not inserted today
+//sleep start time was not inserted today
     if ($rowCount == 0) {
 
 
 //SQL Statement to insert data into value table
-        $insert = "INSERT INTO value (user_id, measurement_id, company_id, value, date)
-        VALUES ('$userId', '$minutesToFallAsleepId', '$company_id', '$minutesToFallAsleep','$date')";
+        $insert = "INSERT INTO sleep_start_time (user_id, measurement_id, company_id, start_time, date)
+        VALUES ('$userId', '$sleepStartTimeId', '$company_id', '$startTime','$date')";
 
         $result = $db_connection->executeStatement($insert);
 
@@ -49,8 +49,8 @@ for ($x = 0; $x < $arrayLength; $x++) {
 
     } else {
 
-        $update = "UPDATE value SET value = '$minutesToFallAsleep'
-                                     WHERE user_id='$userId' AND measurement_id='$minutesToFallAsleepId' AND company_id='$company_id' AND date = '$date'";
+        $update = "UPDATE sleep_start_time SET start_time = '$startTime'
+                                     WHERE user_id='$userId' AND measurement_id='$sleepStartTimeId' AND company_id='$company_id' AND date = '$date'";
 
         $result = $db_connection->executeStatement($update);
 

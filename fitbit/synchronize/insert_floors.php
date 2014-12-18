@@ -2,31 +2,32 @@
 /**
  * Created by PhpStorm.
  * User: timonvogler
- * Date: 02.12.14
- * Time: 15:12
+ * Date: 03.12.14
+ * Time: 15:51
  */
 
 
-$response = $fitbit->getTimeSeries("minutesAsleep", "today", "7d");
-print_r($response);
-$minutesAsleepId = getMeasurementId("minutesAsleep", $db_connection);
+$response = $fitbit->getTimeSeries("floors", "today", "7d");
+
+$measurementName='floors';
+$floorsId = $db_connection->getMeasurementId($measurementName);
 
 $error = true;
 
-$arrayLength = $response;
-$arrayLength = sizeof($arrayLength);
+$arrayLenght = $response;
+$arrayLenght = sizeof($arrayLenght);
 
 
 $array = $response;
 
-for ($x = 0; $x < $arrayLength; $x++) {
+for ($x = 0; $x < $arrayLenght; $x++) {
 
-    $minutesAsleep = $array[$x]->value;
+    $floors = $array[$x]->value;
     $date = $array[$x]->dateTime;
 
 
     //SQL Statement to
-    $select = "SELECT * FROM value WHERE user_id='$userId' AND measurement_id='$minutesAsleepId' AND company_id='$company_id' AND date= '$date' ";
+    $select = "SELECT * FROM value WHERE user_id='$userId' AND measurement_id='$floorsId' AND company_id='$company_id' AND date= '$date' ";
     $result = $db_connection->executeStatement($select);
 
     if (!$result) {
@@ -40,10 +41,9 @@ for ($x = 0; $x < $arrayLength; $x++) {
 
 //SQL Statement to insert data into value table
         $insert = "INSERT INTO value (user_id, measurement_id, company_id, value, date)
-        VALUES ('$userId', '$minutesAsleepId', '$company_id', '$minutesAsleep','$date')";
+        VALUES ('$userId', '$floorsId', '$company_id', '$floors','$date')";
 
         $result = $db_connection->executeStatement($insert);
-
         if (!$result) {
             $error = false;
         }
@@ -51,11 +51,10 @@ for ($x = 0; $x < $arrayLength; $x++) {
 
     } else {
 
-        $update = "UPDATE value SET value = '$minutesAsleep'
-                                     WHERE user_id='$userId' AND measurement_id='$minutesAsleepId' AND company_id='$company_id' AND date = '$date'";
+        $update_weight = "UPDATE value set value = '$floors'
+                                     WHERE user_id='$userId' AND measurement_id='$floorsId' AND company_id='$company_id' AND date = '$date'";
 
-        $result = $db_connection->executeStatement($update);
-
+        $result = $db_connection->executeStatement($update_weight);
         if (!$result) {
             $error = false;
         }

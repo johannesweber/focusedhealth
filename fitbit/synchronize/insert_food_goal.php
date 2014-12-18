@@ -14,8 +14,12 @@ $error = true;
 $response = $fitbit->getFoodGoal();
 
 
-$caloriesId = getMeasurementId("calories", $db_connection);
-$periodDailyId = getMeasurementId("daily", $db_connection);
+// to get the Id's for the measurement name
+$measurementName = 'calories';
+$caloriesId = $db_connection->getMeasurementId($measurementName);
+$measurementName = 'daily';
+$periodDailyId = $db_connection->getMeasurementId($measurementName);
+
 
 $foodGoal = $response->goals->calories;
 
