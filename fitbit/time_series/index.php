@@ -23,6 +23,7 @@ $userId = $_GET["userId"];
 $date = $_GET["endDate"];
 $limit = $_GET["limit"];
 $measurement = $_GET["measurement"];
+//$companyId = $_GET["companyId"];
 
 // to used in insert
 require_once '../id/find_company_id.php';
@@ -36,7 +37,9 @@ $fitbit->setResponseFormat('json');
 
 $measurementId = $db_connection->getMeasurementId($measurement);
 
-$companyAccountInfo = $db_connection->getCompanyAccountIdAndMemberSinceFromCompanyAccountInfo($userId, $company_id);
+$companyId = $db_connection->getCompanyIdFitbit($companyId);
+
+$companyAccountInfo = $db_connection->getFromCompanyAccountInfo($select, $userId, $company_id);
 
 $db_connection->selectValueFromDatabase($measurementId, $userId, $date, $limit);
 

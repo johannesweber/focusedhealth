@@ -12,6 +12,9 @@ class DatabaseConnection
     protected $db_connection;
     protected $result;
 
+    /*
+     *
+     */
     public function __construct()
     {
 
@@ -22,6 +25,9 @@ class DatabaseConnection
 
     }
 
+    /*
+     * function to ????
+     */
     public function connect()
     {
 
@@ -36,6 +42,9 @@ class DatabaseConnection
         }
     }
 
+    /*
+     * function to ????
+     */
     public function executeStatement($statement)
     {
 
@@ -50,12 +59,18 @@ class DatabaseConnection
         return $db_result;
     }
 
+    /*
+     * function to ????
+     */
     public function close()
     {
 
         mysqli_close($this->db_connection);
     }
 
+    /*
+     * function to ????
+     */
     public function getResultAsArray()
     {
 
@@ -63,11 +78,17 @@ class DatabaseConnection
         return $resultArray;
     }
 
+    /*
+     * function to ????
+     */
     public function getResult()
     {
         return $this->result;
     }
 
+    /*
+     * function to???
+     */
     public function getResultAsJSON()
     {
 
@@ -95,11 +116,26 @@ class DatabaseConnection
         return $measurementId;
     }
 
+    /*
+     * fuction to get the intern companyId from our database
+     */
+    public function getCompanyIdFitbit($companyId){
+
+    $this->connect();
+
+        $fetch = "SELECT id FROM company WHERE name='fitbit'";
+
+        $this->executeStatement($fetch);
+        $result = $this->getResultAsArray();
+        $companyId = $result['id'];
+        return $companyId;
+
+}
 
     /*
-    * function to
+    * function to find the companyId and memberSince
     */
-    public function getCompanyAccountIdAndMemberSinceFromCompanyAccountInfo($userId, $company_id)
+    public function getFromCompanyAccountInfo($select, $userId, $company_id)
     {
         $this->connect();
 
@@ -107,11 +143,14 @@ class DatabaseConnection
 
         $this->executeStatement($fetch);
         $result = $this->getResultAsArray();
-        $companyAccountId = $result['company_account_id'];
-        $memberSince = $result['memberSince'];
-        return $companyAccountId;
+        $selectValue = $result[$select];
+
+        return $selectValue;
     }
 
+    /*
+     * function to ???
+     */
     public function selectValueFromDatabase($measurementId, $userId, $date, $limit)
     {
 
