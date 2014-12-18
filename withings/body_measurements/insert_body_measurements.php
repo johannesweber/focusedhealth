@@ -68,11 +68,12 @@ for ($i = 0; $i< sizeof($valueArray); $i++ ) {
 
 
 
-
+ $rowCount = $db_connection->checkIfvalueExists($user_id,$measurementId, $company_id, $date);
 
 
     //if category is a real measurement
     if ($category == 1) {
+
 
         //measurement was not inserted for today
         if ($rowCount == 0) {
@@ -84,6 +85,8 @@ for ($i = 0; $i< sizeof($valueArray); $i++ ) {
 
 
         $db_connection->executeStatement($insert);
+
+
         } else {
             //update
         }
