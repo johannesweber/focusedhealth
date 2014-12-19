@@ -119,9 +119,10 @@ class DatabaseConnection
     /*
      * fuction to get the intern companyId from our database
      */
-    public function getCompanyIdFitbit(){
+    public function getCompanyIdFitbit()
+    {
 
-    $this->connect();
+        $this->connect();
 
         $fetch = "SELECT id FROM company WHERE name='fitbit'";
 
@@ -130,7 +131,7 @@ class DatabaseConnection
         $companyId = $result['id'];
         return $companyId;
 
-}
+    }
 
     /*
     * function to find the companyId and memberSince
@@ -149,13 +150,29 @@ class DatabaseConnection
     }
 
     /*
-     * function to ???
+     * function to
      */
-    public function selectValueFromDatabase($measurementId, $userId, $date, $limit) {
+    public function selectValueFromGoal($userId, $periodDailyId)
+    {
 
         $this->connect();
 
-        $statement = "SELECT value, date FROM value WHERE value.user_id='$userId' AND value.measurement_id = '$measurementId' AND date <= '$date' ORDER BY date DESC LIMIT $limit";
+        $statement = "SELECT goal_value, start_value, startdate FROM goal WHERE user_id = '$userId' AND period = '$periodDailyId'";
+
+        $this->executeStatement($statement);
+
+        echo $this->getResultAsJSON();
+    }
+
+    /*
+     * function to ???
+     */
+    public function selectValueFromDatabase($measurementId, $userId, $date, $limit)
+    {
+
+        $this->connect();
+
+        $statement = "SELECT value, date FROM value WHERE value . user_id = '$userId' AND value . measurement_id = '$measurementId' AND date <= '$date' ORDER BY date DESC LIMIT $limit";
 
         $this->executeStatement($statement);
 
@@ -167,7 +184,7 @@ class DatabaseConnection
     {
         $this->connect();
 
-        $statement = "SELECT * FROM value WHERE user_id='$userId' AND measurement_id='$measurementId' AND company_id='$companyId' AND date= '$date' ";
+        $statement = "SELECT * FROM value WHERE user_id = '$userId' AND measurement_id = '$measurementId' AND company_id = '$companyId' AND date = '$date' ";
 
         $result = $this->executeStatement($statement);
 
