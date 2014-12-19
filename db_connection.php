@@ -152,7 +152,7 @@ class DatabaseConnection
     /*
      * function to
      */
-    public function selectValueFromGoal($userId, $periodDailyId)
+    public function selectValueFromGoalActivity($userId, $periodDailyId)
     {
 
         $this->connect();
@@ -164,6 +164,17 @@ class DatabaseConnection
         echo $this->getResultAsJSON();
     }
 
+    public function selectValueFromGoalMeasurement($userId, $measurementId ){
+        $this->connect();
+
+        $fetch = "SELECT goal_value, start_value, startdate FROM goal WHERE user_id='$userId' AND measurement_id='$measurementId' ";
+
+        $this->executeStatement($fetch);
+
+        echo $this->getResultAsJSON();
+
+    }
+
     /*
      * function to ???
      */
@@ -171,6 +182,8 @@ class DatabaseConnection
     {
 
         $this->connect();
+
+        $this->getMeasurementId($measurement);
 
         $statement = "SELECT value, date FROM value WHERE value . user_id = '$userId' AND value . measurement_id = '$measurementId' AND date <= '$date' ORDER BY date DESC LIMIT $limit";
 
