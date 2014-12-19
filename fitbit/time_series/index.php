@@ -23,21 +23,8 @@ $userId = $_GET["userId"];
 $date = $_GET["endDate"];
 $limit = $_GET["limit"];
 $measurement = $_GET["measurement"];
-//$companyId = $_GET["companyId"];
-
-// to used in insert
-require_once '../id/find_company_id.php';
-require_once '../fetch_credentials.php';
-
-$fitbit = new FitBitPHP("7c39abf127964bc984aba4020845ff11", "18c4a92f21f1458e8ac9798567d3d38c");
-$fitbit->setOAuthDetails($oauth_token, $oauth_token_secret);
-$fitbit->setResponseFormat('json');
 
 $measurementId = $db_connection->getMeasurementId($measurement);
-
-$companyId = $db_connection->getCompanyIdFitbit($companyId);
-
-$companyAccountInfo = $db_connection->getFromCompanyAccountInfo($select, $userId, $company_id);
 
 $db_connection->selectValueFromDatabase($measurementId, $userId, $date, $limit);
 
