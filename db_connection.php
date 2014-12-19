@@ -178,12 +178,12 @@ class DatabaseConnection
     /*
      * function to ???
      */
-    public function selectValueFromDatabase($measurementId, $userId, $date, $limit)
+    public function selectValueFromDatabase($measurement, $userId, $date, $limit)
     {
 
         $this->connect();
 
-        $this->getMeasurementId($measurement);
+        $measurementId = $this->getMeasurementId($measurement);
 
         $statement = "SELECT value, date FROM value WHERE value . user_id = '$userId' AND value . measurement_id = '$measurementId' AND date <= '$date' ORDER BY date DESC LIMIT $limit";
 
