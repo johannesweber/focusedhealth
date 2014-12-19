@@ -152,28 +152,33 @@ class DatabaseConnection
     /*
      * function to
      */
-    public function selectValueFromGoalActivity($userId, $periodDailyId)
+    public function selectValueFromGoal($userId, $measurementId, $date, $periodDailyId)
     {
-
         $this->connect();
 
-        $statement = "SELECT goal_value, start_value, startdate FROM goal WHERE user_id = '$userId' AND period = '$periodDailyId'";
+        $periodDailyId = $_GET["period"]; // Frage ist, ob das auch so funktioniert wie es gedacht ist? :-)
 
-        $this->executeStatement($statement);
-
-        echo $this->getResultAsJSON();
+        if ($periodDailyId == 1 || $periodDailyId == 2) {
+            $statement = "SELECT goal_value, start_value, startdate FROM goal WHERE user_id = '$userId' AND period = '$periodDailyId'";
+            $this->executeStatement($statement);
+            echo $this->getResultAsJSON();
+        } else {
+            $statement = "SELECT goal_value, start_value, startdate FROM goal WHERE user_id='$userId' AND measurement_id='$measurementId' ";
+            $this->executeStatement($statement);
+            echo $this->getResultAsJSON();
+        }
     }
 
-    public function selectValueFromGoalMeasurement($userId, $measurementId ){
-        $this->connect();
+    /* public function selectValueFromGoalMeasurement($userId, $measurementId ){
+         $this->connect();
 
-        $fetch = "SELECT goal_value, start_value, startdate FROM goal WHERE user_id='$userId' AND measurement_id='$measurementId' ";
+         $fetch = "SELECT goal_value, start_value, startdate FROM goal WHERE user_id='$userId' AND measurement_id='$measurementId' ";
 
-        $this->executeStatement($fetch);
+         $this->executeStatement($fetch);
 
-        echo $this->getResultAsJSON();
+         echo $this->getResultAsJSON();
 
-    }
+     }*/
 
     /*
      * function to ???
