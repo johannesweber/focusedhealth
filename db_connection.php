@@ -119,7 +119,7 @@ class DatabaseConnection
     /*
      * fuction to get the intern companyId from our database
      */
-    public function getCompanyIdFitbit($companyId){
+    public function getCompanyIdFitbit(){
 
     $this->connect();
 
@@ -151,8 +151,7 @@ class DatabaseConnection
     /*
      * function to ???
      */
-    public function selectValueFromDatabase($measurementId, $userId, $date, $limit)
-    {
+    public function selectValueFromDatabase($measurementId, $userId, $date, $limit) {
 
         $this->connect();
 
