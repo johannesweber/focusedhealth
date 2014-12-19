@@ -158,12 +158,13 @@ class DatabaseConnection
 
         $periodDailyId = $_GET["period"]; // Frage ist, ob das auch so funktioniert wie es gedacht ist? :-)
 
-        if ($periodDailyId == 1 || $periodDailyId == 2) {
-            $statement = "SELECT goal_value, start_value, startdate FROM goal WHERE user_id = '$userId' AND period = '$periodDailyId'";
+        if ($periodDailyId == NULL) {
+            $statement = "SELECT goal_value, start_value, startdate FROM goal WHERE user_id='$userId' AND measurement_id='$measurementId' ";
             $this->executeStatement($statement);
             echo $this->getResultAsJSON();
+
         } else {
-            $statement = "SELECT goal_value, start_value, startdate FROM goal WHERE user_id='$userId' AND measurement_id='$measurementId' ";
+            $statement = "SELECT goal_value, start_value, startdate FROM goal WHERE user_id = '$userId' AND period = '$periodDailyId'";
             $this->executeStatement($statement);
             echo $this->getResultAsJSON();
         }
