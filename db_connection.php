@@ -165,6 +165,7 @@ class DatabaseConnection
     }
 
     public function selectValueFromGoalMeasurement($userId, $measurementId ){
+
         $this->connect();
 
         $fetch = "SELECT goal_value, start_value, startdate FROM goal WHERE user_id='$userId' AND measurement_id='$measurementId' ";
