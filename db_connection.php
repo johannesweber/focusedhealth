@@ -152,28 +152,25 @@ class DatabaseConnection
     /*
      * function to
      */
-    public function selectValueFromGoalActivity($userId, $periodDailyId)
-    {
+    public function selectGoalFromDatabase($measurementId, $userId, $periodDailyId = null) {
 
         $this->connect();
 
-        $statement = "SELECT goal_value, start_value, startdate FROM goal WHERE user_id = '$userId' AND period = '$periodDailyId'";
+        $basicStatement = "SELECT goal_value, start_value, startdate FROM goal WHERE user_id='$userId' AND ";
+
+        if ($periodDailyId == null) {
+
+            $statement = $basicStatement . "measurement_id='$measurementId' ";
+
+        } else {
+
+            $statement = $basicStatement . "period = '$periodDailyId'";
+
+        }
 
         $this->executeStatement($statement);
 
         echo $this->getResultAsJSON();
-    }
-
-    public function selectValueFromGoalMeasurement($userId, $measurementId ){
-
-        $this->connect();
-
-        $fetch = "SELECT goal_value, start_value, startdate FROM goal WHERE user_id='$userId' AND measurement_id='$measurementId' ";
-
-        $this->executeStatement($fetch);
-
-        echo $this->getResultAsJSON();
-
     }
 
     /*

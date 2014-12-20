@@ -11,8 +11,6 @@ $response = $fitbit->getTimeSeries("minutesAwake", "today", "7d");
 $measurementName='minutesAwake';
 $minutesAwakeId = $db_connection->getMeasurementId($measurementName);
 
-$error = true;
-
 $arrayLength = $response;
 $arrayLength = sizeof($arrayLength);
 
@@ -26,7 +24,7 @@ for ($x = 0; $x < $arrayLength; $x++) {
 
 
     //SQL Statement to
-    $select = "SELECT * FROM value WHERE user_id='$userId' AND measurement_id='$minutesAwakeId' AND company_id='$company_id' AND date= '$date' ";
+    $select = "SELECT * FROM value WHERE user_id='$userId' AND measurement_id='$minutesAwakeId' AND company_id='$companyId' AND date= '$date' ";
     $result = $db_connection->executeStatement($select);
 
     if (!$result) {
@@ -40,7 +38,7 @@ for ($x = 0; $x < $arrayLength; $x++) {
 
 //SQL Statement to insert data into value table
         $insert = "INSERT INTO value (user_id, measurement_id, company_id, value, date)
-        VALUES ('$userId', '$minutesAwakeId', '$company_id', '$minutesAwake','$date')";
+        VALUES ('$userId', '$minutesAwakeId', '$companyId', '$minutesAwake','$date')";
 
         $result = $db_connection->executeStatement($insert);
         if (!$result) {
@@ -51,7 +49,7 @@ for ($x = 0; $x < $arrayLength; $x++) {
     } else {
 
         $update = "UPDATE value SET value = '$minutesAwake'
-                                     WHERE user_id='$userId' AND measurement_id='$minutesAwakeId' AND company_id='$company_id' AND date = '$date'";
+                                     WHERE user_id='$userId' AND measurement_id='$minutesAwakeId' AND company_id='$companyId' AND date = '$date'";
 
         $result = $db_connection->executeStatement($update);
 
@@ -62,12 +60,6 @@ for ($x = 0; $x < $arrayLength; $x++) {
 
     }
 
-}
-
-if (!$error) {
-    echo '{"success" : "-1", "message" : "steps statement was not successfull"}';
-} else {
-    echo '{"success" : "1", "message" : "steps statement was successfull"}';
 }
 
 ?>

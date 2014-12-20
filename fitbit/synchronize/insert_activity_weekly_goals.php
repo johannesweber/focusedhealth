@@ -9,8 +9,6 @@
 
 $response = $fitbit->getActivityWeeklyGoals();
 
-$error = true;
-
 // to get the Id's for the measurement name
 $measurementName = 'distance';
 $distanceId = $db_connection->getMeasurementId($measurementName);
@@ -39,7 +37,7 @@ for ($id = 0; $id < sizeof($idArray); $id++) {
     $wert = $werteArray[$id];
 
 //SQL Statement to check if this data set already exists
-    $select = "SELECT * FROM goal WHERE user_id='$userId' AND measurement_id='$ID' AND company_id='$company_id' AND period= '$periodWeeklyId'";
+    $select = "SELECT * FROM goal WHERE user_id='$userId' AND measurement_id='$ID' AND company_id='$companyId' AND period= '$periodWeeklyId'";
     $result = $db_connection->executeStatement($select);
 
     if (!$result) {
@@ -51,7 +49,7 @@ for ($id = 0; $id < sizeof($idArray); $id++) {
     //weekly goal is not inserted yet
     if ($rowCount == 0) {
         $insert = "INSERT INTO goal (goal_value, startdate, enddate, period, user_id, measurement_id, company_id)
-         VALUES ('$wert', Null, Null, '$periodWeeklyId', '$userId', '$ID', '$company_id')";
+         VALUES ('$wert', Null, Null, '$periodWeeklyId', '$userId', '$ID', '$companyId')";
 
         $result = $db_connection->executeStatement($insert);
 
@@ -62,8 +60,8 @@ for ($id = 0; $id < sizeof($idArray); $id++) {
         //weekly goal was already inserted
     } else {
         $update_activity_daily_goals = "UPDATE goal set goal_value='$wert', startdate=NULL, enddate=NULL, period='$periodWeeklyId',
-                                    user_id='$userId', measurement_id='$ID', company_id='$company_id'
-                                     WHERE user_id='$userId' AND measurement_id='$ID' AND company_id='$company_id' AND period='$periodWeeklyId'";
+                                    user_id='$userId', measurement_id='$ID', company_id='$companyId'
+                                     WHERE user_id='$userId' AND measurement_id='$ID' AND company_id='$companyId' AND period='$periodWeeklyId'";
 
         $result = $db_connection->executeStatement($update_activity_daily_goals);
 
@@ -74,12 +72,5 @@ for ($id = 0; $id < sizeof($idArray); $id++) {
     }
 
 }
-
-if (!$error) {
-    echo '{"success" : "-1", "message" : "steps statement was not successfull"}';
-} else {
-    echo '{"success" : "1", "message" : "steps statement was successfull"}';
-}
-
 
 ?>

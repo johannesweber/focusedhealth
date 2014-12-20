@@ -14,8 +14,6 @@ $response = $fitbit->getTimeSeries("awakeningsCount", "today", "7d");
 $measurementName='awakeningsCount';
 $awakeningsCountId = $db_connection->getMeasurementId($measurementName);
 
-$error = true;
-
 //length of response array
 $arrayLength = $response;
 $arrayLength = sizeof($arrayLength);
@@ -33,7 +31,7 @@ for ($x = 0;
 
 
 //SQL Statement to check if this data set already exists for this day
-    $select = "SELECT * FROM value WHERE user_id='$userId' AND measurement_id='$awakeningsCountId' AND company_id='$company_id' AND date= '$date' ";
+    $select = "SELECT * FROM value WHERE user_id='$userId' AND measurement_id='$awakeningsCountId' AND company_id='$companyId' AND date= '$date' ";
 
     $result = $db_connection->executeStatement($select);
     if (!$result) {
@@ -48,7 +46,7 @@ for ($x = 0;
 
 //SQL Statement to insert data into table called "value"
         $insert = "INSERT INTO value (user_id, measurement_id, company_id, value, date)
-        VALUES ('$userId', '$awakeningsCountId', '$company_id', '$awakeningsCount','$date')";
+        VALUES ('$userId', '$awakeningsCountId', '$companyId', '$awakeningsCount','$date')";
 
         $result = $db_connection->executeStatement($insert);
 
@@ -60,7 +58,7 @@ for ($x = 0;
     } else {
 //SQL Statement to update data
         $update = "UPDATE value SET value = '$awakeningsCount'
-                                     WHERE user_id='$userId' AND measurement_id='$awakeningsCountId' AND company_id='$company_id' AND date = '$date'";
+                                     WHERE user_id='$userId' AND measurement_id='$awakeningsCountId' AND company_id='$companyId' AND date = '$date'";
 
         $result = $db_connection->executeStatement($update);
 
@@ -70,12 +68,6 @@ for ($x = 0;
 
         }
     }
-}
-
-if (!$error) {
-    echo '{"success" : "-1", "message" : "steps statement was not successfull"}';
-} else {
-    echo '{"success" : "1", "message" : "steps statement was successfull"}';
 }
 
 ?>

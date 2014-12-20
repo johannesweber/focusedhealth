@@ -16,12 +16,16 @@ $userId = $_GET["userId"];
 $date = $_GET["endDate"];
 $measurement = $_GET["measurement"];
 
+//TODO was sind activity daily goals ? bzw. was sagen sie aus? wo ist der unterschied zu den normalen goals ?
+//TODO warum steht in der datenbank überall null
+//TODO nochmal über das select statement drüber gucken
+
 /*// goals
 $db_connection->selectValueFromGoalActivity($userId, $periodDailyId); // wegen period nochmal gucken was wir hier genau übergeben müssen
 $db_connection->selectValueFromGoalMeasurement($userId, $measurement, $date);
 */
 
-$db_connection->selectValueFromGoal($userId, $measurement, $date, $periodDailyId);
+$db_connection->selectGoalFromDatabase($userId, $measurement, $date);
 
 $db_connection->close();
 ?>
