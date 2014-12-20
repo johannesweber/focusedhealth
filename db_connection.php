@@ -183,7 +183,7 @@ class DatabaseConnection
 
         $measurementId = $this->getMeasurementId($measurement);
 
-        $statement = "SELECT value, date FROM value WHERE value . user_id = '$userId' AND value . measurement_id = '$measurementId' AND date <= '$date' ORDER BY date DESC LIMIT $limit";
+        $statement = "SELECT value, date FROM value WHERE user_id = '$userId' AND measurement_id = '$measurementId' AND date <= '$date' ORDER BY date DESC LIMIT $limit";
 
         $this->executeStatement($statement);
 
