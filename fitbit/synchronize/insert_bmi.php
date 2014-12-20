@@ -21,7 +21,6 @@ $bmiId = $db_connection->getMeasurementId($measurementName);
 $arrayLength = $response;
 $arrayLength = sizeof($arrayLength);
 
-$error = true;
 $array = $response;
 
 //loop to insert all data from response array
@@ -32,7 +31,7 @@ for ($x = 0; $x < $arrayLength; $x++) {
     $date = $array[$x]->dateTime;
 
 //SQL Statement to check if this data set already exists for this day
-    $select = "SELECT * FROM value WHERE user_id='$userId' AND measurement_id='$bmiId' AND company_id='$company_id' AND date= '$date' ";
+    $select = "SELECT * FROM value WHERE user_id='$userId' AND measurement_id='$bmiId' AND company_id='$companyId' AND date= '$date' ";
     $result = $db_connection->executeStatement($select);
 
     $result = $db_connection->executeStatement($select);
@@ -48,7 +47,7 @@ for ($x = 0; $x < $arrayLength; $x++) {
 
 //SQL Statement to insert data into table calles value
         $insert = "INSERT INTO value (user_id, measurement_id, company_id, value, date)
-        VALUES ('$userId', '$bmiId', '$company_id', '$bmi','$date')";
+        VALUES ('$userId', '$bmiId', '$companyId', '$bmi','$date')";
 
         $result = $db_connection->executeStatement($insert);
 
@@ -60,7 +59,7 @@ for ($x = 0; $x < $arrayLength; $x++) {
     } else {
         //SQL Statement to update data
         $update = "UPDATE value SET value = '$bmi'
-                   WHERE user_id='$userId' AND measurement_id='$bmiId' AND company_id='$company_id' AND date = '$date'";
+                   WHERE user_id='$userId' AND measurement_id='$bmiId' AND company_id='$companyId' AND date = '$date'";
 
         $result = $db_connection->executeStatement($update);
 
@@ -70,12 +69,6 @@ for ($x = 0; $x < $arrayLength; $x++) {
 
     }
 
-}
-
-if (!$error) {
-    echo '{"success" : "-1", "message" : "steps statement was not successfull"}';
-} else {
-    echo '{"success" : "1", "message" : "steps statement was successfull"}';
 }
 
 ?>

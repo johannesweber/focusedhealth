@@ -15,8 +15,6 @@ $response = $fitbit->getTimeSeries("caloriesIn", "today", "7d");
 $measurementName='caloriesIn';
 $caloriesId = $db_connection->getMeasurementId($measurementName);
 
-$error = true;
-
 //lenght of response array
 $arrayLenght = $response;
 $arrayLenght = sizeof($arrayLenght);
@@ -33,7 +31,7 @@ for ($x = 0; $x < $arrayLenght; $x++) {
 
 
 //SQL Statement to check if this data set already exists for this day
-    $select = "SELECT * FROM value WHERE user_id='$userId' AND measurement_id='$caloriesId' AND company_id='$company_id' AND date= '$date' ";
+    $select = "SELECT * FROM value WHERE user_id='$userId' AND measurement_id='$caloriesId' AND company_id='$companyId' AND date= '$date' ";
 
 
     $result = $db_connection->executeStatement($select);
@@ -49,7 +47,7 @@ for ($x = 0; $x < $arrayLenght; $x++) {
 
 //SQL Statement to insert data into table called value
         $insert = "INSERT INTO value (user_id, measurement_id, company_id, value, date)
-        VALUES ('$userId', '$caloriesId', '$company_id', '$caloriesIn','$date')";
+        VALUES ('$userId', '$caloriesId', '$companyId', '$caloriesIn','$date')";
 
         $result = $db_connection->executeStatement($insert);
 
@@ -62,7 +60,7 @@ for ($x = 0; $x < $arrayLenght; $x++) {
 
         //SQL Statement to update data
         $update = "UPDATE value SET value = '$caloriesIn'
-                   WHERE user_id='$userId' AND measurement_id='$caloriesId' AND company_id='$company_id' AND date = '$date'";
+                   WHERE user_id='$userId' AND measurement_id='$caloriesId' AND company_id='$companyId' AND date = '$date'";
 
         $result = $db_connection->executeStatement($update);
 
@@ -75,11 +73,6 @@ for ($x = 0; $x < $arrayLenght; $x++) {
 
 }
 
-if (!$error) {
-    echo '{"success" : "-1", "message" : "steps statement was not successfull"}';
-} else {
-    echo '{"success" : "1", "message" : "steps statement was successfull"}';
-}
 //insert awakenings count of a specific time range
 //Request for time series awakenings count
 //lenght of response array

@@ -10,8 +10,6 @@
 //Request for activity daily goals
 $response = $fitbit->getActivityDailyGoals();
 
-$error = true;
-
 
 // to get the Id's for the measurement name
 $measurementName='distance';
@@ -53,7 +51,7 @@ for ($id = 0; $id < sizeof($idArray); $id++) {
 
 
 //SQL Statement to check if this data set already exists
-    $select = "SELECT * FROM goal WHERE user_id='$userId' AND measurement_id='$ID' AND company_id='$company_id' AND period= '$periodDailyId'";
+    $select = "SELECT * FROM goal WHERE user_id='$userId' AND measurement_id='$ID' AND company_id='$companyId' AND period= '$periodDailyId'";
     $result = $db_connection->executeStatement($select);
 
     if (!$result) {
@@ -65,7 +63,7 @@ for ($id = 0; $id < sizeof($idArray); $id++) {
 //activity daily goal data set is not inserted yet
     if ($rowCount == 0) {
         $insert_activity_daily_goals = "INSERT INTO goal (goal_value, startdate, enddate, period, user_id, measurement_id, company_id)
-         VALUES ('$wert', Null, Null, '$periodDailyId', '$userId', '$ID', '$company_id')";
+         VALUES ('$wert', Null, Null, '$periodDailyId', '$userId', '$ID', '$companyId')";
 
         $result = $db_connection->executeStatement($insert_activity_daily_goals);
 
@@ -75,8 +73,8 @@ for ($id = 0; $id < sizeof($idArray); $id++) {
     } else {
         //SQL Statement to update data
         $update = "UPDATE goal set goal_value='$wert', startdate=NULL, enddate=NULL, period='$periodDailyId',
-                                    user_id='$userId', measurement_id='$ID', company_id='$company_id'
-                                     WHERE user_id='$userId' AND measurement_id='$ID' AND company_id='$company_id' AND period='$periodDailyId'";
+                                    user_id='$userId', measurement_id='$ID', company_id='$companyId'
+                                     WHERE user_id='$userId' AND measurement_id='$ID' AND company_id='$companyId' AND period='$periodDailyId'";
 
         $result = $db_connection->executeStatement($update);
 
@@ -86,12 +84,6 @@ for ($id = 0; $id < sizeof($idArray); $id++) {
 
     }
 
-}
-
-if (!$error) {
-    echo '{"success" : "-1", "message" : "steps statement was not successfull"}';
-} else {
-    echo '{"success" : "1", "message" : "steps statement was successfull"}';
 }
 
 ?>

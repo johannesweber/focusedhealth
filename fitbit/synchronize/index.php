@@ -35,6 +35,9 @@ $fitbit->setOAuthDetails($oauth_token, $oauth_token_secret);
 $fitbit->setResponseFormat('json');
 
 require_once '../id/find_member_since.php';
+
+$error = true;
+
 require_once 'insert_steps.php';
 require_once 'insert_distance.php';
 require_once 'insert_calories_out.php';
@@ -59,11 +62,12 @@ require_once 'insert_bmi.php';
 //require_once 'insert_weight_goal.php';
 
 
-
-
-
+if (!$error) {
+    echo '{"success" : "-1", "message" : "insert statements were not successfull"}';
+} else {
+    echo '{"success" : "1", "message" : "steps statements were successfull"}';
+}
 
 $db_connection->close();
-
 
 ?>

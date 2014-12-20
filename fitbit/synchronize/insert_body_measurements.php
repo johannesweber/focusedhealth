@@ -9,10 +9,7 @@
 $timestamp = time();
 $date = date("Y-m-d", $timestamp);
 
-$error = true;
-
 $response = $fitbit->getBody($date);
-
 
 // to get the Id's for the measurement name
 $measurementName = 'bicep';
@@ -58,7 +55,7 @@ for ($x = 0; $x < sizeof($measurementIdArray); $x++) {
     $value = $measurementArray[$x];
 
 //SQL Statement to check if this data set already exists for this day
-    $select = "SELECT * FROM value WHERE user_id='$userId' AND measurement_id='$ID' AND company_id='$company_id' AND date= '$date' ";
+    $select = "SELECT * FROM value WHERE user_id='$userId' AND measurement_id='$ID' AND company_id='$companyId' AND date= '$date' ";
     $result = $db_connection->executeStatement($select);
 
     if (!$result) {
@@ -73,7 +70,7 @@ for ($x = 0; $x < sizeof($measurementIdArray); $x++) {
 
 //SQL Statement to insert data into value table
         $insert = "INSERT INTO value (user_id, measurement_id, company_id, value, date)
-         VALUES ('$userId', '$ID', '$company_id', '$value','$date')";
+         VALUES ('$userId', '$ID', '$companyId', '$value','$date')";
 
         $result = $db_connection->executeStatement($insert);
 
@@ -85,7 +82,7 @@ for ($x = 0; $x < sizeof($measurementIdArray); $x++) {
     } else {
 
         $update = "UPDATE value SET value = '$value'
-                                     WHERE user_id='$userId' AND measurement_id='$ID' AND company_id='$company_id' AND date = '$date'";
+                                     WHERE user_id='$userId' AND measurement_id='$ID' AND company_id='$companyId' AND date = '$date'";
 
         $result = $db_connection->executeStatement($update);
         if (!$result) {
@@ -95,13 +92,5 @@ for ($x = 0; $x < sizeof($measurementIdArray); $x++) {
     }
 
 }
-
-if (!$error) {
-    echo '{"success" : "-1", "message" : "steps statement was not successfull"}';
-} else {
-    echo '{"success" : "1", "message" : "steps statement was successfull"}';
-}
-
-
 
 ?>
