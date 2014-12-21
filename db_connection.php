@@ -108,9 +108,9 @@ class DatabaseConnection
     {
         $this->connect();
 
-        $fetch = "SELECT id FROM measurement WHERE name='$measurementName'";
+        $statement = "SELECT id FROM measurement WHERE name='$measurementName'";
 
-        $this->executeStatement($fetch);
+        $this->executeStatement($statement);
         $result = $this->getResultAsArray();
         $measurementId = $result['id'];
         return $measurementId;
@@ -124,13 +124,12 @@ class DatabaseConnection
 
         $this->connect();
 
-        $fetch = "SELECT id FROM company WHERE name='fitbit'";
+        $statement = "SELECT id FROM company WHERE name='fitbit'";
 
-        $this->executeStatement($fetch);
+        $this->executeStatement($statement);
         $result = $this->getResultAsArray();
         $companyId = $result['id'];
         return $companyId;
-
     }
 
     /*
@@ -140,9 +139,9 @@ class DatabaseConnection
     {
         $this->connect();
 
-        $fetch = "SELECT * FROM company_account_info WHERE user_id ='$userId' and company_id = '$company_id'";
+        $statement = "SELECT * FROM company_account_info WHERE user_id ='$userId' and company_id = '$company_id'";
 
-        $this->executeStatement($fetch);
+        $this->executeStatement($statement);
         $result = $this->getResultAsArray();
         $selectValue = $result[$select];
 
@@ -152,7 +151,8 @@ class DatabaseConnection
     /*
      * function to
      */
-    public function selectGoalFromDatabase($measurement, $userId, $period) {
+    public function selectGoalFromDatabase($measurement, $userId, $period)
+    {
 
         $this->connect();
 
@@ -176,7 +176,8 @@ class DatabaseConnection
     /*
      * function to ???
      */
-    public function selectValueFromDatabase($measurement, $userId, $date, $limit) {
+    public function selectValueFromDatabase($measurement, $userId, $date, $limit)
+    {
 
         $this->connect();
 
