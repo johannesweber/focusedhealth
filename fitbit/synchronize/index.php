@@ -20,10 +20,7 @@ include '../fitbitphp.php';
 
 $db_connection = new DatabaseConnection();
 
-$db_connection->connect();
-
 $userId = $_GET["userId"];
-
 
 // to used in insert
 include '../id/find_company_id.php';
@@ -44,7 +41,7 @@ require_once 'insert_calories_out.php';
 require_once 'insert_calories_in.php';
 require_once 'insert_elevation.php';
 require_once 'insert_fat.php';
-require_once 'insert_floors.php';
+//require_once 'insert_floors.php';
 require_once 'insert_minutesAsleep.php';
 require_once 'insert_minutesAwake.php';
 require_once 'insert_minutesToFallAsleep.php';
@@ -63,9 +60,9 @@ require_once 'insert_bmi.php';
 
 
 if (!$error) {
-    echo '{"success" : "-1", "message" : "insert statements were not successfull"}';
+    echo '{"success" : "-1", "message" : "Data could not be synchronized. Please try again later!"}';
 } else {
-    echo '{"success" : "1", "message" : "steps statements were successfull"}';
+    echo '{"success" : "1", "message" : "Data successfully synchronized!"}';
 }
 
 $db_connection->close();

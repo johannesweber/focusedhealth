@@ -152,21 +152,21 @@ class DatabaseConnection
     /*
      * function to
      */
-    public function selectGoalFromDatabase($measurementId, $userId, $periodDailyId = null) {
+    public function selectGoalFromDatabase($measurement, $userId, $period) {
 
         $this->connect();
 
-        $basicStatement = "SELECT goal_value, start_value, startdate FROM goal WHERE user_id='$userId' AND ";
+        $measurementId = $this->getMeasurementId($measurement);
 
-        if ($periodDailyId == null) {
+        $statement = "SELECT goal_value, start_value, startdate
+                            FROM goal
+                            WHERE user_id= $userId
+                            AND measurement_id= $measurementId
+                            AND period = $period
+                      ";
 
-            $statement = $basicStatement . "measurement_id='$measurementId' ";
+        echo $statement;
 
-        } else {
-
-            $statement = $basicStatement . "period = '$periodDailyId'";
-
-        }
 
         $this->executeStatement($statement);
 
@@ -176,14 +176,13 @@ class DatabaseConnection
     /*
      * function to ???
      */
-    public function selectValueFromDatabase($measurement, $userId, $date, $limit)
-    {
+    public function selectValueFromDatabase($measurement, $userId, $date, $limit) {
 
         $this->connect();
 
         $measurementId = $this->getMeasurementId($measurement);
 
-        $statement = "SELECT value, date FROM value WHERE value . user_id = '$userId' AND value . measurement_id = '$measurementId' AND date <= '$date' ORDER BY date DESC LIMIT $limit";
+        $statement = "SELECT value, date FROM value WHERE user_id = '$userId' AND measurement_id = '$measurementId' AND date <= '$date' ORDER BY date DESC LIMIT $limit";
 
         $this->executeStatement($statement);
 
