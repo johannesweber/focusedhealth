@@ -68,9 +68,6 @@ for ($id = 0; $id < sizeof($idArray); $id++) {
         if (!$result) {
             $error = false;
         }
-
     }
-
 }
-
 ?>
