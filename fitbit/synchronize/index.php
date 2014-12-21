@@ -20,10 +20,7 @@ include '../fitbitphp.php';
 
 $db_connection = new DatabaseConnection();
 
-$db_connection->connect();
-
 $userId = $_GET["userId"];
-
 
 // to used in insert
 include '../id/find_company_id.php';
