@@ -178,12 +178,9 @@ class DatabaseConnection
                             AND measurement_id= $measurementId
                             AND period = $period
                       ";
-
-        echo $statement;
-
         $this->executeStatement($statement);
 
-        echo $this->getResultAsJSON();
+        return $this->getResultAsJSON();
     }
 
     /*
@@ -208,7 +205,7 @@ class DatabaseConnection
 
         $this->executeStatement($statement);
 
-        echo $this->getResultAsJSON();
+        return $this->getResultAsJSON();
     }
 
     //return number of rows

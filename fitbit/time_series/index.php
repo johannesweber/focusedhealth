@@ -24,7 +24,7 @@ $date = $_GET["endDate"];
 $limit = $_GET["limit"];
 $measurement = $_GET["measurement"];
 
-$db_connection->selectValueFromDatabase($measurement, $userId, $date, $limit);
+echo $db_connection->selectValueFromDatabase($measurement, $userId, $date, $limit);
 
 $db_connection->close();
 

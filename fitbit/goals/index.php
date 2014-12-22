@@ -9,7 +9,7 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 'On');
 
-include '../../db_connection.php';
+require_once '../../db_connection.php';
 
 $db_connection = new DatabaseConnection();
 
@@ -24,7 +24,7 @@ $period = $_GET["period"];
 // MAn erhält bei weekly goals kein start-/enddatum und auch kein startValue lt. API Explorer
 //TODO nochmal über das select statement drüber gucken
 
-$db_connection->selectGoalFromDatabase($measurement, $userId, $period);
+echo $db_connection->selectGoalFromDatabase($measurement, $userId, $period);
 
 $db_connection->close();
 
