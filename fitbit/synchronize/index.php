@@ -33,7 +33,7 @@ $fitbit = new FitBitPHP("7c39abf127964bc984aba4020845ff11", "18c4a92f21f1458e8ac
 $fitbit->setOAuthDetails($oauth_token, $oauth_token_secret);
 $fitbit->setResponseFormat('json');
 
-require_once '../id/find_member_since.php';
+//require_once '../id/find_member_since.php'; statement wird durch Methode in db_connection aufgerufen. Kann gelöscht werden?
 
 $error = true;
 
