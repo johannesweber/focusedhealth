@@ -20,8 +20,8 @@ $measurementName='caloriesOut';
 $caloriesOutId = $db_connection->getMeasurementId($measurementName);
 $measurementName='steps';
 $stepsId = $db_connection->getMeasurementId($measurementName);
-$measurementName='daily';
-$periodDailyId = $db_connection->getMeasurementId($measurementName);
+$period = 'daily';
+$periodDailyId = $db_connection->getPeriodId($period);
 
 
 //access data of response

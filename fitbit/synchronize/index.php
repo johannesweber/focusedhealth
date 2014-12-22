@@ -20,6 +20,8 @@ include '../fitbitphp.php';
 
 $db_connection = new DatabaseConnection();
 
+$db_connection->connect();
+
 $userId = $_GET["userId"];
 
 // to used in insert
@@ -41,7 +43,7 @@ require_once 'insert_calories_out.php';
 require_once 'insert_calories_in.php';
 require_once 'insert_elevation.php';
 require_once 'insert_fat.php';
-//require_once 'insert_floors.php';
+require_once 'insert_floors.php';
 require_once 'insert_minutesAsleep.php';
 require_once 'insert_minutesAwake.php';
 require_once 'insert_minutesToFallAsleep.php';
@@ -51,13 +53,12 @@ require_once 'insert_water.php';
 require_once 'insert_weight.php';
 require_once 'insert_awakeningsCount.php';
 require_once 'insert_bmi.php';
-//require_once 'insert_activity_weekly_goals';
-//require_once 'insert_activity_daily_goals';
-//require_once 'insert_body_measurements';
-//require_once 'insert_food_goal';
-//require_once 'insert_food_plan.php';
-//require_once 'insert_weight_goal.php';
-
+require_once 'insert_activity_weekly_goals.php';
+require_once 'insert_activity_daily_goals.php';
+require_once 'insert_body_measurements.php';
+require_once 'insert_food_goal.php';
+require_once 'insert_food_plan.php';
+require_once 'insert_weight_goal.php';
 
 if (!$error) {
     echo '{"success" : "-1", "message" : "Data could not be synchronized. Please try again later!"}';

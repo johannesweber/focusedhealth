@@ -104,16 +104,28 @@ class DatabaseConnection
     /*
      * function to find the measurment Id's by name
      */
-    public function getMeasurementId($measurementName)
+    public function getMeasurementId($measurement)
     {
         $this->connect();
 
-        $fetch = "SELECT id FROM measurement WHERE name='$measurementName'";
+        $fetch = "SELECT id FROM measurement WHERE name='$measurement'";
 
         $this->executeStatement($fetch);
         $result = $this->getResultAsArray();
         $measurementId = $result['id'];
         return $measurementId;
+    }
+
+    public function getPeriodId($period){
+
+        $this->connect();
+
+        $fetch = "SELECT id FROM period WHERE period='$period'";
+
+        $this->executeStatement($fetch);
+        $result = $this->getResultAsArray();
+        $periodId = $result['id'];
+        return $periodId;
     }
 
     /*
@@ -160,6 +172,8 @@ class DatabaseConnection
 
         $statement = "SELECT goal_value, start_value, startdate
                             FROM goal
+                            JOIN measurement meas ON goal.measurement_id = meas.id
+                            JOIN unit ON meas.unit_id = unit.id
                             WHERE user_id= $userId
                             AND measurement_id= $measurementId
                             AND period = $period
@@ -182,7 +196,16 @@ class DatabaseConnection
 
         $measurementId = $this->getMeasurementId($measurement);
 
-        $statement = "SELECT value, date FROM value WHERE user_id = '$userId' AND measurement_id = '$measurementId' AND date <= '$date' ORDER BY date DESC LIMIT $limit";
+        $statement = "SELECT value, DATE, meas.name AS measurement, unit.name AS unit
+                      FROM value val
+                      JOIN measurement meas ON val.measurement_id = meas.id
+                      JOIN unit ON meas.unit_id = unit.id
+                      WHERE user_id =  '$userId'
+                      AND measurement_id =  '$measurementId'
+                      AND DATE <=  '$date'
+                      ORDER BY date DESC
+                      LIMIT $limit
+                      ";
 
         $this->executeStatement($statement);
 
