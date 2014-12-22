@@ -10,12 +10,13 @@
 $timestamp = time();
 $today = date("Y-m-d", $timestamp);
 $measurementName='steps';
-echo "Measurement id: " . $stepsId = $db_connection->getMeasurementId($measurementName);
+$stepsId = $db_connection->getMeasurementId($measurementName);
 
 $error = true;
 
+//memberSince include in index: find_member_since
 $response = $fitbit->getTimeSeries("steps", $memberSince, $today);
-echo "response"  . $response;
+$arrayLenght = $response;
 $arrayLenght = sizeof($arrayLenght);
 
 

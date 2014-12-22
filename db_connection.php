@@ -131,36 +131,28 @@ class DatabaseConnection
     /*
      * fuction to get the intern companyId from our database
      */
-    public function getCompanyId($company)
+    public function getCompanyIdFitbit()
     {
 
         $this->connect();
 
-        $fetch = "SELECT id FROM company WHERE name='$company'";
+        $fetch = "SELECT id FROM company WHERE name='fitbit'";
 
         $this->executeStatement($fetch);
         $result = $this->getResultAsArray();
-        print_r($result);
-        echo "Company ID: " . $companyId = $result["id"];
+        $companyId = $result['id'];
         return $companyId;
 
     }
 
-    public function getMemberSince($userId, $company) {
-
-        $select = 'memberSince';
-
-        $this->getFromCompanyAccountInfo($select, $userId, $company);
-    }
-
     /*
-    * function to find select everything from company account info
+    * function to find the companyId and memberSince
     */
-    public function getFromCompanyAccountInfo($select, $userId, $companyId)
+    public function getFromCompanyAccountInfo($select, $userId, $company_id)
     {
         $this->connect();
 
-        $fetch = "SELECT * FROM company_account_info WHERE user_id ='$userId' and company_id = '$companyId'";
+        $fetch = "SELECT * FROM company_account_info WHERE user_id ='$userId' and company_id = '$company_id'";
 
         $this->executeStatement($fetch);
         $result = $this->getResultAsArray();
