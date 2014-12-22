@@ -24,6 +24,10 @@ $db_connection->connect();
 
 $userId = $_GET["userId"];
 
+$company = 'fitbit';
+
+$companyId = $db_connection->getCompanyId($company);
+
 // to used in insert
 include '../id/find_company_id.php';
 
@@ -33,32 +37,32 @@ $fitbit = new FitBitPHP("7c39abf127964bc984aba4020845ff11", "18c4a92f21f1458e8ac
 $fitbit->setOAuthDetails($oauth_token, $oauth_token_secret);
 $fitbit->setResponseFormat('json');
 
-//require_once '../id/find_member_since.php'; statement wird durch Methode in db_connection aufgerufen. Kann gelöscht werden?
+$memberSince = $db_connection->getMemberSince($userId, $companyId);
 
 $error = true;
 
 require_once 'insert_steps.php';
-require_once 'insert_distance.php';
-require_once 'insert_calories_out.php';
-require_once 'insert_calories_in.php';
-require_once 'insert_elevation.php';
-require_once 'insert_fat.php';
-require_once 'insert_floors.php';
-require_once 'insert_minutesAsleep.php';
-require_once 'insert_minutesAwake.php';
-require_once 'insert_minutesToFallAsleep.php';
-require_once 'insert_sleep_start_time.php';
-require_once 'insert_time_in_bed.php';
-require_once 'insert_water.php';
-require_once 'insert_weight.php';
-require_once 'insert_awakeningsCount.php';
-require_once 'insert_bmi.php';
-require_once 'insert_activity_weekly_goals.php';
-require_once 'insert_activity_daily_goals.php';
-require_once 'insert_body_measurements.php';
-require_once 'insert_food_goal.php';
-require_once 'insert_food_plan.php';
-require_once 'insert_weight_goal.php';
+//require_once 'insert_distance.php';
+//require_once 'insert_calories_out.php';
+//require_once 'insert_calories_in.php';
+//require_once 'insert_elevation.php';
+//require_once 'insert_fat.php';
+//require_once 'insert_floors.php';
+//require_once 'insert_minutesAsleep.php';
+//require_once 'insert_minutesAwake.php';
+//require_once 'insert_minutesToFallAsleep.php';
+//require_once 'insert_sleep_start_time.php';
+//require_once 'insert_time_in_bed.php';
+//require_once 'insert_water.php';
+//require_once 'insert_weight.php';
+//require_once 'insert_awakeningsCount.php';
+//require_once 'insert_bmi.php';
+//require_once 'insert_activity_weekly_goals.php';
+//require_once 'insert_activity_daily_goals.php';
+//require_once 'insert_body_measurements.php';
+//require_once 'insert_food_goal.php';
+//require_once 'insert_food_plan.php';
+//require_once 'insert_weight_goal.php';
 
 if (!$error) {
     echo '{"success" : "-1", "message" : "Data could not be synchronized. Please try again later!"}';
