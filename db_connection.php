@@ -181,7 +181,6 @@ class DatabaseConnection
 
         echo $statement;
 
-
         $this->executeStatement($statement);
 
         echo $this->getResultAsJSON();
