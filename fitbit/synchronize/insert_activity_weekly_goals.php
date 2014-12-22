@@ -14,8 +14,8 @@ $measurementName = 'distance';
 $distanceId = $db_connection->getMeasurementId($measurementName);
 $measurementName = 'steps';
 $stepsId = $db_connection->getMeasurementId($measurementName);
-$measurementName = 'weekly';
-$periodWeeklyId = $db_connection->getMeasurementId($measurementName);
+$period = 'weekly';
+$periodWeeklyId = $db_connection->getPeriodId($period);
 
 
 $distance = $response->goals->distance;
