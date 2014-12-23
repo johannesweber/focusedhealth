@@ -16,10 +16,10 @@ $fetch_credentials_mysqli_result = $db_connection->executeStatement($fetch_crede
 
 $fetch_credentials_result = $db_connection->getResultAsArray();
 
-$user_id = $fetch_credentials_result['user_id'];
-$oauth_token = $fetch_credentials_result['oauth_token'];
-$oauth_token_secret = $fetch_credentials_result['oauth_token_secret'];
-$company_account_id = $fetch_credentials_result['company_account_id'];
+$userId = $fetch_credentials_result['user_id'];
+$oauthToken = $fetch_credentials_result['oauth_token'];
+$oauthTokenSecret = $fetch_credentials_result['oauth_token_secret'];
+$companyAccountId = $fetch_credentials_result['company_account_id'];
 
 
 ?>
