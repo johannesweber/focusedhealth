@@ -30,7 +30,7 @@ include '../id/find_company_id.php';
 include '../fetch_credentials.php';
 
 $fitbit = new FitBitPHP("7c39abf127964bc984aba4020845ff11", "18c4a92f21f1458e8ac9798567d3d38c");
-$fitbit->setOAuthDetails($oauth_token, $oauth_token_secret);
+$fitbit->setOAuthDetails($oauthToken, $oauthTokenSecret);
 $fitbit->setResponseFormat('json');
 
 require_once '../id/find_member_since.php';
