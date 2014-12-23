@@ -11,4 +11,4 @@ $fetch_user_info = "SELECT city, country, dateOfBirth, gender, height, memberSin
 
 $db_connection->executeStatement($fetch_user_info);
 
-echo $db_connection->getResultAsJSON();
+echo $result = $db_connection->getResultAsJSON();

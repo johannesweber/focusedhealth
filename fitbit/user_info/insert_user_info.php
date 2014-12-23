@@ -21,7 +21,7 @@ $timezone = $response->user->timezone;
 $waterUnit = $response->user->waterUnit;
 $weightUnit = $response->user->weightUnit;
 
-$select_water_goal = "SELECT * FROM company_account_info WHERE user_id='$userId' AND company_id='$company_id'";
+$select_water_goal = "SELECT * FROM company_account_info WHERE user_id='$userId' AND company_id='$companyId'";
 $result = $db_connection->executeStatement($select_water_goal);
 $rowCount = $result->num_rows;
 
@@ -29,9 +29,10 @@ if ($rowCount == 0) {
 
 //SQL Statement to insert data into user info table
     $insert = "INSERT INTO company_account_info (user_id, company_id, company_account_id, avatar, city, country, dateOfBirth, distanceUnit, fullName, gender, glucoseUnit, height, heightUnit, locale, memberSince, waterUnit, weightUnit, timezone)
-    VALUES ('$userId', '$company_id', '$encodedId', '$avatar', '$city', '$country', '$dateOfBirth', '$distanceUnit', '$fullName', '$gender', '$glucoseUnit', '$height', '$heightUnit', '$locale', '$memberSince', '$waterUnit', '$weightUnit', '$timezone')";
+    VALUES ('$userId', '$companyId', '$encodedId', '$avatar', '$city', '$country', '$dateOfBirth', '$distanceUnit', '$fullName', '$gender', '$glucoseUnit', '$height', '$heightUnit', '$locale', '$memberSince', '$waterUnit', '$weightUnit', '$timezone')";
 
     $result = $db_connection->executeStatement($insert);
+
     if (!$result) {
         $error = false;
     }
@@ -39,9 +40,11 @@ if ($rowCount == 0) {
 } else {
 
     $update = "UPDATE company_account_info set company_account_id='$encodedId', avatar='$avatar', city='$city', country='$country', dateOfBirth='$dateOfBirth', distanceUnit='$distanceUnit',
-fullName='$fullName', gender='$gender', glucoseUnit='$glucoseUnit', height='$height', heightUnit='$heightUnit', locale='$locale', memberSince='$memberSince', waterUnit='$waterUnit', weightUnit='$weightUnit', timezone='$timezone'
-WHERE user_id='$userId'  AND company_id ='$company_id'";
+              fullName='$fullName', gender='$gender', glucoseUnit='$glucoseUnit', height='$height', heightUnit='$heightUnit', locale='$locale', memberSince='$memberSince', waterUnit='$waterUnit', weightUnit='$weightUnit', timezone='$timezone'
+              WHERE user_id='$userId'  AND company_id ='$companyId'";
+
     $result = $db_connection->executeStatement($update);
+
     if (!$result) {
         $error = false;
     }
@@ -50,9 +53,9 @@ WHERE user_id='$userId'  AND company_id ='$company_id'";
 }
 
 if (!$error) {
-    echo '{"success" : "-1", "message" : "steps statement was not successfull"}';
+    echo '{"success" : "-1", "message" : "user info statement was not successfull"}';
 } else {
-    echo '{"success" : "1", "message" : "steps statement was successfull"}';
+    echo '{"success" : "1", "message" : "user info statement was successfull"}';
 }
 
 ?>
