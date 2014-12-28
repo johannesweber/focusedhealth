@@ -131,12 +131,12 @@ class DatabaseConnection
     /*
      * fuction to get the intern companyId from our database
      */
-    public function getCompanyIdFitbit()
+    public function getCompanyId($company)
     {
 
         $this->connect();
 
-        $fetch = "SELECT id FROM company WHERE name='fitbit'";
+        $fetch = "SELECT id FROM company WHERE name='$company'";
 
         $this->executeStatement($fetch);
         $result = $this->getResultAsArray();
@@ -164,19 +164,27 @@ class DatabaseConnection
     /*
      * function to
      */
-    public function selectGoalFromDatabase($measurement, $userId, $period) {
+    public function selectGoalFromDatabase($measurement, $userId, $period, $limit) {
 
         $this->connect();
 
-        $measurementId = $this->getMeasurementId($measurement);
+        $timestamp = time();
+        $date = date("Y-m-d", $timestamp);
 
-        $statement = "SELECT goal_value, start_value, startdate
-                            FROM goal
-                            JOIN measurement meas ON goal.measurement_id = meas.id
-                            JOIN unit ON meas.unit_id = unit.id
-                            WHERE user_id= $userId
-                            AND measurement_id= $measurementId
-                            AND period = $period
+        $measurementId = $this->getMeasurementId($measurement);
+        //$companyId = $this->getCompanyId($company);
+
+        $statement = "SELECT goal.goal_id, goal.goal_value AS target_value, v.value AS current_value, v.date
+                      FROM goal
+                      JOIN measurement meas ON goal.measurement_id = meas.id
+                      JOIN unit ON meas.unit_id = unit.id
+                      JOIN value v ON v.measurement_id = meas.id
+                      WHERE goal.measurement_id = $measurementId
+                      AND v.user_id = $userId
+                      AND goal.period = $period
+                      AND v.date <=  '$date'
+                      ORDER BY DATE DESC
+                      LIMIT $limit
                       ";
         $this->executeStatement($statement);
 
@@ -192,13 +200,13 @@ class DatabaseConnection
 
         $measurementId = $this->getMeasurementId($measurement);
 
-        $statement = "SELECT value, DATE, meas.name AS measurement, unit.name AS unit
+        $statement = "SELECT value, date, meas.name AS measurement, unit.name AS unit
                       FROM value val
                       JOIN measurement meas ON val.measurement_id = meas.id
                       JOIN unit ON meas.unit_id = unit.id
                       WHERE user_id =  '$userId'
                       AND measurement_id =  '$measurementId'
-                      AND DATE <=  '$date'
+                      AND date <=  '$date'
                       ORDER BY date DESC
                       LIMIT $limit
                       ";
