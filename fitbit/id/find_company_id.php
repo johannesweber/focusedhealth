@@ -6,9 +6,7 @@
  * Time: 22:19
  */
 
-$company = 'fitbit';
-
-$find_company_id_statement = "SELECT id FROM company WHERE name='$company'";
+$find_company_id_statement = "SELECT id FROM company WHERE name = '$company'";
 
 $find_company_id_mysqli_result = $db_connection->executeStatement($find_company_id_statement);
 

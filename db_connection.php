@@ -216,6 +216,28 @@ class DatabaseConnection
         return $this->getResultAsJSON();
     }
 
+    public function checkIfCredentialsExists($company, $userId) {
+
+        $this->connect();
+
+        $companyId = $this->getCompanyId($company);
+
+        $statement = "SELECT * FROM user_company_account WHERE user_id = '$userId' AND company_id = $companyId";
+
+        $result = $this->executeStatement($statement);
+
+        $numberOfRows = $result->num_rows;
+
+        if ($numberOfRows > 0) {
+            $exists = true;
+        } else {
+            $exists = false;
+        }
+
+        return $exists;
+
+    }
+
     //return number of rows
     public function checkIfvalueExists($userId, $measurementId, $companyId, $date)
     {
@@ -225,7 +247,15 @@ class DatabaseConnection
 
         $result = $this->executeStatement($statement);
 
-        echo $rowCount = $result->num_rows;
+        $numberOfRows = $result->num_rows;
+
+        if ($numberOfRows > 0) {
+            $exists = true;
+        } else {
+            $exists = false;
+        }
+
+        return $exists;
     }
 
 
