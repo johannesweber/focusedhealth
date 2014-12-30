@@ -216,6 +216,33 @@ class DatabaseConnection
         return $this->getResultAsJSON();
     }
 
+    //returns true if desired goal is stored in database
+    public function checkIfGoalExists($measurement, $userId, $company) {
+
+        $measurementId = $this->getMeasurementId($measurement);
+        $companyId = $this->getCompanyId($company);
+
+        $statement = "SELECT * FROM goal
+                      WHERE user_id = '$userId'
+                      AND measurement_id = '$measurementId'
+                      AND company_id = '$companyId'";
+
+        $result = $this->executeStatement($statement);
+
+        $numberOfRows = $result->num_rows;
+
+        if ($numberOfRows > 0) {
+
+            $exists = true;
+
+        } else {
+
+            $exists = false;
+        }
+
+        return $exists;
+    }
+
     public function checkIfCredentialsExists($company, $userId) {
 
         $this->connect();
@@ -238,16 +265,12 @@ class DatabaseConnection
 
     }
 
-    //return number of rows
-    public function checkIfvalueExists($userId, $measurementId, $companyId, $date)
-    {
-        $this->connect();
+    //return true if value is in Database
+    public function checkIfValueExists($userId, $measurement, $date, $limit) {
 
-        $statement = "SELECT * FROM value WHERE user_id = '$userId' AND measurement_id = '$measurementId' AND company_id = '$companyId' AND date = '$date' ";
+        $this->selectValueFromDatabase($measurement, $userId, $date, $limit);
 
-        $result = $this->executeStatement($statement);
-
-        $numberOfRows = $result->num_rows;
+        $numberOfRows = $this->result->num_rows;
 
         if ($numberOfRows > 0) {
             $exists = true;
@@ -257,8 +280,6 @@ class DatabaseConnection
 
         return $exists;
     }
-
-
 }
 
 ?>

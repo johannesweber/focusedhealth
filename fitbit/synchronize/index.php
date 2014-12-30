@@ -14,9 +14,9 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 'On');
 
-include '../../db_connection.php';
+require_once '../../db_connection.php';
 
-include '../fitbitphp.php';
+require_once '../fitbitphp.php';
 
 $db_connection = new DatabaseConnection();
 
@@ -25,13 +25,16 @@ $db_connection->connect();
 $userId = $_GET["userId"];
 
 // to used in insert
-include '../id/find_company_id.php';
+$company = "fitbit";
+$companyId = $db_connection->getCompanyId($company);
 
-include '../fetch_credentials.php';
+require_once '../fetch_credentials.php';
 
 $fitbit = new FitBitPHP("7c39abf127964bc984aba4020845ff11", "18c4a92f21f1458e8ac9798567d3d38c");
 $fitbit->setOAuthDetails($oauthToken, $oauthTokenSecret);
 $fitbit->setResponseFormat('json');
+
+require_once '../user_info/insert/index.php';
 
 require_once '../id/find_member_since.php';
 
