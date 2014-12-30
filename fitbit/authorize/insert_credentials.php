@@ -6,7 +6,7 @@
  * Time: 17:40
  */
 
-$credentialsExists = $db_connection ->checkIfCredentialsExists($company, $userId);
+$credentialsExists = $db_connection->checkIfCredentialsExists($company, $userId);
 
 if (!$credentialsExists) {
 

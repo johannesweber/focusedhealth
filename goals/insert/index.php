@@ -19,34 +19,29 @@ $userId = $_GET["userId"];
 $measurement = $_GET["measurement"];
 $measurementId = $db_connection->getMeasurementId($measurement);
 $period = $_GET["period"];
-$startDate = $_GET["startDate"];
+$startDateString = $_GET["startDate"];
+//converts date from string to MySQL Date
+$timestamp = strtotime($startDateString);
+$startDate = date("Y-m-d", $timestamp);
 $company = $_GET["company"];
 $companyId = $db_connection->getCompanyId($company);
 $goalValue = $_GET["goalValue"];
 
-$timestamp = time();
-$date = date("Y-m-d", $timestamp);
-
 //get correct limit value for goal
 $limit = 1;
 
-$db_connection->selectGoalFromDatabase($measurement, $userId, $period, $limit);
+$goalExists = $db_connection->checkIfGoalExists($measurement, $userId, $company);
 
-$result = $db_connection->getResult();
-
-if ($result->num_rows == 0 ) {
+if (!$goalExists) {
 
     //TODO was ist das StartValue ? Braucht man das ? ist ja überall NULL ?!?
-    $statement = "INSERT INTO goal (goal_value, start_value, startdate, period, user_id, measurement_id, company_id)
-                VALUES ('$goalValue', '0', '$date', '$period', '$userId', '$measurementId', '$companyId')";
+    echo "Insert " . $statement = "INSERT INTO goal (goal_value, start_value, startdate, period, user_id, measurement_id, company_id)
+                VALUES ('$goalValue', '0', '$startDate', '$period', '$userId', '$measurementId', '$companyId')";
 
 } else {
 
-    $resultArray = $db_connection->getResultAsArray();
-    $goalId = $resultArray["goal_id"];
-
-    $statement = "UPDATE goal
-                  SET goal_value = $goalValue, start_value = 0, startdate = $date, period = $period, user_id = $userId, measurement_id = $measurementId, company_id = $companyId
+    echo "Update " . $statement = "UPDATE goal
+                  SET goal_value = $goalValue, start_value = 0, startdate = '$startDate', period = $period, user_id = $userId, measurement_id = $measurementId, company_id = $companyId
                   WHERE period = $period AND measurement_id = $measurementId AND user_id = $userId
                   ";
 }
