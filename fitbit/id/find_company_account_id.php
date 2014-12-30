@@ -6,7 +6,7 @@
  * Time: 20:20
  */
 
-include 'find_company_id.php';
+$companyId = $db_connection->getCompanyId($company = "fitbit");
 
 $fetch = "SELECT company_account_id FROM company_account_info WHERE user_id='$userId' AND company_id = '$companyId'";
 
