@@ -52,10 +52,4 @@ if ($rowCount == 0) {
 
 }
 
-if (!$error) {
-    echo '{"success" : "-1", "message" : "user info statement was not successfull"}';
-} else {
-    echo '{"success" : "1", "message" : "user info statement was successfull"}';
-}
-
 ?>
