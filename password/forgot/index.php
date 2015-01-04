@@ -45,8 +45,8 @@ if($_POST) {
 
         $message  = "Hello " . $email . ",\n\n";
         $message .= "please click the following link to reset your Password: \n";
-        $message .= "http://141.19.142.45/~johannes/focusedhealth/password/reset/?email=$email&verifier=$verifier\n\n";
-        $message .= "If you don't requested resetting your password, feel free to ignore this mail.\n\n";
+        $message .= "https://anakin.informatik.hs-mannheim.de/uip1/~johannes/focusedhealth/password/reset/?email=$email&verifier=$verifier\n\n";
+        $message .= "If you had not requested resetting your password, feel free to ignore this mail.\n\n";
         $message .= "Thank You.\n\n";
         $message .= "Best Regards,\n";
         $message .= "Your Focused Health Team";
