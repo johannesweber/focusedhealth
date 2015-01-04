@@ -34,6 +34,12 @@ require_once '../id/find_company_id.php';
 
 require_once 'insert_credentials.php';
 
+require_once '../fetch_credentials.php';
+
+//start to insert
+
+//include '../user_info/insert_user_info.php';
+
 $db_connection->close();
 
 ?>
