@@ -194,17 +194,19 @@ class DatabaseConnection
     /*
      * function to ???
      */
-    public function selectValueFromDatabase($measurement, $userId, $date, $limit) {
+    public function selectValueFromDatabase($company, $measurement, $userId, $date, $limit) {
 
         $this->connect();
 
         $measurementId = $this->getMeasurementId($measurement);
+        $companyId = $this->getCompanyId($company);
 
         $statement = "SELECT value, date, meas.name AS measurement, unit.name AS unit
                       FROM value val
                       JOIN measurement meas ON val.measurement_id = meas.id
                       JOIN unit ON meas.unit_id = unit.id
                       WHERE user_id =  '$userId'
+                      AND company_id = '$companyId'
                       AND measurement_id =  '$measurementId'
                       AND date <=  '$date'
                       ORDER BY date DESC
@@ -266,19 +268,59 @@ class DatabaseConnection
     }
 
     //return true if value is in Database
-    public function checkIfValueExists($userId, $measurement, $date, $limit) {
+    public function checkIfValueExists($userId, $company, $measurement, $date, $limit) {
 
-        $this->selectValueFromDatabase($measurement, $userId, $date, $limit);
+        $this->selectValueFromDatabase($measurement, $userId, $date, $limit, $company);
 
         $numberOfRows = $this->result->num_rows;
 
         if ($numberOfRows > 0) {
+
             $exists = true;
+
         } else {
+
             $exists = false;
         }
 
         return $exists;
+    }
+
+    public function insertValue($userId, $company, $measurement, $date, $value) {
+
+        $this->connect();
+
+        $successfull = false;
+
+        $measurementId = $this->getMeasurementId($measurement);
+        $companyId = $this->getCompanyId($company);
+
+        $valuesExists = $this->checkIfValueExists($userId, $company, $measurement, $date, $limit = 1);
+
+        if ($valuesExists) {
+
+            $statement = "UPDATE value SET value = '$value'
+                          WHERE user_id = '$userId'
+                          AND company_id = '$companyId'
+                          AND measurement_id = '$measurementId'
+                          AND date = '$date'
+                          ";
+
+        } else {
+
+            $statement = "INSERT INTO value (user_id, measurement_id, company_id, value, date)
+                          VALUES ('$userId' , '$measurementId' , '$companyId', '$value' , '$date')
+                          ";
+        }
+
+        $result = $this->executeStatement($statement);
+
+        if ($result) {
+
+           $successfull = true;
+        }
+
+        return $successfull;
     }
 }
 
