@@ -34,7 +34,6 @@ if ($result) {
 } else {
 
     echo '{"success" : "-1", "message" : "Value was not successfully inserted"}';
-
 }
 
 $db_connection->close();
