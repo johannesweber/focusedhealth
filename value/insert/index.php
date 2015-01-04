@@ -13,8 +13,14 @@ $db_connection = new DatabaseConnection();
 $userId = $_GET['userId'];
 $company = $_GET['company'];
 $measurement = $_GET['measurement'];
-$date = $_GET['date'];
 $value = $_GET['value'];
+
+//converts date from string to MySQL Date
+$dateString = $_GET["date"];
+$timestamp = strtotime($dateString);
+$date = date("Y-m-d", $timestamp);
+
+
 
 $result = $db_connection->insertValue($userId, $company, $measurement, $date, $value);
 
