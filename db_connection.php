@@ -270,7 +270,7 @@ class DatabaseConnection
     //return true if value is in Database
     public function checkIfValueExists($userId, $company, $measurement, $date, $limit) {
 
-        $this->selectValueFromDatabase($measurement, $userId, $date, $limit, $company);
+        $this->selectValueFromDatabase($company, $measurement, $userId, $date, $limit);
 
         $numberOfRows = $this->result->num_rows;
 

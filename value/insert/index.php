@@ -6,6 +6,9 @@
  * Time: 17:35
  */
 
+error_reporting(E_ALL);
+ini_set('display_errors', 'On');
+
 require_once '../../db_connection.php';
 
 $db_connection = new DatabaseConnection();
