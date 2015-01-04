@@ -19,12 +19,13 @@ $db_connection = new DatabaseConnection();
 
 $db_connection->connect();
 
+$company = 'fitbit';
 $userId = $_GET["userId"];
 $date = $_GET["endDate"];
 $limit = $_GET["limit"];
 $measurement = $_GET["measurement"];
 
-echo $db_connection->selectValueFromDatabase($measurement, $userId, $date, $limit);
+echo $db_connection->selectValueFromDatabase($company, $measurement, $userId, $date, $limit);
 
 $db_connection->close();
 
