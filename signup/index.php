@@ -44,7 +44,7 @@ if($_GET) {
                 $subject = "Focused Health App | Account Activation";
 
                 $message  = "Please click on the following link to activate your Account: \n\n";
-                $message .= "http://141.19.142.45/~johannes/focusedhealth/signup/activate/?email=$email&verifier=$verifier\n\n";
+                $message .= "https://anakin.informatik.hs-mannheim.de/uip1/~johannes/focusedhealth/signup/activate/?email=$email&verifier=$verifier\n\n";
                 $message .= "Thank You.";
 
                 $mail = new Mail();
