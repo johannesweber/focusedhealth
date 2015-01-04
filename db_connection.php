@@ -26,7 +26,7 @@ class DatabaseConnection
     }
 
     /*
-     * function to ????
+     * function to connect to the database
      */
     public function connect()
     {
@@ -60,7 +60,7 @@ class DatabaseConnection
     }
 
     /*
-     * function to ????
+     * function to close the database connection
      */
     public function close()
     {
@@ -116,7 +116,11 @@ class DatabaseConnection
         return $measurementId;
     }
 
-    public function getPeriodId($period){
+    /*
+     * function to get the Id for the period. It's daily or weekly.
+     */
+    public function getPeriodId($period)
+    {
 
         $this->connect();
 
@@ -164,7 +168,8 @@ class DatabaseConnection
     /*
      * function to
      */
-    public function selectGoalFromDatabase($measurement, $userId, $period, $limit) {
+    public function selectGoalFromDatabase($measurement, $userId, $period, $limit)
+    {
 
         $this->connect();
 
@@ -194,7 +199,8 @@ class DatabaseConnection
     /*
      * function to ???
      */
-    public function selectValueFromDatabase($company, $measurement, $userId, $date, $limit) {
+    public function selectValueFromDatabase($company, $measurement, $userId, $date, $limit)
+    {
 
         $this->connect();
 
@@ -218,8 +224,11 @@ class DatabaseConnection
         return $this->getResultAsJSON();
     }
 
-    //returns true if desired goal is stored in database
-    public function checkIfGoalExists($measurement, $userId, $company) {
+    /*
+     * returns true if desired goal is stored in database
+     */
+    public function checkIfGoalExists($measurement, $userId, $company)
+    {
 
         $measurementId = $this->getMeasurementId($measurement);
         $companyId = $this->getCompanyId($company);
@@ -245,7 +254,11 @@ class DatabaseConnection
         return $exists;
     }
 
-    public function checkIfCredentialsExists($company, $userId) {
+    /*
+     *
+     */
+    public function checkIfCredentialsExists($company, $userId)
+    {
 
         $this->connect();
 
@@ -267,8 +280,12 @@ class DatabaseConnection
 
     }
 
-    //return true if value is in Database
-    public function checkIfValueExists($userId, $company, $measurement, $date, $limit) {
+    /*
+     *
+     * return true if value is in Database
+     */
+    public function checkIfValueExists($userId, $company, $measurement, $date, $limit)
+    {
 
         $this->selectValueFromDatabase($company, $measurement, $userId, $date, $limit);
 
@@ -286,7 +303,11 @@ class DatabaseConnection
         return $exists;
     }
 
-    public function insertValue($userId, $company, $measurement, $date, $value) {
+    /*
+     *
+     */
+    public function insertValue($userId, $company, $measurement, $date, $value)
+    {
 
         $this->connect();
 
@@ -317,7 +338,7 @@ class DatabaseConnection
 
         if ($result) {
 
-           $successfull = true;
+            $successfull = true;
         }
 
         return $successfull;

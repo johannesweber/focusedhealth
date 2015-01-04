@@ -10,7 +10,7 @@
  */
 
 
-$fetch_credentials = "SELECT * FROM user_company_account WHERE company_id='$company_id' AND user_id='$user_id'";
+$fetch_credentials = "SELECT * FROM user_company_account WHERE company_id='$companyId' AND user_id='$userId'";
 
 $fetch_credentials_mysqli_result = $db_connection->executeStatement($fetch_credentials);
 
