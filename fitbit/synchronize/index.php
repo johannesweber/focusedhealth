@@ -24,7 +24,6 @@ $db_connection->connect();
 
 $userId = $_GET["userId"];
 
-// to used in insert
 $company = "fitbit";
 $companyId = $db_connection->getCompanyId($company);
 
