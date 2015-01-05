@@ -36,8 +36,8 @@ $withings->setOAuthDetails($oauth_token, $oauth_token_secret, $company_account_i
 
 $error = true;
 
-require_once 'insert_body_measurements.php';
-//require_once 'insert_activity.php';
+//require_once 'insert_body_measurements.php';
+require_once 'insert_activity.php';
 
 
 //TODO Evtl. als Methode in db_connection
