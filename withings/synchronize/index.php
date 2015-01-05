@@ -34,20 +34,9 @@ $withings = new WithingsPHP();
 $withings->setOAuthDetails($oauth_token, $oauth_token_secret, $company_account_id);
 
 
-$error = true;
+//require_once 'insert_body_measures.php';
+require_once 'insert_activity_measures.php';
 
-//require_once 'insert_body_measurements.php';
-require_once 'insert_activity.php';
-
-
-//TODO Evtl. als Methode in db_connection
-/*if (!$error) {
-    echo '{"success" : "-1", "message" : "Data could not be synchronized. Please try again later!"}';
-} else {
-    echo '{"success" : "1", "message" : "Data successfully synchronized!"}';
-}*/
-
-$db_connection->synchronizeMessage($error);
 $db_connection->close();
 
 ?>

@@ -33,7 +33,7 @@ require_once '../fetch_credentials.php';
 $withings = new WithingsPHP();
 $withings->setOAuthDetails($oauth_token, $oauth_token_secret, $company_account_id);
 
-require_once 'insert_activity.php';
+require_once 'insert_activity_measures.php';
 
 $db_connection->close();
 

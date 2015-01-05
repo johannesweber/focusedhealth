@@ -242,4 +242,43 @@ class WithingsPHP
         print_r($result);
         return $result;
     }
+
+    public function convertMeasurementIdToMeasurementName($measurementId) {
+
+        switch ($measurementId) {
+            case 1: $name = 'weight';
+                break;
+            case 4: $name = 'height';
+                break;
+            case 5: $name = 'fatFreeMass';
+                break;
+            case 6: $name = 'fat';
+                break;
+            case 8: $name = 'fatMass';
+                break;
+            case 9: $name = 'diastolic';
+                break;
+            case 10: $name = 'systolic';
+                break;
+            case 11: $name = 'heartRate';
+                break;
+            case 54: $name = 'spO2';
+                break;
+            default: $name = 'measurement ID not available';
+        }
+
+        return $name;
+    }
+
+    /*
+ * function to check synchronization
+ */
+    public function showSynchronizeMessage($result)
+    {
+        if (!$result) {
+            echo '{"success" : "-1", "message" : "Data could not be synchronized. Please try again later!"}';
+        } else {
+            echo '{"success" : "1", "message" : "Data successfully synchronized!"}';
+        }
+    }
 }

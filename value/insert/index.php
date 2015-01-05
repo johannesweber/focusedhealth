@@ -23,8 +23,6 @@ $dateString = $_GET["date"];
 $timestamp = strtotime($dateString);
 $date = date("Y-m-d", $timestamp);
 
-
-
 $result = $db_connection->insertValue($userId, $company, $measurement, $date, $value);
 
 if ($result) {

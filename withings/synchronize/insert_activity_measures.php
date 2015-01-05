@@ -6,10 +6,13 @@
  * Time: 21:58
  */
 
-$startdate = "1417392000"; //1 dez.
-$enddate = "1417737600";
+/*$startdate = "1417392000"; //1 dez.
+$enddate = "1417737600";*/
+
 $response = $withings->getActivityMeasures();
 print_r($response);
+
+$successfull = true;
 
 
 // get all id's wich are neccessary
@@ -28,27 +31,31 @@ $moderateId = $db_connection->getMeasurementId($measurement);
 $measurement = 'intense';
 $intenseId = $db_connection->getMeasurementId($measurement);
 
+
 echo "steps: " . $stepsId . "\ndistance: " . $distanceId . "\ncaloriesOut: " . $caloriesOutId . "\nelevation: " . $elevationId
     . "\nsoft: " . $softId
     . "\nmoderate: " . $moderateId
     . "\nintense: " . $intenseId . "\n";
 
 
-// connecting meastype from withings with measure id's from focused health
-$meastypeWithings = array(15 => $stepsId, 18 => $distanceId, 22 => $caloriesOutId, 14 => $elevationId, 60 => $softId, 61 => $moderateId, 62 => $intenseId);
+/*
+$arrayLength = $response->body;
 
-
-$measuregrpsArray = $response->body->activities;
-
-echo "\nHALLOOOOOO\n";
+var_dump($arrayLength);
 
 //run through each date
-for ($x = 0; $x < sizeof($measuregrpsArray); $x++) {
+for ($x = 0; $x < sizeOf(arrayLength); $x++) {
 
-    //need to know if value is a real measurement or a goal !
-    $category = $measuregrpsArray[$x]->category;
+
+
+    $category = $arrayLength[$x]->category;
     $timestamp = $measuregrpsArray[$x]->date;
     $date = date("Y-m-d", $timestamp);
+
+
+    /*
+
+
 
     // values of the day
     $valueArray = $measuregrpsArray[$x]->measures;
@@ -84,7 +91,7 @@ for ($x = 0; $x < sizeof($measuregrpsArray); $x++) {
                 //update
                 /*$update = "UPDATE value SET value = '$value'
                                      WHERE user_id='$userId' AND measurement_id='$measurementId' AND company_id='$companyId' AND date = '$date'";
-*/
+
             }
             // if category is a goal
         } else if ($category == 2) {
@@ -93,5 +100,10 @@ for ($x = 0; $x < sizeof($measuregrpsArray); $x++) {
 
         }
     }
-}
+}*/
+
+
+
+$withings->showSynchronizeMessage($successfull);
+
 ?>

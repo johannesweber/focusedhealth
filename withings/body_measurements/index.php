@@ -34,6 +34,6 @@ $withings = new WithingsPHP();
 $withings->setOAuthDetails($oauth_token, $oauth_token_secret, $company_account_id);
 
 //include '../../id/find_id.php';
-require_once 'insert_body_measurements.php';
+require_once 'insert_body_measures.php';
 
 $db_connection->close();
