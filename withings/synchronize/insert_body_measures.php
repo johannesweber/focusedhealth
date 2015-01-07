@@ -39,7 +39,7 @@ for ($x = 0; $x < sizeof($measuregrpsArray); $x++) {
 
             $result = $db_connection->insertValue($userId, $company, $measurement, $date, $value);
 
-            if(!$result){
+            if (!$result) {
 
                 $successfull = false;
             }

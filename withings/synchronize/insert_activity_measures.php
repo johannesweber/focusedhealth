@@ -6,13 +6,19 @@
  * Time: 21:58
  */
 
-/*$startdate = "1417392000"; //1 dez.
-$enddate = "1417737600";*/
-
 $response = $withings->getActivityMeasures();
 print_r($response);
 
 $successfull = true;
+
+$arrayLength = $response->body;
+
+
+
+//run through each date
+for($x = 0; $x <sizeof($arrayLength); $x++ ){
+
+}
 
 
 // get all id's wich are neccessary
@@ -39,9 +45,6 @@ echo "steps: " . $stepsId . "\ndistance: " . $distanceId . "\ncaloriesOut: " . $
 
 
 /*
-$arrayLength = $response->body;
-
-var_dump($arrayLength);
 
 //run through each date
 for ($x = 0; $x < sizeOf(arrayLength); $x++) {
