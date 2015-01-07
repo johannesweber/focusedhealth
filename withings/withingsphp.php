@@ -120,9 +120,9 @@ class WithingsPHP
 
         $encodedUserId = urlencode($this->userid);
 
-        if($hasTimespan == false){
+        if ($hasTimespan == false) {
             $parameterString = 'action=' . $encodedAction . '&oauth_consumer_key=' . $encodedConsumerKey . '&oauth_nonce=' . $encodedNonce . '&oauth_signature_method=' . $encodedSignatureMethod . '&oauth_timestamp=' . $encodedTimestamp . '&oauth_token=' . $encodedToken . '&oauth_version=' . $encodedVersion . '&userid=' . $encodedUserId;
-        }else{
+        } else {
             $parameterString = 'action=' . $encodedAction . "&enddate=" . $endDate . '&oauth_consumer_key=' . $encodedConsumerKey . '&oauth_nonce=' . $encodedNonce . '&oauth_signature_method=' . $encodedSignatureMethod . '&oauth_timestamp=' . $encodedTimestamp . '&oauth_token=' . $encodedToken . '&oauth_version=' . $encodedVersion . "&startdate=" . $startDate . '&userid=' . $encodedUserId;
 
         }
@@ -182,7 +182,6 @@ class WithingsPHP
 
         $json = file_get_contents($url);
         $result = json_decode($json);
-        print_r($result);
         return $result;
     }
 
@@ -197,7 +196,6 @@ class WithingsPHP
 
         $json = file_get_contents($url);
         $result = json_decode($json);
-        print_r($result);
         return $result;
     }
 
@@ -211,7 +209,6 @@ class WithingsPHP
 
         $json = file_get_contents($url);
         $result = json_decode($json);
-        print_r($result);
         return $result;
     }
 
@@ -225,7 +222,6 @@ class WithingsPHP
 
         $json = file_get_contents($url);
         $result = json_decode($json);
-        print_r($result);
         return $result;
     }
 
@@ -239,35 +235,53 @@ class WithingsPHP
 
         $json = file_get_contents($url);
         $result = json_decode($json);
-        print_r($result);
         return $result;
     }
 
-    public function convertMeasurementIdToMeasurementName($measurementId) {
+    public function convertMeasurementIdToMeasurementName($measurementId)
+    {
 
         switch ($measurementId) {
-            case 1: $name = 'weight';
+            case 1:
+                $name = 'weight';
                 break;
-            case 4: $name = 'height';
+            case 4:
+                $name = 'height';
                 break;
-            case 5: $name = 'fatFreeMass';
+            case 5:
+                $name = 'fatFreeMass';
                 break;
-            case 6: $name = 'fat';
+            case 6:
+                $name = 'fat';
                 break;
-            case 8: $name = 'fatMass';
+            case 8:
+                $name = 'fatMass';
                 break;
-            case 9: $name = 'diastolic';
+            case 9:
+                $name = 'diastolic';
                 break;
-            case 10: $name = 'systolic';
+            case 10:
+                $name = 'systolic';
                 break;
-            case 11: $name = 'heartRate';
+            case 11:
+                $name = 'heartRate';
                 break;
-            case 54: $name = 'spO2';
+            case 54:
+                $name = 'spO2';
                 break;
-            default: $name = 'measurement ID not available';
+            default:
+                $name = 'measurement ID not available';
         }
 
         return $name;
+    }
+
+    public function devideSeconds ($seconds){
+
+        $result = $seconds/60;
+
+        return $result;
+
     }
 
     /*

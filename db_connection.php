@@ -308,7 +308,6 @@ class DatabaseConnection
      */
     public function insertValue($userId, $company, $measurement, $date, $value)
     {
-
         $this->connect();
 
         $successfull = false;
@@ -343,6 +342,82 @@ class DatabaseConnection
 
         return $successfull;
     }
+
+    /*
+     *
+     */
+    public function insertSleepStartTime($userId, $company, $measurement, $startTime, $endTime, $date)
+    {
+
+        $this->connect();
+
+        $successfull = false;
+        $result = false;
+        $companyId = $this->getCompanyId($company);
+
+        $valuesExists = $this->checkIfSleepTimeExists($userId, $company, $date, $startTime);
+
+
+        if (!$valuesExists) {
+
+            $statement = "INSERT INTO sleep_start_time (user_id, measurement_id,company_id, start_time, end_time, date)
+                          VALUES ('$userId' , '$measurement' , '$companyId' ,'$startTime', '$endTime', '$date' )";
+            $result = $this->executeStatement($statement);
+
+        }
+
+        if ($result) {
+
+            $successfull = true;
+        }
+
+        return $successfull;
+    }
+
+
+    /*
+     *
+     */
+    public function checkIfSleepTimeExists($userId, $company, $date, $startTime)
+    {
+
+        $this->selectSleepTimeFromDatabase($company, $userId, $date, $startTime);
+        $numberOfRows = $this->result->num_rows;
+        if ($numberOfRows > 0) {
+
+            $exists = true;
+
+        } else {
+
+            $exists = false;
+        }
+
+        return $exists;
+    }
+
+
+    public function selectSleepTimeFromDatabase($company, $userId, $date, $startTime)
+    {
+
+        $this->connect();
+
+
+        $companyId = $this->getCompanyId($company);
+
+        $statement = "SELECT *
+                      FROM sleep_start_time
+                      WHERE user_id =  '$userId'
+                      AND company_id = '$companyId'
+                      AND date =  '$date'
+                      AND start_time = '$startTime'
+                      ";
+
+        $this->executeStatement($statement);
+
+        return $this->getResultAsJSON();
+    }
+
+
 }
 
 ?>

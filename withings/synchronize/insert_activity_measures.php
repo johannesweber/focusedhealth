@@ -6,14 +6,16 @@
  * Time: 21:58
  */
 
+
+$timestamp = time();
+$date = date("Y-m-d", $timestamp);
+
 $response = $withings->getActivityMeasures();
 print_r($response);
 
 $successfull = true;
 
-$activityArray = $response->body;
-
-
+$activityArray = $response->body->activities;
 
 // get all id's wich are neccessary
 $measurement = 'steps';
@@ -31,21 +33,16 @@ $moderateId = $db_connection->getMeasurementId($measurement);
 $measurement = 'intense';
 $intenseId = $db_connection->getMeasurementId($measurement);
 
-/*
-echo "steps: " . $stepsId . "\ndistance: " . $distanceId . "\ncaloriesOut: " . $caloriesOutId . "\nelevation: " . $elevationId
-    . "\nsoft: " . $softId
-    . "\nmoderate: " . $moderateId
-    . "\nintense: " . $intenseId . "\n";
-*/
-
 
 //run through each date
 for($x = 0; $x <sizeof($activityArray); $x++ ){
 
-    $steps = $activityArray[$x]->steps;
-    print_r($steps);
+    $date = $activityArray[$x]->date;
+
+
 
 }
+
 
 
 
