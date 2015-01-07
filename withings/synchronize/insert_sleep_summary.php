@@ -49,7 +49,7 @@ for ($i = 0; $i < sizeof($sleepSummaryArray); $i++) {
     $wakeUpCount = $withings->devideSeconds($sleepSummaryArray[$i]->data->wakeupcount);
 
     // Methoden Aufruf, um Daten in Datenbank zu schreiben
-    // $result = $db_connection->insertValue($userId, $company, $wakeUpDurationMeasurement, $date, $wakeUpDuration);
+    $result = $db_connection->insertValue($userId, $company, $wakeUpDurationMeasurement, $date, $wakeUpDuration);
     $result = $db_connection->insertValue($userId, $company, $lightSleepDurationMeasurement, $date, $lightSleepDuration);
     $result = $db_connection->insertValue($userId, $company, $deepSleepDurationMeasurement, $date, $deepSleepDuration);
     //$result = $db_connection->insertValue($userId, $company, $durationToSleepId, $date, $durationToSleep);
