@@ -56,6 +56,7 @@ for ($i = 0; $i < sizeof($sleepSummaryArray); $i++) {
     $result = $db_connection->insertValue($userId, $company, $wakeUpCountMeasurement, $date, $wakeUpCount);
 
 
+  Test 12 Test
 }
 
 

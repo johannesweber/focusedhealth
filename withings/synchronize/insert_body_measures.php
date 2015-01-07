@@ -5,7 +5,7 @@
  * Date: 25.11.14
  * Time: 14:58
  */
-
+Test 12 Test
 $response = $withings->getBodyMeasures();
 
 //$int = 1780;
