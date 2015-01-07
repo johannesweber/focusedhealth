@@ -11,14 +11,8 @@ print_r($response);
 
 $successfull = true;
 
-$arrayLength = $response->body;
+$activityArray = $response->body;
 
-
-
-//run through each date
-for($x = 0; $x <sizeof($arrayLength); $x++ ){
-
-}
 
 
 // get all id's wich are neccessary
@@ -37,11 +31,23 @@ $moderateId = $db_connection->getMeasurementId($measurement);
 $measurement = 'intense';
 $intenseId = $db_connection->getMeasurementId($measurement);
 
-
+/*
 echo "steps: " . $stepsId . "\ndistance: " . $distanceId . "\ncaloriesOut: " . $caloriesOutId . "\nelevation: " . $elevationId
     . "\nsoft: " . $softId
     . "\nmoderate: " . $moderateId
     . "\nintense: " . $intenseId . "\n";
+*/
+
+
+//run through each date
+for($x = 0; $x <sizeof($activityArray); $x++ ){
+
+    $steps = $activityArray[$x]->steps;
+    print_r($steps);
+
+}
+
+
 
 
 /*
