@@ -5,7 +5,7 @@
  * Date: 04.01.15
  * Time: 21:58
  */
-Test 12 Test
+
 
 $timestamp = time();
 $date = date("Y-m-d", $timestamp);
