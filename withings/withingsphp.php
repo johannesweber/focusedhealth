@@ -156,7 +156,6 @@ class WithingsPHP
      * @param string $userId UserId of public profile, if none using set with setUser or '-' by default
      * @return mixed SimpleXMLElement or the value encoded in json as an object
      */
-
     public function getBodyMeasures()
     {
         $action = 'getmeas';
@@ -171,7 +170,11 @@ class WithingsPHP
         return $result;
     }
 
-
+    /**
+     * @param $startDate
+     * @param $endDate
+     * @return mixed SimpleXMLElement or the value encoded in json as an object
+     */
     public function getBodyMeasuresTimeRange($startDate, $endDate)
     {
         $action = 'getmeas';
@@ -185,7 +188,9 @@ class WithingsPHP
         return $result;
     }
 
-
+    /**
+     * @return mixed SimpleXMLElement or the value encoded in json as an object
+     */
     public function getActivityMeasures()
     {
         $action = 'getactivity';
@@ -199,6 +204,9 @@ class WithingsPHP
         return $result;
     }
 
+    /**
+     * @return mixed SimpleXMLElement or the value encoded in json as an object
+     */
     public function getIntradayActivity()
     {
         $action = 'getintradayactivity';
@@ -212,6 +220,11 @@ class WithingsPHP
         return $result;
     }
 
+    /**
+     * @param $startDate
+     * @param $endDate
+     * @return mixed SimpleXMLElement or the value encoded in json as an object
+     */
     public function getSleepMeasure($startDate, $endDate)
     {
         $action = 'get';
@@ -225,6 +238,9 @@ class WithingsPHP
         return $result;
     }
 
+    /**
+     * @return mixed SimpleXMLElement or the value encoded in json as an object
+     */
     public function getSleepSummary()
     {
         $action = 'getsummary';
@@ -238,9 +254,14 @@ class WithingsPHP
         return $result;
     }
 
+
+    /**
+     * function to convert  the measurement id to measurement name
+     * @param $measurementId id of the measurement
+     * @return string the name of the measurement
+     */
     public function convertMeasurementIdToMeasurementName($measurementId)
     {
-
         switch ($measurementId) {
             case 1:
                 $name = 'weight';
@@ -276,17 +297,22 @@ class WithingsPHP
         return $name;
     }
 
-    public function devideSeconds ($seconds){
-
-        $result = $seconds/60;
+    /**
+     * function to convert seconds in minutes
+     * @param $seconds time in seconds
+     * @return float time in minutes
+     */
+    public function devideSeconds($seconds)
+    {
+        $result = $seconds / 60;
 
         return $result;
-
     }
 
-    /*
- * function to check synchronization
- */
+    /**
+     * function to check synchronization if it successfully
+     * @param $result
+     */
     public function showSynchronizeMessage($result)
     {
         if (!$result) {

@@ -6,10 +6,7 @@
  * Time: 13:44
  */
 
-// Unix Zeit umwandeln
-$timestamp = time();
-$time = date("H:i", $timestamp);
-
+// Methodenaufruf
 $response = $withings->getSleepSummary();
 print_r($response);
 
