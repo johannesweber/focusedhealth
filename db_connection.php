@@ -508,6 +508,27 @@ class DatabaseConnection
         return $this->getResultAsJSON();
 
     }
+
+    public function selectDuplicateMeasurementsFromUser($userId) {
+
+        $this->connect();
+
+        $statement = "SELECT user_id, m.name, m.nameInApp, u.name AS unit, c.name AS groupname, m.sliderLimit
+                      FROM  `user_company_account`
+                      JOIN company ON company_id = company.id
+                      JOIN company_has_measurement chm ON company.id = chm.company_id
+                      JOIN measurement m ON chm.measurement_id = m.id
+                      JOIN category c ON m.group_id = c.id
+                      JOIN unit u ON m.unit_id = u.id
+                      WHERE user_id =  '$userId'
+                      GROUP BY m.name
+                      HAVING ( COUNT(m.name) > 1 )
+                      ";
+
+        $this->executeStatement($statement);
+
+        return $this->getResultAsJSON();
+    }
 }
 
 ?>
