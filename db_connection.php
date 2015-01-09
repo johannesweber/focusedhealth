@@ -466,6 +466,31 @@ class DatabaseConnection
 
         return $result;
     }
+
+    public function selectAllMeasurementsFromUser($userId) {
+
+        $this->connect();
+
+        $statement = "SELECT DISTINCT user_id, m.name, m.nameInApp, u.name as unit, c.name as groupname, m.sliderLimit
+                      FROM  `user_company_account`
+                      JOIN company
+                      ON company_id = company.id
+                      JOIN company_has_measurement chm
+                      ON company.id = chm.company_id
+                      JOIN measurement m
+                      ON chm.measurement_id = m.id
+                      JOIN category c
+                      ON m.group_id = c.id
+                      JOIN unit u
+                      ON m.unit_id = u.id
+                      WHERE user_id = '$userId'
+                      ";
+
+        $this->executeStatement($statement);
+
+        return $this->getResultAsJSON();
+
+    }
 }
 
 ?>
