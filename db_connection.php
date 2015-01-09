@@ -454,6 +454,12 @@ class DatabaseConnection
         return $this->getResultAsJSON();
     }
 
+    /**
+     * function to change the email address
+     * @param $userId
+     * @param $newEmail
+     * @return bool|mysqli_result
+     */
     public function insertNewEmail($userId, $newEmail) {
 
         $this->connect();
