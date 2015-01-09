@@ -120,9 +120,9 @@ class WithingsPHP
 
         $encodedUserId = urlencode($this->userid);
 
-        if($hasTimespan == false){
+        if ($hasTimespan == false) {
             $parameterString = 'action=' . $encodedAction . '&oauth_consumer_key=' . $encodedConsumerKey . '&oauth_nonce=' . $encodedNonce . '&oauth_signature_method=' . $encodedSignatureMethod . '&oauth_timestamp=' . $encodedTimestamp . '&oauth_token=' . $encodedToken . '&oauth_version=' . $encodedVersion . '&userid=' . $encodedUserId;
-        }else{
+        } else {
             $parameterString = 'action=' . $encodedAction . "&enddate=" . $endDate . '&oauth_consumer_key=' . $encodedConsumerKey . '&oauth_nonce=' . $encodedNonce . '&oauth_signature_method=' . $encodedSignatureMethod . '&oauth_timestamp=' . $encodedTimestamp . '&oauth_token=' . $encodedToken . '&oauth_version=' . $encodedVersion . "&startdate=" . $startDate . '&userid=' . $encodedUserId;
 
         }
@@ -156,7 +156,6 @@ class WithingsPHP
      * @param string $userId UserId of public profile, if none using set with setUser or '-' by default
      * @return mixed SimpleXMLElement or the value encoded in json as an object
      */
-
     public function getBodyMeasures()
     {
         $action = 'getmeas';
@@ -171,7 +170,11 @@ class WithingsPHP
         return $result;
     }
 
-
+    /**
+     * @param $startDate
+     * @param $endDate
+     * @return mixed SimpleXMLElement or the value encoded in json as an object
+     */
     public function getBodyMeasuresTimeRange($startDate, $endDate)
     {
         $action = 'getmeas';
@@ -182,11 +185,12 @@ class WithingsPHP
 
         $json = file_get_contents($url);
         $result = json_decode($json);
-        print_r($result);
         return $result;
     }
 
-
+    /**
+     * @return mixed SimpleXMLElement or the value encoded in json as an object
+     */
     public function getActivityMeasures()
     {
         $action = 'getactivity';
@@ -197,10 +201,12 @@ class WithingsPHP
 
         $json = file_get_contents($url);
         $result = json_decode($json);
-        print_r($result);
         return $result;
     }
 
+    /**
+     * @return mixed SimpleXMLElement or the value encoded in json as an object
+     */
     public function getIntradayActivity()
     {
         $action = 'getintradayactivity';
@@ -211,10 +217,14 @@ class WithingsPHP
 
         $json = file_get_contents($url);
         $result = json_decode($json);
-        print_r($result);
         return $result;
     }
 
+    /**
+     * @param $startDate
+     * @param $endDate
+     * @return mixed SimpleXMLElement or the value encoded in json as an object
+     */
     public function getSleepMeasure($startDate, $endDate)
     {
         $action = 'get';
@@ -225,10 +235,12 @@ class WithingsPHP
 
         $json = file_get_contents($url);
         $result = json_decode($json);
-        print_r($result);
         return $result;
     }
 
+    /**
+     * @return mixed SimpleXMLElement or the value encoded in json as an object
+     */
     public function getSleepSummary()
     {
         $action = 'getsummary';
@@ -239,40 +251,68 @@ class WithingsPHP
 
         $json = file_get_contents($url);
         $result = json_decode($json);
-        print_r($result);
         return $result;
     }
 
-    public function convertMeasurementIdToMeasurementName($measurementId) {
 
+    /**
+     * function to convert  the measurement id to measurement name
+     * @param $measurementId id of the measurement
+     * @return string the name of the measurement
+     */
+    public function convertMeasurementIdToMeasurementName($measurementId)
+    {
         switch ($measurementId) {
-            case 1: $name = 'weight';
+            case 1:
+                $name = 'weight';
                 break;
-            case 4: $name = 'height';
+            case 4:
+                $name = 'height';
                 break;
-            case 5: $name = 'fatFreeMass';
+            case 5:
+                $name = 'fatFreeMass';
                 break;
-            case 6: $name = 'fat';
+            case 6:
+                $name = 'fat';
                 break;
-            case 8: $name = 'fatMass';
+            case 8:
+                $name = 'fatMass';
                 break;
-            case 9: $name = 'diastolic';
+            case 9:
+                $name = 'diastolic';
                 break;
-            case 10: $name = 'systolic';
+            case 10:
+                $name = 'systolic';
                 break;
-            case 11: $name = 'heartRate';
+            case 11:
+                $name = 'heartRate';
                 break;
-            case 54: $name = 'spO2';
+            case 54:
+                $name = 'spO2';
                 break;
-            default: $name = 'measurement ID not available';
+            default:
+                $name = 'measurement ID not available';
         }
 
         return $name;
     }
 
-    /*
- * function to check synchronization
- */
+    /**
+     * function to convert seconds in minutes
+     * @param $seconds time in seconds
+     * @return float time in minutes
+     */
+    public function devideSeconds($seconds)
+    {
+        $result = $seconds / 60;
+
+        return $result;
+    }
+
+    /**
+     * function to check synchronization if it successfully
+     * @param $result
+     */
     public function showSynchronizeMessage($result)
     {
         if (!$result) {

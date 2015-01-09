@@ -42,8 +42,10 @@ class DatabaseConnection
         }
     }
 
-    /*
+    /**
      * function to ????
+     * @param $statement
+     * @return bool|mysqli_result
      */
     public function executeStatement($statement)
     {
@@ -64,12 +66,12 @@ class DatabaseConnection
      */
     public function close()
     {
-
         mysqli_close($this->db_connection);
     }
 
-    /*
+    /**
      * function to ????
+     * @return array|null
      */
     public function getResultAsArray()
     {
@@ -78,31 +80,33 @@ class DatabaseConnection
         return $resultArray;
     }
 
-    /*
+    /**
      * function to ????
+     * @return mixed
      */
     public function getResult()
     {
         return $this->result;
     }
 
-    /*
+    /**
      * function to???
+     * @return string
      */
     public function getResultAsJSON()
     {
-
         $data = array();
 
         for ($x = 0; $x < mysqli_num_rows($this->result); $x++) {
             $data[] = mysqli_fetch_assoc($this->result);
         }
-
         return json_encode($data);
     }
 
-    /*
+    /**
      * function to find the measurement Id's by name
+     * @param $measurement
+     * @return mixed
      */
     public function getMeasurementId($measurement)
     {
@@ -116,12 +120,13 @@ class DatabaseConnection
         return $measurementId;
     }
 
-    /*
+    /**
      * function to get the Id for the period. It's daily or weekly.
+     * @param $period
+     * @return mixed Id of the right period
      */
     public function getPeriodId($period)
     {
-
         $this->connect();
 
         $fetch = "SELECT id FROM period WHERE period='$period'";
@@ -132,12 +137,13 @@ class DatabaseConnection
         return $periodId;
     }
 
-    /*
+    /**
      * fuction to get the intern companyId from our database
+     * @param $company
+     * @return mixed Id of the right company
      */
     public function getCompanyId($company)
     {
-
         $this->connect();
 
         $fetch = "SELECT id FROM company WHERE name='$company'";
@@ -146,12 +152,15 @@ class DatabaseConnection
         $result = $this->getResultAsArray();
         $companyId = $result['id'];
         return $companyId;
-
     }
 
-    /*
-    * function to find the companyId and memberSince
-    */
+    /**
+     * function to find the companyId and memberSince
+     * @param $select
+     * @param $userId
+     * @param $company_id
+     * @return mixed
+     */
     public function getFromCompanyAccountInfo($select, $userId, $company_id)
     {
         $this->connect();
@@ -165,12 +174,16 @@ class DatabaseConnection
         return $selectValue;
     }
 
-    /*
-     * function to
+
+    /**
+     * @param $measurement
+     * @param $userId
+     * @param $period
+     * @param $limit
+     * @return string
      */
     public function selectGoalFromDatabase($measurement, $userId, $period, $limit)
     {
-
         $this->connect();
 
         $timestamp = time();
@@ -196,12 +209,17 @@ class DatabaseConnection
         return $this->getResultAsJSON();
     }
 
-    /*
-     * function to ???
+
+    /**
+     * @param $company
+     * @param $measurement
+     * @param $userId
+     * @param $date
+     * @param $limit
+     * @return string
      */
     public function selectValueFromDatabase($company, $measurement, $userId, $date, $limit)
     {
-
         $this->connect();
 
         $measurementId = $this->getMeasurementId($measurement);
@@ -224,12 +242,16 @@ class DatabaseConnection
         return $this->getResultAsJSON();
     }
 
-    /*
-     * returns true if desired goal is stored in database
+
+    /**
+     * function to check if goal exists in the database
+     * @param $measurement
+     * @param $userId
+     * @param $company
+     * @return bool true if desired goal is stored in database
      */
     public function checkIfGoalExists($measurement, $userId, $company)
     {
-
         $measurementId = $this->getMeasurementId($measurement);
         $companyId = $this->getCompanyId($company);
 
@@ -254,12 +276,14 @@ class DatabaseConnection
         return $exists;
     }
 
-    /*
-     *
+
+    /**
+     * @param $company
+     * @param $userId
+     * @return bool
      */
     public function checkIfCredentialsExists($company, $userId)
     {
-
         $this->connect();
 
         $companyId = $this->getCompanyId($company);
@@ -275,18 +299,21 @@ class DatabaseConnection
         } else {
             $exists = false;
         }
-
         return $exists;
-
     }
 
-    /*
-     *
-     * return true if value is in Database
+
+    /**
+     * function to check if value exists in the database
+     * @param $userId
+     * @param $company
+     * @param $measurement
+     * @param $date
+     * @param $limit
+     * @return bool true if value is in Database
      */
     public function checkIfValueExists($userId, $company, $measurement, $date, $limit)
     {
-
         $this->selectValueFromDatabase($company, $measurement, $userId, $date, $limit);
 
         $numberOfRows = $this->result->num_rows;
@@ -294,21 +321,24 @@ class DatabaseConnection
         if ($numberOfRows > 0) {
 
             $exists = true;
-
         } else {
 
             $exists = false;
         }
-
         return $exists;
     }
 
-    /*
-     *
+
+    /**
+     * @param $userId
+     * @param $company
+     * @param $measurement
+     * @param $date
+     * @param $value
+     * @return bool
      */
     public function insertValue($userId, $company, $measurement, $date, $value)
     {
-
         $this->connect();
 
         $successfull = false;
@@ -326,22 +356,101 @@ class DatabaseConnection
                           AND measurement_id = '$measurementId'
                           AND date = '$date'
                           ";
-
         } else {
 
             $statement = "INSERT INTO value (user_id, measurement_id, company_id, value, date)
                           VALUES ('$userId' , '$measurementId' , '$companyId', '$value' , '$date')
                           ";
         }
-
         $result = $this->executeStatement($statement);
 
         if ($result) {
 
             $successfull = true;
         }
-
         return $successfull;
+    }
+
+
+    /**
+     * function to insert the information of sleep from withings in the database
+     * @param $userId
+     * @param $company
+     * @param $measurement
+     * @param $startTime
+     * @param $endTime
+     * @param $date
+     * @return bool
+     */
+    public function insertSleepStartTime($userId, $company, $measurement, $startTime, $endTime, $date)
+    {
+        $this->connect();
+
+        $successfull = false;
+        $result = false;
+        $companyId = $this->getCompanyId($company);
+
+        $valuesExists = $this->checkIfSleepTimeExists($userId, $company, $date, $startTime);
+
+        if (!$valuesExists) {
+
+            $statement = "INSERT INTO sleep_start_time (user_id, measurement_id,company_id, start_time, end_time, date)
+                          VALUES ('$userId' , '$measurement' , '$companyId' ,'$startTime', '$endTime', '$date' )";
+            $result = $this->executeStatement($statement);
+        }
+
+        if ($result) {
+
+            $successfull = true;
+        }
+        return $successfull;
+    }
+
+
+    /**
+     * function to check if sleep time exists in the database
+     * @param $userId
+     * @param $company
+     * @param $date
+     * @param $startTime
+     * @return bool
+     */
+    public function checkIfSleepTimeExists($userId, $company, $date, $startTime)
+    {
+        $this->selectSleepTimeFromDatabase($company, $userId, $date, $startTime);
+        $numberOfRows = $this->result->num_rows;
+        if ($numberOfRows > 0) {
+            $exists = true;
+        } else {
+            $exists = false;
+        }
+        return $exists;
+    }
+
+
+    /**
+     * @param $company
+     * @param $userId
+     * @param $date
+     * @param $startTime
+     * @return string
+     */
+    public function selectSleepTimeFromDatabase($company, $userId, $date, $startTime)
+    {
+        $this->connect();
+
+        $companyId = $this->getCompanyId($company);
+
+        $statement = "SELECT *
+                      FROM sleep_start_time
+                      WHERE user_id =  '$userId'
+                      AND company_id = '$companyId'
+                      AND date =  '$date'
+                      AND start_time = '$startTime'";
+
+        $this->executeStatement($statement);
+
+        return $this->getResultAsJSON();
     }
 }
 
