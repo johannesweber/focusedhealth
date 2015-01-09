@@ -225,7 +225,9 @@ class DatabaseConnection
         $measurementId = $this->getMeasurementId($measurement);
         $companyId = $this->getCompanyId($company);
 
-        $statement = "SELECT value, date, meas.name AS measurement, unit.name AS unit
+        if ($limit != 365) {
+
+            $statement = "SELECT value, date, meas.name AS measurement, unit.name AS unit
                       FROM value val
                       JOIN measurement meas ON val.measurement_id = meas.id
                       JOIN unit ON meas.unit_id = unit.id
@@ -236,6 +238,21 @@ class DatabaseConnection
                       ORDER BY date DESC
                       LIMIT $limit
                       ";
+        } else {
+
+            $statement = "SELECT SUM(value) as value, date, meas.name AS measurement, unit.name AS unit
+                      FROM value val
+                      JOIN measurement meas ON val.measurement_id = meas.id
+                      JOIN unit ON meas.unit_id = unit.id
+                      WHERE user_id =  '$userId'
+                      AND company_id = '$companyId'
+                      AND measurement_id =  '$measurementId'
+                      AND date <=  '$date'
+					  GROUP BY Month(date)
+					  ORDER BY date DESC
+                      LIMIT $limit
+                      ";
+        }
 
         $this->executeStatement($statement);
 
@@ -471,6 +488,52 @@ class DatabaseConnection
         $result = $this->executeStatement($statement);
 
         return $result;
+    }
+
+    public function selectAllMeasurementsFromUser($userId) {
+
+        $this->connect();
+
+        $statement = "SELECT DISTINCT user_id, m.name, m.nameInApp, u.name as unit, c.name as groupname, m.sliderLimit
+                      FROM  `user_company_account`
+                      JOIN company
+                      ON company_id = company.id
+                      JOIN company_has_measurement chm
+                      ON company.id = chm.company_id
+                      JOIN measurement m
+                      ON chm.measurement_id = m.id
+                      JOIN category c
+                      ON m.group_id = c.id
+                      JOIN unit u
+                      ON m.unit_id = u.id
+                      WHERE user_id = '$userId'
+                      ";
+
+        $this->executeStatement($statement);
+
+        return $this->getResultAsJSON();
+
+    }
+
+    public function selectDuplicateMeasurementsFromUser($userId) {
+
+        $this->connect();
+
+        $statement = "SELECT user_id, m.name, m.nameInApp, u.name AS unit, c.name AS groupname, m.sliderLimit
+                      FROM  `user_company_account`
+                      JOIN company ON company_id = company.id
+                      JOIN company_has_measurement chm ON company.id = chm.company_id
+                      JOIN measurement m ON chm.measurement_id = m.id
+                      JOIN category c ON m.group_id = c.id
+                      JOIN unit u ON m.unit_id = u.id
+                      WHERE user_id =  '$userId'
+                      GROUP BY m.name
+                      HAVING ( COUNT(m.name) > 1 )
+                      ";
+
+        $this->executeStatement($statement);
+
+        return $this->getResultAsJSON();
     }
 }
 
