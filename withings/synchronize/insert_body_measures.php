@@ -8,9 +8,6 @@
 
 $response = $withings->getBodyMeasures();
 
-//$int = 1780;
-//$double = number_format(($int / 1000), 3);
-
 $successfull = true;
 
 $measuregrpsArray = $response->body->measuregrps;
