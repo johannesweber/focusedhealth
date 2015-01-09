@@ -381,6 +381,7 @@ class DatabaseConnection
      * @param $endTime
      * @param $date
      * @return bool
+     * wo ist das Update statement????
      */
     public function insertSleepStartTime($userId, $company, $measurement, $startTime, $endTime, $date)
     {
@@ -451,6 +452,19 @@ class DatabaseConnection
         $this->executeStatement($statement);
 
         return $this->getResultAsJSON();
+    }
+
+    public function insertNewEmail($userId, $newEmail) {
+
+        $this->connect();
+
+        $statement = "UPDATE user SET email = '$newEmail'
+                          WHERE user_id = '$userId'
+                          ";
+
+        $result = $this->executeStatement($statement);
+
+        return $result;
     }
 }
 
