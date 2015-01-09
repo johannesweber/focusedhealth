@@ -225,7 +225,9 @@ class DatabaseConnection
         $measurementId = $this->getMeasurementId($measurement);
         $companyId = $this->getCompanyId($company);
 
-        $statement = "SELECT value, date, meas.name AS measurement, unit.name AS unit
+        if ($limit != 365) {
+
+            $statement = "SELECT value, date, meas.name AS measurement, unit.name AS unit
                       FROM value val
                       JOIN measurement meas ON val.measurement_id = meas.id
                       JOIN unit ON meas.unit_id = unit.id
@@ -236,6 +238,21 @@ class DatabaseConnection
                       ORDER BY date DESC
                       LIMIT $limit
                       ";
+        } else {
+
+            $statement = "SELECT SUM(value) as value, date, meas.name AS measurement, unit.name AS unit
+                      FROM value val
+                      JOIN measurement meas ON val.measurement_id = meas.id
+                      JOIN unit ON meas.unit_id = unit.id
+                      WHERE user_id =  '$userId'
+                      AND company_id = '$companyId'
+                      AND measurement_id =  '$measurementId'
+                      AND date <=  '$date'
+					  GROUP BY Month(date)
+					  ORDER BY date DESC
+                      LIMIT $limit
+                      ";
+        }
 
         $this->executeStatement($statement);
 
