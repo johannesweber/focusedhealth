@@ -494,7 +494,7 @@ class DatabaseConnection
 
         $this->connect();
 
-        $statement = "SELECT DISTINCT user_id, m.name, m.nameInApp, u.name as unit, c.name as groupname, m.sliderLimit
+        $statement = "SELECT user_id, m.name, m.nameInApp, u.name as unit, c.name as groupname, c.nameInGerman as groupnameInGerman, m.sliderLimit, company.name as favoriteCompany
                       FROM  `user_company_account`
                       JOIN company
                       ON company_id = company.id
@@ -507,6 +507,7 @@ class DatabaseConnection
                       JOIN unit u
                       ON m.unit_id = u.id
                       WHERE user_id = '$userId'
+                      GROUP BY m.name
                       ";
 
         $this->executeStatement($statement);
