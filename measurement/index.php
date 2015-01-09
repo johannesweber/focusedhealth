@@ -15,7 +15,7 @@ $db_connection = new DatabaseConnection();
 
 $userId = $_GET["userId"];
 
-$result = $db_connection->selectAllMeasurementsFromUser($userId);
+echo $result = $db_connection->selectAllMeasurementsFromUser($userId);
 
 $db_connection->close();
 
