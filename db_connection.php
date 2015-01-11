@@ -489,7 +489,7 @@ class DatabaseConnection
 
         return $result;
     }
-    
+
     public function selectAllMeasurementsFromUser($userId) {
 
         $this->connect();

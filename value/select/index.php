@@ -13,13 +13,11 @@ ini_set('display_errors', 'On');
 
 include '../../db_connection.php';
 
-include '../fitbitphp.php';
-
 $db_connection = new DatabaseConnection();
 
 $db_connection->connect();
 
-$company = 'fitbit';
+$company = $_GET["company"];
 $userId = $_GET["userId"];
 $date = $_GET["endDate"];
 $limit = $_GET["limit"];
