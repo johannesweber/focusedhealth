@@ -489,21 +489,21 @@ class DatabaseConnection
 
         return $result;
     }
-
+    
     public function selectAllMeasurementsFromUser($userId) {
 
         $this->connect();
 
-        $statement = "SELECT user_id, m.name, m.nameInApp, u.name as unit, c.name as groupname, c.nameInGerman as groupnameInGerman, m.sliderLimit, company.name as favoriteCompany
-                      FROM  `user_company_account`
+        $statement = "SELECT m.name, m.nameInApp, m.nameInGerman, m.nameInFrench, u.name as unit, category.name as groupname,category.nameInGerman as groupnameInGerman, m.sliderLimit, company.name as favoriteCompany
+                      FROM  user_company_account
                       JOIN company
                       ON company_id = company.id
                       JOIN company_has_measurement chm
                       ON company.id = chm.company_id
                       JOIN measurement m
                       ON chm.measurement_id = m.id
-                      JOIN category c
-                      ON m.group_id = c.id
+                      JOIN category
+                      ON m.group_id = category.id
                       JOIN unit u
                       ON m.unit_id = u.id
                       WHERE user_id = '$userId'
@@ -520,7 +520,7 @@ class DatabaseConnection
 
         $this->connect();
 
-        $statement = "SELECT user_id, m.name, m.nameInApp, u.name AS unit, c.name AS groupname, m.sliderLimit
+        $statement = "SELECT m.name, m.nameInApp, u.name AS unit, c.name AS groupname, m.sliderLimit
                       FROM  `user_company_account`
                       JOIN company ON company_id = company.id
                       JOIN company_has_measurement chm ON company.id = chm.company_id
