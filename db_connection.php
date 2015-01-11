@@ -494,7 +494,7 @@ class DatabaseConnection
 
         $this->connect();
 
-        $statement = "SELECT m.name, m.nameInApp, m.nameInGerman, m.nameInFrench, u.name as unit, category.name as groupname,category.nameInGerman as groupnameInGerman, m.sliderLimit, company.name as favoriteCompany
+        $statement = "SELECT m.name, m.nameInApp, m.nameInGerman, m.nameInFrench, u.name as unit, c.name as groupname, c.nameInGerman as groupnameInGerman, c.nameInFrench as groupnameInFrench,  m.sliderLimit, company.name as favoriteCompany
                       FROM  user_company_account
                       JOIN company
                       ON company_id = company.id
@@ -502,8 +502,8 @@ class DatabaseConnection
                       ON company.id = chm.company_id
                       JOIN measurement m
                       ON chm.measurement_id = m.id
-                      JOIN category
-                      ON m.group_id = category.id
+                      JOIN category c
+                      ON m.group_id = c.id
                       JOIN unit u
                       ON m.unit_id = u.id
                       WHERE user_id = '$userId'
