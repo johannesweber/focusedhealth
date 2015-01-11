@@ -267,7 +267,7 @@ class DatabaseConnection
      * @param $company
      * @return bool true if desired goal is stored in database
      */
-    public function checkIfGoalExists($measurement, $userId, $company)
+    public function checkIfGoalExists($measurement, $userId, $company, $periodId) //achtung perioid hinzugefügt
     {
         $measurementId = $this->getMeasurementId($measurement);
         $companyId = $this->getCompanyId($company);
@@ -275,7 +275,8 @@ class DatabaseConnection
         $statement = "SELECT * FROM goal
                       WHERE user_id = '$userId'
                       AND measurement_id = '$measurementId'
-                      AND company_id = '$companyId'";
+                      AND company_id = '$companyId'
+                      AND period = '$periodId'";
 
         $result = $this->executeStatement($statement);
 
@@ -331,7 +332,8 @@ class DatabaseConnection
      */
     public function checkIfValueExists($userId, $company, $measurement, $date, $limit)
     {
-        $this->selectValueFromDatabase($company, $measurement, $userId, $date, $limit);
+        //$this->selectValueFromDatabase($company, $measurement, $userId, $date, $limit);
+        $this->checkIfValueAlreadyExists($company,$measurement,$userId,$date);
 
         $numberOfRows = $this->result->num_rows;
 
@@ -345,6 +347,22 @@ class DatabaseConnection
         return $exists;
     }
 
+
+    public function checkIfValueAlreadyExists($company, $measurement, $userId, $date) {
+
+        $this->connect();
+
+        $measurementId = $this->getMeasurementId($measurement);
+        $companyId = $this->getCompanyId($company);
+
+
+        $statement = "SELECT * FROM value WHERE user_id='$userId' AND measurement_id='$measurementId' AND company_id='$companyId' AND date= '$date'";
+
+        $this->executeStatement($statement);
+
+        return $this->getResultAsJSON();
+
+    }
 
     /**
      * @param $userId
@@ -387,6 +405,44 @@ class DatabaseConnection
         }
         return $successfull;
     }
+
+
+
+
+    public function insertGoal($userId, $company, $measurement, $value, $periodId)
+    {
+        $this->connect();
+
+        $successfull = false;
+
+        $measurementId = $this->getMeasurementId($measurement);
+        $companyId = $this->getCompanyId($company);
+
+        $valuesExists = $this->checkIfGoalExists($measurement,$userId,$company,$periodId);
+
+        if ($valuesExists) {
+
+            $statement = "UPDATE goal
+                          set goal_value='$value', startdate=NULL, enddate=NULL, period='$periodId',user_id='$userId', measurement_id='$measurementId', company_id='$companyId'
+                          WHERE user_id='$userId'
+                          AND measurement_id='$measurementId'
+                          AND company_id='$companyId' AND period='$periodId'";
+        } else {
+
+            $statement = "INSERT INTO goal (goal_value, startdate, enddate, period, user_id, measurement_id, company_id)
+                          VALUES ('$value', Null, Null, '$periodId', '$userId', '$measurementId', '$companyId')";
+        }
+        $result = $this->executeStatement($statement);
+
+        if ($result) {
+
+            $successfull = true;
+        }
+        return $successfull;
+    }
+
+
+
 
 
     /**

@@ -6,13 +6,15 @@
  * Time: 15:03
  */
 
+$successfull = true;
+
 //date of today
 $timestamp = time();
 $today = date("Y-m-d", $timestamp);
 $measurementName='steps';
 $stepsId = $db_connection->getMeasurementId($measurementName);
 
-$error = true;
+
 
 //memberSince include in index: find_member_since
 $response = $fitbit->getTimeSeries("steps", $memberSince, $today);
@@ -29,45 +31,18 @@ for ($x = 0; $x < $arrayLenght; $x++) {
     $date = $array[$x]->dateTime;
 
 
-    //SQL Statement to
-    $select = "SELECT * FROM value WHERE user_id= '$userId' AND measurement_id='$stepsId' AND company_id='$companyId' AND date= '$date' ";
+    $result = $db_connection->insertValue($userId, $company, $measurementName, $date, $steps);
 
 
-    $result = $db_connection->executeStatement($select);
     if (!$result) {
-        $error = false;
-    }
 
-
-    $rowCount = $result->num_rows;
-
-//steps was not inserted today
-    if ($rowCount == 0) {
-
-
-//SQL Statement to insert data into value table
-        $insert = "INSERT INTO value (user_id, measurement_id, company_id, value, date)
-        VALUES ('$userId', '$stepsId', '$companyId', '$steps','$date')";
-
-        $result = $db_connection->executeStatement($insert);
-
-        if (!$result) {
-            $error = false;
-        }
-
-    } else {
-
-        $update = "UPDATE value SET value = '$steps'
-                                     WHERE user_id='$userId' AND measurement_id='$stepsId' AND company_id='$companyId' AND date = '$date'";
-
-        $result = $db_connection->executeStatement($update);
-
-        if (!$result) {
-            $error = false;
-        }
-
+        $successfull = false;
     }
 
 }
+
+$fitbit->showSynchronizeMessage($successfull);
+
+
 
 ?>

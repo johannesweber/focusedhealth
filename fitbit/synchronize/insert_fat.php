@@ -6,6 +6,7 @@
  * Time: 12:10
  */
 
+$successfull = true;
 
 $response = $fitbit->getTimeSeries("fat", "today", "7d");
 $measurementName='bodyFat';
@@ -23,41 +24,16 @@ for ($x = 0; $x < $arrayLenght; $x++) {
     $date = $array[$x]->dateTime;
 
 
-    //SQL Statement to
-    $select = "SELECT * FROM value WHERE user_id='$userId' AND measurement_id='$fatId' AND company_id='$companyId' AND date= '$date' ";
-    $result = $db_connection->executeStatement($select);
+    $result = $db_connection->insertValue($userId, $company, $measurementName, $date, $fat);
+
 
     if (!$result) {
-        $error = false;
-    }
-    $rowCount = $result->num_rows;
 
-//weight was not inserted today
-    if ($rowCount == 0) {
-
-
-//SQL Statement to insert data into value table
-        $insert = "INSERT INTO value (user_id, measurement_id, company_id, value, date)
-        VALUES ('$userId', '$fatId', '$companyId', '$fat','$date')";
-
-        $result = $db_connection->executeStatement($insert);
-        if (!$result) {
-            $error = false;
-        }
-
-    } else {
-
-        $update = "UPDATE value SET value = '$fat'
-                                     WHERE user_id='$userId' AND measurement_id='$fatId' AND company_id='$companyId' AND date = '$date'";
-
-        $result = $db_connection->executeStatement($update);
-
-        if (!$result) {
-            $error = false;
-        }
-
+        $successfull = false;
     }
 
 }
+
+$fitbit->showSynchronizeMessage($successfull);
 
 ?>

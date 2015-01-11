@@ -2654,6 +2654,25 @@ class FitBitPHP {
     }
 
 
+
+
+
+    /**
+     * function to check synchronization if it successfully
+     * @param $result
+     */
+    public function showSynchronizeMessage($result)
+    {
+        if (!$result) {
+            echo '{"success" : "-1", "message" : "Data could not be synchronized. Please try again later!"}';
+        } else {
+            echo '{"success" : "1", "message" : "Data successfully synchronized!"}';
+        }
+    }
+
+
+
+
 }
 
 
