@@ -1,5 +1,9 @@
 <?php
 /**
+ *
+ * This class is used to insert the values in our database which we get from the different Company's.
+ * We check if the insert was successfully.
+ *
  * Created by PhpStorm.
  * User: johannesweber
  * Date: 04.01.15
@@ -25,6 +29,7 @@ $date = date("Y-m-d", $timestamp);
 
 $result = $db_connection->insertValue($userId, $company, $measurement, $date, $value);
 
+// Verifies that was successfully inserted
 if ($result) {
 
     echo '{"success" : "1", "message" : "Value successfully inserted"}';

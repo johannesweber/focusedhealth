@@ -1,5 +1,8 @@
 <?php
 /**
+ *
+ * This class is used to select the value of food from our database and provide it to our Mobile App.
+ *
  * Created by PhpStorm.
  * User: timonvogler
  * Date: 12.01.15

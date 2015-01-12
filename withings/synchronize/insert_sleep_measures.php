@@ -1,5 +1,8 @@
 <?php
 /**
+ *
+ * This Class is used to retrieve and store the manufacturer's data in our database.
+ *
  * Created by PhpStorm.
  * User: pauer
  * Date: 05.01.15

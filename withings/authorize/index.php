@@ -1,7 +1,7 @@
 <?php
 /**
  * this class is executed when the user presses the add device button.
- * in this class we are getting the aouth token and token secret from our iPhone and store them for
+ * in this class we are getting the oauth token and token secret from our iPhone and store them for
  * further requests in our database.
  * afterwards we fetch all the data from the withings device.
  *

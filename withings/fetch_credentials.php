@@ -1,6 +1,6 @@
 <?php
 /**
- * this class gets all important credentials from fitbit. This credentials are required to send Requests to Fitbit API
+ * This class gets all important credentials from Withings. This credentials are required to send Requests to Withings API.
  *
  *
  * Created by PhpStorm.

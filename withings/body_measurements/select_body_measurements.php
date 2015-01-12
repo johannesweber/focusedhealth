@@ -1,5 +1,8 @@
 <?php
 /**
+ *
+ * This class is used to select the data from our database and provide it to our Mobile App.
+ *
  * Created by PhpStorm.
  * User: pauer
  * Date: 05.01.15

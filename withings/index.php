@@ -1,5 +1,8 @@
 <?php
 /**
+ *
+ * This class
+ *
  * Created by PhpStorm.
  * User: johannesweber
  * Date: 20.11.14
