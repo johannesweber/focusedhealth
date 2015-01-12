@@ -2661,12 +2661,12 @@ class FitBitPHP {
      * function to check synchronization if it successfully
      * @param $result
      */
-    public function showSynchronizeMessage($result)
+    public function showSynchronizeMessage($company, $result)
     {
         if (!$result) {
-            echo '{"success" : "-1", "message" : "Fitbit Data could not be synchronized. Please try again later!"}';
+            echo '{"success" : "-1", "message" : "'. $company . ' could not be synchronized. Please try again later!"}';
         } else {
-            echo '{"success" : "1", "message" : "Fitbit Data successfully synchronized!"}';
+            echo '{"success" : "1", "message" : "'. $company . ' successfully synchronized!"}';
         }
     }
 

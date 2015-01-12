@@ -9,7 +9,7 @@
 
 $successfull = true;
 
-$response = $fitbit->getTimeSeries("minutesAfterWakeup", "today", "7d");
+$response = $fitbit->getTimeSeries("minutesAfterWakeup", "today", "1y");
 
 $measurementName='afterWakeUp';
 $minutesminutesAfterWakeupId = $db_connection->getMeasurementId($measurementName);

@@ -318,7 +318,7 @@ class WithingsPHP
         if (!$result) {
             echo '{"success" : "-1", "message" : "'. $company . ' could not be synchronized. Please try again later!"}';
         } else {
-            echo '{"success" : "1", "message" : "'. $company . '  successfully synchronized!"}';
+            echo '{"success" : "1", "message" : "'. $company . ' successfully synchronized!"}';
         }
     }
 }
