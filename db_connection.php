@@ -1,6 +1,10 @@
 <?php
 
 /**
+ *
+ * The class is needed to establish the database connection.
+ * The class contains various methods that can be called again in other classes.
+ *
  * Created by PhpStorm.
  * User: johannesweber
  * Date: 17.11.14
@@ -332,7 +336,7 @@ class DatabaseConnection
      */
     public function checkIfValueExists($userId, $company, $measurement, $date, $limit)
     {
-        $this->checkIfValueAlreadyExists($company,$measurement,$userId,$date);
+        $this->checkIfValueAlreadyExists($company, $measurement, $userId, $date);
 
         $numberOfRows = $this->result->num_rows;
 
@@ -347,7 +351,8 @@ class DatabaseConnection
     }
 
 
-    public function checkIfValueAlreadyExists($company, $measurement, $userId, $date) {
+    public function checkIfValueAlreadyExists($company, $measurement, $userId, $date)
+    {
 
         $this->connect();
 
@@ -406,8 +411,6 @@ class DatabaseConnection
     }
 
 
-
-
     public function insertGoal($userId, $company, $measurement, $value, $periodId)
     {
         $this->connect();
@@ -417,7 +420,7 @@ class DatabaseConnection
         $measurementId = $this->getMeasurementId($measurement);
         $companyId = $this->getCompanyId($company);
 
-        $valuesExists = $this->checkIfGoalExists($measurement,$userId,$company,$periodId);
+        $valuesExists = $this->checkIfGoalExists($measurement, $userId, $company, $periodId);
 
         if ($valuesExists) {
 
@@ -439,9 +442,6 @@ class DatabaseConnection
         }
         return $successfull;
     }
-
-
-
 
 
     /**
@@ -532,7 +532,8 @@ class DatabaseConnection
      * @param $newEmail
      * @return bool|mysqli_result
      */
-    public function insertNewEmail($userId, $newEmail) {
+    public function insertNewEmail($userId, $newEmail)
+    {
 
         $this->connect();
 
@@ -545,7 +546,8 @@ class DatabaseConnection
         return $result;
     }
 
-    public function selectAllMeasurementsFromUser($userId) {
+    public function selectAllMeasurementsFromUser($userId)
+    {
 
         $this->connect();
 
@@ -571,7 +573,8 @@ class DatabaseConnection
 
     }
 
-    public function selectDuplicateMeasurementsFromUser($userId) {
+    public function selectDuplicateMeasurementsFromUser($userId)
+    {
 
         $this->connect();
 
