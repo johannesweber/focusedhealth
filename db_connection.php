@@ -230,6 +230,7 @@ class DatabaseConnection
         $statement = "SELECT activity, date, start_time, ROUND(duration/60000) AS DurationInMin, distance, calories, description
                       FROM activity
                       WHERE user_id ='$userId'
+                      AND company_id = '$companyId'
                       AND date <='$date'
                       ORDER BY DATE DESC
                       LIMIT $limit
@@ -244,12 +245,18 @@ class DatabaseConnection
     {
         $this->connect();
 
-        $timestamp = time();
-        $date = date("Y-m-d", $timestamp);
 
         $companyId = $this->getCompanyId($company);
 
-        $statement =
+        $statement = "SELECT date, amount, name, unit, calories, carbs, fat, fiber, protein, sodium
+                      FROM food
+                      WHERE user_id='$userId'
+                      AND company_id = '$companyId'
+                      AND date <= '$date'
+                      ORDER BY DATE DESC
+                      LIMIT $limit
+                      ";
+
         $this->executeStatement($statement);
 
         return $this->getResultAsJSON();
@@ -450,6 +457,59 @@ class DatabaseConnection
             $successfull = true;
         }
         return $successfull;
+    }
+
+
+    public function insertActivity($userId, $company, $calories, $distance, $description, $duration, $lastModified, $name, $startDate, $startTime)
+    {
+        $this->connect();
+
+        $successfull = false;
+
+        $companyId = $this->getCompanyId($company);
+
+        $valuesExists = $this->checkIfActivityExists($userId, $company, $name, $startDate, $startTime);
+
+        if (!$valuesExists) {
+
+
+            $statement = "INSERT INTO activity (user_id, company_id, activity, date, start_time, duration, distance, calories, description, last_modified)
+                          VALUES ('$userId', '$companyId', '$name', '$startDate', '$startTime', '$duration', '$distance', '$calories', '$description', '$lastModified')";
+        }
+        $result = $this->executeStatement($statement);
+
+        if ($result) {
+
+            $successfull = true;
+        }
+        return $successfull;
+    }
+
+
+    public function checkIfActivityExists($userId, $company, $name, $startDate, $startTime)
+    {
+
+
+        $this->connect();
+
+        $companyId = $this->getCompanyId($company);
+
+
+        $statement = "SELECT * FROM activity WHERE user_id='$userId' AND activity='$name' AND company_id='$companyId' AND date= '$startDate' AND start_time= '$startTime' ";
+
+        $this->executeStatement($statement);
+
+
+        $numberOfRows = $this->result->num_rows;
+
+        if ($numberOfRows > 0) {
+
+            $exists = true;
+        } else {
+
+            $exists = false;
+        }
+        return $exists;
     }
 
 

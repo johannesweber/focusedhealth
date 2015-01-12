@@ -8,6 +8,7 @@
  * insert activities like swimming or running
  */
 
+$successfull = true;
 
 //date of today
 $timestamp = time();
@@ -18,6 +19,7 @@ $error = true;
 
 //Request for activities
 $response = $fitbit->getActivities($datum);
+print_r($response);
 
 //lenght of activity array
 $arrayLenght = $response->activities;
@@ -34,31 +36,24 @@ for ($x = 0; $x < $arrayLenght; $x++) {
     $duration = $response->activities[$x]->duration;
     $lastModified = $response->activities[$x]->lastModified;
     $name = $response->activities[$x]->name;
+    echo("HAALLLLLLOOOOO");
+    echo("##########\n " .$name .\n);
     $startDate = $response->activities[$x]->startDate;
     $startTime = $response->activities[$x]->startTime;
 
 
-    //SQL Statement to check if this data set already exists for this day
-    $select = "SELECT * FROM activity WHERE user_id='$userId' AND activity='$name' AND company_id='$company_id' AND date= '$startDate' AND start_time= '$startTime' ";
-    $result = $db_connection->executeStatement($select);
 
-    if (!$result) {
-        $error = false;
-    }
 
-    $rowCount = $result->num_rows;
 
-    //activity was not inserted today
-    if ($rowCount == 0) {
 
-        $insert = "INSERT INTO activity (user_id, company_id, activity, date, start_time, duration, distance, calories, description, last_modified)
-                VALUES ('$userId', '$company_id', '$name', '$startDate', '$startTime', '$duration', '$distance', '$calories', '$description', '$lastModified')";
+$result = $db_connection->insertActivity($userId, $company, $calories, $distance, $description, $duration, $lastModified, $name, $startDate, $startTime);
 
-        $result = $db_connection->executeStatement($insert);
 
-        if (!$result) {
-            $error = false;
-        }
-    }
+if (!$result) {
+
+    $successfull = false;
+}
 
 }
+
+$fitbit->showSynchronizeMessage($successfull);

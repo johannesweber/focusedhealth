@@ -43,7 +43,7 @@ $error = true;
 //require_once 'insert_steps.php';
 //require_once 'insert_distance.php';
 //require_once 'insert_calories_out.php';
-require_once 'insert_calories_in.php';
+//require_once 'insert_calories_in.php';
 ///require_once 'insert_elevation.php';
 //require_once 'insert_fat.php';
 //require_once 'insert_floors.php';
@@ -63,7 +63,7 @@ require_once 'insert_calories_in.php';
 //require_once 'insert_food_plan.php';
 //require_once 'insert_weight_goal.php';
 //require_once 'insert_water_goal.php';
-
+require_once 'insert_activities.php';
 
 
 if (!$error) {
