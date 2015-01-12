@@ -494,8 +494,8 @@ class DatabaseConnection
 
         $this->connect();
 
-        $statement = "SELECT user_id, m.name, m.nameInApp, u.name as unit, c.name as groupname, c.nameInGerman as groupnameInGerman, m.sliderLimit, company.name as favoriteCompany
-                      FROM  `user_company_account`
+        $statement = "SELECT m.name, m.nameInApp, m.nameInFrench, u.name as unit, c.name as groupname, c.nameInGerman as groupnameInGerman, c.nameInFrench as groupnameInFrench,  m.sliderLimit, company.name as favoriteCompany
+                      FROM  user_company_account
                       JOIN company
                       ON company_id = company.id
                       JOIN company_has_measurement chm
@@ -520,7 +520,7 @@ class DatabaseConnection
 
         $this->connect();
 
-        $statement = "SELECT user_id, m.name, m.nameInApp, u.name AS unit, c.name AS groupname, m.sliderLimit
+        $statement = "SELECT m.name, m.nameInApp, u.name AS unit, c.name AS groupname, m.sliderLimit
                       FROM  `user_company_account`
                       JOIN company ON company_id = company.id
                       JOIN company_has_measurement chm ON company.id = chm.company_id

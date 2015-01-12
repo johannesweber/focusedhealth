@@ -6,10 +6,10 @@
  * Time: 14:41
  */
 
-error_reporting(E_ALL);
-ini_set('display_errors', 'On');
+header('Content-type: application/json; charset=utf-8');
 
-header('Content-type: application/json');
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 
 require_once '../../../db_connection.php';
 
@@ -17,7 +17,7 @@ $db_connection = new DatabaseConnection();
 
 $userId = $_GET["userId"];
 
-echo $result = $db_connection->selectAllMeasurementsFromUser($userId);
+echo $db_connection->selectAllMeasurementsFromUser($userId);
 
 $db_connection->close();
 
