@@ -216,12 +216,10 @@ class DatabaseConnection
      * @param $limit
      * @return string
      */
-    public function selectActivityFromDatabase($company, $userId, $limit)
+    public function selectActivityFromDatabase($company, $userId, $date, $limit)
     {
         $this->connect();
 
-        $timestamp = time();
-        $date = date("Y-m-d", $timestamp);
 
         $companyId = $this->getCompanyId($company);
 
@@ -238,7 +236,7 @@ class DatabaseConnection
     }
 
 
-    public function selectFoodFromDatabase($company, $userId, $limit)
+    public function selectFoodFromDatabase($company, $userId,$date ,$limit)
     {
         $this->connect();
 

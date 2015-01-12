@@ -26,7 +26,7 @@ $limit = $_GET["limit"];
 
 $fetch_food = "SELECT date, amount, name, unit, calories, carbs, fat, fiber, protein, sodium FROM food WHERE user_id='$userId'AND date='$date'";
 
-echo $db_connection->selectFoodFromDatabase($company, $userId, $limit);
+echo $db_connection->selectFoodFromDatabase($company, $userId, $date, $limit);
 
 $db_connection->close();
 
