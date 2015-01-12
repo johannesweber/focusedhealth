@@ -22,10 +22,8 @@ $response = $fitbit->getFoodGoal();
 
 $calories = $response->goals->calories;
 
-//ist nicht in der response vorhanden!!
-//$estimateDate = $response->foodPlan->estimateDate;
 
-$intensity = $response->foodPlan->intensity;
+
 
 
 //SQL Statement to check if this data set already exists
@@ -40,11 +38,11 @@ $rowCount = $result->num_rows;
 
 //food plan was not inserted
 if ($rowCount == 0) {
-    $insert_food_plan = "INSERT INTO food_plan (user_id, calories_goal, measurement_id, start_date, intensity, period_id,  company_id)
-         VALUES ('$userId', '$calories', '$caloriesId', '$date', '$intensity', '$periodDailyId', '$companyId')";
+    $insert_food_plan = "INSERT INTO food_plan (user_id, calories_goal, measurement_id, start_date, period_id,  company_id)
+         VALUES ('$userId', '$calories', '$caloriesId', '$date', '$periodDailyId', '$companyId')";
     $db_connection->executeStatement($insert_food_plan);
 } else {
-    $update = "UPDATE food_plan SET calories_goal = '$calories',start_date = '$date', intensity = '$intensity'
+    $update = "UPDATE food_plan SET calories_goal = '$calories',start_date = '$date'
                                      WHERE user_id='$userId' AND company_id='$companyId'";
     $result = $db_connection->executeStatement($update);
     if (!$result) {

@@ -8,7 +8,6 @@
  * insert activities like swimming or running
  */
 
-$successfull = true;
 
 //date of today
 $timestamp = time();
@@ -19,7 +18,6 @@ $error = true;
 
 //Request for activities
 $response = $fitbit->getActivities($datum);
-print_r($response);
 
 //lenght of activity array
 $arrayLenght = $response->activities;
@@ -59,4 +57,3 @@ if (!$result) {
 
 }
 
-$fitbit->showSynchronizeMessage($successfull);

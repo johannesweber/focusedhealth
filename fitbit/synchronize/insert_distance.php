@@ -7,10 +7,8 @@
  */
 
 
-$successfull = true;
 
 $response = $fitbit->getTimeSeries("distance", "today", "7d");
-print_r($response);
 $measurementName='distance';
 $distanceId = $db_connection->getMeasurementId($measurementName);
 
@@ -36,6 +34,5 @@ for ($x = 0; $x < $arrayLenght; $x++) {
 
 }
 
-$fitbit->showSynchronizeMessage($successfull);
 
 ?>

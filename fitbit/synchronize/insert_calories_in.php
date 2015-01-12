@@ -8,7 +8,6 @@
  * insert calories in of a specific time range
  */
 
-$successfull = true;
 
 //Request for time series awakenings count
 $response = $fitbit->getTimeSeries("caloriesIn", "today", "7d");
@@ -41,7 +40,6 @@ for ($x = 0; $x < $arrayLenght; $x++) {
 
 }
 
-$fitbit->showSynchronizeMessage($successfull);
 
 
 

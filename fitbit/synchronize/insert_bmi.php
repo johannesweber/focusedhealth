@@ -9,7 +9,6 @@
  *
  */
 
-$successfull = true;
 
 //Request for time series awakenings count
 $response = $fitbit->getTimeSeries("bmi", "today", "7d");
@@ -41,6 +40,5 @@ for ($x = 0; $x < $arrayLength; $x++) {
 
 }
 
-$fitbit->showSynchronizeMessage($successfull);
 
 ?>

@@ -16,10 +16,8 @@
 
 $response = $withings->getBodyMeasures();
 
-$successfull = true;
 
 $measuregrpsArray = $response->body->measuregrps;
-print_r($measuregrpsArray);
 
 //run through each date
 for ($x = 0; $x < sizeof($measuregrpsArray); $x++) {
@@ -61,6 +59,5 @@ for ($x = 0; $x < sizeof($measuregrpsArray); $x++) {
     }
 }
 
-$withings->showSynchronizeMessage($successfull);
 
 ?>

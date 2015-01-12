@@ -6,7 +6,6 @@
  * Time: 17:06
  */
 
-$successfull = true;
 
 $timestamp = time();
 $date = date("Y-m-d", $timestamp);
@@ -33,6 +32,5 @@ if (!$result) {
 
 
 
-$fitbit->showSynchronizeMessage($successfull);
 
 ?>

@@ -8,7 +8,6 @@
  *insert awakenings count of a specific time range
  */
 
-$successfull = true;
 
 
 //Request for time series awakenings count
@@ -40,7 +39,6 @@ for ($x = 0; $x < $arrayLength; $x++) {
 
 }
 
-$fitbit->showSynchronizeMessage($successfull);
 
 
 ?>

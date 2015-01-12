@@ -14,6 +14,7 @@ header('Content-type: application/json');
 error_reporting(E_ALL);
 ini_set('display_errors', 'On');
 
+$successfull = true;
 
 require_once '../../db_connection.php';
 
@@ -23,7 +24,7 @@ $db_connection = new DatabaseConnection();
 
 $db_connection->connect();
 
-$user_id = $_POST['user_id'];
+$userId = $_GET['userId'];
 //$userId = '53';
 
 
@@ -42,6 +43,8 @@ require_once 'insert_body_measures.php';
 //require_once 'insert_intraday_activity.php';
 //require_once 'insert_sleep_measures.php';
 require_once 'insert_sleep_summary.php';
+
+$withings->showSynchronizeMessage($company,$successfull);
 
 $db_connection->close();
 

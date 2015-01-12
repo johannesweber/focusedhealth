@@ -6,7 +6,6 @@
  * Time: 17:06
  */
 
-$successfull = true;
 
 //Request for activity daily goals
 $response = $fitbit->getActivityDailyGoals();
@@ -57,6 +56,5 @@ for ($id = 0; $id < sizeof($measArray); $id++) {
 
 }
 
-$fitbit->showSynchronizeMessage($successfull);
 
 ?>

@@ -12,9 +12,7 @@
 
 
 $response = $withings->getActivityMeasures();
-print_r($response);
 
-$successfull = true;
 
 $activityArray = $response->body->activities;
 
@@ -49,16 +47,44 @@ for($x = 0; $x <sizeof($activityArray); $x++ ){
 
 
     $result = $db_connection->insertValue($userId, $company, $stepsMeasurement, $date, $steps);
+    if (!$result) {
+
+        $successfull = false;
+    }
     $result = $db_connection->insertValue($userId, $company, $distanceMeasurement, $date, $distance);
+    if (!$result) {
+
+        $successfull = false;
+    }
     $result = $db_connection->insertValue($userId, $company, $caloriesOutMeasurement, $date, $calories);
+    if (!$result) {
+
+        $successfull = false;
+    }
     $result = $db_connection->insertValue($userId, $company, $elevationMeasurement, $date, $elevation);
+    if (!$result) {
+
+        $successfull = false;
+    }
     $result = $db_connection->insertValue($userId, $company, $softMeasurement, $date, $soft);
+    if (!$result) {
+
+        $successfull = false;
+    }
     $result = $db_connection->insertValue($userId, $company, $moderateMeasurement, $date, $moderate);
+    if (!$result) {
+
+        $successfull = false;
+    }
     $result = $db_connection->insertValue($userId, $company, $intenseMeasurement, $date, $intense);
+    if (!$result) {
+
+        $successfull = false;
+    }
 
 
 }
 
-$withings->showSynchronizeMessage($successfull);
+
 
 ?>

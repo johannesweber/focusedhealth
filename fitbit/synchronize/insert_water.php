@@ -6,7 +6,6 @@
  * Time: 13:52
  */
 
-$successfull = true;
 
 $response = $fitbit->getTimeSeries("water", "today", "7d");
 
@@ -34,6 +33,5 @@ for ($x = 0; $x < $arrayLenght; $x++) {
 
 }
 
-$fitbit->showSynchronizeMessage($successfull);
 
 ?>
