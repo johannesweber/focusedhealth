@@ -9,11 +9,17 @@
  * Time: 14:58
  */
 
+//$int = 1780;
+//$double = number_format(($int / 1000), 3);
+
+
+
 $response = $withings->getBodyMeasures();
 
 $successfull = true;
 
 $measuregrpsArray = $response->body->measuregrps;
+print_r($measuregrpsArray);
 
 //run through each date
 for ($x = 0; $x < sizeof($measuregrpsArray); $x++) {
@@ -33,6 +39,10 @@ for ($x = 0; $x < sizeof($measuregrpsArray); $x++) {
 
         $value = $valueArray[$i]->value;
         $measurementId = $valueArray[$i]->type;
+        $unit = $valueArray[$i]->unit;
+
+        // convert in to double
+        $valueDouble = number_format(($value / (10^($unit*(-1)))),($unit*(-1)));
 
         // method call to convert the measurementId
         $measurement = $withings->convertMeasurementIdToMeasurementName($measurementId);
@@ -41,7 +51,7 @@ for ($x = 0; $x < sizeof($measuregrpsArray); $x++) {
         if ($category == 1) {
 
             // method call to insert the value in our database
-            $result = $db_connection->insertValue($userId, $company, $measurement, $date, $value);
+            $result = $db_connection->insertValue($userId, $company, $measurement, $date, $valueDouble);
 
             if (!$result) {
 

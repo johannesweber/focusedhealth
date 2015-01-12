@@ -23,8 +23,8 @@ $db_connection = new DatabaseConnection();
 
 $db_connection->connect();
 
-$user_id = $_POST['user_id'];
-//$userId = '52';
+//$user_id = $_POST['user_id'];
+$userId = '53';
 
 
 // to used in insert
@@ -38,10 +38,10 @@ $withings->setOAuthDetails($oauth_token, $oauth_token_secret, $company_account_i
 
 
 require_once 'insert_body_measures.php';
-require_once 'insert_activity_measures.php';
+//require_once 'insert_activity_measures.php';
 //require_once 'insert_intraday_activity.php';
 //require_once 'insert_sleep_measures.php';
-require_once 'insert_sleep_summary.php';
+//require_once 'insert_sleep_summary.php';
 
 $db_connection->close();
 
