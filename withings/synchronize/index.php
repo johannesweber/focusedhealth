@@ -23,7 +23,7 @@ $db_connection = new DatabaseConnection();
 
 $db_connection->connect();
 
-$user_id = $_POST['user_id'];
+$user_id = $_GET['userId'];
 //$userId = '53';
 
 
