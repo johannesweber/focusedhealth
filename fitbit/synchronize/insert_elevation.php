@@ -6,7 +6,6 @@
  * Time: 16:04
  */
 
-$successfull = true;
 
 $response = $fitbit->getTimeSeries("elevation", "today", "7d");
 $measurementName='elevation';
@@ -34,6 +33,5 @@ for ($x = 0; $x < $arrayLenght; $x++) {
 
 }
 
-$fitbit->showSynchronizeMessage($successfull);
 
 ?>

@@ -14,6 +14,8 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 'On');
 
+
+
 require_once '../../db_connection.php';
 
 require_once '../fitbitphp.php';
@@ -38,7 +40,7 @@ require_once '../user_info/insert/index.php';
 
 require_once '../id/find_member_since.php';
 
-$error = true;
+$successfull = true;
 
 require_once 'insert_steps.php';
 require_once 'insert_distance.php';
@@ -67,11 +69,9 @@ require_once 'insert_activities.php';
 require_once 'insert_food.php';
 
 
-if (!$error) {
-    echo '{"success" : "-1", "message" : "Data could not be synchronized. Please try again later!"}';
-} else {
-    echo '{"success" : "1", "message" : "Data successfully synchronized!"}';
-}
+
+
+$fitbit->showSynchronizeMessage($successfull);
 
 $db_connection->close();
 

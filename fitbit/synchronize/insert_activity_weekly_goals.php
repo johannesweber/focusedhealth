@@ -6,7 +6,6 @@
  * Time: 17:06
  */
 
-$successfull = true;
 
 $response = $fitbit->getActivityWeeklyGoals();
 
@@ -45,6 +44,5 @@ for ($id = 0; $id < sizeof($measArray); $id++) {
 
 }
 
-$fitbit->showSynchronizeMessage($successfull);
 
 ?>

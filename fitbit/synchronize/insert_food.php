@@ -6,7 +6,6 @@
  * Time: 14:35
  */
 
-$successfull = true;
 
 $timestamp = time();
 $datum = date("Y-m-d", $timestamp);
@@ -49,7 +48,6 @@ for ($x = 0; $x < $arrayLenght; $x++) {
 
 }
 
-$fitbit->showSynchronizeMessage($successfull);
 
 ?>
 

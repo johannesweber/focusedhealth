@@ -11,9 +11,7 @@
 
 // Methodenaufruf
 $response = $withings->getSleepSummary();
-print_r($response);
 
-$succesfull = true;
 
 $sleepSummaryArray = $response->body->series;
 
@@ -50,10 +48,30 @@ for ($i = 0; $i < sizeof($sleepSummaryArray); $i++) {
 
     // Methoden Aufruf, um Daten in Datenbank zu schreiben
     $result = $db_connection->insertValue($userId, $company, $wakeUpDurationMeasurement, $date, $wakeUpDuration);
+    if (!$result) {
+
+        $successfull = false;
+    }
     $result = $db_connection->insertValue($userId, $company, $lightSleepDurationMeasurement, $date, $lightSleepDuration);
+    if (!$result) {
+
+        $successfull = false;
+    }
     $result = $db_connection->insertValue($userId, $company, $deepSleepDurationMeasurement, $date, $deepSleepDuration);
+    if (!$result) {
+
+        $successfull = false;
+    }
     $result = $db_connection->insertValue($userId, $company, $durationToSleepMeasurement, $date, $durationToSleep);
+    if (!$result) {
+
+        $successfull = false;
+    }
     $result = $db_connection->insertValue($userId, $company, $wakeUpCountMeasurement, $date, $wakeUpCount);
+    if (!$result) {
+
+        $successfull = false;
+    }
 
 
 }

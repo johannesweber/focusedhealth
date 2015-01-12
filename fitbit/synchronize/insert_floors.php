@@ -6,7 +6,6 @@
  * Time: 15:51
  */
 
-$successfull = true;
 
 $response = $fitbit->getTimeSeries("floors", "today", "7d");
 
@@ -35,6 +34,5 @@ for ($x = 0; $x < $arrayLenght; $x++) {
 
 }
 
-$fitbit->showSynchronizeMessage($successfull);
 
 ?>

@@ -6,7 +6,6 @@
  * Time: 15:12
  */
 
-$successfull = true;
 
 $response = $fitbit->getTimeSeries("weight", "today", "7d");
 $measurementName='weight';
@@ -33,6 +32,5 @@ for ($x = 0; $x < $arrayLenght; $x++) {
 
 }
 
-$fitbit->showSynchronizeMessage($successfull);
 
 ?>

@@ -9,7 +9,6 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 'On');
 
-$successfull = true;
 
 //date for daily goal
 $timestamp = time();
@@ -33,6 +32,5 @@ if (!$result) {
 
 
 
-$fitbit->showSynchronizeMessage($successfull);
 
 ?>
