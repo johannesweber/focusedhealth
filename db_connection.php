@@ -791,7 +791,7 @@ class DatabaseConnection
 
         $companyId = $this->getCompanyId($companyName);
 
-        $statement = "DELETE FROM user_company_count
+        $statement = "DELETE FROM user_company_account
                       WHERE user_id = '$userId'
                       AND company_id = '$companyId'
                       ";
@@ -799,9 +799,37 @@ class DatabaseConnection
         $this->executeStatement($statement);
 
         return $this->result;
-
     }
 
+    public function insertCompanyFromUser($userId, $companyName) {
+
+        $this->connect();
+
+        $companyId = $this->getCompanyId($companyName);
+        $timestamp = time();
+        $date = date("Y-m-d", $timestamp);
+
+        $statement = "INSERT INTO user_company_account (user_id, company_id, company_account_id, timestamp)
+                      VALUES ('$userId', '$companyId', '$userId', '$date')
+                      ";
+
+        $this->executeStatement($statement);
+
+        return $this->result;
+    }
+
+    public function selectCategoryFromDatabase() {
+
+        $this->connect();
+
+        $statement = "SELECT name, nameInGerman, nameInFrench
+                      FROM category
+                      ";
+
+        $this->executeStatement($statement);
+
+        return $this->getResultAsJSON();
+    }
 
 }
 
