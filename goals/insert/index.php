@@ -35,12 +35,12 @@ $goalExists = $db_connection->checkIfGoalExists($measurement, $userId, $company)
 if (!$goalExists) {
 
     //TODO was ist das StartValue ? Braucht man das ? ist ja überall NULL ?!?
-    echo "Insert " . $statement = "INSERT INTO goal (goal_value, start_value, startdate, period, user_id, measurement_id, company_id)
+    $statement = "INSERT INTO goal (goal_value, start_value, startdate, period, user_id, measurement_id, company_id)
                 VALUES ('$goalValue', '0', '$startDate', '$period', '$userId', '$measurementId', '$companyId')";
 
 } else {
 
-    echo "Update " . $statement = "UPDATE goal
+    $statement = "UPDATE goal
                   SET goal_value = $goalValue, start_value = 0, startdate = '$startDate', period = $period, user_id = $userId, measurement_id = $measurementId, company_id = $companyId
                   WHERE period = $period AND measurement_id = $measurementId AND user_id = $userId
                   ";
