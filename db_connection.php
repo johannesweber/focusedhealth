@@ -470,17 +470,22 @@ class DatabaseConnection
 
         $valuesExists = $this->checkIfActivityExists($userId, $company, $name, $startDate, $startTime);
 
+        $result="";
         if (!$valuesExists) {
 
 
             $statement = "INSERT INTO activity (user_id, company_id, activity, date, start_time, duration, distance, calories, description, last_modified)
                           VALUES ('$userId', '$companyId', '$name', '$startDate', '$startTime', '$duration', '$distance', '$calories', '$description', '$lastModified')";
+
+            $result = $this->executeStatement($statement);
+
+        } else {
+            $successfull = true;
         }
-        $result = $this->executeStatement($statement);
 
         if ($result) {
-
             $successfull = true;
+
         }
         return $successfull;
     }
@@ -511,6 +516,88 @@ class DatabaseConnection
         }
         return $exists;
     }
+
+
+    /**
+     * @param $userId
+     * @param $company
+     * @param $date
+     * @param $amount
+     * @param $brand
+     * @param $name
+     * @param $unit
+     * @param $calories
+     * @param $carbs
+     * @param $fat
+     * @param $fiber
+     * @param $protein
+     * @param $sodium
+     * @return bool
+     */
+    public function insertFood($userId, $company, $date, $amount, $brand, $name, $unit, $calories, $carbs, $fat, $fiber, $protein, $sodium)
+    {
+        $this->connect();
+
+        $successfull = false;
+
+        $companyId = $this->getCompanyId($company);
+
+        $valuesExists = $this->checkIfFoodExists($userId, $company, $date, $name);
+
+        $result="";
+        if (!$valuesExists) {
+
+
+            $statement = "INSERT INTO food (user_id, company_id, date, amount, brand, name, unit, calories, carbs, fat, fiber, protein, sodium)
+                VALUES ('$userId', '$companyId', '$date', '$amount', '$brand', '$name', '$unit', '$calories', '$carbs', '$fat', '$fiber', '$protein', '$sodium')";
+
+            $result = $this->executeStatement($statement);
+
+        } else {
+            $successfull = true;
+        }
+
+        if ($result) {
+            $successfull = true;
+
+        }
+        return $successfull;
+    }
+
+
+    /**
+     * @param $userId
+     * @param $company
+     * @param $date
+     * @param $name
+     * @return bool
+     */
+    public function checkIfFoodExists($userId, $company, $date, $name)
+    {
+
+
+        $this->connect();
+
+        $companyId = $this->getCompanyId($company);
+
+
+        $statement = "SELECT * FROM food WHERE user_id='$userId'  AND company_id='$companyId' AND date= '$date' AND name = '$name' ";
+
+        $this->executeStatement($statement);
+
+
+        $numberOfRows = $this->result->num_rows;
+
+        if ($numberOfRows > 0) {
+
+            $exists = true;
+        } else {
+
+            $exists = false;
+        }
+        return $exists;
+    }
+
 
 
     public function insertGoal($userId, $company, $measurement, $value, $periodId)

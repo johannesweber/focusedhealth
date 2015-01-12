@@ -63,7 +63,8 @@ $error = true;
 //require_once 'insert_food_plan.php';
 //require_once 'insert_weight_goal.php';
 //require_once 'insert_water_goal.php';
-require_once 'insert_activities.php';
+//require_once 'insert_activities.php';
+require_once 'insert_food.php';
 
 
 if (!$error) {

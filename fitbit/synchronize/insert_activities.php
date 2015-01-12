@@ -24,20 +24,23 @@ print_r($response);
 //lenght of activity array
 $arrayLenght = $response->activities;
 $arrayLenght = sizeof($arrayLenght);
-
+echo $arrayLenght;
 
 //loop to insert all data from activity array
 for ($x = 0; $x < $arrayLenght; $x++) {
 
+
     //access data of array
     $calories = $response->activities[$x]->calories;
-    $distance = $response->activities[$x]->distance;
+    if (isset($response->activities[$x]->distance)){
+        $distance = $response->activities[$x]->distance;
+    }else{
+        $distance = 0;
+    };
     $description = $response->activities[$x]->description;
     $duration = $response->activities[$x]->duration;
     $lastModified = $response->activities[$x]->lastModified;
     $name = $response->activities[$x]->name;
-    echo("HAALLLLLLOOOOO");
-    echo("##########\n " .$name .\n);
     $startDate = $response->activities[$x]->startDate;
     $startTime = $response->activities[$x]->startTime;
 

@@ -6,6 +6,7 @@
  * Time: 14:35
  */
 
+$successfull = true;
 
 $timestamp = time();
 $datum = date("Y-m-d", $timestamp);
@@ -36,37 +37,21 @@ for ($x = 0; $x < $arrayLenght; $x++) {
     $sodium = $response->foods[$x]->nutritionalValues->sodium;
 
 
-    //SQL Statement to
-    $select = "SELECT * FROM food WHERE user_id='$userId'  AND company_id='$company_id' AND date= '$date' ";
-    $result = $db_connection->executeStatement($select);
+
+
+    $result = $db_connection->insertFood($userId, $company, $date, $amount, $brand, $name, $unit, $calories, $carbs, $fat, $fiber, $protein, $sodium);
+
+
     if (!$result) {
-        $error = false;
-    }
-    $rowCount = $result->num_rows;
 
-//food was not inserted for today
-    if ($rowCount == 0) {
-
-
-        $insert_food = "INSERT INTO food (user_id, company_id, date, amount, brand, name, unit, calories, carbs, fat, fiber, protein, sodium)
-                VALUES ('$userId', '$company_id', '$date', '$amount', '$brand', '$name', '$unit', '$calories', '$carbs', '$fat', '$fiber', '$protein', '$sodium')";
-
-        $result = $db_connection->executeStatement($insert);
-        if (!$result) {
-            $error = false;
-        }
-
+        $successfull = false;
     }
 
 }
 
-if (!$error) {
-    echo '{"success" : "-1", "message" : "steps statement was not successfull"}';
-} else {
-    echo '{"success" : "1", "message" : "steps statement was successfull"}';
-
-
-}
-
+$fitbit->showSynchronizeMessage($successfull);
 
 ?>
+
+
+
