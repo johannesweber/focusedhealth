@@ -332,7 +332,6 @@ class DatabaseConnection
      */
     public function checkIfValueExists($userId, $company, $measurement, $date, $limit)
     {
-        //$this->selectValueFromDatabase($company, $measurement, $userId, $date, $limit);
         $this->checkIfValueAlreadyExists($company,$measurement,$userId,$date);
 
         $numberOfRows = $this->result->num_rows;
