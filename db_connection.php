@@ -831,6 +831,37 @@ class DatabaseConnection
         return $this->getResultAsJSON();
     }
 
+    public function selectCompaniesFromUser($userId) {
+
+        $this->connect();
+
+        $statement = "SELECT c.name , c.nameInApp
+                      FROM user_company_account uca
+                      JOIN company c
+                      ON uca.company_id = c.id
+                      WHERE user_id = '$userId'
+                      ";
+
+        $this->executeStatement($statement);
+
+        return $this->getResultAsJSON();
+    }
+
+    public function selectAllCompanies() {
+
+        $this->connect();
+
+        $statement = "SELECT c.name , c.nameInApp
+                      FROM user_company_account uca
+                      JOIN company c
+                      ON uca.company_id = c.id
+                      ";
+
+        $this->executeStatement($statement);
+
+        return $this->getResultAsJSON();
+    }
+
 }
 
 ?>
