@@ -1,5 +1,8 @@
 <?php
 /**
+ *
+ * This class is needed to execute all statements to save Withings data in our database. This class includes the other php files and perform different method calls.
+ *
  * Created by PhpStorm.
  * User: pauer
  * Date: 05.01.15

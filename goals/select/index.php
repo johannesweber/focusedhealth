@@ -1,5 +1,8 @@
 <?php
 /**
+ *
+ * This class is used to make an method call that we select goals from our database and provide it to our Mobile App.
+ *
  * Created by PhpStorm.
  * User: pauer
  * Date: 19.12.14

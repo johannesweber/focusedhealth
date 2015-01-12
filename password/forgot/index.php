@@ -1,5 +1,8 @@
 <?php
 /**
+ *
+ * This class is used to send an Email with an Link if the user has forgotten his password.
+ *
  * Created by PhpStorm.
  * User: johannesweber
  * Date: 11.12.14

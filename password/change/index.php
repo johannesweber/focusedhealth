@@ -1,5 +1,8 @@
 <?php
 /**
+ *
+ * This class is used to change the password.
+ *
  * Created by PhpStorm.
  * User: johannesweber
  * Date: 12.12.14

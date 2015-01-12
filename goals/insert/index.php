@@ -1,5 +1,8 @@
 <?php
 /**
+ *
+ * This class is used to insert data for goals in our database and update the value if changes occur.
+ *
  * Created by PhpStorm.
  * User: johannesweber
  * Date: 28.12.14

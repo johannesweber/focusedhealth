@@ -1,5 +1,8 @@
 <?php
 /**
+ *
+ * This class is used to get the data of activities from Withings. This data will be stored in our database.
+ *
  * Created by PhpStorm.
  * User: pauer
  * Date: 11.12.14

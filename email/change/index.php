@@ -1,5 +1,8 @@
 <?php
 /**
+ *
+ * This class is used to change the email with an method call.
+ *
  * Created by PhpStorm.
  * User: johannesweber
  * Date: 09.01.15

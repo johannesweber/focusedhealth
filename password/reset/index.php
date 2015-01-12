@@ -1,5 +1,8 @@
 <?php
 /**
+ *
+ * This class is used to reset the password.
+ *
  * Created by PhpStorm.
  * User: johannesweber
  * Date: 11.12.14

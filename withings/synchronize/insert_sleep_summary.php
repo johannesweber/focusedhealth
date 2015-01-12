@@ -1,5 +1,8 @@
 <?php
 /**
+ *
+ * This Class is used to retrieve and store the manufacturer's data in our database. We get a summary of our sleep activity.
+ *
  * Created by PhpStorm.
  * User: pauer
  * Date: 05.01.15

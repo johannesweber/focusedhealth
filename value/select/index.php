@@ -1,5 +1,8 @@
 <?php
 /**
+ *
+ * This class is used to make an method Call to select the values from our database.
+ *
  * Created by PhpStorm.
  * User: timonvogler
  * Date: 27.11.14

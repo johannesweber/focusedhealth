@@ -1,5 +1,8 @@
 <?php
 /**
+ *
+ * This Class is used to retrieve and store the manufacturer's data in our database. We receive data regarding the activity measures which are stored by Withings .
+ *
  * Created by PhpStorm.
  * User: pauer
  * Date: 04.01.15

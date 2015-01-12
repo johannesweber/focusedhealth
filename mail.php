@@ -1,5 +1,7 @@
 <?php
 /**
+ * This class is required to send an Email to the User.
+ *
  * Created by PhpStorm.
  * User: johannesweber
  * Date: 11.12.14
@@ -13,6 +15,16 @@ require_once 'library/PHPMailer/PHPMailerAutoload.php';
 
 class Mail{
 
+    /**
+     * function
+     *
+     * @param $to
+     * @param $from
+     * @param $from_name
+     * @param $subject
+     * @param $message
+     * @return bool
+     */
     function smtpmailer($to, $from, $from_name, $subject, $message) {
 
         global $error;
