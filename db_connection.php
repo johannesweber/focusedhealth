@@ -783,6 +783,26 @@ class DatabaseConnection
 
         return $this->getResultAsJSON();
     }
+
+
+    public function deleteCompanyFromUser($userId, $companyName) {
+
+        $this->connect();
+
+        $companyId = $this->getCompanyId($companyName);
+
+        $statement = "DELETE FROM user_company_count
+                      WHERE user_id = '$userId'
+                      AND company_id = '$companyId'
+                      ";
+
+        $this->executeStatement($statement);
+
+        return $this->result;
+
+    }
+
+
 }
 
 ?>
