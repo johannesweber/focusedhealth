@@ -212,6 +212,50 @@ class DatabaseConnection
 
     /**
      * @param $company
+     * @param $userId
+     * @param $limit
+     * @return string
+     */
+    public function selectActivityFromDatabase($company, $userId, $limit)
+    {
+        $this->connect();
+
+        $timestamp = time();
+        $date = date("Y-m-d", $timestamp);
+
+        $companyId = $this->getCompanyId($company);
+
+        $statement = "SELECT activity, date, start_time, ROUND(duration/60000) AS DurationInMin, distance, calories, description
+                      FROM activity
+                      WHERE user_id ='$userId'
+                      AND date <='$date'
+                      ORDER BY DATE DESC
+                      LIMIT $limit
+                      ";
+        $this->executeStatement($statement);
+
+        return $this->getResultAsJSON();
+    }
+
+
+    public function selectFoodFromDatabase($company, $userId, $limit)
+    {
+        $this->connect();
+
+        $timestamp = time();
+        $date = date("Y-m-d", $timestamp);
+
+        $companyId = $this->getCompanyId($company);
+
+        $statement =
+        $this->executeStatement($statement);
+
+        return $this->getResultAsJSON();
+    }
+
+
+    /**
+     * @param $company
      * @param $measurement
      * @param $userId
      * @param $date
