@@ -818,6 +818,18 @@ class DatabaseConnection
         return $this->result;
     }
 
+    public function selectCategoryFromDatabase() {
+
+        $this->connect();
+
+        $statement = "SELECT name, nameInGerman, nameInFrench
+                      FROM category
+                      ";
+
+        $this->executeStatement($statement);
+
+        return $this->getResultAsJSON();
+    }
 
 }
 
