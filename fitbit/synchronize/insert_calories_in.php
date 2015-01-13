@@ -20,6 +20,7 @@ $arrayLenght = $response;
 $arrayLenght = sizeof($arrayLenght);
 
 
+//just to know it's an array
 $array = $response;
 
 //loop to insert all data from response array

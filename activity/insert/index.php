@@ -4,6 +4,8 @@
  * User: timonvogler
  * Date: 12.01.15
  * Time: 13:06
+ *
+ * to insert activity which is insert by the user manually
  */
 
 error_reporting(E_ALL);
@@ -13,6 +15,7 @@ require_once '../../db_connection.php';
 
 $db_connection = new DatabaseConnection();
 
+// data send by phone
 $userId = $_GET['userId'];
 $company = $_GET['company'];
 $calories = $_GET['calories'];

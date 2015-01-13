@@ -21,6 +21,7 @@ $db_connection = new DatabaseConnection();
 
 $db_connection->connect();
 
+//data send by phone
 $userId = $_POST['userId'];
 $oauthToken = $_POST['oauth_token'];
 $oauthTokenSecret = $_POST['oauth_token_secret'];

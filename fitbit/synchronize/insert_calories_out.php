@@ -8,16 +8,17 @@
  * insert calories out
  */
 
-
+// Request for time series awakenings count
 $response = $fitbit->getTimeSeries("caloriesOut", "today", "1y");
 
+//name of the measurement
 $measurementName='caloriesOut';
 $caloriesOutId = $db_connection->getMeasurementId($measurementName);
 
 $arrayLenght = $response;
 $arrayLenght = sizeof($arrayLenght);
 
-
+// just to know it's an array
 $array = $response;
 
 //run through all calories out values

@@ -8,6 +8,7 @@
  * to insert water goal
  */
 
+// For Error Reporting
 error_reporting(E_ALL);
 ini_set('display_errors', 'On');
 
@@ -19,7 +20,7 @@ $date = date("Y-m-d", $timestamp);
 $response = $fitbit->getWaterGoal();
 $waterGoal = $response->goal->goal;
 
-// to get the Id's for the measurement name
+// to get the name for the measurement
 $waterMeasurementName='water';
 $periodName='daily';
 $periodDailyId = $db_connection->getPeriodId($periodName);

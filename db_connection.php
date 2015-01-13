@@ -886,6 +886,7 @@ public function insertCompanyFromUser($userId, $companyName)
 }
 
 /**
+ * don't know why we need this method
  * @return string
  */
 public function selectCategoryFromDatabase()
@@ -893,7 +894,7 @@ public function selectCategoryFromDatabase()
 
     $this->connect();
 
-    $statement = "SELECT n
+    $statement = "SELECT *
                       FROM category
                       ";
 

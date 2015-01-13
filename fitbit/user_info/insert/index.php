@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * to insert user info
+ */
+
+
 $response = $fitbit->getProfile();
 
 $error = true;
@@ -21,8 +26,9 @@ $timezone = $response->user->timezone;
 $waterUnit = $response->user->waterUnit;
 $weightUnit = $response->user->weightUnit;
 
-$select_water_goal = "SELECT * FROM company_account_info WHERE user_id='$userId' AND company_id='$companyId'";
-$result = $db_connection->executeStatement($select_water_goal);
+//check if values already exists
+$statement = "SELECT * FROM company_account_info WHERE user_id='$userId' AND company_id='$companyId'";
+$result = $db_connection->executeStatement($statement);
 $rowCount = $result->num_rows;
 
 if ($rowCount == 0) {
@@ -39,6 +45,7 @@ if ($rowCount == 0) {
 
 } else {
 
+    //to update user infos
     $update = "UPDATE company_account_info set company_account_id='$encodedId', avatar='$avatar', city='$city', country='$country', dateOfBirth='$dateOfBirth', distanceUnit='$distanceUnit',
               fullName='$fullName', gender='$gender', glucoseUnit='$glucoseUnit', height='$height', heightUnit='$heightUnit', locale='$locale', memberSince='$memberSince', waterUnit='$waterUnit', weightUnit='$weightUnit', timezone='$timezone'
               WHERE user_id='$userId'  AND company_id ='$companyId'";

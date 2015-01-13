@@ -13,7 +13,7 @@
 $timestamp = time();
 $datum = date("Y-m-d", $timestamp);
 
-$error = true;
+$successfull = true;
 
 
 //Request for activities
@@ -29,6 +29,8 @@ for ($x = 0; $x < $arrayLenght; $x++) {
 
     //access data of array
     $calories = $response->activities[$x]->calories;
+
+    //sometimes distance doesn't exist in response
     if (isset($response->activities[$x]->distance)){
         $distance = $response->activities[$x]->distance;
     }else{
@@ -40,9 +42,6 @@ for ($x = 0; $x < $arrayLenght; $x++) {
     $name = $response->activities[$x]->name;
     $startDate = $response->activities[$x]->startDate;
     $startTime = $response->activities[$x]->startTime;
-
-
-
 
 
 

@@ -15,17 +15,19 @@ $weightGoal = $response->goal->weight;
 $startDate = $response->goal->startDate;
 $startWeight = $response->goal->startWeight;
 
-// to get the Id's for the measurement name
+// to get the name for the measurement
 $measurementName='weight';
 $weightId = $db_connection->getMeasurementId($measurementName);
 $measurementName='daily';
 $periodDailyId = $db_connection->getMeasurementId($measurementName);
 
+//check if weight goal already exists
 $select_weight_goal = "SELECT * FROM goal WHERE user_id='$userId' AND measurement_id='$weightId' AND company_id='$companyId'";
 $result = $db_connection->executeStatement($select_weight_goal);
 $rowCount = $result->num_rows;
 
 if ($rowCount == 0) {
+    //insert weight goal
     $insert = "INSERT INTO goal (goal_value, start_value, startdate, enddate, period, user_id, measurement_id, company_id)
 VALUES ('$weightGoal', '$startWeight', '$startDate', Null, NULL , '$userId', '$weightId', '$companyId')";
     $result = $db_connection->executeStatement($insert);
@@ -34,7 +36,7 @@ VALUES ('$weightGoal', '$startWeight', '$startDate', Null, NULL , '$userId', '$w
     }
 
 } else {
-
+//update weight goal
     $update = "UPDATE goal set goal_value='$weightGoal',start_value='$startWeight', startdate='$startDate'
 WHERE user_id='$userId' AND measurement_id='$weightId' and company_id='$companyId'";
     $result = $db_connection->executeStatement($update);

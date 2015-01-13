@@ -7,6 +7,8 @@
  * User: timonvogler
  * Date: 12.01.15
  * Time: 11:17
+ *
+ * get activity
  */
 
 
@@ -21,6 +23,7 @@ $db_connection = new DatabaseConnection();
 
 $db_connection->connect();
 
+// data send by phone
 $company = $_GET["company"];
 $userId = $_GET["userId"];
 $date = $_GET["endDate"];

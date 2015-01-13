@@ -11,7 +11,7 @@
 
 $response = $fitbit->getActivityWeeklyGoals();
 
-// to get the Id's for the measurement name
+// to get the name for the measurement
 $distanceMeasurementName = 'distance';
 $stepsMeasurementName = 'steps';
 $period = 'weekly';

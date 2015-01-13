@@ -9,9 +9,10 @@
  */
 
 
-
+// Request for distance in specific Time Series
 $response = $fitbit->getTimeSeries("distance", "today", "1y");
 
+//to get the name of the measurement
 $measurementName='distance';
 $distanceId = $db_connection->getMeasurementId($measurementName);
 

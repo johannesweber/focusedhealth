@@ -4,6 +4,8 @@
  * User: timonvogler
  * Date: 12.01.15
  * Time: 15:56
+ *
+ * dont't know why we need this file
  */
 
 header('Content-type: application/json; charset=utf-8');
