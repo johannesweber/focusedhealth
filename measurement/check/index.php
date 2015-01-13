@@ -18,7 +18,7 @@ $db_connection = new DatabaseConnection();
 $company = $_GET['company'];
 $measurement = $_GET['measurement'];
 
-$companyHasMeasurement = $db_connection->checkIfCompanyHasMeasurement($company, $measurement);
+$companyHasMeasurement = $db_connection->selectCompanyHasMeasurement();
 
 echo '{"companyHasMeasurement" : "' . $companyHasMeasurement . '"}';
 
