@@ -4,6 +4,8 @@
  * User: pauer
  * Date: 25.11.14
  * Time: 14:58
+ *
+ * to insert the different body measurements
  */
 
 
@@ -12,7 +14,7 @@ $date = date("Y-m-d", $timestamp);
 
 $response = $fitbit->getBody($date);
 
-// to get the Id's for the measurement name
+
 $bicepMeasurementName = 'bicep';
 $calfMeasurementName = 'calf';
 $chestMeasurementName = 'chest';

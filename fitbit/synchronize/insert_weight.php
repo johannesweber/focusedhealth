@@ -4,6 +4,8 @@
  * User: timonvogler
  * Date: 02.12.14
  * Time: 15:12
+ *
+ * to insert weight
  */
 
 
@@ -16,6 +18,7 @@ $arrayLenght = sizeof($arrayLenght);
 
 $array = $response;
 
+//run through each weight value
 for ($x = 0; $x < $arrayLenght; $x++) {
 
     $weight = $array[$x]->value;

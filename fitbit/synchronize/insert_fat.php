@@ -4,6 +4,8 @@
  * User: pauer
  * Date: 03.12.14
  * Time: 12:10
+ *
+ * to insert body fat
  */
 
 
@@ -17,6 +19,7 @@ $arrayLenght = sizeof($arrayLenght);
 
 $array = $response;
 
+//run through each body fat value
 for ($x = 0; $x < $arrayLenght; $x++) {
 
     $fat = $array[$x]->value;

@@ -4,6 +4,8 @@
  * User: pauer
  * Date: 03.12.14
  * Time: 13:52
+ *
+ * to insert water
  */
 
 
@@ -18,6 +20,7 @@ $arrayLenght = sizeof($arrayLenght);
 
 $array = $response;
 
+//run through each water value
 for ($x = 0; $x < $arrayLenght; $x++) {
 
     $water = $array[$x]->value;

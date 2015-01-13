@@ -4,6 +4,8 @@
  * User: pauer
  * Date: 03.12.14
  * Time: 14:24
+ *
+ * insert calories out
  */
 
 
@@ -18,6 +20,7 @@ $arrayLenght = sizeof($arrayLenght);
 
 $array = $response;
 
+//run through all calories out values
 for ($x = 0; $x < $arrayLenght; $x++) {
 
     $calories = $array[$x]->value;

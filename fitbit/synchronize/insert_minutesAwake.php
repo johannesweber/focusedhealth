@@ -4,6 +4,8 @@
  * User: timonvogler
  * Date: 02.12.14
  * Time: 15:12
+ *
+ * to insert minutes awake
  */
 
 
@@ -17,6 +19,7 @@ $arrayLength = sizeof($arrayLength);
 
 $array = $response;
 
+//run through each minutes awake value
 for ($x = 0; $x < $arrayLength; $x++) {
 
     $minutesAwake = $array[$x]->value;

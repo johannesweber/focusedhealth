@@ -5,7 +5,7 @@
  * Date: 01.12.14
  * Time: 16:49
  *
- * insert activities like swimming or running
+ * to insert activities like swimming or running
  */
 
 
