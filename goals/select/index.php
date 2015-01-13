@@ -22,14 +22,7 @@ $period = $_GET["period"];
 $company = $_GET["company"];
 $limit = $_GET["limit"];
 
-//TODO was sind activity daily goals ? bzw. was sagen sie aus? wo ist der unterschied zu den normalen goals ?
-// Man erhält lt. API Explorer eine Zusammenfassung und die gleichen Sachen wie bei daily und weekly und zusätzlich wie aktiv man war
-//TODO warum steht in der datenbank überall null
-// Man erhält bei daily goals kein start-/enddatum und auch kein startValue lt. API Explorer
-// MAn erhält bei weekly goals kein start-/enddatum und auch kein startValue lt. API Explorer
-//TODO nochmal über das select statement drüber gucken
-
-echo $db_connection->selectGoalFromDatabase($measurement, $userId, $period, $limit);
+echo $db_connection->selectGoalFromDatabase($company, $measurement, $userId, $period, $limit);
 
 $db_connection->close();
 

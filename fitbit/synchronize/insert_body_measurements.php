@@ -14,7 +14,7 @@ $date = date("Y-m-d", $timestamp);
 
 $response = $fitbit->getBody($date);
 
-
+// get measurement names
 $bicepMeasurementName = 'bicep';
 $calfMeasurementName = 'calf';
 $chestMeasurementName = 'chest';
@@ -24,7 +24,7 @@ $neckMeasurementName = 'neck';
 $thighMeasurementName = 'thigh';
 $waistMeasurementName = 'waist';
 
-
+//access values of response
 $bicep = $response->body->bicep;
 $calf = $response->body->calf;
 $chest = $response->body->chest;

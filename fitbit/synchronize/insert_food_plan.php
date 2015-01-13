@@ -10,7 +10,7 @@
 $timestamp = time();
 $date = date("Y-m-d", $timestamp);
 
-// to get the Id's for the measurement name
+// to get the name for the measurement
 $measurementName = 'calories';
 $caloriesId = $db_connection->getMeasurementId($measurementName);
 $measurementName = 'daily';
@@ -21,9 +21,6 @@ $response = $fitbit->getFoodGoal();
 
 
 $calories = $response->goals->calories;
-
-
-
 
 
 //SQL Statement to check if this data set already exists

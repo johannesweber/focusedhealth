@@ -893,7 +893,7 @@ public function selectCategoryFromDatabase()
 
     $this->connect();
 
-    $statement = "SELECT n
+    $statement = "SELECT name
                       FROM category
                       ";
 
@@ -955,20 +955,38 @@ public function selectAllCompanies()
         }
     }
 
-/**
- * function to check if authorization is succesfull
- * @param $company
- * @param $result
- */
-public function showAuthorizeMessage($company, $result)
-{
-    if ($result) {
-        echo '{"success" : "1", "message" : "You have been successfully authorized for " ' . $company . ' "!"}';
-    } else {
-        echo '{"success" : "-1", "message" : "Authorization for " ' . $company . ' " Failed! Please try again later!"}';
+    /**
+    * function to check if authorization is succesfull
+    * @param $company
+    * @param $result
+    */
+    public function showAuthorizeMessage($company, $result)
+    {
+        if ($result) {
+            echo '{"success" : "1", "message" : "You have been successfully authorized for " ' . $company . ' "!"}';
+        } else {
+            echo '{"success" : "-1", "message" : "Authorization for " ' . $company . ' " Failed! Please try again later!"}';
+        }
+
     }
 
-}
+    public function selectCompanyHasMeasurement(){
+
+        $this->connect();
+
+        echo $statement = "SELECT c.name, m.name
+                      FROM company_has_measurement chm
+                      JOIN company c
+                      ON chm.company_id = c.id
+                      JOIN measurement m
+                      ON chm.measurement_id = m.id
+                      ";
+
+        $this->executeStatement($statement);
+
+        return $this->getResultAsJSON();
+
+    }
 }
 
 ?>

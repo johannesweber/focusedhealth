@@ -2039,7 +2039,6 @@ class FitBitPHP {
      */
     public function getTimeSeries($type, $basedate, $to_period)
     {
-
         switch ($type) {
             case 'caloriesIn':
                 $path = '/foods/log/caloriesIn';

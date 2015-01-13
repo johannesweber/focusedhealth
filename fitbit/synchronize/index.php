@@ -42,6 +42,7 @@ require_once '../id/find_member_since.php';
 
 $successfull = true;
 
+//include files to synch data
 require_once 'insert_steps.php';
 require_once 'insert_distance.php';
 require_once 'insert_calories_out.php';

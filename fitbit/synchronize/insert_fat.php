@@ -8,7 +8,7 @@
  * to insert body fat
  */
 
-
+// Request for fat to get a specific time series
 $response = $fitbit->getTimeSeries("fat", "today", "1y");
 $measurementName='bodyFat';
 $fatId = $db_connection->getMeasurementId($measurementName);

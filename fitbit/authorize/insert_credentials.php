@@ -4,6 +4,8 @@
  * User: johannesweber
  * Date: 17.11.14
  * Time: 17:40
+ *
+ * to insert credentials (tokens , company user id)
  */
 
 $credentialsExists = $db_connection->checkIfCredentialsExists($company, $userId);

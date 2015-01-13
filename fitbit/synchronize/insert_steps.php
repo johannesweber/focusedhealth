@@ -15,9 +15,7 @@ $today = date("Y-m-d", $timestamp);
 $measurementName='steps';
 $stepsId = $db_connection->getMeasurementId($measurementName);
 
-
-
-//memberSince include in index: find_member_since
+// to get memberSince it's include in index; to get all data since the user is a member
 $response = $fitbit->getTimeSeries("steps", $memberSince, $today);
 $arrayLenght = $response;
 $arrayLenght = sizeof($arrayLenght);

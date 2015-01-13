@@ -14,7 +14,7 @@
 $response = $fitbit->getActivityDailyGoals();
 
 
-// to get the Id's for the measurement name
+// to get the name for the measurement
 $distanceMeasurementName='distance';
 $activeMinutesMeasurementName='activeMinutes';
 $caloriesOutMeasurementName='caloriesOut';

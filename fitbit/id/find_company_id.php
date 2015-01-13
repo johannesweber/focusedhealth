@@ -4,6 +4,8 @@
  * User: johannesweber
  * Date: 17.11.14
  * Time: 22:19
+ *
+ * to find the company id
  */
 
 $find_company_id_statement = "SELECT id FROM company WHERE name = '$company'";
