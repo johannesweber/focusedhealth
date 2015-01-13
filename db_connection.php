@@ -103,6 +103,13 @@ class DatabaseConnection
         $data = array();
 
         for ($x = 0; $x < mysqli_num_rows($this->result); $x++) {
+
+            /**
+             * Function to convert one specific element into utf 8
+             * it takes to much time to iterate through all elements ant convert them :)
+             * $element['nameInGerman'] = mb_convert_encoding($element['nameInGerman'], 'utf-8');
+             */
+
             $element = mysqli_fetch_assoc($this->result);
 
             $data[] = $element;
