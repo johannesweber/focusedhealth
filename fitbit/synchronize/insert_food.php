@@ -15,7 +15,6 @@ $datum = date("Y-m-d", $timestamp);
 $error = true;
 
 $response = $fitbit->getFoods($datum);
-//print_r($response);
 
 
 $arrayLenght = $response->foods;

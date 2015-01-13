@@ -4,6 +4,8 @@
  * User: johannesweber
  * Date: 18.11.14
  * Time: 13:39
+ *
+ * to select all user infos
  */
 
 //TODO real User id required

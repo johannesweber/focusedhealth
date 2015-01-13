@@ -4,6 +4,8 @@
  * User: timonvogler
  * Date: 08.12.14
  * Time: 20:20
+ *
+ * to find company account id
  */
 
 $companyId = $db_connection->getCompanyId($company = "fitbit");

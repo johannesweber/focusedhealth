@@ -16,7 +16,7 @@ $minutesAwakeId = $db_connection->getMeasurementId($measurementName);
 $arrayLength = $response;
 $arrayLength = sizeof($arrayLength);
 
-
+// just to know it's an array
 $array = $response;
 
 //run through each minutes awake value

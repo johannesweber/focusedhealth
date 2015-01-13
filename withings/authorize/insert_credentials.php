@@ -1,5 +1,7 @@
 <?php
 /**
+ * This class is used to check if credentials exists and insert or update credentials like userId, oauthToken etv. in our database.
+ *
  * Created by PhpStorm.
  * User: johannesweber
  * Date: 17.11.14
@@ -9,10 +11,12 @@
 $timestamp = time();
 $date = date("Y-m-d", $timestamp);
 
+$credentialExists = $db_connection->checkIfCredentialsExists($company, $userId);
+
 if (!credentialsExists) {
 
 //TODO send user id with iPhone
-    $insert_user_company_account = "INSERT INTO user_company_account (user_id, company_id, oauth_token, oauth_token_secret,
+    $statement = "INSERT INTO user_company_account (user_id, company_id, oauth_token, oauth_token_secret,
                                                 company_account_id, timestamp)
                                     VALUES ('$user_id', '$company_id', '$oauth_token', '$oauth_token_secret',
                                             '$company_account_id', '$date')";
@@ -23,7 +27,7 @@ if (!credentialsExists) {
                    WHERE user_id = '$user_id'
                    AND company_id = '$company_id'";
 }
-$result = $db_connection->executeStatement($insert_user_company_account);
+$result = $db_connection->executeStatement($statement);
 
 $db_connection->showAuthorizeMessage($company, $result);
 

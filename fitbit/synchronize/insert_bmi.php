@@ -21,6 +21,7 @@ $bmiId = $db_connection->getMeasurementId($measurementName);
 $arrayLength = $response;
 $arrayLength = sizeof($arrayLength);
 
+// just to know it's an array
 $array = $response;
 
 //loop to insert all data from response array
