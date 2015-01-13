@@ -197,7 +197,7 @@ class DatabaseConnection
      * @param $limit
      * @return string
      */
-    public function selectGoalFromDatabase($measurement, $userId, $period, $limit)
+    public function selectGoalFromDatabase($company, $measurement, $userId, $period, $limit)
     {
         $this->connect();
 
@@ -205,7 +205,7 @@ class DatabaseConnection
         $date = date("Y-m-d", $timestamp);
 
         $measurementId = $this->getMeasurementId($measurement);
-        //$companyId = $this->getCompanyId($company);
+        $companyId = $this->getCompanyId($company);
 
         $statement = "SELECT goal.goal_id, goal.goal_value AS target_value, v.value AS current_value, v.date
                       FROM goal
@@ -216,9 +216,11 @@ class DatabaseConnection
                       AND v.user_id = $userId
                       AND goal.period = $period
                       AND v.date <=  '$date'
+                      AND v.company_id = '$companyId'
                       ORDER BY DATE DESC
                       LIMIT $limit
                       ";
+
         $this->executeStatement($statement);
 
         return $this->getResultAsJSON();
@@ -331,8 +333,9 @@ class DatabaseConnection
      * @param $company
      * @return bool true if desired goal is stored in database
      */
-    public function checkIfGoalExists($measurement, $userId, $company, $periodId) //achtung perioid hinzugefügt
+    public function checkIfGoalExists($measurement, $userId, $company, $period, $date)
     {
+
         $measurementId = $this->getMeasurementId($measurement);
         $companyId = $this->getCompanyId($company);
 
@@ -340,7 +343,9 @@ class DatabaseConnection
                       WHERE user_id = '$userId'
                       AND measurement_id = '$measurementId'
                       AND company_id = '$companyId'
-                      AND period = '$periodId'";
+                      AND period = '$period'
+                      AND startdate = '$date'
+                      ";
 
         $result = $this->executeStatement($statement);
 
@@ -833,7 +838,7 @@ class DatabaseConnection
 
         $this->connect();
 
-        $statement = "SELECT n
+        $statement = "SELECT name
                       FROM category
                       ";
 
@@ -872,6 +877,25 @@ class DatabaseConnection
 
         return $this->getResultAsJSON();
     }
+
+    /**
+     *maybe we need it later
+    public function deleteGoalFromDataBase() {
+
+        $this->connect();
+
+        $goalId = $this->getGoalId();
+
+        $statement = "DELETE FROM goal
+                    WHERE goal_id = '$goalId'
+                    ";
+
+        $this->executeStatement($statement);
+
+        return $this->result;
+    }
+     */
+
 
 }
 
