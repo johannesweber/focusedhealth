@@ -4,6 +4,8 @@
  * User: timonvogler
  * Date: 08.12.14
  * Time: 17:33
+ *
+ * to insert sleep start time
  */
 
 
@@ -17,6 +19,7 @@ $arrayLength = sizeof($arrayLength);
 
 $array = $response;
 
+//run through each sleep start time value
 for ($x = 0; $x < $arrayLength; $x++) {
 
     $startTime = $array[$x]->value;

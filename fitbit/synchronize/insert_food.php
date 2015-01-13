@@ -4,6 +4,8 @@
  * User: timonvogler
  * Date: 01.12.14
  * Time: 14:35
+ *
+ * to insert food
  */
 
 
@@ -19,7 +21,7 @@ $response = $fitbit->getFoods($datum);
 $arrayLenght = $response->foods;
 $arrayLenght = sizeof($arrayLenght);
 
-
+//run through each food
 for ($x = 0; $x < $arrayLenght; $x++) {
 
     //access data of array

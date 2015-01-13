@@ -4,10 +4,12 @@
  * User: pauer
  * Date: 03.12.14
  * Time: 13:52
+ *
+ * to insert water
  */
 
 
-$response = $fitbit->getTimeSeries("water", "today", "7d");
+$response = $fitbit->getTimeSeries("water", "today", "1y");
 
 $measurementName='water';
 $waterId = $db_connection->getMeasurementId($measurementName);
@@ -18,6 +20,7 @@ $arrayLenght = sizeof($arrayLenght);
 
 $array = $response;
 
+//run through each water value
 for ($x = 0; $x < $arrayLenght; $x++) {
 
     $water = $array[$x]->value;

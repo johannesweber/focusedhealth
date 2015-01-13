@@ -11,7 +11,8 @@
 
 
 //Request for time series awakenings count
-$response = $fitbit->getTimeSeries("awakeningsCount", "today", "7d");
+$response = $fitbit->getTimeSeries("awakeningsCount", "today", "1y");
+
 $measurementName='awakeningsCount';
 $awakeningsCountId = $db_connection->getMeasurementId($measurementName);
 

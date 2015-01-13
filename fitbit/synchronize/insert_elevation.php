@@ -4,10 +4,12 @@
  * User: timonvogler
  * Date: 03.12.14
  * Time: 16:04
+ *
+ * to insert elevation values
  */
 
 
-$response = $fitbit->getTimeSeries("elevation", "today", "7d");
+$response = $fitbit->getTimeSeries("elevation", "today", "1y");
 $measurementName='elevation';
 $elevationId = $db_connection->getMeasurementId($measurementName);
 
@@ -17,6 +19,7 @@ $arrayLenght = sizeof($arrayLenght);
 
 $array = $response;
 
+//run through each elvevation value
 for ($x = 0; $x < $arrayLenght; $x++) {
 
     $elevation = $array[$x]->value;
