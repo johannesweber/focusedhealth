@@ -7,7 +7,7 @@
  */
 
 
-$response = $fitbit->getTimeSeries("minutesToFallAsleep", "today", "7d");
+$response = $fitbit->getTimeSeries("minutesToFallAsleep", "today", "1y");
 
 $measurementName='minutesToFallAsleep';
 $minutesToFallAsleepId = $db_connection->getMeasurementId($measurementName);

@@ -8,7 +8,7 @@
 
 
 
-$response = $fitbit->getTimeSeries("distance", "today", "7d");
+$response = $fitbit->getTimeSeries("distance", "today", "1y");
 $measurementName='distance';
 $distanceId = $db_connection->getMeasurementId($measurementName);
 

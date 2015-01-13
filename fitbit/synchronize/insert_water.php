@@ -7,7 +7,7 @@
  */
 
 
-$response = $fitbit->getTimeSeries("water", "today", "7d");
+$response = $fitbit->getTimeSeries("water", "today", "1y");
 
 $measurementName='water';
 $waterId = $db_connection->getMeasurementId($measurementName);

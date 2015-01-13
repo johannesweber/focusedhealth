@@ -7,7 +7,7 @@
  */
 
 
-$response = $fitbit->getTimeSeries("floors", "today", "7d");
+$response = $fitbit->getTimeSeries("floors", "today", "1y");
 
 $measurementName='floors';
 $floorsId = $db_connection->getMeasurementId($measurementName);

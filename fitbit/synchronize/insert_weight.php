@@ -7,7 +7,7 @@
  */
 
 
-$response = $fitbit->getTimeSeries("weight", "today", "7d");
+$response = $fitbit->getTimeSeries("weight", "today", "1y");
 $measurementName='weight';
 $weightId = $db_connection->getMeasurementId($measurementName);
 

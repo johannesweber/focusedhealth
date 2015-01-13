@@ -7,7 +7,7 @@
  */
 
 
-$response = $fitbit->getTimeSeries("caloriesOut", "today", "7d");
+$response = $fitbit->getTimeSeries("caloriesOut", "today", "1y");
 
 $measurementName='caloriesOut';
 $caloriesOutId = $db_connection->getMeasurementId($measurementName);

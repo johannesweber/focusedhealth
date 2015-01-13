@@ -7,7 +7,7 @@
  */
 
 
-$response = $fitbit->getTimeSeries("minutesAwake", "today", "7d");
+$response = $fitbit->getTimeSeries("minutesAwake", "today", "1y");
 $measurementName='minutesAwake';
 $minutesAwakeId = $db_connection->getMeasurementId($measurementName);
 

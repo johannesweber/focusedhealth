@@ -7,7 +7,7 @@
  */
 
 
-$response = $fitbit->getTimeSeries("elevation", "today", "7d");
+$response = $fitbit->getTimeSeries("elevation", "today", "1y");
 $measurementName='elevation';
 $elevationId = $db_connection->getMeasurementId($measurementName);
 
