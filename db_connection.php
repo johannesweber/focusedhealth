@@ -16,7 +16,7 @@ class DatabaseConnection
     protected $db_connection;
     protected $result;
 
-    /*
+    /**
      *
      */
     public function __construct()
@@ -48,7 +48,7 @@ class DatabaseConnection
     }
 
     /**
-     * function to ????
+     * function to execute SQL statement
      * @param $statement
      * @return bool|mysqli_result
      */
@@ -75,7 +75,7 @@ class DatabaseConnection
     }
 
     /**
-     * function to ????
+     * function to get a result as Array
      * @return array|null
      */
     public function getResultAsArray()
@@ -86,7 +86,7 @@ class DatabaseConnection
     }
 
     /**
-     * function to ????
+     * function to check if the result true or false
      * @return mixed
      */
     public function getResult()
@@ -95,7 +95,7 @@ class DatabaseConnection
     }
 
     /**
-     * function to???
+     * function to a result as JSON Object
      * @return string
      */
     public function getResultAsJSON()
@@ -191,6 +191,8 @@ class DatabaseConnection
 
 
     /**
+     *
+     * function to select the goal values from the database
      * @param $measurement
      * @param $userId
      * @param $period
@@ -226,6 +228,7 @@ class DatabaseConnection
 
 
     /**
+     * function to select the activities from our database
      * @param $company
      * @param $userId
      * @param $limit
@@ -235,7 +238,7 @@ class DatabaseConnection
     {
         $this->connect();
 
-
+        // method call to get the right Id of the company
         $companyId = $this->getCompanyId($company);
 
         $statement = "SELECT activity, date, start_time, ROUND(duration/60000) AS DurationInMin, distance, calories, description
@@ -252,7 +255,15 @@ class DatabaseConnection
     }
 
 
-    public function selectFoodFromDatabase($company, $userId,$date ,$limit)
+    /**
+     * function to select all values from food of our database
+     * @param $company
+     * @param $userId
+     * @param $date
+     * @param $limit
+     * @return string
+     */
+    public function selectFoodFromDatabase($company, $userId, $date, $limit)
     {
         $this->connect();
 
@@ -275,6 +286,7 @@ class DatabaseConnection
 
 
     /**
+     * function to select values from our database
      * @param $company
      * @param $measurement
      * @param $userId
@@ -289,6 +301,7 @@ class DatabaseConnection
         $measurementId = $this->getMeasurementId($measurement);
         $companyId = $this->getCompanyId($company);
 
+        // If the limit less than a year use the first statement
         if ($limit != 365) {
 
             $statement = "SELECT value, date, meas.name AS measurement, unit.name AS unit
@@ -302,7 +315,8 @@ class DatabaseConnection
                       ORDER BY date DESC
                       LIMIT $limit
                       ";
-        } else {
+        } // is used if the limit is more than a year and the months will be summarized
+        else {
 
             $statement = "SELECT SUM(value) as value, date, meas.name AS measurement, unit.name AS unit
                       FROM value val
@@ -360,6 +374,7 @@ class DatabaseConnection
 
 
     /**
+     * function to ckeck if the data and the tokens are available
      * @param $company
      * @param $userId
      * @return bool
@@ -400,8 +415,8 @@ class DatabaseConnection
 
         $numberOfRows = $this->result->num_rows;
 
+        // check if the SQL result wether empty or a value is available
         if ($numberOfRows > 0) {
-
             $exists = true;
         } else {
 
@@ -411,14 +426,20 @@ class DatabaseConnection
     }
 
 
+    /**
+     * function to ckeck if value already exists in our database
+     * @param $company
+     * @param $measurement
+     * @param $userId
+     * @param $date
+     * @return string
+     */
     public function checkIfValueAlreadyExists($company, $measurement, $userId, $date)
     {
-
         $this->connect();
 
         $measurementId = $this->getMeasurementId($measurement);
         $companyId = $this->getCompanyId($company);
-
 
         $statement = "SELECT * FROM value WHERE user_id='$userId' AND measurement_id='$measurementId' AND company_id='$companyId' AND date= '$date'";
 
@@ -429,6 +450,7 @@ class DatabaseConnection
     }
 
     /**
+     * function to insert/update values in our database
      * @param $userId
      * @param $company
      * @param $measurement
@@ -447,6 +469,7 @@ class DatabaseConnection
 
         $valuesExists = $this->checkIfValueExists($userId, $company, $measurement, $date, $limit = 1);
 
+        // update value if value already exists
         if ($valuesExists) {
 
             $statement = "UPDATE value SET value = '$value'
@@ -455,13 +478,15 @@ class DatabaseConnection
                           AND measurement_id = '$measurementId'
                           AND date = '$date'
                           ";
-        } else {
+        } // insert value if it doesn't exist
+        else {
 
             $statement = "INSERT INTO value (user_id, measurement_id, company_id, value, date)
                           VALUES ('$userId' , '$measurementId' , '$companyId', '$value' , '$date')
                           ";
         }
         $result = $this->executeStatement($statement);
+
 
         if ($result) {
 
@@ -470,20 +495,33 @@ class DatabaseConnection
         return $successfull;
     }
 
-
+    /**
+     * function to insert activities in our database
+     * @param $userId
+     * @param $company
+     * @param $calories
+     * @param $distance
+     * @param $description
+     * @param $duration
+     * @param $lastModified
+     * @param $name
+     * @param $startDate
+     * @param $startTime
+     * @return bool
+     */
     public function insertActivity($userId, $company, $calories, $distance, $description, $duration, $lastModified, $name, $startDate, $startTime)
     {
         $this->connect();
 
+        // set false for checking if  the insert statement is successfull
         $successfull = false;
 
         $companyId = $this->getCompanyId($company);
 
         $valuesExists = $this->checkIfActivityExists($userId, $company, $name, $startDate, $startTime);
 
-        $result="";
+        $result = "";
         if (!$valuesExists) {
-
 
             $statement = "INSERT INTO activity (user_id, company_id, activity, date, start_time, duration, distance, calories, description, last_modified)
                           VALUES ('$userId', '$companyId', '$name', '$startDate', '$startTime', '$duration', '$distance', '$calories', '$description', '$lastModified')";
@@ -494,27 +532,31 @@ class DatabaseConnection
             $successfull = true;
         }
 
+        // if the insert statement is succesfully set variable true and return
         if ($result) {
             $successfull = true;
-
         }
         return $successfull;
     }
 
-
+    /**
+     * function
+     * @param $userId
+     * @param $company
+     * @param $name
+     * @param $startDate
+     * @param $startTime
+     * @return bool
+     */
     public function checkIfActivityExists($userId, $company, $name, $startDate, $startTime)
     {
-
-
         $this->connect();
 
         $companyId = $this->getCompanyId($company);
 
-
         $statement = "SELECT * FROM activity WHERE user_id='$userId' AND activity='$name' AND company_id='$companyId' AND date= '$startDate' AND start_time= '$startTime' ";
 
         $this->executeStatement($statement);
-
 
         $numberOfRows = $this->result->num_rows;
 
@@ -530,6 +572,7 @@ class DatabaseConnection
 
 
     /**
+     * function
      * @param $userId
      * @param $company
      * @param $date
@@ -555,7 +598,7 @@ class DatabaseConnection
 
         $valuesExists = $this->checkIfFoodExists($userId, $company, $date, $name);
 
-        $result="";
+        $result = "";
         if (!$valuesExists) {
 
 
@@ -577,6 +620,7 @@ class DatabaseConnection
 
 
     /**
+     * function
      * @param $userId
      * @param $company
      * @param $date
@@ -585,7 +629,6 @@ class DatabaseConnection
      */
     public function checkIfFoodExists($userId, $company, $date, $name)
     {
-
 
         $this->connect();
 
@@ -608,7 +651,6 @@ class DatabaseConnection
         }
         return $exists;
     }
-
 
 
     public function insertGoal($userId, $company, $measurement, $value, $periodId)
@@ -645,7 +687,7 @@ class DatabaseConnection
 
 
     /**
-     * function to insert the information of sleep from withings in the database
+     * function to insert the information of sleep in the database
      * @param $userId
      * @param $company
      * @param $measurement
@@ -734,7 +776,6 @@ class DatabaseConnection
      */
     public function insertNewEmail($userId, $newEmail)
     {
-
         $this->connect();
 
         $statement = "UPDATE user SET email = '$newEmail'
@@ -746,9 +787,12 @@ class DatabaseConnection
         return $result;
     }
 
+    /**
+     * @param $userId
+     * @return string
+     */
     public function selectAllMeasurementsFromUser($userId)
     {
-
         $this->connect();
 
         $statement = "SELECT m.name, m.nameInApp, u.name as unit, c.name as groupname, m.sliderLimit, company.name as favoriteCompany
@@ -773,9 +817,12 @@ class DatabaseConnection
 
     }
 
+    /**
+     * @param $userId
+     * @return string
+     */
     public function selectDuplicateMeasurementsFromUser($userId)
     {
-
         $this->connect();
 
         $statement = "SELECT m.name, m.nameInApp, u.name AS unit, c.name AS groupname, m.sliderLimit
@@ -795,9 +842,13 @@ class DatabaseConnection
         return $this->getResultAsJSON();
     }
 
-
-    public function deleteCompanyFromUser($userId, $companyName) {
-
+    /**
+     * @param $userId
+     * @param $companyName
+     * @return mixed
+     */
+    public function deleteCompanyFromUser($userId, $companyName)
+    {
         $this->connect();
 
         $companyId = $this->getCompanyId($companyName);
@@ -812,8 +863,13 @@ class DatabaseConnection
         return $this->result;
     }
 
-    public function insertCompanyFromUser($userId, $companyName) {
-
+    /**
+     * @param $userId
+     * @param $companyName
+     * @return mixed
+     */
+    public function insertCompanyFromUser($userId, $companyName)
+    {
         $this->connect();
 
         $companyId = $this->getCompanyId($companyName);
@@ -829,7 +885,11 @@ class DatabaseConnection
         return $this->result;
     }
 
-    public function selectCategoryFromDatabase() {
+    /**
+     * @return string
+     */
+    public function selectCategoryFromDatabase()
+    {
 
         $this->connect();
 
@@ -842,7 +902,12 @@ class DatabaseConnection
         return $this->getResultAsJSON();
     }
 
-    public function selectCompaniesFromUser($userId) {
+    /**
+     * @param $userId
+     * @return string
+     */
+    public function selectCompaniesFromUser($userId)
+    {
 
         $this->connect();
 
@@ -858,7 +923,11 @@ class DatabaseConnection
         return $this->getResultAsJSON();
     }
 
-    public function selectAllCompanies() {
+    /**
+     * @return string
+     */
+    public function selectAllCompanies()
+    {
 
         $this->connect();
 
