@@ -9,6 +9,7 @@
  * Time: 21:58
  */
 
+/* The file is written but we don't know if it's right, because we get an empty response from withings */
 
 
 $response = $withings->getActivityMeasures();

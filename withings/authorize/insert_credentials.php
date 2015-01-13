@@ -29,6 +29,7 @@ if (!credentialsExists) {
 }
 $result = $db_connection->executeStatement($statement);
 
+// method call to give out a message
 $db_connection->showAuthorizeMessage($company, $result);
 
 ?>

@@ -21,6 +21,7 @@ $db_connection = new DatabaseConnection();
 
 $db_connection->connect();
 
+// send data by iphone
 $user_id = $_POST['user_id'];
 $company_account_id = $_POST['company_account_id'];
 $oauth_token = $_POST['oauth_token'];
@@ -31,14 +32,8 @@ $withings = new WithingsPHP();
 $withings->setOAuthDetails($oauth_token, $oauth_token_secret, $company_account_id);
 
 require_once '../id/find_company_id.php';
-
 require_once 'insert_credentials.php';
-
 require_once '../fetch_credentials.php';
-
-//start to insert
-
-//include '../user_info/insert_user_info.php';
 
 $db_connection->close();
 

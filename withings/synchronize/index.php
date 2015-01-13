@@ -11,17 +11,17 @@
 
 header('Content-type: application/json');
 
+//For Error Reporting
 error_reporting(E_ALL);
 ini_set('display_errors', 'On');
 
 $successfull = true;
 
+//include files
 require_once '../../db_connection.php';
-
 require_once '../withingsphp.php';
 
 $db_connection = new DatabaseConnection();
-
 $db_connection->connect();
 
 $userId = $_GET['userId'];
@@ -37,13 +37,10 @@ require_once '../fetch_credentials.php';
 $withings = new WithingsPHP();
 $withings->setOAuthDetails($oauth_token, $oauth_token_secret, $company_account_id);
 
-
 require_once 'insert_body_measures.php';
-//require_once 'insert_activity_measures.php';
-//require_once 'insert_intraday_activity.php';
-//require_once 'insert_sleep_measures.php';
 require_once 'insert_sleep_summary.php';
 
+// method call to get a message if synchronize was successfull
 $withings->showSynchronizeMessage($company,$successfull);
 
 $db_connection->close();
