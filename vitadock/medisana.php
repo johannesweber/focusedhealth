@@ -1,5 +1,7 @@
 <?php
 /**
+ * This class is used to send requests to medisana for data retrieval
+ *
  * Created by PhpStorm.
  * User: chris
  * Date: 05/12/14
@@ -37,37 +39,36 @@ class medisanaPHP
     protected $oauth_version = '1.0';
     protected $oauth_timestamp;
     protected $oauth_nonce;
-//    protected $userid;
 
 
-    /**
-     * @param string $consumer_key Application consumer key for Fitbit API
-     * @param string $consumer_secret Application secret
-     * @param int $debug Debug mode (0/1) enables OAuth internal debug
-     * @param string $user_agent User-agent to use in API calls
-     * @param string $response_format Response format (json or xml) to use in API calls
-     */
     public function __construct()
     {
         $this->initUrls();
     }
 
+    /**
+     *
+     */
     private function initUrls()
     {
-        //?start=&max=&date_since=
         $this->medisanaBaseURL = 'https://cloud.vitadock.com/data/';
-
     }
 
+    /**
+     * @param $oauth_token
+     * @param $oauth_token_secret
+     */
     public function setOAuthDetails($oauth_token, $oauth_token_secret)
     {
-
         $this->oauth_token = $oauth_token;
         $this->oauth_token_secret = $oauth_token_secret;
     }
 
 
-//das token secret muss auch an den server geschickt werden und das consumer secret
+    /**
+     * function to
+     * @return string
+     */
     private function getSignature(){
 
         $this->oauth_timestamp = time();
@@ -80,13 +81,6 @@ class medisanaPHP
         $encodedConsumerSecret = urlencode($this->oauth_consumer_secret);
 
         $signingKey = $encodedConsumerSecret . '&' . $encodedTokenSecret;
-
-        //ab hier ist es "sortiert"
-
-        //diese stelle sorgt für fehler, da module ein "/" hat und das dann 2x encodiert wird
-//        $encodedModule = urlencode($module);
-//        echo "Modul= $encodedModule \n";
-//        $encodedModule = $this->module;
 
         $encodedConsumerKey = urlencode($this->oauth_consumer_key);
 
@@ -121,6 +115,14 @@ class medisanaPHP
         return $finalSignature;
     }
 
+    /**
+     * function to get all data from medisana
+     * @param $module
+     * @param int $max
+     * @param int $date_since
+     * @param int $start
+     * @return mixed
+     */
     public function getData($module, $max = 10, $date_since = 0, $start = 1){
 
         $this->start = $start;
@@ -136,17 +138,15 @@ class medisanaPHP
         try {
             $request = $client->get($url, $headers);
         } catch (RequestException $e) {
-            /*
-            echo $e->getRequest() . "\n";
-            if ($e->hasResponse()) {
-                echo $e->getResponse() . "\n";
-
-            }*/
         }
         $response = $request->getBody();
         return $response;
     }
 
+    /**
+     * function to set the URL for the request
+     * @return string
+     */
     function getUrl(){
         if ($this->start != 0){
             $url = $this->medisanaBaseURL . $this->module . "?start=" . $this->start . "&max=" . $this->max . "&date_since=" . $this->date_since;
@@ -156,6 +156,10 @@ class medisanaPHP
         return $url;
     }
 
+    /**
+     * function to set headers required for receiving data from Medisana
+     * @return array
+     */
     function setHeaders(){
         $headers = [ 'headers' => [
             'Accept'           => 'application/json',

@@ -9,9 +9,6 @@
 $db_connection = new DatabaseConnection();
 $db_connection->connect();
 
-$vitadock = newVitadockPHP("");
-$vitadock->setOAuthDetails($oauthToken, $oauthTokenSecret);
-
 //include File
 require_once '../medisana.php';
 require_once '../../db_connection.php';

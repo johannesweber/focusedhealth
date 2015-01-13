@@ -23,13 +23,6 @@ if (!$credentialsExists) {
 
 $result = $db_connection->executeStatement($statement);
 
-if ($result) {
-
-    echo '{"success" : "1", "message" : "You have been successfully authorized!"}';
-
-} else {
-
-    echo '{"success" : "-1", "message" : "Authorization Failed! Please try again later."}';
-}
+$db_connection->showAuthorizeMessage($company, $result);
 
 ?>
