@@ -5,7 +5,7 @@
  * Date: 01.12.14
  * Time: 16:49
  *
- * insert activities like swimming or running
+ * to insert activities like swimming or running
  */
 
 
@@ -22,7 +22,6 @@ $response = $fitbit->getActivities($datum);
 //lenght of activity array
 $arrayLenght = $response->activities;
 $arrayLenght = sizeof($arrayLenght);
-echo $arrayLenght;
 
 //loop to insert all data from activity array
 for ($x = 0; $x < $arrayLenght; $x++) {

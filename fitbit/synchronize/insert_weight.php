@@ -4,10 +4,12 @@
  * User: timonvogler
  * Date: 02.12.14
  * Time: 15:12
+ *
+ * to insert weight
  */
 
 
-$response = $fitbit->getTimeSeries("weight", "today", "7d");
+$response = $fitbit->getTimeSeries("weight", "today", "1y");
 $measurementName='weight';
 $weightId = $db_connection->getMeasurementId($measurementName);
 
@@ -16,6 +18,7 @@ $arrayLenght = sizeof($arrayLenght);
 
 $array = $response;
 
+//run through each weight value
 for ($x = 0; $x < $arrayLenght; $x++) {
 
     $weight = $array[$x]->value;

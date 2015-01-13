@@ -4,6 +4,8 @@
  * User: timonvogler
  * Date: 12.01.15
  * Time: 19:08
+ *
+ * to insert minutes after wakeup
  */
 
 
@@ -20,6 +22,7 @@ $arrayLength = sizeof($arrayLength);
 
 $array = $response;
 
+//run through each minutes after wakeup value
 for ($x = 0; $x < $arrayLength; $x++) {
 
     $minutesAfterWakeup = $array[$x]->value;

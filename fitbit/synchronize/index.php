@@ -71,7 +71,7 @@ require_once 'insert_food.php';
 
 
 
-$fitbit->showSynchronizeMessage($company,$successfull);
+$db_connection->showSynchronizeMessage($company,$successfull);
 
 $db_connection->close();
 

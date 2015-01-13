@@ -4,11 +4,14 @@
  * User: pauer
  * Date: 03.12.14
  * Time: 15:17
+ *
+ * to insert distance
  */
 
 
 
-$response = $fitbit->getTimeSeries("distance", "today", "7d");
+$response = $fitbit->getTimeSeries("distance", "today", "1y");
+
 $measurementName='distance';
 $distanceId = $db_connection->getMeasurementId($measurementName);
 
@@ -18,6 +21,7 @@ $arrayLenght = sizeof($arrayLenght);
 
 $array = $response;
 
+//run through each distance value
 for ($x = 0; $x < $arrayLenght; $x++) {
 
     $distance = $array[$x]->value;

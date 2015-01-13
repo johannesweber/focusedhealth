@@ -4,6 +4,8 @@
  * User: pauer
  * Date: 25.11.14
  * Time: 17:06
+ *
+ * to insert water goal
  */
 
 error_reporting(E_ALL);

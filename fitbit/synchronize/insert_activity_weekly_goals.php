@@ -4,6 +4,8 @@
  * User: pauer
  * Date: 25.11.14
  * Time: 17:06
+ *
+ * to insert the weekly goals
  */
 
 
@@ -20,7 +22,7 @@ $distance = $response->goals->distance;
 $steps = $response->goals->steps;
 
 
-// Array for the different measurement ids
+// Array for the different measurements
 $measArray[0] = $distanceMeasurementName;
 $measArray[1] = $stepsMeasurementName;
 

@@ -4,10 +4,12 @@
  * User: timonvogler
  * Date: 02.12.14
  * Time: 15:12
+ *
+ * to insert minutes asleep
  */
 
 
-$response = $fitbit->getTimeSeries("minutesAsleep", "today", "7d");
+$response = $fitbit->getTimeSeries("minutesAsleep", "today", "1y");
 
 $measurementName='minutesAsleep';
 $minutesAsleepId = $db_connection->getMeasurementId($measurementName);
@@ -18,6 +20,7 @@ $arrayLength = sizeof($arrayLength);
 
 $array = $response;
 
+//run through each minutes asleep value
 for ($x = 0; $x < $arrayLength; $x++) {
 
     $minutesAsleep = $array[$x]->value;

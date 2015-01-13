@@ -4,6 +4,8 @@
  * User: pauer
  * Date: 03.12.14
  * Time: 15:03
+ *
+ * to insert steps
  */
 
 
@@ -23,7 +25,7 @@ $arrayLenght = sizeof($arrayLenght);
 
 $array = $response;
 
-
+//run through each steps value
 for ($x = 0; $x < $arrayLenght; $x++) {
 
     $steps = $array[$x]->value;
