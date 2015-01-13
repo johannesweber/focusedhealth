@@ -9,20 +9,15 @@
  * Time: 14:58
  */
 
-//$int = 1780;
-//$double = number_format(($int / 1000), 3);
-
-
-
 $response = $withings->getBodyMeasures();
-
 
 $measuregrpsArray = $response->body->measuregrps;
 
 //run through each date
 for ($x = 0; $x < sizeof($measuregrpsArray); $x++) {
 
-    //need to know if value is a real measurement or a goal !
+    //need to know if value is a real measurement or a goal ! There are two categories.
+    // 1 = measurement; 2 = user objectives
     $category = $measuregrpsArray[$x]->category;
 
     //to get the unix timestamp and convert it in a real date
