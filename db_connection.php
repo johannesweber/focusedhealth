@@ -955,6 +955,15 @@ public function selectAllCompanies()
         }
     }
 
+    public function showMessage()
+    {
+        if (!$this->result) {
+            echo '{"success" : "-1", "message" : "Action not successfully executed.!"}';
+        } else {
+            echo '{"success" : "1", "message" : "Action successfully synchronized!"}';
+        }
+    }
+
     /**
     * function to check if authorization is succesfull
     * @param $company
