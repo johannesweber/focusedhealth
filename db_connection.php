@@ -34,7 +34,6 @@ class DatabaseConnection
      */
     public function connect()
     {
-
         $this->db_connection = mysqli_connect(MYSQL_HOST,
             MYSQL_USER,
             MYSQL_PASSWORD,
@@ -44,6 +43,8 @@ class DatabaseConnection
         if (!$this->db_connection) {
             echo 'Connection failed';
         }
+
+        mysqli_set_charset($this->db_connection, "utf-8");
     }
 
     /**
@@ -102,8 +103,11 @@ class DatabaseConnection
         $data = array();
 
         for ($x = 0; $x < mysqli_num_rows($this->result); $x++) {
-            $data[] = mysqli_fetch_assoc($this->result);
+            $element = mysqli_fetch_assoc($this->result);
+            $element['nameInGerman'] = mb_convert_encoding($element['nameInGerman'], 'utf-8');
+            $data[] = $element;
         }
+
         return json_encode($data);
     }
 
