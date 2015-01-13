@@ -974,7 +974,7 @@ public function selectAllCompanies()
 
         $this->connect();
 
-        echo $statement = "SELECT c.name, m.name
+        $statement = "SELECT c.name as company, m.name as measurement
                       FROM company_has_measurement chm
                       JOIN company c
                       ON chm.company_id = c.id

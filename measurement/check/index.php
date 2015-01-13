@@ -15,12 +15,7 @@ require_once '../../db_connection.php';
 
 $db_connection = new DatabaseConnection();
 
-$company = $_GET['company'];
-$measurement = $_GET['measurement'];
-
-$companyHasMeasurement = $db_connection->selectCompanyHasMeasurement();
-
-echo '{"companyHasMeasurement" : "' . $companyHasMeasurement . '"}';
+echo $db_connection->selectCompanyHasMeasurement();
 
 $db_connection->close();
 
