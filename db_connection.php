@@ -104,7 +104,7 @@ class DatabaseConnection
 
         for ($x = 0; $x < mysqli_num_rows($this->result); $x++) {
             $element = mysqli_fetch_assoc($this->result);
-            $element['nameInGerman'] = mb_convert_encoding($element['nameInGerman'], 'utf-8');
+
             $data[] = $element;
         }
 
@@ -744,7 +744,7 @@ class DatabaseConnection
 
         $this->connect();
 
-        $statement = "SELECT m.name, m.nameInApp, m.nameInFrench, u.name as unit, c.name as groupname, c.nameInGerman as groupnameInGerman, c.nameInFrench as groupnameInFrench,  m.sliderLimit, company.name as favoriteCompany
+        $statement = "SELECT m.name, m.nameInApp, u.name as unit, c.name as groupname, m.sliderLimit, company.name as favoriteCompany
                       FROM  user_company_account
                       JOIN company
                       ON company_id = company.id
@@ -826,7 +826,7 @@ class DatabaseConnection
 
         $this->connect();
 
-        $statement = "SELECT name, nameInGerman, nameInFrench
+        $statement = "SELECT n
                       FROM category
                       ";
 
