@@ -22,7 +22,6 @@ $response = $fitbit->getActivities($datum);
 //lenght of activity array
 $arrayLenght = $response->activities;
 $arrayLenght = sizeof($arrayLenght);
-echo $arrayLenght;
 
 //loop to insert all data from activity array
 for ($x = 0; $x < $arrayLenght; $x++) {
