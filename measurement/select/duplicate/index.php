@@ -17,7 +17,7 @@ $db_connection = new DatabaseConnection();
 
 $userId = $_GET["userId"];
 
-echo $db_connection->selectDuplicateMeasurementsFromUser($userId);
+echo $result = $db_connection->selectDuplicateMeasurementsFromUser($userId);
 
 $db_connection->close();
 

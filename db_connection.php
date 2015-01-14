@@ -136,7 +136,7 @@ public function getMeasurementId($measurement)
 }
 
 /**
- * function to get the Id for the period. It's daily or weekly.
+ * function to get the Id for the period.
  * @param $period
  * @return mixed Id of the right period
  */
@@ -144,11 +144,14 @@ public function getPeriodId($period)
 {
     $this->connect();
 
-    $fetch = "SELECT id FROM period WHERE period='$period'";
+    $fetch = "SELECT period_number
+              FROM period
+              WHERE name = '$period'
+              ";
 
     $this->executeStatement($fetch);
     $result = $this->getResultAsArray();
-    $periodId = $result['id'];
+    $periodId = $result['period_number'];
     return $periodId;
 }
 
@@ -207,7 +210,7 @@ public function selectGoalFromDatabase($measurement, $userId, $period, $limit)
     $date = date("Y-m-d", $timestamp);
 
     $measurementId = $this->getMeasurementId($measurement);
-    //$companyId = $this->getCompanyId($company);
+    $periodId = $this->getPeriodId($period);
 
     $statement = "SELECT goal.goal_id, goal.goal_value AS target_value, v.value AS current_value, v.date
                       FROM goal
@@ -216,7 +219,7 @@ public function selectGoalFromDatabase($measurement, $userId, $period, $limit)
                       JOIN value v ON v.measurement_id = meas.id
                       WHERE goal.measurement_id = $measurementId
                       AND v.user_id = $userId
-                      AND goal.period = $period
+                      AND goal.period = $periodId
                       AND v.date <=  '$date'
                       ORDER BY DATE DESC
                       LIMIT $limit
@@ -964,6 +967,15 @@ public function selectAllCompanies()
             echo '{"success" : "-1", "message" : "'. $company . ' could not be synchronized. Please try again later!"}';
         } else {
             echo '{"success" : "1", "message" : "'. $company . ' successfully synchronized!"}';
+        }
+    }
+
+    public function showMessage()
+    {
+        if (!$this->result) {
+            echo '{"success" : "-1", "message" : "Action not successfully executed.!"}';
+        } else {
+            echo '{"success" : "1", "message" : "Action successfully synchronized!"}';
         }
     }
 
