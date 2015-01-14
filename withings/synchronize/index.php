@@ -25,10 +25,9 @@ $db_connection = new DatabaseConnection();
 $db_connection->connect();
 
 $userId = $_GET['userId'];
-//$userId = '53';
 
 
-// to used in insert
+// used in insert
 $company = "withings";
 $companyId = $db_connection->getCompanyId($company);
 
