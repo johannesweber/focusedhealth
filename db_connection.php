@@ -95,7 +95,7 @@ public function getResult()
 }
 
 /**
- * function to a result as JSON Object
+ * function to get a result as JSON Object
  * @return string
  */
 public function getResultAsJSON()
@@ -540,7 +540,7 @@ public function insertActivity($userId, $company, $calories, $distance, $descrip
 }
 
 /**
- * function
+ * function to ckeck if activity already exists in our database
  * @param $userId
  * @param $company
  * @param $name
@@ -572,7 +572,7 @@ public function checkIfActivityExists($userId, $company, $name, $startDate, $sta
 
 
 /**
- * function
+ * function to insert food into database
  * @param $userId
  * @param $company
  * @param $date
@@ -620,7 +620,7 @@ public function insertFood($userId, $company, $date, $amount, $brand, $name, $un
 
 
 /**
- * function
+ * function to ckeck if food already exists in our database
  * @param $userId
  * @param $company
  * @param $date
@@ -653,6 +653,15 @@ public function checkIfFoodExists($userId, $company, $date, $name)
 }
 
 
+    /**
+     * function to insert a  goal
+     * @param $userId
+     * @param $company
+     * @param $measurement
+     * @param $value
+     * @param $periodId
+     * @return bool
+     */
 public function insertGoal($userId, $company, $measurement, $value, $periodId)
 {
     $this->connect();
@@ -744,6 +753,7 @@ public function checkIfSleepTimeExists($userId, $company, $date, $startTime)
 
 
 /**
+ * get the sleep start time for spezific date, time and user
  * @param $company
  * @param $userId
  * @param $date
@@ -788,6 +798,8 @@ public function insertNewEmail($userId, $newEmail)
 }
 
 /**
+ * function to get all the measures which a user has
+ * it is possible that someone has different measures because he is using  wearables from other companies (Withings or Fitbit ..)
  * @param $userId
  * @return string
  */

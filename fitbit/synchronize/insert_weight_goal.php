@@ -18,8 +18,8 @@ $startWeight = $response->goal->startWeight;
 // to get the name for the measurement
 $measurementName='weight';
 $weightId = $db_connection->getMeasurementId($measurementName);
-$measurementName='daily';
-$periodDailyId = $db_connection->getMeasurementId($measurementName);
+$period='daily';
+$periodDailyId = $db_connection->getPeriodId($period);
 
 //check if weight goal already exists
 $select_weight_goal = "SELECT * FROM goal WHERE user_id='$userId' AND measurement_id='$weightId' AND company_id='$companyId'";
