@@ -1011,6 +1011,22 @@ public function selectAllCompanies()
         return $this->getResultAsJSON();
 
     }
+
+
+    public function deleteUser($userId) {
+
+        $this->connect();
+
+        $statement = "DELETE FROM user
+                      WHERE id = '$userId'";
+
+        $this->executeStatement($statement);
+
+        return $this->getResultAsJSON();
+
+
+    }
+
 }
 
 ?>
