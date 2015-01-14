@@ -144,11 +144,14 @@ public function getPeriodId($period)
 {
     $this->connect();
 
-    $fetch = "SELECT id FROM period WHERE period='$period'";
+    $fetch = "SELECT period_number
+              FROM period
+              WHERE name = '$period'
+              ";
 
     $this->executeStatement($fetch);
     $result = $this->getResultAsArray();
-    $periodId = $result['id'];
+    $periodId = $result['period_number'];
     return $periodId;
 }
 
