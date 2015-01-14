@@ -833,10 +833,8 @@ public function selectAllMeasurementsFromUser($userId)
 }
 
 /**
- * function to check if the companies have the same measurements.
- * example: user Pit added the companies Withings and Fitbit to our app
- * so it is possible that Withings and Fitbit recording the same measurement (steps)
- * this would be a duplicate measurement for the user
+ * function to check if the companies have the same measurements for a specific user.
+ *
  * @param $userId
  * @return string duplicate measurements
  */
@@ -862,6 +860,7 @@ public function selectDuplicateMeasurementsFromUser($userId)
 }
 
 /**
+ * function to delete an account (Withings, Fitbit etc) of an user
  * @param $userId
  * @param $companyName
  * @return mixed
@@ -883,6 +882,7 @@ public function deleteCompanyFromUser($userId, $companyName)
 }
 
 /**
+ * function to insert a new company (Withings, Fitbit etc) of an user
  * @param $userId
  * @param $companyName
  * @return mixed
@@ -905,6 +905,7 @@ public function insertCompanyFromUser($userId, $companyName)
 }
 
 /**
+ * function to get all categories from the database
  * @return string
  */
 public function selectCategoryFromDatabase()
@@ -922,6 +923,7 @@ public function selectCategoryFromDatabase()
 }
 
 /**
+ * function to get the companies of an user
  * @param $userId
  * @return string
  */
@@ -943,6 +945,7 @@ public function selectCompaniesFromUser($userId)
 }
 
 /**
+ *function to get all companies (and how often) in our table user_company_account
  * @return string
  */
 public function selectAllCompanies()
@@ -998,6 +1001,10 @@ public function selectAllCompanies()
 
     }
 
+    /**
+     * function to get all the measurement which a company is recording
+     * @return string
+     */
     public function selectCompanyHasMeasurement(){
 
         $this->connect();
