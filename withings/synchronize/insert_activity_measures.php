@@ -17,21 +17,14 @@ $response = $withings->getActivityMeasures();
 
 $activityArray = $response->body->activities;
 
-// get all id's wich are neccessary
+// get all measures wich are neccessary
 $stepsMeasurement = 'steps';
-$stepsId = $db_connection->getMeasurementId($stepsMeasurement);
 $distanceMeasurement = 'distance';
-$distanceId = $db_connection->getMeasurementId($distanceMeasurement);
 $caloriesOutMeasurement = 'caloriesOut';
-$caloriesOutId = $db_connection->getMeasurementId($caloriesOutMeasurement);
 $elevationMeasurement = 'elevation';
-$elevationId = $db_connection->getMeasurementId($elevationMeasurement);
 $softMeasurement = 'soft';
-$softId = $db_connection->getMeasurementId($softMeasurement);
 $moderateMeasurement = 'moderate';
-$moderateId = $db_connection->getMeasurementId($moderateMeasurement);
 $intenseMeasurement = 'intense';
-$intenseId = $db_connection->getMeasurementId($intenseMeasurement);
 
 
 //run through each date

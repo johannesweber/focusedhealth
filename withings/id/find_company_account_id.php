@@ -4,6 +4,8 @@
  * User: timonvogler
  * Date: 08.12.14
  * Time: 20:20
+ *
+ * to find the account id from Withings, Fitbit, Medisana or Focusedhealth
  */
 
 $fetch = "SELECT company_account_id FROM company_account_info WHERE user_id='$userid' AND company_id = '$company_id'";

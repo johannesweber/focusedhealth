@@ -15,17 +15,12 @@ $response = $withings->getSleepSummary();
 
 $sleepSummaryArray = $response->body->series;
 
-// get all id's wich are neccessary
+// get all measure names wich are neccessary
 $wakeUpDurationMeasurement = 'wakeUpDuration';
-$wakeUpDurationId = $db_connection->getMeasurementId($wakeUpDurationMeasurement);
 $lightSleepDurationMeasurement = 'lightlySleepDuration';
-$lightSleepDurationId = $db_connection->getMeasurementId($lightSleepDurationMeasurement);
 $deepSleepDurationMeasurement = 'deepSleepDuration';
-$deepSleepDurationId = $db_connection->getMeasurementId($deepSleepDurationMeasurement);
 $durationToSleepMeasurement = 'durationToSleep';
-$durationToSleepId = $db_connection->getMeasurementId($durationToSleepMeasurement);
 $wakeUpCountMeasurement = 'awakeningsCount';
-$wakeUpCountId = $db_connection->getMeasurementId($wakeUpCountMeasurement);
 $measurement = 'sleepStartTime';
 $sleepStartTimeMeasurementId = $db_connection->getMeasurementId($measurement);
 
@@ -39,7 +34,7 @@ for ($i = 0; $i < sizeof($sleepSummaryArray); $i++) {
     // method call to insert
       $result = $db_connection->insertSleepStartTime($userId, $company, $sleepStartTimeMeasurementId, $startTime, $endTime, $date);
 
-    // Zugriff auf response value
+    // access response value
     $wakeUpDuration = $withings->devideSeconds($sleepSummaryArray[$i]->data->wakeupduration);
     $lightSleepDuration = $withings->devideSeconds($sleepSummaryArray[$i]->data->lightsleepduration);
     $deepSleepDuration = $withings->devideSeconds($sleepSummaryArray[$i]->data->deepsleepduration);

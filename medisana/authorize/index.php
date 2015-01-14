@@ -44,7 +44,7 @@ $oauth_token_secret = $_POST['oauth_token_secret'];
  *      18.tracker/phase                = Tracker Phase
  */
 
-//create new vitadock php object with consumer key and consumer secret
+//create new medisana php object with consumer key and consumer secret
 $vitadock = new medisanaPHP();
 //set the access token and secret for this request
 $vitadock->setOAuthDetails($oauth_token, $oauth_token_secret);
