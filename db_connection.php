@@ -810,7 +810,7 @@ public function selectAllMeasurementsFromUser($userId)
 {
     $this->connect();
 
-    $statement = "SELECT m.name, m.nameInApp, u.name as unit, c.name as groupname, m.sliderLimit, company.name as favoriteCompany, m.goalable as goalable
+    $statement = "SELECT m.name, m.nameInApp, u.name as unit, c.name as groupname, m.sliderLimit, company.name as favoriteCompany, m.goalable as isGoalable
                       FROM  user_company_account
                       JOIN company
                       ON company_id = company.id
