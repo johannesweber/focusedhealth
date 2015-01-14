@@ -1005,7 +1005,7 @@ public function selectAllCompanies()
      * function to get all the measurement which a company is recording
      * @return string
      */
-    public function selectCompanyHasMeasurement(){
+    public function selectCompanyHasMeasurement($userId){
 
         $this->connect();
 
@@ -1015,6 +1015,12 @@ public function selectAllCompanies()
                       ON chm.company_id = c.id
                       JOIN measurement m
                       ON chm.measurement_id = m.id
+                      WHERE c.name in
+                      (SELECT company.name
+                      FROM user_company_account
+                      JOIN company
+                      ON company_id = company.id
+                      WHERE user_id = '$userId')
                       ";
 
         $this->executeStatement($statement);

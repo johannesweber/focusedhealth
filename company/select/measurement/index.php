@@ -11,11 +11,13 @@ header('Content-type: application/json; charset=utf-8');
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-require_once '../../db_connection.php';
+require_once '../../../db_connection.php';
 
 $db_connection = new DatabaseConnection();
 
-echo $db_connection->selectCompanyHasMeasurement();
+$userId = $_GET['userId'];
+
+echo $db_connection->selectCompanyHasMeasurement($userId);
 
 $db_connection->close();
 
