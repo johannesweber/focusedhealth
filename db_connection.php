@@ -833,8 +833,12 @@ public function selectAllMeasurementsFromUser($userId)
 }
 
 /**
+ * function to check if the companies have the same measurements.
+ * example: user Pit added the companies Withings and Fitbit to our app
+ * so it is possible that Withings and Fitbit recording the same measurement (steps)
+ * this would be a duplicate measurement for the user
  * @param $userId
- * @return string
+ * @return string duplicate measurements
  */
 public function selectDuplicateMeasurementsFromUser($userId)
 {
@@ -1013,12 +1017,17 @@ public function selectAllCompanies()
     }
 
 
-    public function deleteUser($userId) {
+    /**
+     * this function deletes a user from our database
+     * @param $userId
+     * @return string
+     */
+    public function deleteUser($email) {
 
         $this->connect();
 
         $statement = "DELETE FROM user
-                      WHERE id = '$userId'";
+                      WHERE email = '$email'";
 
         $this->executeStatement($statement);
 

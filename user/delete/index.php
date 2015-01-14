@@ -15,10 +15,10 @@ require_once '../../db_connection.php';
 $db_connection = new DatabaseConnection();
 
 // data send by phone
-$userId = $_GET['userId'];
+$userEmail = $_GET['email'];
 
 
-$result = $db_connection->deleteUser($userId);
+$result = $db_connection->deleteUser($userEmail);
 
 if ($result) {
 
