@@ -95,7 +95,7 @@ public function getResult()
 }
 
 /**
- * function to a result as JSON Object
+ * function to get a result as JSON Object
  * @return string
  */
 public function getResultAsJSON()
@@ -543,7 +543,7 @@ public function insertActivity($userId, $company, $calories, $distance, $descrip
 }
 
 /**
- * function
+ * function to ckeck if activity already exists in our database
  * @param $userId
  * @param $company
  * @param $name
@@ -575,7 +575,7 @@ public function checkIfActivityExists($userId, $company, $name, $startDate, $sta
 
 
 /**
- * function
+ * function to insert food into database
  * @param $userId
  * @param $company
  * @param $date
@@ -623,7 +623,7 @@ public function insertFood($userId, $company, $date, $amount, $brand, $name, $un
 
 
 /**
- * function
+ * function to ckeck if food already exists in our database
  * @param $userId
  * @param $company
  * @param $date
@@ -656,6 +656,15 @@ public function checkIfFoodExists($userId, $company, $date, $name)
 }
 
 
+    /**
+     * function to insert a  goal
+     * @param $userId
+     * @param $company
+     * @param $measurement
+     * @param $value
+     * @param $periodId
+     * @return bool
+     */
 public function insertGoal($userId, $company, $measurement, $value, $periodId)
 {
     $this->connect();
@@ -747,6 +756,7 @@ public function checkIfSleepTimeExists($userId, $company, $date, $startTime)
 
 
 /**
+ * get the sleep start time for spezific date, time and user
  * @param $company
  * @param $userId
  * @param $date
@@ -791,6 +801,8 @@ public function insertNewEmail($userId, $newEmail)
 }
 
 /**
+ * function to get all the measures which a user has
+ * it is possible that someone has different measures because he is using  wearables from other companies (Withings or Fitbit ..)
  * @param $userId
  * @return string
  */
@@ -798,7 +810,7 @@ public function selectAllMeasurementsFromUser($userId)
 {
     $this->connect();
 
-    $statement = "SELECT m.name, m.nameInApp, u.name as unit, c.name as groupname, m.sliderLimit, company.name as favoriteCompany
+    $statement = "SELECT m.name, m.nameInApp, u.name as unit, c.name as groupname, m.sliderLimit, company.name as favoriteCompany, m.goalable as isGoalable
                       FROM  user_company_account
                       JOIN company
                       ON company_id = company.id
@@ -821,8 +833,10 @@ public function selectAllMeasurementsFromUser($userId)
 }
 
 /**
+ * function to check if the companies have the same measurements for a specific user.
+ *
  * @param $userId
- * @return string
+ * @return string duplicate measurements
  */
 public function selectDuplicateMeasurementsFromUser($userId)
 {
@@ -846,6 +860,7 @@ public function selectDuplicateMeasurementsFromUser($userId)
 }
 
 /**
+ * function to delete an account (Withings, Fitbit etc) of an user
  * @param $userId
  * @param $companyName
  * @return mixed
@@ -867,6 +882,7 @@ public function deleteCompanyFromUser($userId, $companyName)
 }
 
 /**
+ * function to insert a new company (Withings, Fitbit etc) of an user
  * @param $userId
  * @param $companyName
  * @return mixed
@@ -889,6 +905,7 @@ public function insertCompanyFromUser($userId, $companyName)
 }
 
 /**
+ * function to get all categories from the database
  * @return string
  */
 public function selectCategoryFromDatabase()
@@ -906,6 +923,7 @@ public function selectCategoryFromDatabase()
 }
 
 /**
+ * function to get the companies of an user
  * @param $userId
  * @return string
  */
@@ -927,6 +945,7 @@ public function selectCompaniesFromUser($userId)
 }
 
 /**
+ *function to get all companies (and how often) in our table user_company_account
  * @return string
  */
 public function selectAllCompanies()
@@ -982,6 +1001,10 @@ public function selectAllCompanies()
 
     }
 
+    /**
+     * function to get all the measurement which a company is recording
+     * @return string
+     */
     public function selectCompanyHasMeasurement(){
 
         $this->connect();
@@ -999,6 +1022,27 @@ public function selectAllCompanies()
         return $this->getResultAsJSON();
 
     }
+
+
+    /**
+     * this function deletes a user from our database
+     * @param $userId
+     * @return string
+     */
+    public function deleteUser($email) {
+
+        $this->connect();
+
+        $statement = "DELETE FROM user
+                      WHERE email = '$email'";
+
+        $this->executeStatement($statement);
+
+        return $this->getResultAsJSON();
+
+
+    }
+
 }
 
 ?>
