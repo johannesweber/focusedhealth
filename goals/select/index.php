@@ -22,7 +22,7 @@ $period = $_GET["period"];
 $company = $_GET["company"];
 $limit = $_GET["limit"];
 
-echo $db_connection->selectGoalFromDatabase($company, $measurement, $userId, $period, $limit);
+echo $db_connection->selectGoalFromDatabase($measurement, $userId, $period, $limit);
 
 $db_connection->close();
 
