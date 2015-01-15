@@ -810,7 +810,7 @@ public function selectAllMeasurementsFromUser($userId)
 {
     $this->connect();
 
-    $statement = "SELECT m.name, m.nameInApp, u.name as unit, c.name as groupname, m.sliderLimit, company.name as favoriteCompany, m.goalable as isGoalable
+    $statement = " SELECT m.name, m.nameInApp, u.name as unit, c.name as groupname, m.sliderLimit, company.name as favoriteCompany, m.goalable as isGoalable
                       FROM  user_company_account
                       JOIN company
                       ON company_id = company.id
@@ -822,7 +822,12 @@ public function selectAllMeasurementsFromUser($userId)
                       ON m.group_id = c.id
                       JOIN unit u
                       ON m.unit_id = u.id
-                      WHERE user_id = '$userId'
+                      WHERE company.name IN
+						(SELECT company.name
+                      FROM user_company_account
+                      JOIN company
+                      ON company_id = company.id
+                      WHERE user_id = '$userId')
                       GROUP BY m.name
                       ";
 
