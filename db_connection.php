@@ -207,7 +207,7 @@ public function selectGoalFromDatabase($measurement, $userId, $company, $period)
     $this->connect();
 
     $measurementId = $this->getMeasurementId($measurement);
-    //TODO do we still need period id ?
+    //TODO do we still need period id ? and testing
     $periodId = $this->getPeriodId($period);
     $companyId = $this->getCompanyId($company);
 
