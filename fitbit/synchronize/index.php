@@ -69,9 +69,6 @@ require_once 'insert_water_goal.php';
 require_once 'insert_activities.php';
 require_once 'insert_food.php';
 
-
-
-
 $db_connection->showSynchronizeMessage($company,$successfull);
 
 $db_connection->close();

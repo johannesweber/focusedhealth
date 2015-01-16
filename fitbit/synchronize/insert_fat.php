@@ -11,7 +11,6 @@
 // Request for fat to get a specific time series
 $response = $fitbit->getTimeSeries("fat", "today", "1y");
 $measurementName='bodyFat';
-$fatId = $db_connection->getMeasurementId($measurementName);
 
 $arrayLenght = $response;
 $arrayLenght = sizeof($arrayLenght);
@@ -25,9 +24,7 @@ for ($x = 0; $x < $arrayLenght; $x++) {
     $fat = $array[$x]->value;
     $date = $array[$x]->dateTime;
 
-
     $result = $db_connection->insertValue($userId, $company, $measurementName, $date, $fat);
-
 
     if (!$result) {
 

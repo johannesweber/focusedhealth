@@ -13,7 +13,6 @@
 $timestamp = time();
 $today = date("Y-m-d", $timestamp);
 $measurementName='steps';
-$stepsId = $db_connection->getMeasurementId($measurementName);
 
 // to get memberSince it's include in index; to get all data since the user is a member
 $response = $fitbit->getTimeSeries("steps", $memberSince, $today);
@@ -29,9 +28,7 @@ for ($x = 0; $x < $arrayLenght; $x++) {
     $steps = $array[$x]->value;
     $date = $array[$x]->dateTime;
 
-
     $result = $db_connection->insertValue($userId, $company, $measurementName, $date, $steps);
-
 
     if (!$result) {
 

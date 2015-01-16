@@ -202,28 +202,47 @@ public function getFromCompanyAccountInfo($select, $userId, $company_id)
  * @param $limit
  * @return string
  */
-public function selectGoalFromDatabase($measurement, $userId, $period, $limit)
+public function selectGoalFromDatabase($measurement, $userId, $company, $period)
 {
     $this->connect();
 
-    $timestamp = time();
-    $date = date("Y-m-d", $timestamp);
-
     $measurementId = $this->getMeasurementId($measurement);
+    //TODO do we still need period id ? and testing
     $periodId = $this->getPeriodId($period);
+    $companyId = $this->getCompanyId($company);
 
-    $statement = "SELECT goal.goal_id, goal.goal_value AS target_value, v.value AS current_value, v.date
+    $timestamp = time();
+    $currentDate = date("Y-m-d", $timestamp);
+
+    $startDateTime = date_create_from_format("Y-m-d", $currentDate);
+
+    //starttime will be calculated depending on the given period
+    switch ($period) {
+
+        case "weekly"   : date_sub($startDateTime, date_interval_create_from_date_string('7 days'));
+            break;
+        case "monthly"  : date_sub($startDateTime, date_interval_create_from_date_string('30 days'));
+            break;
+        case "annual"   : date_sub($startDateTime, date_interval_create_from_date_string('365 days'));
+            break;
+    }
+
+    //the startdate datetime object will be converted to an string
+    $startDateString = date_format($startDateTime, 'Y-m-d');
+
+    $statement = "SELECT goal.goal_id, goal.goal_value AS target_value, SUM(v.value) AS current_value, v.date, com.name as company
                       FROM goal
                       JOIN measurement meas ON goal.measurement_id = meas.id
                       JOIN unit ON meas.unit_id = unit.id
                       JOIN value v ON v.measurement_id = meas.id
+					  JOIN company com ON goal.company_id = com.id
                       WHERE goal.measurement_id = $measurementId
                       AND v.user_id = $userId
                       AND goal.period = $periodId
-                      AND v.date <=  '$date'
-                      ORDER BY DATE DESC
-                      LIMIT $limit
+                      AND com.id = $companyId
+                      AND v.date BETWEEN '$startDateString' AND '$currentDate'
                       ";
+
     $this->executeStatement($statement);
 
     return $this->getResultAsJSON();

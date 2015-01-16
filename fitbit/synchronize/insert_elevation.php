@@ -12,9 +12,6 @@
 $response = $fitbit->getTimeSeries("elevation", "today", "1y");
 $measurementName='elevation';
 
-// method call to get the Id of the measurement
-$elevationId = $db_connection->getMeasurementId($measurementName);
-
 $arrayLenght = $response;
 $arrayLenght = sizeof($arrayLenght);
 

@@ -20,7 +20,6 @@ $activeMinutesMeasurementName='activeMinutes';
 $caloriesOutMeasurementName='caloriesOut';
 $stepsMeasurementName='steps';
 $period = 'daily';
-$periodDailyId = $db_connection->getPeriodId($period);
 
 
 //access data of response
@@ -48,9 +47,8 @@ for ($id = 0; $id < sizeof($measArray); $id++) {
     $measurementName = $measArray[$id];
     $wert = $werteArray[$id];
 
-
-    $result = $db_connection->insertGoal($userId, $company, $measurementName, $wert, $periodDailyId);
-
+    //startdate is NULL because we are getting no startdate from Fitbit API
+    $result = $db_connection->insertGoal($userId, $company, $measurementName, $wert, $period, $startDate = NULL);
 
     if (!$result) {
 

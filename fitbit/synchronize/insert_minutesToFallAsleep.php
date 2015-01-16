@@ -12,7 +12,6 @@
 $response = $fitbit->getTimeSeries("minutesToFallAsleep", "today", "1y");
 
 $measurementName='minutesToFallAsleep';
-$minutesToFallAsleepId = $db_connection->getMeasurementId($measurementName);
 
 $arrayLength = $response;
 $arrayLength = sizeof($arrayLength);
