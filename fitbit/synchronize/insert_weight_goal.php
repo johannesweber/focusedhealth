@@ -29,7 +29,7 @@ $rowCount = $result->num_rows;
 if ($rowCount == 0) {
     //insert weight goal
     $insert = "INSERT INTO goal (goal_value, start_value, startdate, enddate, period, user_id, measurement_id, company_id)
-VALUES ('$weightGoal', '$startWeight', '$startDate', Null, NULL , '$userId', '$weightId', '$companyId')";
+VALUES ('$weightGoal', '$startWeight', '$startDate', 0, NULL , '$userId', '$weightId', '$companyId')";
     $result = $db_connection->executeStatement($insert);
     if (!$result) {
         $error = false;

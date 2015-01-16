@@ -23,9 +23,9 @@ $waterGoal = $response->goal->goal;
 // to get the name for the measurement
 $waterMeasurementName='water';
 $periodName='daily';
-$periodDailyId = $db_connection->getPeriodId($periodName);
 
-$result = $db_connection->insertGoal($userId, $company, $waterMeasurementName, $waterGoal, $periodDailyId);
+//startdate is NULL because we are getting no startdate from Fitbit API
+$result = $db_connection->insertGoal($userId, $company, $waterMeasurementName, $waterGoal, $periodName, $startdate = NULL);
 
 
 if (!$result) {

@@ -18,14 +18,12 @@ $response = $fitbit->getFoodGoal();
 // to get the Id's for the measurement name
 $caloriesMeasurementName = 'caloriesIn';
 $periodName = 'daily';
-// method call to get the right periodId
-$periodDailyId = $db_connection->getPeriodId($periodName);
 
 
 $foodGoal = $response->goals->calories;
 
-
-$result = $db_connection->insertGoal($userId, $company, $caloriesMeasurementName, $foodGoal, $periodDailyId);
+//startdate is NULL because we are getting no startdate from Fitbit API
+$result = $db_connection->insertGoal($userId, $company, $caloriesMeasurementName, $foodGoal, $periodName, $startdate = NULL);
 
 
 if (!$result) {

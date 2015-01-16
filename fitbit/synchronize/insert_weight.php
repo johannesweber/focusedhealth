@@ -11,7 +11,6 @@
 
 $response = $fitbit->getTimeSeries("weight", "today", "1y");
 $measurementName='weight';
-$weightId = $db_connection->getMeasurementId($measurementName);
 
 $arrayLenght = $response;
 $arrayLenght = sizeof($arrayLenght);

@@ -16,7 +16,6 @@ $sleepStartTimeId = $db_connection->getMeasurementId($measurementName);
 $arrayLength = $response;
 $arrayLength = sizeof($arrayLength);
 
-
 $array = $response;
 
 //run through each sleep start time value
