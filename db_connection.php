@@ -344,20 +344,23 @@ public function selectValueFromDatabase($company, $measurement, $userId, $date, 
 /**
  * function to check if goal exists in the database
  * @param $measurement
+ * @param date
  * @param $userId
  * @param $company
  * @return bool true if desired goal is stored in database
  */
-public function checkIfGoalExists($measurement, $userId, $company, $periodId) //achtung perioid hinzugefügt
+public function checkIfGoalExists($measurement, $userId, $company,$period, $startdate) //achtung perioid hinzugefügt
 {
     $measurementId = $this->getMeasurementId($measurement);
     $companyId = $this->getCompanyId($company);
+    $periodId = $this->getPeriodId($period);
 
     $statement = "SELECT * FROM goal
                       WHERE user_id = '$userId'
                       AND measurement_id = '$measurementId'
                       AND company_id = '$companyId'
-                      AND period = '$periodId'";
+                      AND period = '$periodId'
+                      AND startdate = '$startdate'";
 
     $result = $this->executeStatement($statement);
 
@@ -662,31 +665,37 @@ public function checkIfFoodExists($userId, $company, $date, $name)
      * @param $company
      * @param $measurement
      * @param $value
-     * @param $periodId
+     * @param $period
+     * @param startDate as String
      * @return bool
      */
-public function insertGoal($userId, $company, $measurement, $value, $periodId)
+public function insertGoal($userId,$company,$measurement,$goalValue, $period, $startDateAsString)
 {
     $this->connect();
 
     $successfull = false;
 
+    //converts date from string to MySQL Date
+    $timestamp = strtotime($startDateAsString);
+    $startDate = date("Y-m-d", $timestamp);
     $measurementId = $this->getMeasurementId($measurement);
     $companyId = $this->getCompanyId($company);
+    $periodId = $this->getPeriodId($period);
 
-    $valuesExists = $this->checkIfGoalExists($measurement, $userId, $company, $periodId);
+    $valuesExists = $this->checkIfGoalExists($measurement,$userId,$company,$period,$startDate);
 
     if ($valuesExists) {
 
+        //enddate is always NULL but we left it in our database so we could use it later. The same with start_value
         $statement = "UPDATE goal
-                          set goal_value='$value', startdate=NULL, enddate=NULL, period='$periodId',user_id='$userId', measurement_id='$measurementId', company_id='$companyId'
+                          set goal_value='$goalValue', start_value = 0, startdate= '$startDate', enddate=NULL, period='$periodId',user_id='$userId', measurement_id='$measurementId', company_id='$companyId'
                           WHERE user_id='$userId'
                           AND measurement_id='$measurementId'
                           AND company_id='$companyId' AND period='$periodId'";
     } else {
 
-        $statement = "INSERT INTO goal (goal_value, startdate, enddate, period, user_id, measurement_id, company_id)
-                          VALUES ('$value', Null, Null, '$periodId', '$userId', '$measurementId', '$companyId')";
+        $statement = "INSERT INTO goal (goal_value, start_value, startdate, enddate, period, user_id, measurement_id, company_id)
+                          VALUES ('$goalValue', 0, '$startDate', Null, '$periodId', '$userId', '$measurementId', '$companyId')";
     }
     $result = $this->executeStatement($statement);
 

@@ -20,49 +20,13 @@ $db_connection->connect();
 
 $userId = $_GET["userId"];
 $measurement = $_GET["measurement"];
-$measurementId = $db_connection->getMeasurementId($measurement);
 $period = $_GET["period"];
-$periodId = $db_connection->getPeriodId($period);
-$startDateString = $_GET["startDate"];
-//converts date from string to MySQL Date
-$timestamp = strtotime($startDateString);
-$startDate = date("Y-m-d", $timestamp);
+$startDate = $_GET["startDate"];
 $company = $_GET["company"];
 $companyId = $db_connection->getCompanyId($company);
 $goalValue = $_GET["goalValue"];
 
-$limit = 1;
-
-$goalExists = $db_connection->checkIfGoalExists($measurement, $userId, $company, $period, $startDate);
-
-if (!$goalExists) {
-
-    $statement = "INSERT INTO goal (goal_value, start_value, startdate, period, user_id, measurement_id, company_id)
-                VALUES ('$goalValue', '0', '$startDate', '$periodId', '$userId', '$measurementId', '$companyId')";
-
-} else {
-
-    $statement = "UPDATE goal
-                  SET goal_value = $goalValue
-                  WHERE period = $periodId
-                  AND measurement_id = $measurementId
-                  AND user_id = $userId
-                  AND company_id = '$companyId'
-                  AND startdate = '$startDate'
-                  ";
-}
-
-$result = $db_connection->executeStatement($statement);
-
-if ($result) {
-
-    echo '{"success" : "1", "message" : "Goal successfully inserted"}';
-
-} else {
-
-    echo '{"success" : "-1", "message" : "Goal was not successfully inserted"}';
-
-}
+$db_connection->insertGoal($userId,$company,$measurement,$goalValue, $period, $startDate);
 
 $db_connection->close();
 
