@@ -22,11 +22,12 @@ $db_connection = new DatabaseConnection();
 $db_connection->connect();
 
 // send data by iphone
-$user_id = $_POST['user_id'];
+$userId = $_POST['user_id'];
 $company_account_id = $_POST['company_account_id'];
 $oauth_token = $_POST['oauth_token'];
 $oauth_token_secret = $_POST['oauth_token_secret'];
-
+$company = "withings";
+$companyId = $db_connection->getCompanyId($company);
 
 $withings = new WithingsPHP();
 $withings->setOAuthDetails($oauth_token, $oauth_token_secret, $company_account_id);
