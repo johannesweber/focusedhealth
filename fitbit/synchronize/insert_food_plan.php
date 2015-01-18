@@ -13,9 +13,10 @@ $date = date("Y-m-d", $timestamp);
 // to get the name for the measurement
 $measurementName = 'calories';
 $caloriesId = $db_connection->getMeasurementId($measurementName);
-//TODO was ist denn hier los ?
-$measurementName = 'daily';
-$periodDailyId = $db_connection->getMeasurementId($measurementName);
+
+
+$period = 'daily';
+$periodDailyId = $db_connection->getPeriodId($period);
 
 
 $response = $fitbit->getFoodGoal();
