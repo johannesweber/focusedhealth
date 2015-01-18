@@ -202,44 +202,49 @@ public function getFromCompanyAccountInfo($select, $userId, $company_id)
  * @param $limit
  * @return string
  */
-public function selectGoalFromDatabase($measurement, $userId, $company, $period)
+public function selectGoalFromDatabase($measurement, $userId, $company, $period, $startDate)
 {
     $this->connect();
 
     $measurementId = $this->getMeasurementId($measurement);
-    //TODO do we still need period id ? and testing
-    $periodId = $this->getPeriodId($period);
     $companyId = $this->getCompanyId($company);
+    $periodId = $this->getPeriodId($period);
 
-    $timestamp = time();
-    $currentDate = date("Y-m-d", $timestamp);
+    //DateTime object created from param startDate to determine the enddate
+    $endDateTime = date_create_from_format("Y-m-d", $startDate);
 
-    $startDateTime = date_create_from_format("Y-m-d", $currentDate);
-
-    //starttime will be calculated depending on the given period
+    //enddate of the goal will be calculated depending on the given period
     switch ($period) {
 
-        case "weekly"   : date_sub($startDateTime, date_interval_create_from_date_string('7 days'));
+        case "weekly"   : date_add($endDateTime, date_interval_create_from_date_string('7 days'));
             break;
-        case "monthly"  : date_sub($startDateTime, date_interval_create_from_date_string('30 days'));
+        case "monthly"  : date_add($endDateTime, date_interval_create_from_date_string('30 days'));
             break;
-        case "annual"   : date_sub($startDateTime, date_interval_create_from_date_string('365 days'));
+        case "annual"   : date_add($endDateTime, date_interval_create_from_date_string('365 days'));
             break;
     }
 
     //the startdate datetime object will be converted to an string
-    $startDateString = date_format($startDateTime, 'Y-m-d');
+    $endDateString = date_format($endDateTime, 'Y-m-d');
 
-    $statement = "SELECT goal.goal_id, goal.goal_value AS target_value, SUM(v.value) AS current_value, v.date, com.name as company
-                      FROM goal
-                      JOIN measurement meas ON goal.measurement_id = meas.id
-                      JOIN unit ON meas.unit_id = unit.id
-                      JOIN value v ON v.measurement_id = meas.id
-					  JOIN company com ON goal.company_id = com.id
-                      WHERE goal.measurement_id = $measurementId
-                      AND v.user_id = $userId
-                      AND com.id = $companyId
-                      AND v.date BETWEEN '$startDateString' AND '$currentDate'
+    $statement = "SELECT subsum.currentValue, subsum.measurement, subsum.unit, goal.goal_value as goalValue
+                  FROM goal
+                  JOIN
+                  (SELECT value.user_id, SUM(value.value) as currentValue, unit.name as unit, meas.name as measurement
+                   FROM value
+                   JOIN measurement meas
+                   ON meas.id = value.measurement_id
+                   JOIN unit
+                   ON meas.unit_id = unit.id
+                   WHERE measurement_id = $measurementId
+                   AND user_id = $userId
+                   AND company_id = $companyId
+                   AND date BETWEEN '$startDate' AND '$endDateString'
+                  ) subsum
+                  ON (goal.user_id = subsum.user_id)
+                  WHERE goal.measurement_id = $measurementId
+                  AND goal.company_id = $companyId
+                  AND goal.period = $periodId
                       ";
 
     $this->executeStatement($statement);
