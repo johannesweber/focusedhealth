@@ -210,9 +210,7 @@ public function selectGoalFromDatabase($measurement, $userId, $company, $period,
     $companyId = $this->getCompanyId($company);
     $periodId = $this->getPeriodId($period);
 
-    echo "Startdate" . $startDate;
-
-    echo $endDate = $this->getEnddateDependingOnPeriod($startDate, $period);
+    $endDate = $this->getEnddateDependingOnPeriod($startDate, $period);
 
     $statement = "SELECT subsum.currentValue, subsum.measurement, subsum.unit, goal.goal_value as goalValue
                   FROM goal
