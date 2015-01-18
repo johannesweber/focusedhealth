@@ -238,7 +238,6 @@ public function selectGoalFromDatabase($measurement, $userId, $company, $period)
 					  JOIN company com ON goal.company_id = com.id
                       WHERE goal.measurement_id = $measurementId
                       AND v.user_id = $userId
-                      AND goal.period = $periodId
                       AND com.id = $companyId
                       AND v.date BETWEEN '$startDateString' AND '$currentDate'
                       ";
