@@ -1073,12 +1073,11 @@ class DatabaseConnection
 
     }
 
-    /*
-     * @param startDate
-     * @param period
-     *
-     * returns the determined enddate as string
-     *
+    /**
+     * function to choose the period of time
+     * @param $startDate
+     * @param $period
+     * @return bool|string returns the determined enddate as string
      */
     public function getEnddateDependingOnPeriod($startDate, $period)
     {
