@@ -210,22 +210,9 @@ public function selectGoalFromDatabase($measurement, $userId, $company, $period,
     $companyId = $this->getCompanyId($company);
     $periodId = $this->getPeriodId($period);
 
-    //DateTime object created from param startDate to determine the enddate
-    $endDateTime = date_create_from_format("Y-m-d", $startDate);
+    echo "Startdate" . $startDate;
 
-    //enddate of the goal will be calculated depending on the given period
-    switch ($period) {
-
-        case "weekly"   : date_add($endDateTime, date_interval_create_from_date_string('7 days'));
-            break;
-        case "monthly"  : date_add($endDateTime, date_interval_create_from_date_string('30 days'));
-            break;
-        case "annual"   : date_add($endDateTime, date_interval_create_from_date_string('365 days'));
-            break;
-    }
-
-    //the startdate datetime object will be converted to an string
-    $endDateString = date_format($endDateTime, 'Y-m-d');
+    echo $endDate = $this->getEnddateDependingOnPeriod($startDate, $period);
 
     $statement = "SELECT subsum.currentValue, subsum.measurement, subsum.unit, goal.goal_value as goalValue
                   FROM goal
@@ -239,7 +226,7 @@ public function selectGoalFromDatabase($measurement, $userId, $company, $period,
                    WHERE measurement_id = $measurementId
                    AND user_id = $userId
                    AND company_id = $companyId
-                   AND date BETWEEN '$startDate' AND '$endDateString'
+                   AND date BETWEEN '$startDate' AND '$endDate'
                   ) subsum
                   ON (goal.user_id = subsum.user_id)
                   WHERE goal.measurement_id = $measurementId
@@ -1083,6 +1070,32 @@ public function selectAllCompanies()
 
         return $this->getResultAsJSON();
 
+
+    }
+    /*
+     * @param startDate
+     * @param period
+     *
+     * returns the determined enddate as string
+     *
+     */
+    public function getEnddateDependingOnPeriod($startDate, $period){
+
+        //DateTime object created from param startDate to determine the enddate
+        $endDateTime = date_create_from_format("Y-m-d", $startDate);
+
+        //enddate of the goal will be calculated depending on the given period
+        switch ($period) {
+
+            case "weekly"   : date_add($endDateTime, date_interval_create_from_date_string('7 days'));
+                break;
+            case "monthly"  : date_add($endDateTime, date_interval_create_from_date_string('30 days'));
+                break;
+            case "annual"   : date_add($endDateTime, date_interval_create_from_date_string('365 days'));
+                break;
+        }
+
+        return date_format($endDateTime, 'Y-m-d');
 
     }
 
