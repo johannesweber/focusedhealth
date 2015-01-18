@@ -35,7 +35,7 @@ for ($x = 0; $x < sizeof($measuregrpsArray); $x++) {
         $unit = $valueArray[$i]->unit;
 
         // convert in to double
-        $valueDouble = number_format(($value / (10^($unit*(-1)))),($unit*(-1)));
+        $valueDouble = number_format( ($value / (pow( 10,($unit*(-1)) )) ) , ($unit*(-1)) );
 
         // method call to convert the measurementId
         $measurement = $withings->convertMeasurementIdToMeasurementName($measurementId);
